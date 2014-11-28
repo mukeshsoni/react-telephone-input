@@ -11,61 +11,6 @@ var _ = require('lodash');
 
 var allCountries = [
     [
-      "United Kingdom",
-      "gb",
-      "44",
-      "+.. .... ......"
-    ],
-    [
-      "Denmark (Danmark)",
-      "dk",
-      "45",
-      "+.. .. .. .. .."
-    ],
-    [
-      "Finland (Suomi)",
-      "fi",
-      "358",
-      "+... .. ... .. .."
-    ],
-    [
-      "France",
-      "fr",
-      "33",
-      "+.. . .. .. .. .."
-    ],
-    [
-      "Germany (Deutschland)",
-      "de",
-      "49",
-      "+.. ... ......."
-    ],
-    [
-      "Netherlands (Nederland)",
-      "nl",
-      "31",
-      "+.. .. ........"
-    ],
-    [
-      "Norway (Norge)",
-      "no",
-      "47",
-      "+.. ... .. ..."
-    ],
-    [
-      "Sweden (Sverige)",
-      "se",
-      "46",
-      "+.. .. ... .. .."
-    ],
-    [
-      "United States",
-      "us",
-      "1",
-      "+. (...) ...-....",
-      0
-    ],
-    [
       "Afghanistan (â€«Ø§ÙØºØ§Ù†Ø³ØªØ§Ù†â€¬â€Ž)",
       "af",
       "93"
@@ -1339,10 +1284,7 @@ for (var i = 0; i < allCountries.length; i++) {
     addCountryCode(c[1], c[2], c[4]);
 }
 
-var preferredCountries = _.first(allCountries, 9);
-
 module.exports = {
             allCountries: allCountries,
-            allCountryCodes: allCountryCodes,
-            preferredCountriesIndex: 9
+            allCountryCodes: allCountryCodes
         };
