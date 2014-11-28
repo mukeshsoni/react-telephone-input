@@ -6,7 +6,7 @@ Inspired from the awesome jquery plugin for <a href="https://github.com/Bluefiel
 
 This one is written as a [reactjs](http://facebook.github.io/react/) component.
 
-![How it looks](/images/international-phone-numbers-screenshot.png?raw=true "How it looks")
+![How it looks](/images/react-telephone-number-screenshot.png?raw=true "How it looks")
 
 ```
 // Use declaratively within another react components render method

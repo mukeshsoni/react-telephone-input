@@ -11,17 +11,17 @@ var _ = require('lodash');
 
 var allCountries = [
     [
-      "Afghanistan (â€«Ø§ÙØºØ§Ù†Ø³ØªØ§Ù†â€¬â€Ž)",
+      "Afghanistan (‫افغانستان‬‎)",
       "af",
       "93"
     ],
     [
-      "Albania (ShqipÃ«ri)",
+      "Albania (Shqipëri)",
       "al",
       "355"
     ],
     [
-      "Algeria (â€«Ø§Ù„Ø¬Ø²Ø§Ø¦Ø±â€¬â€Ž)",
+      "Algeria (‫الجزائر‬‎)",
       "dz",
       "213"
     ],
@@ -56,7 +56,7 @@ var allCountries = [
       "54"
     ],
     [
-      "Armenia (Õ€Õ¡ÕµÕ¡Õ½Õ¿Õ¡Õ¶)",
+      "Armenia (Հայաստան)",
       "am",
       "374"
     ],
@@ -72,12 +72,12 @@ var allCountries = [
       "+.. ... ... ..."
     ],
     [
-      "Austria (Ã–sterreich)",
+      "Austria (Österreich)",
       "at",
       "43"
     ],
     [
-      "Azerbaijan (AzÉ™rbaycan)",
+      "Azerbaijan (Azərbaycan)",
       "az",
       "994"
     ],
@@ -87,12 +87,12 @@ var allCountries = [
       "1242"
     ],
     [
-      "Bahrain (â€«Ø§Ù„Ø¨Ø­Ø±ÙŠÙ†â€¬â€Ž)",
+      "Bahrain (‫البحرين‬‎)",
       "bh",
       "973"
     ],
     [
-      "Bangladesh (à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶)",
+      "Bangladesh (বাংলাদেশ)",
       "bd",
       "880"
     ],
@@ -102,12 +102,12 @@ var allCountries = [
       "1246"
     ],
     [
-      "Belarus (Ð‘ÐµÐ»Ð°Ñ€ÑƒÑÑŒ)",
+      "Belarus (Беларусь)",
       "by",
       "375"
     ],
     [
-      "Belgium (BelgiÃ«)",
+      "Belgium (België)",
       "be",
       "32",
       "+.. ... .. .. .."
@@ -118,7 +118,7 @@ var allCountries = [
       "501"
     ],
     [
-      "Benin (BÃ©nin)",
+      "Benin (Bénin)",
       "bj",
       "229"
     ],
@@ -128,7 +128,7 @@ var allCountries = [
       "1441"
     ],
     [
-      "Bhutan (à½ à½–à¾²à½´à½‚)",
+      "Bhutan (འབྲུག)",
       "bt",
       "975"
     ],
@@ -138,7 +138,7 @@ var allCountries = [
       "591"
     ],
     [
-      "Bosnia and Herzegovina (Ð‘Ð¾ÑÐ½Ð° Ð¸ Ð¥ÐµÑ€Ñ†ÐµÐ³Ð¾Ð²Ð¸Ð½Ð°)",
+      "Bosnia and Herzegovina (Босна и Херцеговина)",
       "ba",
       "387"
     ],
@@ -168,7 +168,7 @@ var allCountries = [
       "673"
     ],
     [
-      "Bulgaria (Ð‘ÑŠÐ»Ð³Ð°Ñ€Ð¸Ñ)",
+      "Bulgaria (България)",
       "bg",
       "359"
     ],
@@ -183,7 +183,7 @@ var allCountries = [
       "257"
     ],
     [
-      "Cambodia (áž€áž˜áŸ’áž–áž»áž‡áž¶)",
+      "Cambodia (កម្ពុជា)",
       "kh",
       "855"
     ],
@@ -218,7 +218,7 @@ var allCountries = [
       "1345"
     ],
     [
-      "Central African Republic (RÃ©publique centrafricaine)",
+      "Central African Republic (République centrafricaine)",
       "cf",
       "236"
     ],
@@ -233,7 +233,7 @@ var allCountries = [
       "56"
     ],
     [
-      "China (ä¸­å›½)",
+      "China (中国)",
       "cn",
       "86",
       "+.. ..-........"
@@ -244,7 +244,7 @@ var allCountries = [
       "57"
     ],
     [
-      "Comoros (â€«Ø¬Ø²Ø± Ø§Ù„Ù‚Ù…Ø±â€¬â€Ž)",
+      "Comoros (‫جزر القمر‬‎)",
       "km",
       "269"
     ],
@@ -270,7 +270,7 @@ var allCountries = [
       "+... ....-...."
     ],
     [
-      "CÃ´te dâ€™Ivoire",
+      "Côte d’Ivoire",
       "ci",
       "225"
     ],
@@ -285,19 +285,19 @@ var allCountries = [
       "53"
     ],
     [
-      "CuraÃ§ao",
+      "Curaçao",
       "cw",
       "599",
       "",
       0
     ],
     [
-      "Cyprus (ÎšÏÏ€ÏÎ¿Ï‚)",
+      "Cyprus (Κύπρος)",
       "cy",
       "357"
     ],
     [
-      "Czech Republic (ÄŒeskÃ¡ republika)",
+      "Czech Republic (Česká republika)",
       "cz",
       "420"
     ],
@@ -318,7 +318,7 @@ var allCountries = [
       "1767"
     ],
     [
-      "Dominican Republic (RepÃºblica Dominicana)",
+      "Dominican Republic (República Dominicana)",
       "do",
       "1",
       "",
@@ -331,7 +331,7 @@ var allCountries = [
       "593"
     ],
     [
-      "Egypt (â€«Ù…ØµØ±â€¬â€Ž)",
+      "Egypt (‫مصر‬‎)",
       "eg",
       "20"
     ],
@@ -367,7 +367,7 @@ var allCountries = [
       "500"
     ],
     [
-      "Faroe Islands (FÃ¸royar)",
+      "Faroe Islands (Føroyar)",
       "fo",
       "298"
     ],
@@ -389,12 +389,12 @@ var allCountries = [
       "+.. . .. .. .. .."
     ],
     [
-      "French Guiana (Guyane franÃ§aise)",
+      "French Guiana (Guyane française)",
       "gf",
       "594"
     ],
     [
-      "French Polynesia (PolynÃ©sie franÃ§aise)",
+      "French Polynesia (Polynésie française)",
       "pf",
       "689"
     ],
@@ -409,7 +409,7 @@ var allCountries = [
       "220"
     ],
     [
-      "Georgia (áƒ¡áƒáƒ¥áƒáƒ áƒ—áƒ•áƒ”áƒšáƒ)",
+      "Georgia (საქართველო)",
       "ge",
       "995"
     ],
@@ -430,7 +430,7 @@ var allCountries = [
       "350"
     ],
     [
-      "Greece (Î•Î»Î»Î¬Î´Î±)",
+      "Greece (Ελλάδα)",
       "gr",
       "30"
     ],
@@ -463,12 +463,12 @@ var allCountries = [
       "+... ....-...."
     ],
     [
-      "Guinea (GuinÃ©e)",
+      "Guinea (Guinée)",
       "gn",
       "224"
     ],
     [
-      "Guinea-Bissau (GuinÃ© Bissau)",
+      "Guinea-Bissau (Guiné Bissau)",
       "gw",
       "245"
     ],
@@ -489,24 +489,24 @@ var allCountries = [
       "504"
     ],
     [
-      "Hong Kong (é¦™æ¸¯)",
+      "Hong Kong (香港)",
       "hk",
       "852",
       "+... .... ...."
     ],
     [
-      "Hungary (MagyarorszÃ¡g)",
+      "Hungary (Magyarország)",
       "hu",
       "36"
     ],
     [
-      "Iceland (Ãsland)",
+      "Iceland (Ísland)",
       "is",
       "354",
       "+... ... ...."
     ],
     [
-      "India (à¤­à¤¾à¤°à¤¤)",
+      "India (भारत)",
       "in",
       "91",
       "+.. .....-....."
@@ -517,12 +517,12 @@ var allCountries = [
       "62"
     ],
     [
-      "Iran (â€«Ø§ÛŒØ±Ø§Ù†â€¬â€Ž)",
+      "Iran (‫ایران‬‎)",
       "ir",
       "98"
     ],
     [
-      "Iraq (â€«Ø§Ù„Ø¹Ø±Ø§Ù‚â€¬â€Ž)",
+      "Iraq (‫العراق‬‎)",
       "iq",
       "964"
     ],
@@ -533,7 +533,7 @@ var allCountries = [
       "+... .. ......."
     ],
     [
-      "Israel (â€«×™×©×¨××œâ€¬â€Ž)",
+      "Israel (‫ישראל‬‎)",
       "il",
       "972"
     ],
@@ -550,18 +550,18 @@ var allCountries = [
       "1876"
     ],
     [
-      "Japan (æ—¥æœ¬)",
+      "Japan (日本)",
       "jp",
       "81",
       "+.. ... .. ...."
     ],
     [
-      "Jordan (â€«Ø§Ù„Ø£Ø±Ø¯Ù†â€¬â€Ž)",
+      "Jordan (‫الأردن‬‎)",
       "jo",
       "962"
     ],
     [
-      "Kazakhstan (ÐšÐ°Ð·Ð°Ñ…ÑÑ‚Ð°Ð½)",
+      "Kazakhstan (Казахстан)",
       "kz",
       "7",
       "+. ... ...-..-..",
@@ -578,17 +578,17 @@ var allCountries = [
       "686"
     ],
     [
-      "Kuwait (â€«Ø§Ù„ÙƒÙˆÙŠØªâ€¬â€Ž)",
+      "Kuwait (‫الكويت‬‎)",
       "kw",
       "965"
     ],
     [
-      "Kyrgyzstan (ÐšÑ‹Ñ€Ð³Ñ‹Ð·ÑÑ‚Ð°Ð½)",
+      "Kyrgyzstan (Кыргызстан)",
       "kg",
       "996"
     ],
     [
-      "Laos (àº¥àº²àº§)",
+      "Laos (ລາວ)",
       "la",
       "856"
     ],
@@ -598,7 +598,7 @@ var allCountries = [
       "371"
     ],
     [
-      "Lebanon (â€«Ù„Ø¨Ù†Ø§Ù†â€¬â€Ž)",
+      "Lebanon (‫لبنان‬‎)",
       "lb",
       "961"
     ],
@@ -613,7 +613,7 @@ var allCountries = [
       "231"
     ],
     [
-      "Libya (â€«Ù„ÙŠØ¨ÙŠØ§â€¬â€Ž)",
+      "Libya (‫ليبيا‬‎)",
       "ly",
       "218"
     ],
@@ -633,12 +633,12 @@ var allCountries = [
       "352"
     ],
     [
-      "Macau (æ¾³é–€)",
+      "Macau (澳門)",
       "mo",
       "853"
     ],
     [
-      "Macedonia (FYROM) (ÐœÐ°ÐºÐµÐ´Ð¾Ð½Ð¸Ñ˜Ð°)",
+      "Macedonia (FYROM) (Македонија)",
       "mk",
       "389"
     ],
@@ -684,7 +684,7 @@ var allCountries = [
       "596"
     ],
     [
-      "Mauritania (â€«Ù…ÙˆØ±ÙŠØªØ§Ù†ÙŠØ§â€¬â€Ž)",
+      "Mauritania (‫موريتانيا‬‎)",
       "mr",
       "222"
     ],
@@ -694,7 +694,7 @@ var allCountries = [
       "230"
     ],
     [
-      "Mexico (MÃ©xico)",
+      "Mexico (México)",
       "mx",
       "52"
     ],
@@ -714,7 +714,7 @@ var allCountries = [
       "377"
     ],
     [
-      "Mongolia (ÐœÐ¾Ð½Ð³Ð¾Ð»)",
+      "Mongolia (Монгол)",
       "mn",
       "976"
     ],
@@ -729,22 +729,22 @@ var allCountries = [
       "1664"
     ],
     [
-      "Morocco (â€«Ø§Ù„Ù…ØºØ±Ø¨â€¬â€Ž)",
+      "Morocco (‫المغرب‬‎)",
       "ma",
       "212"
     ],
     [
-      "Mozambique (MoÃ§ambique)",
+      "Mozambique (Moçambique)",
       "mz",
       "258"
     ],
     [
-      "Myanmar (Burma) (á€™á€¼á€”á€ºá€™á€¬)",
+      "Myanmar (Burma) (မြန်မာ)",
       "mm",
       "95"
     ],
     [
-      "Namibia (NamibiÃ«)",
+      "Namibia (Namibië)",
       "na",
       "264"
     ],
@@ -754,7 +754,7 @@ var allCountries = [
       "674"
     ],
     [
-      "Nepal (à¤¨à¥‡à¤ªà¤¾à¤²)",
+      "Nepal (नेपाल)",
       "np",
       "977"
     ],
@@ -765,7 +765,7 @@ var allCountries = [
       "+.. .. ........"
     ],
     [
-      "New Caledonia (Nouvelle-CalÃ©donie)",
+      "New Caledonia (Nouvelle-Calédonie)",
       "nc",
       "687"
     ],
@@ -801,7 +801,7 @@ var allCountries = [
       "672"
     ],
     [
-      "North Korea (ì¡°ì„  ë¯¼ì£¼ì£¼ì˜ ì¸ë¯¼ ê³µí™”êµ­)",
+      "North Korea (조선 민주주의 인민 공화국)",
       "kp",
       "850"
     ],
@@ -817,12 +817,12 @@ var allCountries = [
       "+.. ... .. ..."
     ],
     [
-      "Oman (â€«Ø¹ÙÙ…Ø§Ù†â€¬â€Ž)",
+      "Oman (‫عُمان‬‎)",
       "om",
       "968"
     ],
     [
-      "Pakistan (â€«Ù¾Ø§Ú©Ø³ØªØ§Ù†â€¬â€Ž)",
+      "Pakistan (‫پاکستان‬‎)",
       "pk",
       "92",
       "+.. ...-......."
@@ -833,12 +833,12 @@ var allCountries = [
       "680"
     ],
     [
-      "Palestine (â€«ÙÙ„Ø³Ø·ÙŠÙ†â€¬â€Ž)",
+      "Palestine (‫فلسطين‬‎)",
       "ps",
       "970"
     ],
     [
-      "Panama (PanamÃ¡)",
+      "Panama (Panamá)",
       "pa",
       "507"
     ],
@@ -853,7 +853,7 @@ var allCountries = [
       "595"
     ],
     [
-      "Peru (PerÃº)",
+      "Peru (Perú)",
       "pe",
       "51"
     ],
@@ -883,22 +883,22 @@ var allCountries = [
       ["787", "939"]
     ],
     [
-      "Qatar (â€«Ù‚Ø·Ø±â€¬â€Ž)",
+      "Qatar (‫قطر‬‎)",
       "qa",
       "974"
     ],
     [
-      "RÃ©union (La RÃ©union)",
+      "Réunion (La Réunion)",
       "re",
       "262"
     ],
     [
-      "Romania (RomÃ¢nia)",
+      "Romania (România)",
       "ro",
       "40"
     ],
     [
-      "Russia (Ð Ð¾ÑÑÐ¸Ñ)",
+      "Russia (Россия)",
       "ru",
       "7",
       "+. ... ...-..-..",
@@ -910,7 +910,7 @@ var allCountries = [
       "250"
     ],
     [
-      "Saint BarthÃ©lemy (Saint-BarthÃ©lemy)",
+      "Saint Barthélemy (Saint-Barthélemy)",
       "bl",
       "590",
       "",
@@ -932,7 +932,7 @@ var allCountries = [
       "1758"
     ],
     [
-      "Saint Martin (Saint-Martin (partie franÃ§aise))",
+      "Saint Martin (Saint-Martin (partie française))",
       "mf",
       "590",
       "",
@@ -959,22 +959,22 @@ var allCountries = [
       "378"
     ],
     [
-      "SÃ£o TomÃ© and PrÃ­ncipe (SÃ£o TomÃ© e PrÃ­ncipe)",
+      "São Tomé and Príncipe (São Tomé e Príncipe)",
       "st",
       "239"
     ],
     [
-      "Saudi Arabia (â€«Ø§Ù„Ù…Ù…Ù„ÙƒØ© Ø§Ù„Ø¹Ø±Ø¨ÙŠØ© Ø§Ù„Ø³Ø¹ÙˆØ¯ÙŠØ©â€¬â€Ž)",
+      "Saudi Arabia (‫المملكة العربية السعودية‬‎)",
       "sa",
       "966"
     ],
     [
-      "Senegal (SÃ©nÃ©gal)",
+      "Senegal (Sénégal)",
       "sn",
       "221"
     ],
     [
-      "Serbia (Ð¡Ñ€Ð±Ð¸Ñ˜Ð°)",
+      "Serbia (Србија)",
       "rs",
       "381"
     ],
@@ -1025,28 +1025,28 @@ var allCountries = [
       "27"
     ],
     [
-      "South Korea (ëŒ€í•œë¯¼êµ­)",
+      "South Korea (대한민국)",
       "kr",
       "82"
     ],
     [
-      "South Sudan (â€«Ø¬Ù†ÙˆØ¨ Ø§Ù„Ø³ÙˆØ¯Ø§Ù†â€¬â€Ž)",
+      "South Sudan (‫جنوب السودان‬‎)",
       "ss",
       "211"
     ],
     [
-      "Spain (EspaÃ±a)",
+      "Spain (España)",
       "es",
       "34",
       "+.. ... ... ..."
     ],
     [
-      "Sri Lanka (à·à·Šâ€à¶»à·“ à¶½à¶‚à¶šà·à·€)",
+      "Sri Lanka (ශ්‍රී ලංකාව)",
       "lk",
       "94"
     ],
     [
-      "Sudan (â€«Ø§Ù„Ø³ÙˆØ¯Ø§Ù†â€¬â€Ž)",
+      "Sudan (‫السودان‬‎)",
       "sd",
       "249"
     ],
@@ -1073,12 +1073,12 @@ var allCountries = [
       "+.. .. ... .. .."
     ],
     [
-      "Syria (â€«Ø³ÙˆØ±ÙŠØ§â€¬â€Ž)",
+      "Syria (‫سوريا‬‎)",
       "sy",
       "963"
     ],
     [
-      "Taiwan (å°ç£)",
+      "Taiwan (台灣)",
       "tw",
       "886"
     ],
@@ -1093,7 +1093,7 @@ var allCountries = [
       "255"
     ],
     [
-      "Thailand (à¹„à¸—à¸¢)",
+      "Thailand (ไทย)",
       "th",
       "66"
     ],
@@ -1123,12 +1123,12 @@ var allCountries = [
       "1868"
     ],
     [
-      "Tunisia (â€«ØªÙˆÙ†Ø³â€¬â€Ž)",
+      "Tunisia (‫تونس‬‎)",
       "tn",
       "216"
     ],
     [
-      "Turkey (TÃ¼rkiye)",
+      "Turkey (Türkiye)",
       "tr",
       "90",
       "+.. ... ... .. .."
@@ -1159,12 +1159,12 @@ var allCountries = [
       "256"
     ],
     [
-      "Ukraine (Ð£ÐºÑ€Ð°Ñ—Ð½Ð°)",
+      "Ukraine (Україна)",
       "ua",
       "380"
     ],
     [
-      "United Arab Emirates (â€«Ø§Ù„Ø¥Ù…Ø§Ø±Ø§Øª Ø§Ù„Ø¹Ø±Ø¨ÙŠØ© Ø§Ù„Ù…ØªØ­Ø¯Ø©â€¬â€Ž)",
+      "United Arab Emirates (‫الإمارات العربية المتحدة‬‎)",
       "ae",
       "971"
     ],
@@ -1187,7 +1187,7 @@ var allCountries = [
       "598"
     ],
     [
-      "Uzbekistan (OÊ»zbekiston)",
+      "Uzbekistan (Oʻzbekiston)",
       "uz",
       "998"
     ],
@@ -1197,7 +1197,7 @@ var allCountries = [
       "678"
     ],
     [
-      "Vatican City (CittÃ  del Vaticano)",
+      "Vatican City (Città del Vaticano)",
       "va",
       "39",
       "+.. .. .... ....",
@@ -1209,7 +1209,7 @@ var allCountries = [
       "58"
     ],
     [
-      "Vietnam (Viá»‡t Nam)",
+      "Vietnam (Việt Nam)",
       "vn",
       "84"
     ],
@@ -1219,7 +1219,7 @@ var allCountries = [
       "681"
     ],
     [
-      "Yemen (â€«Ø§Ù„ÙŠÙ…Ù†â€¬â€Ž)",
+      "Yemen (‫اليمن‬‎)",
       "ye",
       "967"
     ],

@@ -2,16 +2,6 @@
  * @jsx React.DOM
  */
 
-// ;(function(root, name, definition) {
-//     if (typeof define === 'function' && define.amd) {
-//         define([], definition);
-//     } else if (typeof module === 'object' && module.exports) {
-//         module.exports = definition();
-//     } else {
-//         root[name] = definition();
-//     }
-// })(this, 'react-telephone-input', function() {
-
 // TODO - remove jquery dependence
 var $ = require('jquery');
 var _ = require('lodash');
@@ -53,42 +43,6 @@ function isNumberValid(inputNumber) {
 }
 
 // sroll to the country list item in the dropdown
-function scrollTo(countryIndex, middle, discardPreferredCountries) {
-    if(countryIndex < 0) return;
-
-    var container = $('.country-list');
-    var containerHeight = container.height();
-    var containerTop = container.offset().top;
-    var containerBottom = containerTop + containerHeight;
-
-    // var element = container.find('li[data-country-code="' + country.iso2 + '"]');
-    var element = container.find('li[data-flag-key=flag_no_' + countryIndex + ']');
-    // in case there is also a preferred country to scroll to and we are asked to discard it
-    if(discardPreferredCountries && element.length > 1) {
-        element = element[1];
-    }
-
-    var elementHeight = element.outerHeight();
-    var elementTop = element.offset().top;
-    var elementBottom = elementTop + elementHeight;
-    var newScrollTop = elementTop - containerTop + container.scrollTop();
-    var middleOffset = (containerHeight / 2) - (elementHeight / 2);
-
-    if (elementTop < containerTop) {
-        // scroll up
-        if (middle) {
-            newScrollTop -= middleOffset;
-        }
-        container.scrollTop(newScrollTop);
-    } else if (elementBottom > containerBottom) {
-        // scroll down
-        if(middle) {
-            newScrollTop += middleOffset;
-        }
-        var heightDifference = containerHeight - elementHeight;
-        container.scrollTop(newScrollTop - heightDifference);
-    }
-}
 
 var ReactTelephoneInput = React.createClass({
     getInitialState: function() {
@@ -104,14 +58,14 @@ var ReactTelephoneInput = React.createClass({
         }
 
         selectedCountryGuessIndex = _.findIndex(allCountries, selectedCountryGuess);
-
+console.log('selected country: ', selectedCountryGuess);
         var formattedNumber = this.formatNumber(inputNumber.replace(/\D/g, ''), selectedCountryGuess ? selectedCountryGuess.format : null);
         var preferredCountries = [];
         var self = this;
 
         preferredCountries = _.filter(allCountries, function(country) {
             return _.any(this.props.preferredCountries, function(preferredCountry) {
-                preferredCountry === country.iso2;
+                return preferredCountry === country.iso2;
             });
         }, this);
 
@@ -133,10 +87,11 @@ var ReactTelephoneInput = React.createClass({
         autoFormat: React.PropTypes.bool,
         defaultCountry: React.PropTypes.string,
         onlyCountries: React.PropTypes.arrayOf(React.PropTypes.string),
-        preferredCountries: React.PropTypes.arrayOf(React.PropTypes.string),
+        // preferredCountries: React.PropTypes.array,
         onChange: React.PropTypes.func,
     },
     getDefaultProps: function() {
+
         return {
             value: '',
             autoFormat: true,
@@ -165,6 +120,38 @@ var ReactTelephoneInput = React.createClass({
         $(document).off('keydown', this.handleKeydown);
         $(document).off('click', this.handleDocumentClick);
     },
+    scrollTo: function(country, middle) {
+        if(country < 0) return;
+
+        var container = $(this.refs.flagDropdownList.getDOMNode());
+        var containerHeight = container.height();
+        var containerTop = container.offset().top;
+        var containerBottom = containerTop + containerHeight;
+
+        // var element = container.find('li[data-flag-key=flag_no_' + countryIndex + ']');
+        var element = $(country);
+
+        var elementHeight = element.outerHeight();
+        var elementTop = element.offset().top;
+        var elementBottom = elementTop + elementHeight;
+        var newScrollTop = elementTop - containerTop + container.scrollTop();
+        var middleOffset = (containerHeight / 2) - (elementHeight / 2);
+
+        if (elementTop < containerTop) {
+            // scroll up
+            if (middle) {
+                newScrollTop -= middleOffset;
+            }
+            container.scrollTop(newScrollTop);
+        } else if (elementBottom > containerBottom) {
+            // scroll down
+            if(middle) {
+                newScrollTop += middleOffset;
+            }
+            var heightDifference = containerHeight - elementHeight;
+            container.scrollTop(newScrollTop - heightDifference);
+        }
+    },
     formatNumber: function(text, pattern) {
         if(!text || text.length === 0) {
             return '+';
@@ -172,6 +159,7 @@ var ReactTelephoneInput = React.createClass({
 
         // for all strings with length less than 3, just return it (1, 2 etc.)
         // also return the same text if the selected country has no fixed format
+        console.log('autoformat: ', this.props.autoFormat);
         if((text && text.length < 2) || !pattern || !this.props.autoFormat) {
             return '+' + text;
         }
@@ -193,7 +181,7 @@ var ReactTelephoneInput = React.createClass({
                 remainingText: _.rest(formattedObject.remainingText)
             }
         }, {formattedText: "", remainingText: text.split('')});
-
+console.log('formatted object: ', formattedObject);
         return formattedObject.formattedText + formattedObject.remainingText.join("");
     },
 
@@ -221,14 +209,18 @@ var ReactTelephoneInput = React.createClass({
             return selectedCountry;
         }, {dialCode: '', priority: 10001}, this);
     }),
+    getElement: function(index) {
+        return this.refs['flag_no_'+index].getDOMNode();
+    },
     handleFlagDropdownClick: function() {
         // need to put the highlight on the current selected country if the dropdown is going to open up
+        var self = this;
         this.setState({
             showDropDown: !this.state.showDropDown,
             highlightCountry: _.findWhere(this.props.onlyCountries, this.state.selectedCountry),
             highlightCountryIndex: _.findIndex(this.props.onlyCountries, this.state.selectedCountry)
         }, function() {
-            scrollTo(this.state.highlightCountryIndex + this.state.preferredCountries.length);
+            self.scrollTo(self.getElement(self.state.highlightCountryIndex + self.state.preferredCountries.length));
         });
     },
     // TODO: handle 
@@ -254,7 +246,7 @@ var ReactTelephoneInput = React.createClass({
                 newSelectedCountry = this.guessSelectedCountry(inputNumber.substring(0, 6));
                 freezeSelection = false;
             }
-
+console.log('newselected country: ', newSelectedCountry);
             // let us remove all non numerals from the input
             formattedNumber = this.formatNumber(inputNumber, newSelectedCountry.format);
         }
@@ -323,7 +315,8 @@ var ReactTelephoneInput = React.createClass({
         // had to write own function because underscore does not have findIndex. lodash has it
         var highlightCountryIndex = this.state.highlightCountryIndex + direction;
 
-        if(highlightCountryIndex < 0 || highlightCountryIndex >= this.props.onlyCountries.length) {
+        if(highlightCountryIndex < 0 
+            || highlightCountryIndex >= (this.props.onlyCountries.length  + this.state.preferredCountries.length)) {
             return highlightCountryIndex - direction;
         }
 
@@ -339,12 +332,13 @@ var ReactTelephoneInput = React.createClass({
             return startsWith(country.name.toLowerCase(), queryString.toLowerCase());
         }, this);
         return probableCountries[0];
+        var self = this;
     }),
     searchCountry: function() {
         var probableCandidate = this._searchCountry(this.state.queryString) || this.props.onlyCountries[0];
-        var probableCandidateIndex = _.findIndex(this.props.onlyCountries, probableCandidate);
+        var probableCandidateIndex = _.findIndex(this.props.onlyCountries, probableCandidate) + this.state.preferredCountries.length;
 
-        scrollTo(probableCandidateIndex + this.state.preferredCountries.length)
+        this.scrollTo(this.getElement(probableCandidateIndex + this.state.preferredCountries.length))
 
         this.setState({
             queryString: "",
@@ -358,13 +352,12 @@ var ReactTelephoneInput = React.createClass({
 
         // ie hack
         event.preventDefault ? event.preventDefault() : event.returnValue = false;
-
         var self = this;
         function _moveHighlight(direction) {
             self.setState({
                 highlightCountryIndex: self._getHighlightCountryIndex(direction)
             }, function() {
-                scrollTo(self.state.highlightCountryIndex + self.state.preferredCountries.length, true);
+                self.scrollTo(self.getElement(self.state.highlightCountryIndex), true);
             });
         }
 
@@ -419,7 +412,7 @@ var ReactTelephoneInput = React.createClass({
         }
     },
     render: function() {
-        window.allCountries = allCountries;
+        console.log('number of countries: ', this.props.onlyCountries.length);
         var cx = React.addons.classSet;
         var dropDownClasses = cx({
             "country-list": true,
@@ -441,11 +434,12 @@ var ReactTelephoneInput = React.createClass({
                 "country": true,
                 "preferred": country.iso2 === 'us' || country.iso2 === 'gb',
                 "active": country.iso2 === 'us',
-                "highlight": _.isEqual(this.state.highlightCountryIndex, index - this.state.preferredCountries.length)
+                "highlight": this.state.highlightCountryIndex === index
             });
 
             return (
                 <li
+                    ref={"flag_no_" + index}
                     key={"flag_no_" + index}
                     data-flag-key={"flag_no_" + index}
                     className={itemClasses}
