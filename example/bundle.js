@@ -1311,6 +1311,8 @@ var allCountries = countryData.allCountries;
 
 require('./styles.less');
 
+var isModernBrowser = Boolean(document.createElement('input').setSelectionRange);
+
 var keys = {
         UP: 38,
         DOWN: 40,
@@ -1358,10 +1360,8 @@ var ReactTelephoneInput = React.createClass({displayName: 'ReactTelephoneInput',
         }
 
         selectedCountryGuessIndex = _.findIndex(allCountries, selectedCountryGuess);
-console.log('selected country: ', selectedCountryGuess);
         var formattedNumber = this.formatNumber(inputNumber.replace(/\D/g, ''), selectedCountryGuess ? selectedCountryGuess.format : null);
         var preferredCountries = [];
-        var self = this;
 
         preferredCountries = _.filter(allCountries, function(country) {
             return _.any(this.props.preferredCountries, function(preferredCountry) {
@@ -1378,8 +1378,7 @@ console.log('selected country: ', selectedCountryGuess);
             showDropDown: false,
             queryString: "",
             freezeSelection: false,
-            debouncedQueryStingSearcher: _.debounce(this.searchCountry, 300),
-            isModernBrowser: Boolean(document.createElement('input').setSelectionRange)
+            debouncedQueryStingSearcher: _.debounce(this.searchCountry, 300)            
         };
     },
     propTypes: {
@@ -1387,7 +1386,7 @@ console.log('selected country: ', selectedCountryGuess);
         autoFormat: React.PropTypes.bool,
         defaultCountry: React.PropTypes.string,
         onlyCountries: React.PropTypes.arrayOf(React.PropTypes.string),
-        // preferredCountries: React.PropTypes.array,
+        preferredCountries: React.PropTypes.arrayOf(React.PropTypes.string),
         onChange: React.PropTypes.func,
     },
     getDefaultProps: function() {
@@ -1459,7 +1458,6 @@ console.log('selected country: ', selectedCountryGuess);
 
         // for all strings with length less than 3, just return it (1, 2 etc.)
         // also return the same text if the selected country has no fixed format
-        console.log('autoformat: ', this.props.autoFormat);
         if((text && text.length < 2) || !pattern || !this.props.autoFormat) {
             return '+' + text;
         }
@@ -1481,7 +1479,6 @@ console.log('selected country: ', selectedCountryGuess);
                 remainingText: _.rest(formattedObject.remainingText)
             }
         }, {formattedText: "", remainingText: text.split('')});
-console.log('formatted object: ', formattedObject);
         return formattedObject.formattedText + formattedObject.remainingText.join("");
     },
 
@@ -1489,7 +1486,7 @@ console.log('formatted object: ', formattedObject);
     _cursorToEnd: function() {
         var input = this.refs.numberInput.getDOMNode();
         input.focus();
-        if (this.state.isModernBrowser) {
+        if (isModernBrowser) {
             var len = input.value.length;
             input.setSelectionRange(len, len);
         }
@@ -1546,7 +1543,6 @@ console.log('formatted object: ', formattedObject);
                 newSelectedCountry = this.guessSelectedCountry(inputNumber.substring(0, 6));
                 freezeSelection = false;
             }
-console.log('newselected country: ', newSelectedCountry);
             // let us remove all non numerals from the input
             formattedNumber = this.formatNumber(inputNumber, newSelectedCountry.format);
         }
@@ -1560,7 +1556,7 @@ console.log('newselected country: ', newSelectedCountry);
             freezeSelection: freezeSelection,
             selectedCountry: newSelectedCountry.dialCode.length > 0 ? newSelectedCountry : this.state.selectedCountry
         }, function() {
-            if(this.state.isModernBrowser) {
+            if(isModernBrowser) {
                 if(diff > 0) {
                     caretPosition = caretPosition - diff;
                 }
@@ -1638,7 +1634,7 @@ console.log('newselected country: ', newSelectedCountry);
         var probableCandidate = this._searchCountry(this.state.queryString) || this.props.onlyCountries[0];
         var probableCandidateIndex = _.findIndex(this.props.onlyCountries, probableCandidate) + this.state.preferredCountries.length;
 
-        this.scrollTo(this.getElement(probableCandidateIndex + this.state.preferredCountries.length))
+        this.scrollTo(this.getElement(probableCandidateIndex + this.state.preferredCountries.length), true);
 
         this.setState({
             queryString: "",
@@ -1712,7 +1708,6 @@ console.log('newselected country: ', newSelectedCountry);
         }
     },
     render: function() {
-        console.log('number of countries: ', this.props.onlyCountries.length);
         var cx = React.addons.classSet;
         var dropDownClasses = cx({
             "country-list": true,
@@ -1729,7 +1724,8 @@ console.log('newselected country: ', newSelectedCountry);
 
         var dashedLi = (React.createElement("li", {key: "dashes", className: "divider"}));
 
-        var countryDropDownList = _.map(_.union(this.state.preferredCountries, this.props.onlyCountries), function(country, index) {
+        var countryDropDownList = _.map(this.state.preferredCountries.concat(this.props.onlyCountries), function(country, index) {
+            console.log('index: ', index);
             var itemClasses = cx({
                 "country": true,
                 "preferred": country.iso2 === 'us' || country.iso2 === 'gb',

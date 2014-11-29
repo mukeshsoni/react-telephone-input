@@ -10,11 +10,13 @@ This one is written as a [reactjs](http://facebook.github.io/react/) component.
 
 ```
 // Use declaratively within another react components render method
+var ReactTelInput = require('react-telephone-input');
 <MyAwesomeReactComponent>
-  <FlagBearer defaultCountry="in"/>
+  <ReactTelInput defaultCountry="in"/>
 </MyAwesomeReactComponent>
 
 // or render standalone
+var ReactTelInput = require('react-telephone-input');
 React.renderComponent(<FlagBearer defaultCountry="in"/>, document.getElementById('my-container'));
 ```
 
