@@ -3,7 +3,6 @@
  */
 
 // TODO - remove jquery dependence
-var $ = require('jquery');
 var _ = require('lodash');
 var React = require('react/addons');
 var countryData = require('./country_data');
@@ -42,6 +41,16 @@ function isNumberValid(inputNumber) {
     return _.some(countries, function(country) {
         return startsWith(inputNumber, country.dialCode) || startsWith(country.dialCode, inputNumber);
     });
+}
+
+function scrollToTop(scrollDuration) {
+    var scrollStep = -window.scrollY / (scrollDuration / 15),
+        scrollInterval = setInterval(function(){
+        if ( window.scrollY != 0 ) {
+            window.scrollBy( 0, scrollStep );
+        }
+        else clearInterval(scrollInterval); 
+    },15);
 }
 
 // sroll to the country list item in the dropdown
@@ -106,34 +115,36 @@ var ReactTelephoneInput = React.createClass({
         return this.getNumber();
     },
     componentDidMount: function() {
-        // document.addEventListener('keydown', this.handleKeydown);
-        // document.addEventListener('click', this.handleDocumentClick);
-        $(document).on('keydown', this.handleKeydown);
-        $(document).on('click', this.handleDocumentClick);
+        document.addEventListener('keydown', this.handleKeydown);
+        document.addEventListener('click', this.handleDocumentClick);
 
         this._cursorToEnd();
 
         this.props.onChange && this.props.onChange(this.state.formattedNumber);
     },
     componentWillUnmount: function() {
-        $(document).off('keydown', this.handleKeydown);
-        $(document).off('click', this.handleDocumentClick);
+        document.removeEventListener('keydown', this.handleKeydown);
+        document.removeEventListener('click', this.handleDocumentClick);
     },
     scrollTo: function(country, middle) {
-        if(country < 0) return;
+        if(!country) return;
 
-        var container = $(this.refs.flagDropdownList.getDOMNode());
-        var containerHeight = container.height();
-        var containerTop = container.offset().top;
+        var container = this.refs.flagDropdownList.getDOMNode();
+
+        if(!container) return;
+
+        containerHeight = container.offsetHeight;
+        var containerOffset = container.getBoundingClientRect();
+        var containerTop = containerOffset.top + document.body.scrollTop;
         var containerBottom = containerTop + containerHeight;
 
-        // var element = container.find('li[data-flag-key=flag_no_' + countryIndex + ']');
-        var element = $(country);
+        var element = country;
+        var elementOffset = element.getBoundingClientRect();
 
-        var elementHeight = element.outerHeight();
-        var elementTop = element.offset().top;
+        var elementHeight = element.offsetHeight;
+        var elementTop = elementOffset.top + document.body.scrollTop;
         var elementBottom = elementTop + elementHeight;
-        var newScrollTop = elementTop - containerTop + container.scrollTop();
+        var newScrollTop = elementTop - containerTop + container.scrollTop;
         var middleOffset = (containerHeight / 2) - (elementHeight / 2);
 
         if (elementTop < containerTop) {
@@ -141,14 +152,14 @@ var ReactTelephoneInput = React.createClass({
             if (middle) {
                 newScrollTop -= middleOffset;
             }
-            container.scrollTop(newScrollTop);
+            container.scrollTop = newScrollTop;
         } else if (elementBottom > containerBottom) {
             // scroll down
             if(middle) {
                 newScrollTop += middleOffset;
             }
             var heightDifference = containerHeight - elementHeight;
-            container.scrollTop(newScrollTop - heightDifference);
+            container.scrollTop = newScrollTop - heightDifference;
         }
     },
     formatNumber: function(text, pattern) {
@@ -207,6 +218,7 @@ var ReactTelephoneInput = React.createClass({
         }, {dialCode: '', priority: 10001}, this);
     }),
     getElement: function(index) {
+        console.log('index of country to jump to: ', index);
         return this.refs['flag_no_'+index].getDOMNode();
     },
     handleFlagDropdownClick: function() {
@@ -333,8 +345,9 @@ var ReactTelephoneInput = React.createClass({
     searchCountry: function() {
         var probableCandidate = this._searchCountry(this.state.queryString) || this.props.onlyCountries[0];
         var probableCandidateIndex = _.findIndex(this.props.onlyCountries, probableCandidate) + this.state.preferredCountries.length;
-
-        this.scrollTo(this.getElement(probableCandidateIndex + this.state.preferredCountries.length), true);
+console.log('probable candidate index: ', probableCandidateIndex);
+console.log('preferred country length: ', this.state.preferredCountries.length);
+        this.scrollTo(this.getElement(probableCandidateIndex), true);
 
         this.setState({
             queryString: "",
@@ -389,18 +402,16 @@ var ReactTelephoneInput = React.createClass({
     isFlagDropDownButtonClicked: function(target) {
         if(!this.refs.flagDropDownButton) return false;
 
-
         var flagDropDownButton = this.refs.flagDropDownButton.getDOMNode();
-        return $(flagDropDownButton).is(target) || $(flagDropDownButton).has(target).length > 0;
+        return flagDropDownButton == target || target.parentNode == flagDropDownButton;
     },
     isFlagItemClicked: function(target) {
         if(!this.refs.flagDropdownList) return false;
 
         var dropDownList = this.refs.flagDropdownList.getDOMNode();
-        return $(dropDownList).is(target) || $(dropDownList).has(target).length > 0;
+        return dropDownList == target || target.parentNode == dropDownList;
     },
     handleDocumentClick: function(event) {
-        // var target = (event.currentTarget) ? event.currentTarget : event.srcElement;
         var target = event.target;
 
         if(!this.isFlagDropDownButtonClicked(target) && !this.isFlagItemClicked(target) && this.state.showDropDown) {
@@ -425,7 +436,6 @@ var ReactTelephoneInput = React.createClass({
         var dashedLi = (<li key={"dashes"} className="divider" />);
 
         var countryDropDownList = _.map(this.state.preferredCountries.concat(this.props.onlyCountries), function(country, index) {
-            console.log('index: ', index);
             var itemClasses = cx({
                 "country": true,
                 "preferred": country.iso2 === 'us' || country.iso2 === 'gb',
