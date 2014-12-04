@@ -20,7 +20,9 @@ var ReactTelInput = require('react-telephone-input');
 React.renderComponent(<FlagBearer defaultCountry="in"/>, document.getElementById('my-container'));
 ```
 
-Note - You will need to change the location of flags.png in the style.less file.
+## How to use it
+- Copy the styles.less file to your less/css folder and convert it to css (using whatever process you choose)
+- Copy the flags.png file from the example folder to your root directory. If you copy it somewhere else, please correct the file location in the less file.
 
 ## Features
 * Automatically format the number as the user types
