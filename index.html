@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>React-telephone-input by mukeshsoni</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>React-telephone-input</h1>
+        <p>React component for entering and validating international telephone numbers. Inspired from the awesome jquery plugin for the same - https://github.com/Bluefieldscom/intl-tel-input.</p>
+
+        <p class="view"><a href="https://github.com/mukeshsoni/react-telephone-input">View the Project on GitHub <small>mukeshsoni/react-telephone-input</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/mukeshsoni/react-telephone-input/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mukeshsoni/react-telephone-input/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mukeshsoni/react-telephone-input">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="reactjs-component-for-international-telephone-input" class="anchor" href="#reactjs-component-for-international-telephone-input" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reactjs Component for International Telephone Input</h1>
+
+<p>Inspired from the awesome jquery plugin for <a href="https://github.com/Bluefieldscom/intl-tel-input" target="_blank">International Telephone Input</a>.</p>
+
+<p>This one is written as a <a href="http://facebook.github.io/react/">reactjs</a> component.</p>
+
+<p><img src="/images/react-telephone-number-screenshot.png?raw=true" alt="How it looks" title="How it looks"></p>
+
+<pre><code>// Use declaratively within another react components render method
+var ReactTelInput = require('react-telephone-input');
+&lt;MyAwesomeReactComponent&gt;
+  &lt;ReactTelInput defaultCountry="in"/&gt;
+&lt;/MyAwesomeReactComponent&gt;
+
+// or render standalone
+var ReactTelInput = require('react-telephone-input');
+React.renderComponent(&lt;FlagBearer defaultCountry="in"/&gt;, document.getElementById('my-container'));
+</code></pre>
+
+<p>Note - You will need to change the location of flags.png in the style.less file.</p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>Automatically format the number as the user types</li>
+<li>Navigate the country dropdown by typing a country's name, or using up/down keys</li>
+<li>Selecting a country from the dropdown will update the dial code in the input</li>
+<li>Typing a different dial code will automatically update the displayed flag</li>
+<li>Country names in the dropdown also include localised versions in brackets</li>
+<li>Dropdown appears above or below the input depending on available space/scroll position</li>
+</ul>
+
+<p>You can try the app by downloading everything and running the commands given below -</p>
+
+<pre><code>$ npm install
+$ npm start
+
+go to your browser and type http://127.0.0.1:1337/example/index.html
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/mukeshsoni">mukeshsoni</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
