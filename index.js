@@ -2,7 +2,8 @@
  * @jsx React.DOM
  */
 
-// TODO - remove jquery dependence
+// TODO - fix the onlyContries props. Currently expects that as an array of country object, but users should be able to send in array of country isos
+
 var _ = require('lodash');
 var React = require('react/addons');
 var countryData = require('./country_data');
@@ -42,18 +43,6 @@ function isNumberValid(inputNumber) {
         return startsWith(inputNumber, country.dialCode) || startsWith(country.dialCode, inputNumber);
     });
 }
-
-function scrollToTop(scrollDuration) {
-    var scrollStep = -window.scrollY / (scrollDuration / 15),
-        scrollInterval = setInterval(function(){
-        if ( window.scrollY != 0 ) {
-            window.scrollBy( 0, scrollStep );
-        }
-        else clearInterval(scrollInterval); 
-    },15);
-}
-
-// sroll to the country list item in the dropdown
 
 var ReactTelephoneInput = React.createClass({
     getInitialState: function() {
