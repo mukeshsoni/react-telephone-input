@@ -41,7 +41,7 @@
     "st": "^0.5.2",
     "watchify": "^2.0.0"
   },
-  "dependencies": {
+  "peerDependencies": {
     "lodash": "^2.4.1",
     "react": "^0.12.1"
   }
