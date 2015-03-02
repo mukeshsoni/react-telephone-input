@@ -86,6 +86,7 @@ var ReactTelephoneInput = React.createClass({
         onlyCountries: React.PropTypes.arrayOf(React.PropTypes.string),
         preferredCountries: React.PropTypes.arrayOf(React.PropTypes.string),
         onChange: React.PropTypes.func,
+        onEnterKeyPress: React.PropTypes.func
     },
     getDefaultProps: function() {
 
@@ -94,7 +95,8 @@ var ReactTelephoneInput = React.createClass({
             autoFormat: true,
             onlyCountries: allCountries,
             defaultCountry: allCountries[0].iso2,
-            isValid: isNumberValid
+            isValid: isNumberValid,
+            onEnterKeyPress: function () {}
         };
     },
     getNumber: function() {
