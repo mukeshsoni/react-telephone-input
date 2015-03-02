@@ -382,7 +382,7 @@ console.log('preferred country length: ', this.state.preferredCountries.length);
     },
     handleInputKeyDown: function(event) {
         if(event.which === keys.ENTER) {
-            this.props.onEnterKeyPress();
+            this.props.onEnterKeyPress(event);
         }
     },
     handleBlur: function() {
