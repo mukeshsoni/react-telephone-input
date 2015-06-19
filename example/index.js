@@ -1,5 +1,5 @@
 var React = require('react');
-var ReactTelInput = require('../');
+var ReactTelInput = require('../src/');
 
 // React.render(<ReactTelInput />, document.getElementById('plain'));
 
