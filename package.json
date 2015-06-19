@@ -41,10 +41,13 @@
     "node-lessify": "0.0.6",
     "reactify": "^0.16.0",
     "st": "^0.5.2",
-    "watchify": "^2.0.0"
+    "watchify": "^3.2.2"
   },
   "peerDependencies": {
     "lodash": ">=2.4.1",
     "react": ">=0.12.1"
+  },
+  "dependencies": {
+    "classnames": "^2.1.2"
   }
 }
