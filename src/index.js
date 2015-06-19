@@ -5,7 +5,8 @@
 // TODO - fix the onlyContries props. Currently expects that as an array of country object, but users should be able to send in array of country isos
 
 var _ = require('lodash');
-var React = require('react/addons');
+var React = require('react');
+var classNames = require('classnames');
 var countryData = require('../country_data');
 var allCountries = countryData.allCountries;
 
@@ -408,16 +409,15 @@ console.log('preferred country length: ', this.state.preferredCountries.length);
         }
     },
     render: function() {
-        var cx = React.addons.classSet;
-        var dropDownClasses = cx({
+        var dropDownClasses = classNames({
             "country-list": true,
             "hide": !this.state.showDropDown
         });
-        var arrowClasses = cx({
+        var arrowClasses = classNames({
             "arrow": true,
             "up": this.state.showDropDown
         });
-        var inputClasses = cx({
+        var inputClasses = classNames({
             "form-control": true,
             "invalid-number": !this.props.isValid(this.state.formattedNumber.replace(/\D/g, ''))
         });
@@ -425,7 +425,7 @@ console.log('preferred country length: ', this.state.preferredCountries.length);
         var dashedLi = (<li key={"dashes"} className="divider" />);
 
         var countryDropDownList = _.map(this.state.preferredCountries.concat(this.props.onlyCountries), function(country, index) {
-            var itemClasses = cx({
+            var itemClasses = classNames({
                 "country": true,
                 "preferred": country.iso2 === 'us' || country.iso2 === 'gb',
                 "active": country.iso2 === 'us',
@@ -451,7 +451,7 @@ console.log('preferred country length: ', this.state.preferredCountries.length);
         // let's insert a dashed line in between preffered countries and the rest
         countryDropDownList.splice(this.state.preferredCountries.length, 0, dashedLi);
 
-        var flagViewClasses = cx({
+        var flagViewClasses = classNames({
             "flag-dropdown": true,
             "open-dropdown": this.state.showDropDown
         });
