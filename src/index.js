@@ -6,10 +6,10 @@
 
 var _ = require('lodash');
 var React = require('react/addons');
-var countryData = require('./country_data');
+var countryData = require('../country_data');
 var allCountries = countryData.allCountries;
 
-require('./styles.less');
+require('../styles.less');
 
 var isModernBrowser = Boolean(document.createElement('input').setSelectionRange);
 
