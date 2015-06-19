@@ -7,8 +7,6 @@
 //    Order (if >1 country with same dial code),
 //    Area codes (if >1 country with same dial code)
 // ]
-var _ = require('lodash');
-
 var allCountries = [
     [
       "Afghanistan (‫افغانستان‬‎)",
