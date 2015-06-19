@@ -123,18 +123,14 @@ var ReactTelephoneInput = React.createClass({
         return this.getNumber();
     },
     componentDidMount: function() {
-        React.findDOMNode(this)
-          .offsetParent
-          .addEventListener('keydown', this.handleKeydown);
+        document.addEventListener('keydown', this.handleKeydown);
 
         this._cursorToEnd();
 
         this.props.onChange && this.props.onChange(this.state.formattedNumber);
     },
     componentWillUnmount: function() {
-        React.findDOMNode(this)
-          .offsetParent
-          .removeEventListener('keydown', this.handleKeydown);
+        document.removeEventListener('keydown', this.handleKeydown);
     },
     scrollTo: function(country, middle) {
         if(!country) return;
