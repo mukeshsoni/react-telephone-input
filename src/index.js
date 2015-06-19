@@ -6,6 +6,7 @@
 
 var _ = require('lodash');
 var React = require('react');
+var onClickOutside = require('react-onclickoutside');
 var classNames = require('classnames');
 var countryData = require('../country_data');
 var allCountries = countryData.allCountries;
@@ -46,6 +47,7 @@ function isNumberValid(inputNumber) {
 }
 
 var ReactTelephoneInput = React.createClass({
+    mixins: [onClickOutside],
     getInitialState: function() {
         var selectedCountryGuess, selectedCountryGuessIndex, inputNumber = this.props.value || '';
 
@@ -77,7 +79,7 @@ var ReactTelephoneInput = React.createClass({
             showDropDown: false,
             queryString: "",
             freezeSelection: false,
-            debouncedQueryStingSearcher: _.debounce(this.searchCountry, 300)            
+            debouncedQueryStingSearcher: _.debounce(this.searchCountry, 300)
         };
     },
     propTypes: {
@@ -105,16 +107,18 @@ var ReactTelephoneInput = React.createClass({
         return this.getNumber();
     },
     componentDidMount: function() {
-        document.addEventListener('keydown', this.handleKeydown);
-        document.addEventListener('click', this.handleDocumentClick);
+        React.findDOMNode(this)
+          .offsetParent
+          .addEventListener('keydown', this.handleKeydown);
 
         this._cursorToEnd();
 
         this.props.onChange && this.props.onChange(this.state.formattedNumber);
     },
     componentWillUnmount: function() {
-        document.removeEventListener('keydown', this.handleKeydown);
-        document.removeEventListener('click', this.handleDocumentClick);
+        React.findDOMNode(this)
+          .offsetParent
+          .removeEventListener('keydown', this.handleKeydown);
     },
     scrollTo: function(country, middle) {
         if(!country) return;
@@ -123,7 +127,7 @@ var ReactTelephoneInput = React.createClass({
 
         if(!container) return;
 
-        containerHeight = container.offsetHeight;
+        var containerHeight = container.offsetHeight;
         var containerOffset = container.getBoundingClientRect();
         var containerTop = containerOffset.top + document.body.scrollTop;
         var containerBottom = containerTop + containerHeight;
@@ -208,7 +212,7 @@ var ReactTelephoneInput = React.createClass({
         }, {dialCode: '', priority: 10001}, this);
     }),
     getElement: function(index) {
-        console.log('index of country to jump to: ', index);
+        //console.log('index of country to jump to: ', index);
         return this.refs['flag_no_'+index].getDOMNode();
     },
     handleFlagDropdownClick: function() {
@@ -222,7 +226,7 @@ var ReactTelephoneInput = React.createClass({
             self.scrollTo(self.getElement(self.state.highlightCountryIndex + self.state.preferredCountries.length));
         });
     },
-    // TODO: handle 
+    // TODO: handle
     handleInput: function(event) {
 
         var formattedNumber = '+', newSelectedCountry = this.state.selectedCountry, freezeSelection = this.state.freezeSelection;
@@ -313,7 +317,7 @@ var ReactTelephoneInput = React.createClass({
         // had to write own function because underscore does not have findIndex. lodash has it
         var highlightCountryIndex = this.state.highlightCountryIndex + direction;
 
-        if(highlightCountryIndex < 0 
+        if(highlightCountryIndex < 0
             || highlightCountryIndex >= (this.props.onlyCountries.length  + this.state.preferredCountries.length)) {
             return highlightCountryIndex - direction;
         }
@@ -330,13 +334,12 @@ var ReactTelephoneInput = React.createClass({
             return startsWith(country.name.toLowerCase(), queryString.toLowerCase());
         }, this);
         return probableCountries[0];
-        var self = this;
     }),
     searchCountry: function() {
         var probableCandidate = this._searchCountry(this.state.queryString) || this.props.onlyCountries[0];
         var probableCandidateIndex = _.findIndex(this.props.onlyCountries, probableCandidate) + this.state.preferredCountries.length;
-console.log('probable candidate index: ', probableCandidateIndex);
-console.log('preferred country length: ', this.state.preferredCountries.length);
+//console.log('probable candidate index: ', probableCandidateIndex);
+//console.log('preferred country length: ', this.state.preferredCountries.length);
         this.scrollTo(this.getElement(probableCandidateIndex), true);
 
         this.setState({
@@ -372,6 +375,7 @@ console.log('preferred country length: ', this.state.preferredCountries.length);
                     break;
             case keys.ESC:
                 this.setState({showDropDown: false}, this._cursorToEnd);
+                break;
             default:
                 if((event.which >= keys.A && event.which <= keys.Z) || event.which === keys.SPACE) {
                     this.setState({queryString: this.state.queryString+String.fromCharCode(event.which)},
@@ -389,22 +393,10 @@ console.log('preferred country length: ', this.state.preferredCountries.length);
             showDropDown: false
         });
     },
-    isFlagDropDownButtonClicked: function(target) {
-        if(!this.refs.flagDropDownButton) return false;
-
-        var flagDropDownButton = this.refs.flagDropDownButton.getDOMNode();
-        return flagDropDownButton == target || target.parentNode == flagDropDownButton;
-    },
-    isFlagItemClicked: function(target) {
-        if(!this.refs.flagDropdownList) return false;
-
-        var dropDownList = this.refs.flagDropdownList.getDOMNode();
-        return dropDownList == target || target.parentNode == dropDownList;
-    },
-    handleDocumentClick: function(event) {
+    handleClickOutside: function(event) {
         var target = event.target;
 
-        if(!this.isFlagDropDownButtonClicked(target) && !this.isFlagItemClicked(target) && this.state.showDropDown) {
+        if(this.state.showDropDown) {
             this.handleBlur();
         }
     },
