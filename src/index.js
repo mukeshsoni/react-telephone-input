@@ -23,7 +23,11 @@ var allCountries = countryData.allCountries;
 
 require('../styles.less');
 
-var isModernBrowser = Boolean(document.createElement('input').setSelectionRange);
+if (typeof document !== "undefined") {
+  var isModernBrowser = Boolean(document.createElement('input').setSelectionRange);
+} else {
+  var isModernBrowser = true;
+}
 
 var keys = {
         UP: 38,
