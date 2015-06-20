@@ -18,7 +18,7 @@ var ReactTelInput = require('react-telephone-input');
 
 // or render standalone
 var ReactTelInput = require('react-telephone-input');
-React.renderComponent(<FlagBearer defaultCountry="in"/>, document.getElementById('my-container'));
+React.render(<ReactTelInput defaultCountry="in"/>, document.getElementById('my-container'));
 ```
 
 ## How to use it
