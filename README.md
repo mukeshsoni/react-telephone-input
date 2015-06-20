@@ -3,8 +3,9 @@ Reactjs Component for International Telephone Input
 
 Inspired from the awesome jquery plugin for <a href="https://github.com/Bluefieldscom/intl-tel-input" target="_blank">International Telephone Input</a>.
 
-
 This one is written as a [reactjs](http://facebook.github.io/react/) component.
+
+Live Demo here - [http://unstack.in/react-telephone-input/](http://unstack.in/react-telephone-input/)
 
 ![How it looks](/images/react-telephone-number-screenshot.png?raw=true "How it looks")
 
