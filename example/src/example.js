@@ -5,7 +5,7 @@ var App = React.createClass({
     render () {
         return (
             <div>
-                <ReactTelephoneInput />
+                <ReactTelephoneInput defaultCountry='in' />
             </div>
         );
     }
