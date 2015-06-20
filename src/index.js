@@ -18,7 +18,7 @@ var memoize = require('lodash/function/memoize');
 var React = require('react');
 var onClickOutside = require('react-onclickoutside');
 var classNames = require('classnames');
-var countryData = require('../country_data');
+var countryData = require('./country_data');
 var allCountries = countryData.allCountries;
 
 require('../styles.less');
