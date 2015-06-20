@@ -11,7 +11,7 @@ var App = React.createClass({
         return React.createElement(
             'div',
             null,
-            React.createElement(ReactTelephoneInput, null)
+            React.createElement(ReactTelephoneInput, { defaultCountry: 'in' })
         );
     }
 });
