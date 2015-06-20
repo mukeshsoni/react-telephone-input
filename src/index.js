@@ -15,6 +15,10 @@ var first = require('lodash/array/first');
 var rest = require('lodash/array/rest');
 var debounce = require('lodash/function/debounce');
 var memoize = require('lodash/function/memoize');
+// import lodash string methods
+var trim = require('lodash/string/trim');
+var startsWith = require('lodash/string/startsWith');
+
 var React = require('react');
 var onClickOutside = require('react-onclickoutside');
 var classNames = require('classnames');
@@ -41,17 +45,6 @@ var keys = {
         Z: 90,
         SPACE: 32
 };
-
-
-function trim(str) {
-    return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-}
-
-// function to check if string s1 starts with s2
-function startsWith(s1, s2) {
-    // could have done with s1.indexOf(s2) === 0. But indexOf is O(n)
-    return s1.slice(0, s2.length) === s2;
-}
 
 function isNumberValid(inputNumber) {
     var countries = countryData.allCountries;
@@ -224,7 +217,6 @@ var ReactTelephoneInput = React.createClass({
         }, {dialCode: '', priority: 10001}, this);
     }),
     getElement: function(index) {
-        //console.log('index of country to jump to: ', index);
         return this.refs['flag_no_'+index].getDOMNode();
     },
     handleFlagDropdownClick: function() {
