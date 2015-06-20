@@ -21,7 +21,7 @@ var classNames = require('classnames');
 var countryData = require('./country_data');
 var allCountries = countryData.allCountries;
 
-require('../styles.less');
+require('../less/default.less');
 
 if (typeof document !== "undefined") {
   var isModernBrowser = Boolean(document.createElement('input').setSelectionRange);

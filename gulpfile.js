@@ -1,6 +1,5 @@
-var gulp = require('gulp'),
-    initGulpTasks = require('react-component-gulp-tasks'),
-
+var gulp = require('gulp');
+var initGulpTasks = require('react-component-gulp-tasks');
 // Read the package.json to detect the package name and dependencies
 var pkg = JSON.parse(require('fs').readFileSync('./package.json'));
 
@@ -12,11 +11,6 @@ var taskConfig = {
         name: 'ReactTelephoneInput',
         src: 'src',
         dist: 'dist',
-        dependencies: [
-            'classnames',
-            'react',
-            'react/addons'
-        ],
         lib: 'lib',
         // This is the name of the package that will be exported
         // by the component file. It must match the name of your
@@ -40,10 +34,11 @@ var taskConfig = {
             'example.js'
         ],
         less: [
+            'example.less',
             'styles.less'
         ]
     }
 
 };
 
-initGulpTasks(gulp, config);
+initGulpTasks(gulp, taskConfig);
