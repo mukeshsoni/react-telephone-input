@@ -1,6 +1,6 @@
 {
   "name": "react-telephone-input",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "React component for entering and validating international telephone numbers. Inspired from the awesome jquery plugin for the same - https://github.com/Bluefieldscom/intl-tel-input.",
   "main": "index.js",
   "files": [
