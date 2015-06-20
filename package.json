@@ -1,17 +1,17 @@
 {
   "name": "react-telephone-input",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "React component for entering and validating international telephone numbers. Inspired from the awesome jquery plugin for the same - https://github.com/Bluefieldscom/intl-tel-input.",
-  "main": "dist/index.js",
-  "files": [
-    "index.js",
-    "country_data.js",
-    "styles.less"
-  ],
+  "main": "lib/index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel/register",
-    "start": "node_modules/.bin/watchify example/index.js -o example/bundle.js -v & st -nc",
-    "prepublish": "node_modules/.bin/babel src/index.js > dist/index.js"
+    "build": "gulp clean && NODE_ENV=production gulp build",
+    "examples": "gulp dev:server",
+    "publish:site": "gulp publish:examples",
+    "release": "gulp release",
+    "start": "gulp dev",
+    "test": "echo \"no tests yet\" && exit 0",
+    "watch": "gulp watch:lib",
+    "test": "mocha --compilers js:babel/register"
   },
   "repository": {
     "type": "git",
