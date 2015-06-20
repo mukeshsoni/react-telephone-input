@@ -21,8 +21,8 @@ React.renderComponent(<FlagBearer defaultCountry="in"/>, document.getElementById
 ```
 
 ## How to use it
-- Copy the styles.less file to your less/css folder and convert it to css (using whatever process you choose)
-- Copy the flags.png file from the example folder to your root directory. If you copy it somewhere else, please correct the file location in the less file.
+- If you install it from `npm install`, you can just do `var ReactTelephoneInut = require('react-telephone-input');`
+- You will need to copy flags.png from example/src folder to see the flag icons for each country.
 
 ## Features
 * Automatically format the number as the user types
@@ -38,5 +38,5 @@ You can try the app by downloading everything and running the commands given bel
 $ npm install
 $ npm start
 
-go to your browser and type http://127.0.0.1:1337/example/index.html
+go to your browser and type `http://localhost:8000`
 ```
