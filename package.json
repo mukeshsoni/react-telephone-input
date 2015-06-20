@@ -2,7 +2,7 @@
   "name": "react-telephone-input",
   "version": "1.0.2",
   "description": "React component for entering and validating international telephone numbers. Inspired from the awesome jquery plugin for the same - https://github.com/Bluefieldscom/intl-tel-input.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "files": [
     "index.js",
     "country_data.js",
@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "watchify example/index.js -o example/bundle.js -v & st -nc"
+    "start": "node_modules/.bin/watchify example/index.js -o example/bundle.js -v & st -nc",
+    "prepublish": "node_modules/.bin/babel src/index.js > dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -35,14 +36,21 @@
   },
   "homepage": "https://github.com/mukeshsoni/react-telephone-input",
   "devDependencies": {
+    "babel": "^5.5.8",
     "browserify": "^6.1.0",
+    "lodash": "^3.9.3",
     "node-lessify": "0.0.6",
+    "react": "^0.13.3",
     "reactify": "^0.16.0",
     "st": "^0.5.2",
-    "watchify": "^2.0.0"
+    "watchify": "^3.2.2"
   },
   "peerDependencies": {
-    "lodash": "^2.4.1",
-    "react": "^0.12.1"
+    "lodash": ">=2.4.1",
+    "react": ">=0.12.1"
+  },
+  "dependencies": {
+    "classnames": "^2.1.2",
+    "react-onclickoutside": "^0.2.4"
   }
 }
