@@ -9,7 +9,7 @@
     "publish:site": "gulp publish:examples",
     "release": "gulp release",
     "start": "gulp dev",
-    "test": "mocha --compilers js:babel/register",
+    "test": "mochify --watch",
     "watch": "gulp watch:lib"
   },
   "repository": {
