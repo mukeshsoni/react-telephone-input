@@ -1236,11 +1236,11 @@ var allCountries = [
 // we will build this in the loop below
 var allCountryCodes = {};
 var addCountryCode = function(iso2, dialCode, priority) {
-if (!(dialCode in allCountryCodes)) {
-  allCountryCodes[dialCode] = [];
-}
-var index = priority || 0;
-allCountryCodes[dialCode][index] = iso2;
+  if (!(dialCode in allCountryCodes)) {
+    allCountryCodes[dialCode] = [];
+  }
+  var index = priority || 0;
+  allCountryCodes[dialCode][index] = iso2;
 };
 
 // loop over all of the countries above

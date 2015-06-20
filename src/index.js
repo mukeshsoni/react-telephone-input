@@ -93,13 +93,12 @@ var ReactTelephoneInput = React.createClass({
         value: React.PropTypes.string,
         autoFormat: React.PropTypes.bool,
         defaultCountry: React.PropTypes.string,
-        onlyCountries: React.PropTypes.arrayOf(React.PropTypes.string),
-        preferredCountries: React.PropTypes.arrayOf(React.PropTypes.string),
+        onlyCountries: React.PropTypes.arrayOf(React.PropTypes.object),
+        preferredCountries: React.PropTypes.arrayOf(React.PropTypes.object),
         onChange: React.PropTypes.func,
         onEnterKeyPress: React.PropTypes.func
     },
     getDefaultProps: function() {
-
         return {
             value: '',
             autoFormat: true,
@@ -208,7 +207,7 @@ var ReactTelephoneInput = React.createClass({
                 if(country.dialCode.length > selectedCountry.dialCode.length) {
                     return country;
                 }
-                if(country.dialCode === selectedCountry.dialCode.length && country.priority < selectedCountry.priority) {
+                if(country.dialCode.length === selectedCountry.dialCode.length && country.priority < selectedCountry.priority) {
                     return country;
                 }
             }
@@ -342,8 +341,7 @@ var ReactTelephoneInput = React.createClass({
     searchCountry: function() {
         var probableCandidate = this._searchCountry(this.state.queryString) || this.props.onlyCountries[0];
         var probableCandidateIndex = findIndex(this.props.onlyCountries, probableCandidate) + this.state.preferredCountries.length;
-//console.log('probable candidate index: ', probableCandidateIndex);
-//console.log('preferred country length: ', this.state.preferredCountries.length);
+
         this.scrollTo(this.getElement(probableCandidateIndex), true);
 
         this.setState({
