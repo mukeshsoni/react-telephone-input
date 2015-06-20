@@ -4,6 +4,7 @@
   "description": "React component for entering and validating international telephone numbers. Inspired from the awesome jquery plugin for the same - https://github.com/Bluefieldscom/intl-tel-input.",
   "main": "lib/index.js",
   "scripts": {
+    "lint": "eslint src",
     "build": "gulp clean && NODE_ENV=production gulp build",
     "examples": "gulp dev:server",
     "publish:site": "gulp publish:examples",
@@ -35,8 +36,10 @@
   },
   "homepage": "https://github.com/mukeshsoni/react-telephone-input",
   "devDependencies": {
+    "babel-eslint": "^3.1.17",
     "babelify": "^6.1.2",
     "chai": "^3.0.0",
+    "eslint": "^0.23.0",
     "gulp": "^3.9.0",
     "lessify": "^1.0.1",
     "mochify": "^2.9.0",
