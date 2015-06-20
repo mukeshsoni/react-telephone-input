@@ -34,8 +34,7 @@ var taskConfig = {
             'example.js'
         ],
         less: [
-            'example.less',
-            'styles.less'
+            'example.less'
         ]
     }
 
