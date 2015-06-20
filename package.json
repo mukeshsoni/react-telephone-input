@@ -52,6 +52,8 @@
     "react": ">=0.12.1"
   },
   "dependencies": {
+    "lodash": ">=2.4.1",
+    "react": ">=0.12.1",
     "classnames": "^2.1.2",
     "react-onclickoutside": "^0.2.4"
   }
