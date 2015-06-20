@@ -24,7 +24,7 @@
   ],
   "browserify": {
     "transform": [
-      "reactify",
+      "babelify",
       "lessify"
     ]
   },
@@ -35,12 +35,12 @@
   },
   "homepage": "https://github.com/mukeshsoni/react-telephone-input",
   "devDependencies": {
+    "babelify": "^6.1.2",
     "chai": "^3.0.0",
     "gulp": "^3.9.0",
     "lessify": "^1.0.1",
     "mochify": "^2.9.0",
-    "react-component-gulp-tasks": "^0.7.0",
-    "reactify": "^1.1.1"
+    "react-component-gulp-tasks": "^0.7.0"
   },
   "dependencies": {
     "lodash": ">=2.4.1",

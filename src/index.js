@@ -53,21 +53,13 @@ function isNumberValid(inputNumber) {
     });
 }
 
+
 var ReactTelephoneInput = React.createClass({
     mixins: [onClickOutside],
     getInitialState: function() {
-        var selectedCountryGuess, selectedCountryGuessIndex, inputNumber = this.props.value || '';
-
-        if(trim(inputNumber) !== '') {
-            selectedCountryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, ''));
-            if(!selectedCountryGuess || !selectedCountryGuess.name) {
-                selectedCountryGuess = findWhere(allCountries, {iso2: this.props.defaultCountry})  || this.props.onlyCountries[0];
-            }
-        } else {
-            selectedCountryGuess = findWhere(allCountries, {iso2: this.props.defaultCountry}) || this.props.onlyCountries[0];
-        }
-
-        selectedCountryGuessIndex = findIndex(allCountries, selectedCountryGuess);
+        var inputNumber = this.props.value || '';
+        var selectedCountryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, ''));
+        var selectedCountryGuessIndex = findIndex(allCountries, selectedCountryGuess);
         var formattedNumber = this.formatNumber(inputNumber.replace(/\D/g, ''), selectedCountryGuess ? selectedCountryGuess.format : null);
         var preferredCountries = [];
 
@@ -80,13 +72,12 @@ var ReactTelephoneInput = React.createClass({
         return {
             preferredCountries: preferredCountries,
             selectedCountry: selectedCountryGuess,
-            // highlightCountry: selectedCountryGuess,
             highlightCountryIndex: selectedCountryGuessIndex,
             formattedNumber: formattedNumber,
             showDropDown: false,
             queryString: "",
             freezeSelection: false,
-            debouncedQueryStingSearcher: debounce(this.searchCountry, 300)
+            debouncedQueryStingSearcher: debounce(this.searchCountry, 100)
         };
     },
     propTypes: {
@@ -202,18 +193,29 @@ var ReactTelephoneInput = React.createClass({
     },
     // memoize results based on the first 5/6 characters. That is all that matters
     guessSelectedCountry: memoize(function(inputNumber) {
-        return reduce(this.props.onlyCountries, function(selectedCountry, country) {
-            if(startsWith(inputNumber, country.dialCode)) {
-                if(country.dialCode.length > selectedCountry.dialCode.length) {
-                    return country;
-                }
-                if(country.dialCode.length === selectedCountry.dialCode.length && country.priority < selectedCountry.priority) {
-                    return country;
-                }
-            }
+        var secondBestGuess = findWhere(allCountries, {iso2: this.props.defaultCountry}) || this.props.onlyCountries[0];
+        if(trim(inputNumber) !== '') {
+            var bestGuess = reduce(this.props.onlyCountries, function(selectedCountry, country) {
+                            if(startsWith(inputNumber, country.dialCode)) {
+                                if(country.dialCode.length > selectedCountry.dialCode.length) {
+                                    return country;
+                                }
+                                if(country.dialCode.length === selectedCountry.dialCode.length && country.priority < selectedCountry.priority) {
+                                    return country;
+                                }
+                            }
 
-            return selectedCountry;
-        }, {dialCode: '', priority: 10001}, this);
+                            return selectedCountry;
+                        }, {dialCode: '', priority: 10001}, this);
+        } else {
+            return secondBestGuess;
+        }
+
+        if(!bestGuess.name) {
+            return secondBestGuess;
+        }
+
+        return bestGuess;
     }),
     getElement: function(index) {
         return this.refs['flag_no_'+index].getDOMNode();
