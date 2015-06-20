@@ -9,7 +9,7 @@
     "styles.less"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --compilers js:babel/register",
     "start": "node_modules/.bin/watchify example/index.js -o example/bundle.js -v & st -nc",
     "prepublish": "node_modules/.bin/babel src/index.js > dist/index.js"
   },
@@ -45,7 +45,11 @@
     "react-component-gulp-tasks": "^0.7.0",
     "reactify": "^0.16.0",
     "st": "^0.5.2",
-    "watchify": "^3.2.2"
+    "watchify": "^3.2.2",
+    "jsdom": "^3.1.2",
+    "mocha": "^2.2.5",
+    "mocha-jsdom": "^0.4.0",
+    "chai": "^3.0.0"
   },
   "peerDependencies": {
     "lodash": ">=2.4.1",
@@ -56,5 +60,10 @@
     "react": ">=0.12.1",
     "classnames": "^2.1.2",
     "react-onclickoutside": "^0.2.4"
+  },
+  "browserify-shim": {
+    "classnames": "global:classNames",
+    "react": "global:React",
+    "lodash": "global:lodash"
   }
 }
