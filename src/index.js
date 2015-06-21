@@ -51,7 +51,6 @@ function isNumberValid(inputNumber) {
     });
 }
 
-
 var ReactTelephoneInput = React.createClass({
     mixins: [onClickOutside],
     getInitialState() {
@@ -417,22 +416,12 @@ var ReactTelephoneInput = React.createClass({
             this.handleBlur();
         }
     },
-    render() {
+    getCountryDropDownList() {
         var dropDownClasses = classNames({
             'country-list': true,
             'hide': !this.state.showDropDown
         });
-        var arrowClasses = classNames({
-            'arrow': true,
-            'up': this.state.showDropDown
-        });
-        var inputClasses = classNames({
-            'form-control': true,
-            'invalid-number': !this.props.isValid(this.state.formattedNumber.replace(/\D/g, ''))
-        });
-
-        var dashedLi = (<li key={"dashes"} className="divider" />);
-
+        
         var countryDropDownList = map(this.state.preferredCountries.concat(this.props.onlyCountries), function(country, index) {
             var itemClasses = classNames({
                 country: true,
@@ -457,8 +446,25 @@ var ReactTelephoneInput = React.createClass({
             );
         }, this);
 
+        var dashedLi = (<li key={"dashes"} className="divider" />);
         // let's insert a dashed line in between preffered countries and the rest
         countryDropDownList.splice(this.state.preferredCountries.length, 0, dashedLi);
+
+        return (
+            <ul ref="flagDropdownList" className={dropDownClasses}>
+                {countryDropDownList}
+            </ul>
+        );
+    },
+    render() {
+        var arrowClasses = classNames({
+            'arrow': true,
+            'up': this.state.showDropDown
+        });
+        var inputClasses = classNames({
+            'form-control': true,
+            'invalid-number': !this.props.isValid(this.state.formattedNumber.replace(/\D/g, ''))
+        });
 
         var flagViewClasses = classNames({
             'flag-dropdown': true,
@@ -483,10 +489,7 @@ var ReactTelephoneInput = React.createClass({
                             <div className={arrowClasses}></div>
                         </div>
                     </div>
-
-                    <ul ref="flagDropdownList" className={dropDownClasses}>
-                        {countryDropDownList}
-                    </ul>
+                    {this.state.showDropDown ? this.getCountryDropDownList() : ''}
                 </div>
             </div>
         );
