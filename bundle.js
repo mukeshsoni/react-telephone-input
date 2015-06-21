@@ -3301,7 +3301,10 @@ var ReactTelephoneInput = React.createClass({
             highlightCountry: findWhere(this.props.onlyCountries, this.state.selectedCountry),
             highlightCountryIndex: findIndex(this.props.onlyCountries, this.state.selectedCountry)
         }, function () {
-            _this.scrollTo(_this.getElement(_this.state.highlightCountryIndex + _this.state.preferredCountries.length));
+            // only need to scrool if the dropdown list is alive
+            if (_this.state.showDropDown) {
+                _this.scrollTo(_this.getElement(_this.state.highlightCountryIndex + _this.state.preferredCountries.length));
+            }
         });
     },
     handleInput: function handleInput(event) {
@@ -3365,7 +3368,6 @@ var ReactTelephoneInput = React.createClass({
     },
     handleFlagItemClick: function handleFlagItemClick(country) {
         var currentSelectedCountry = this.state.selectedCountry;
-        // var nextSelectedCountry = this.props.onlyCountries[countryIndex];
         var nextSelectedCountry = findWhere(this.props.onlyCountries, country);
         var newNumber = this.state.formattedNumber.replace(currentSelectedCountry.dialCode, nextSelectedCountry.dialCode);
         var formattedNumber = this.formatNumber(newNumber.replace(/\D/g, ''), nextSelectedCountry.format);
