@@ -1,6 +1,48 @@
 require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-(function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".react-tel-input{position:relative;width:200px}.react-tel-input .flag{width:16px;height:11px;background:url(\"flags.png\")}.react-tel-input .ad{background-position:-16px 0}.react-tel-input .ae{background-position:-32px 0}.react-tel-input .af{background-position:-48px 0}.react-tel-input .ag{background-position:-64px 0}.react-tel-input .ai{background-position:-80px 0}.react-tel-input .al{background-position:-96px 0}.react-tel-input .am{background-position:-112px 0}.react-tel-input .ao{background-position:-128px 0}.react-tel-input .ar{background-position:-144px 0}.react-tel-input .as{background-position:-160px 0}.react-tel-input .at{background-position:-176px 0}.react-tel-input .au{background-position:-192px 0}.react-tel-input .aw{background-position:-208px 0}.react-tel-input .az{background-position:-224px 0}.react-tel-input .ba{background-position:-240px 0}.react-tel-input .bb{background-position:0 -11px}.react-tel-input .bd{background-position:-16px -11px}.react-tel-input .be{background-position:-32px -11px}.react-tel-input .bf{background-position:-48px -11px}.react-tel-input .bg{background-position:-64px -11px}.react-tel-input .bh{background-position:-80px -11px}.react-tel-input .bi{background-position:-96px -11px}.react-tel-input .bj{background-position:-112px -11px}.react-tel-input .bm{background-position:-128px -11px}.react-tel-input .bn{background-position:-144px -11px}.react-tel-input .bo{background-position:-160px -11px}.react-tel-input .br{background-position:-176px -11px}.react-tel-input .bs{background-position:-192px -11px}.react-tel-input .bt{background-position:-208px -11px}.react-tel-input .bw{background-position:-224px -11px}.react-tel-input .by{background-position:-240px -11px}.react-tel-input .bz{background-position:0 -22px}.react-tel-input .ca{background-position:-16px -22px}.react-tel-input .cd{background-position:-32px -22px}.react-tel-input .cf{background-position:-48px -22px}.react-tel-input .cg{background-position:-64px -22px}.react-tel-input .ch{background-position:-80px -22px}.react-tel-input .ci{background-position:-96px -22px}.react-tel-input .ck{background-position:-112px -22px}.react-tel-input .cl{background-position:-128px -22px}.react-tel-input .cm{background-position:-144px -22px}.react-tel-input .cn{background-position:-160px -22px}.react-tel-input .co{background-position:-176px -22px}.react-tel-input .cr{background-position:-192px -22px}.react-tel-input .cu{background-position:-208px -22px}.react-tel-input .cv{background-position:-224px -22px}.react-tel-input .cw{background-position:-240px -22px}.react-tel-input .cy{background-position:0 -33px}.react-tel-input .cz{background-position:-16px -33px}.react-tel-input .de{background-position:-32px -33px}.react-tel-input .dj{background-position:-48px -33px}.react-tel-input .dk{background-position:-64px -33px}.react-tel-input .dm{background-position:-80px -33px}.react-tel-input .do{background-position:-96px -33px}.react-tel-input .dz{background-position:-112px -33px}.react-tel-input .ec{background-position:-128px -33px}.react-tel-input .ee{background-position:-144px -33px}.react-tel-input .eg{background-position:-160px -33px}.react-tel-input .er{background-position:-176px -33px}.react-tel-input .es{background-position:-192px -33px}.react-tel-input .et{background-position:-208px -33px}.react-tel-input .fi{background-position:-224px -33px}.react-tel-input .fj{background-position:-240px -33px}.react-tel-input .fk{background-position:0 -44px}.react-tel-input .fm{background-position:-16px -44px}.react-tel-input .fo{background-position:-32px -44px}.react-tel-input .fr,.react-tel-input .bl,.react-tel-input .mf{background-position:-48px -44px}.react-tel-input .ga{background-position:-64px -44px}.react-tel-input .gb{background-position:-80px -44px}.react-tel-input .gd{background-position:-96px -44px}.react-tel-input .ge{background-position:-112px -44px}.react-tel-input .gf{background-position:-128px -44px}.react-tel-input .gh{background-position:-144px -44px}.react-tel-input .gi{background-position:-160px -44px}.react-tel-input .gl{background-position:-176px -44px}.react-tel-input .gm{background-position:-192px -44px}.react-tel-input .gn{background-position:-208px -44px}.react-tel-input .gp{background-position:-224px -44px}.react-tel-input .gq{background-position:-240px -44px}.react-tel-input .gr{background-position:0 -55px}.react-tel-input .gt{background-position:-16px -55px}.react-tel-input .gu{background-position:-32px -55px}.react-tel-input .gw{background-position:-48px -55px}.react-tel-input .gy{background-position:-64px -55px}.react-tel-input .hk{background-position:-80px -55px}.react-tel-input .hn{background-position:-96px -55px}.react-tel-input .hr{background-position:-112px -55px}.react-tel-input .ht{background-position:-128px -55px}.react-tel-input .hu{background-position:-144px -55px}.react-tel-input .id{background-position:-160px -55px}.react-tel-input .ie{background-position:-176px -55px}.react-tel-input .il{background-position:-192px -55px}.react-tel-input .in{background-position:-208px -55px}.react-tel-input .io{background-position:-224px -55px}.react-tel-input .iq{background-position:-240px -55px}.react-tel-input .ir{background-position:0 -66px}.react-tel-input .is{background-position:-16px -66px}.react-tel-input .it{background-position:-32px -66px}.react-tel-input .jm{background-position:-48px -66px}.react-tel-input .jo{background-position:-64px -66px}.react-tel-input .jp{background-position:-80px -66px}.react-tel-input .ke{background-position:-96px -66px}.react-tel-input .kg{background-position:-112px -66px}.react-tel-input .kh{background-position:-128px -66px}.react-tel-input .ki{background-position:-144px -66px}.react-tel-input .km{background-position:-160px -66px}.react-tel-input .kn{background-position:-176px -66px}.react-tel-input .kp{background-position:-192px -66px}.react-tel-input .kr{background-position:-208px -66px}.react-tel-input .kw{background-position:-224px -66px}.react-tel-input .ky{background-position:-240px -66px}.react-tel-input .kz{background-position:0 -77px}.react-tel-input .la{background-position:-16px -77px}.react-tel-input .lb{background-position:-32px -77px}.react-tel-input .lc{background-position:-48px -77px}.react-tel-input .li{background-position:-64px -77px}.react-tel-input .lk{background-position:-80px -77px}.react-tel-input .lr{background-position:-96px -77px}.react-tel-input .ls{background-position:-112px -77px}.react-tel-input .lt{background-position:-128px -77px}.react-tel-input .lu{background-position:-144px -77px}.react-tel-input .lv{background-position:-160px -77px}.react-tel-input .ly{background-position:-176px -77px}.react-tel-input .ma{background-position:-192px -77px}.react-tel-input .mc{background-position:-208px -77px}.react-tel-input .md{background-position:-224px -77px}.react-tel-input .me{background-position:-112px -154px;height:12px}.react-tel-input .mg{background-position:0 -88px}.react-tel-input .mh{background-position:-16px -88px}.react-tel-input .mk{background-position:-32px -88px}.react-tel-input .ml{background-position:-48px -88px}.react-tel-input .mm{background-position:-64px -88px}.react-tel-input .mn{background-position:-80px -88px}.react-tel-input .mo{background-position:-96px -88px}.react-tel-input .mp{background-position:-112px -88px}.react-tel-input .mq{background-position:-128px -88px}.react-tel-input .mr{background-position:-144px -88px}.react-tel-input .ms{background-position:-160px -88px}.react-tel-input .mt{background-position:-176px -88px}.react-tel-input .mu{background-position:-192px -88px}.react-tel-input .mv{background-position:-208px -88px}.react-tel-input .mw{background-position:-224px -88px}.react-tel-input .mx{background-position:-240px -88px}.react-tel-input .my{background-position:0 -99px}.react-tel-input .mz{background-position:-16px -99px}.react-tel-input .na{background-position:-32px -99px}.react-tel-input .nc{background-position:-48px -99px}.react-tel-input .ne{background-position:-64px -99px}.react-tel-input .nf{background-position:-80px -99px}.react-tel-input .ng{background-position:-96px -99px}.react-tel-input .ni{background-position:-112px -99px}.react-tel-input .nl,.react-tel-input .bq{background-position:-128px -99px}.react-tel-input .no{background-position:-144px -99px}.react-tel-input .np{background-position:-160px -99px}.react-tel-input .nr{background-position:-176px -99px}.react-tel-input .nu{background-position:-192px -99px}.react-tel-input .nz{background-position:-208px -99px}.react-tel-input .om{background-position:-224px -99px}.react-tel-input .pa{background-position:-240px -99px}.react-tel-input .pe{background-position:0 -110px}.react-tel-input .pf{background-position:-16px -110px}.react-tel-input .pg{background-position:-32px -110px}.react-tel-input .ph{background-position:-48px -110px}.react-tel-input .pk{background-position:-64px -110px}.react-tel-input .pl{background-position:-80px -110px}.react-tel-input .pm{background-position:-96px -110px}.react-tel-input .pr{background-position:-112px -110px}.react-tel-input .ps{background-position:-128px -110px}.react-tel-input .pt{background-position:-144px -110px}.react-tel-input .pw{background-position:-160px -110px}.react-tel-input .py{background-position:-176px -110px}.react-tel-input .qa{background-position:-192px -110px}.react-tel-input .re{background-position:-208px -110px}.react-tel-input .ro{background-position:-224px -110px}.react-tel-input .rs{background-position:-240px -110px}.react-tel-input .ru{background-position:0 -121px}.react-tel-input .rw{background-position:-16px -121px}.react-tel-input .sa{background-position:-32px -121px}.react-tel-input .sb{background-position:-48px -121px}.react-tel-input .sc{background-position:-64px -121px}.react-tel-input .sd{background-position:-80px -121px}.react-tel-input .se{background-position:-96px -121px}.react-tel-input .sg{background-position:-112px -121px}.react-tel-input .sh{background-position:-128px -121px}.react-tel-input .si{background-position:-144px -121px}.react-tel-input .sk{background-position:-160px -121px}.react-tel-input .sl{background-position:-176px -121px}.react-tel-input .sm{background-position:-192px -121px}.react-tel-input .sn{background-position:-208px -121px}.react-tel-input .so{background-position:-224px -121px}.react-tel-input .sr{background-position:-240px -121px}.react-tel-input .ss{background-position:0 -132px}.react-tel-input .st{background-position:-16px -132px}.react-tel-input .sv{background-position:-32px -132px}.react-tel-input .sx{background-position:-48px -132px}.react-tel-input .sy{background-position:-64px -132px}.react-tel-input .sz{background-position:-80px -132px}.react-tel-input .tc{background-position:-96px -132px}.react-tel-input .td{background-position:-112px -132px}.react-tel-input .tg{background-position:-128px -132px}.react-tel-input .th{background-position:-144px -132px}.react-tel-input .tj{background-position:-160px -132px}.react-tel-input .tk{background-position:-176px -132px}.react-tel-input .tl{background-position:-192px -132px}.react-tel-input .tm{background-position:-208px -132px}.react-tel-input .tn{background-position:-224px -132px}.react-tel-input .to{background-position:-240px -132px}.react-tel-input .tr{background-position:0 -143px}.react-tel-input .tt{background-position:-16px -143px}.react-tel-input .tv{background-position:-32px -143px}.react-tel-input .tw{background-position:-48px -143px}.react-tel-input .tz{background-position:-64px -143px}.react-tel-input .ua{background-position:-80px -143px}.react-tel-input .ug{background-position:-96px -143px}.react-tel-input .us{background-position:-112px -143px}.react-tel-input .uy{background-position:-128px -143px}.react-tel-input .uz{background-position:-144px -143px}.react-tel-input .va{background-position:-160px -143px}.react-tel-input .vc{background-position:-176px -143px}.react-tel-input .ve{background-position:-192px -143px}.react-tel-input .vg{background-position:-208px -143px}.react-tel-input .vi{background-position:-224px -143px}.react-tel-input .vn{background-position:-240px -143px}.react-tel-input .vu{background-position:0 -154px}.react-tel-input .wf{background-position:-16px -154px}.react-tel-input .ws{background-position:-32px -154px}.react-tel-input .ye{background-position:-48px -154px}.react-tel-input .za{background-position:-64px -154px}.react-tel-input .zm{background-position:-80px -154px}.react-tel-input .zw{background-position:-96px -154px}.react-tel-input *{box-sizing:border-box;-moz-box-sizing:border-box}.react-tel-input .hide{display:none}.react-tel-input .v-hide{visibility:hidden}.react-tel-input input[type=text],.react-tel-input input[type=tel]{position:relative;z-index:0;margin-top:0 !important;margin-bottom:0 !important;padding-left:44px;margin-left:0;background:#fff;border:1px solid #cacaca;border-radius:3px;box-shadow:0 1px 2px #e3e3e3 inset;line-height:25px;height:28px;width:100%}.react-tel-input input[type=text]:focus,.react-tel-input input[type=tel]:focus{border-color:#42bdff;border-left-color:#cacaca}.react-tel-input input[type=text].invalid-number,.react-tel-input input[type=tel].invalid-number{border:1px solid #d79f9f;background-color:#faf0f0;border-left-color:#cacaca}.react-tel-input input[type=text].invalid-number:focus,.react-tel-input input[type=tel].invalid-number:focus{border:1px solid #d79f9f;border-left-color:#cacaca;background-color:#faf0f0}.react-tel-input .flag-dropdown{position:absolute;top:0;bottom:0;padding:0;background-color:#eaeaea;border:1px solid #cacaca;border-radius:3px 0 0 3px}.react-tel-input .flag-dropdown.open-dropdown{background:#fff;border-bottom:0;border-radius:3px 0 0 0}.react-tel-input .flag-dropdown.open-dropdown .selected-flag{background:#fff;border-radius:3px 0 0 0}.react-tel-input .flag-dropdown:hover{cursor:pointer}.react-tel-input .flag-dropdown:hover .selected-flag{background-color:#fff}.react-tel-input input[disabled]+.flag-dropdown:hover{cursor:default}.react-tel-input input[disabled]+.flag-dropdown:hover .selected-flag{background-color:transparent}.react-tel-input .selected-flag{z-index:13;position:relative;width:38px;height:26px;padding:0 0 0 8px;border-radius:3px 0 0 3px}.react-tel-input .selected-flag .flag{position:absolute;top:50%;margin-top:-5px}.react-tel-input .selected-flag .arrow{position:relative;top:50%;margin-top:-2px;left:20px;width:0;height:0;border-left:3px solid transparent;border-right:3px solid transparent;border-top:4px solid #555}.react-tel-input .selected-flag .arrow.up{border-top:none;border-bottom:4px solid #555}.react-tel-input .country-list{list-style:none;position:absolute;z-index:2;padding:0;margin:-1px 0 0 -1px;box-shadow:1px 1px 4px rgba(0,0,0,0.2);background-color:white;border:1px solid #ccc;width:400px;max-height:200px;overflow-y:scroll;border-radius:0 0 3px 3px;top:26px}.react-tel-input .country-list .flag{display:inline-block}.react-tel-input .country-list .divider{padding-bottom:5px;margin-bottom:5px;border-bottom:1px solid #ccc}.react-tel-input .country-list .country{padding:5px 10px}.react-tel-input .country-list .country .dial-code{color:#999}.react-tel-input .country-list .country:hover{background-color:#e8f7fe}.react-tel-input .country-list .country.highlight{background-color:#c7e2f1}.react-tel-input .country-list .flag{margin-right:6px;margin-top:2px}.react-tel-input .country-list .country-name{margin-right:6px}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
-},{}],2:[function(require,module,exports){
+var css = ".react-tel-input {\n  position: relative;\n  width: 200px;\n}\n.react-tel-input .flag {\n  width: 16px;\n  height: 11px;\n  background: url(\"flags.png\");\n}\n.react-tel-input .ad {\n  background-position: -16px 0;\n}\n.react-tel-input .ae {\n  background-position: -32px 0;\n}\n.react-tel-input .af {\n  background-position: -48px 0;\n}\n.react-tel-input .ag {\n  background-position: -64px 0;\n}\n.react-tel-input .ai {\n  background-position: -80px 0;\n}\n.react-tel-input .al {\n  background-position: -96px 0;\n}\n.react-tel-input .am {\n  background-position: -112px 0;\n}\n.react-tel-input .ao {\n  background-position: -128px 0;\n}\n.react-tel-input .ar {\n  background-position: -144px 0;\n}\n.react-tel-input .as {\n  background-position: -160px 0;\n}\n.react-tel-input .at {\n  background-position: -176px 0;\n}\n.react-tel-input .au {\n  background-position: -192px 0;\n}\n.react-tel-input .aw {\n  background-position: -208px 0;\n}\n.react-tel-input .az {\n  background-position: -224px 0;\n}\n.react-tel-input .ba {\n  background-position: -240px 0;\n}\n.react-tel-input .bb {\n  background-position: 0 -11px;\n}\n.react-tel-input .bd {\n  background-position: -16px -11px;\n}\n.react-tel-input .be {\n  background-position: -32px -11px;\n}\n.react-tel-input .bf {\n  background-position: -48px -11px;\n}\n.react-tel-input .bg {\n  background-position: -64px -11px;\n}\n.react-tel-input .bh {\n  background-position: -80px -11px;\n}\n.react-tel-input .bi {\n  background-position: -96px -11px;\n}\n.react-tel-input .bj {\n  background-position: -112px -11px;\n}\n.react-tel-input .bm {\n  background-position: -128px -11px;\n}\n.react-tel-input .bn {\n  background-position: -144px -11px;\n}\n.react-tel-input .bo {\n  background-position: -160px -11px;\n}\n.react-tel-input .br {\n  background-position: -176px -11px;\n}\n.react-tel-input .bs {\n  background-position: -192px -11px;\n}\n.react-tel-input .bt {\n  background-position: -208px -11px;\n}\n.react-tel-input .bw {\n  background-position: -224px -11px;\n}\n.react-tel-input .by {\n  background-position: -240px -11px;\n}\n.react-tel-input .bz {\n  background-position: 0 -22px;\n}\n.react-tel-input .ca {\n  background-position: -16px -22px;\n}\n.react-tel-input .cd {\n  background-position: -32px -22px;\n}\n.react-tel-input .cf {\n  background-position: -48px -22px;\n}\n.react-tel-input .cg {\n  background-position: -64px -22px;\n}\n.react-tel-input .ch {\n  background-position: -80px -22px;\n}\n.react-tel-input .ci {\n  background-position: -96px -22px;\n}\n.react-tel-input .ck {\n  background-position: -112px -22px;\n}\n.react-tel-input .cl {\n  background-position: -128px -22px;\n}\n.react-tel-input .cm {\n  background-position: -144px -22px;\n}\n.react-tel-input .cn {\n  background-position: -160px -22px;\n}\n.react-tel-input .co {\n  background-position: -176px -22px;\n}\n.react-tel-input .cr {\n  background-position: -192px -22px;\n}\n.react-tel-input .cu {\n  background-position: -208px -22px;\n}\n.react-tel-input .cv {\n  background-position: -224px -22px;\n}\n.react-tel-input .cw {\n  background-position: -240px -22px;\n}\n.react-tel-input .cy {\n  background-position: 0 -33px;\n}\n.react-tel-input .cz {\n  background-position: -16px -33px;\n}\n.react-tel-input .de {\n  background-position: -32px -33px;\n}\n.react-tel-input .dj {\n  background-position: -48px -33px;\n}\n.react-tel-input .dk {\n  background-position: -64px -33px;\n}\n.react-tel-input .dm {\n  background-position: -80px -33px;\n}\n.react-tel-input .do {\n  background-position: -96px -33px;\n}\n.react-tel-input .dz {\n  background-position: -112px -33px;\n}\n.react-tel-input .ec {\n  background-position: -128px -33px;\n}\n.react-tel-input .ee {\n  background-position: -144px -33px;\n}\n.react-tel-input .eg {\n  background-position: -160px -33px;\n}\n.react-tel-input .er {\n  background-position: -176px -33px;\n}\n.react-tel-input .es {\n  background-position: -192px -33px;\n}\n.react-tel-input .et {\n  background-position: -208px -33px;\n}\n.react-tel-input .fi {\n  background-position: -224px -33px;\n}\n.react-tel-input .fj {\n  background-position: -240px -33px;\n}\n.react-tel-input .fk {\n  background-position: 0 -44px;\n}\n.react-tel-input .fm {\n  background-position: -16px -44px;\n}\n.react-tel-input .fo {\n  background-position: -32px -44px;\n}\n.react-tel-input .fr,\n.react-tel-input .bl,\n.react-tel-input .mf {\n  background-position: -48px -44px;\n}\n.react-tel-input .ga {\n  background-position: -64px -44px;\n}\n.react-tel-input .gb {\n  background-position: -80px -44px;\n}\n.react-tel-input .gd {\n  background-position: -96px -44px;\n}\n.react-tel-input .ge {\n  background-position: -112px -44px;\n}\n.react-tel-input .gf {\n  background-position: -128px -44px;\n}\n.react-tel-input .gh {\n  background-position: -144px -44px;\n}\n.react-tel-input .gi {\n  background-position: -160px -44px;\n}\n.react-tel-input .gl {\n  background-position: -176px -44px;\n}\n.react-tel-input .gm {\n  background-position: -192px -44px;\n}\n.react-tel-input .gn {\n  background-position: -208px -44px;\n}\n.react-tel-input .gp {\n  background-position: -224px -44px;\n}\n.react-tel-input .gq {\n  background-position: -240px -44px;\n}\n.react-tel-input .gr {\n  background-position: 0 -55px;\n}\n.react-tel-input .gt {\n  background-position: -16px -55px;\n}\n.react-tel-input .gu {\n  background-position: -32px -55px;\n}\n.react-tel-input .gw {\n  background-position: -48px -55px;\n}\n.react-tel-input .gy {\n  background-position: -64px -55px;\n}\n.react-tel-input .hk {\n  background-position: -80px -55px;\n}\n.react-tel-input .hn {\n  background-position: -96px -55px;\n}\n.react-tel-input .hr {\n  background-position: -112px -55px;\n}\n.react-tel-input .ht {\n  background-position: -128px -55px;\n}\n.react-tel-input .hu {\n  background-position: -144px -55px;\n}\n.react-tel-input .id {\n  background-position: -160px -55px;\n}\n.react-tel-input .ie {\n  background-position: -176px -55px;\n}\n.react-tel-input .il {\n  background-position: -192px -55px;\n}\n.react-tel-input .in {\n  background-position: -208px -55px;\n}\n.react-tel-input .io {\n  background-position: -224px -55px;\n}\n.react-tel-input .iq {\n  background-position: -240px -55px;\n}\n.react-tel-input .ir {\n  background-position: 0 -66px;\n}\n.react-tel-input .is {\n  background-position: -16px -66px;\n}\n.react-tel-input .it {\n  background-position: -32px -66px;\n}\n.react-tel-input .jm {\n  background-position: -48px -66px;\n}\n.react-tel-input .jo {\n  background-position: -64px -66px;\n}\n.react-tel-input .jp {\n  background-position: -80px -66px;\n}\n.react-tel-input .ke {\n  background-position: -96px -66px;\n}\n.react-tel-input .kg {\n  background-position: -112px -66px;\n}\n.react-tel-input .kh {\n  background-position: -128px -66px;\n}\n.react-tel-input .ki {\n  background-position: -144px -66px;\n}\n.react-tel-input .km {\n  background-position: -160px -66px;\n}\n.react-tel-input .kn {\n  background-position: -176px -66px;\n}\n.react-tel-input .kp {\n  background-position: -192px -66px;\n}\n.react-tel-input .kr {\n  background-position: -208px -66px;\n}\n.react-tel-input .kw {\n  background-position: -224px -66px;\n}\n.react-tel-input .ky {\n  background-position: -240px -66px;\n}\n.react-tel-input .kz {\n  background-position: 0 -77px;\n}\n.react-tel-input .la {\n  background-position: -16px -77px;\n}\n.react-tel-input .lb {\n  background-position: -32px -77px;\n}\n.react-tel-input .lc {\n  background-position: -48px -77px;\n}\n.react-tel-input .li {\n  background-position: -64px -77px;\n}\n.react-tel-input .lk {\n  background-position: -80px -77px;\n}\n.react-tel-input .lr {\n  background-position: -96px -77px;\n}\n.react-tel-input .ls {\n  background-position: -112px -77px;\n}\n.react-tel-input .lt {\n  background-position: -128px -77px;\n}\n.react-tel-input .lu {\n  background-position: -144px -77px;\n}\n.react-tel-input .lv {\n  background-position: -160px -77px;\n}\n.react-tel-input .ly {\n  background-position: -176px -77px;\n}\n.react-tel-input .ma {\n  background-position: -192px -77px;\n}\n.react-tel-input .mc {\n  background-position: -208px -77px;\n}\n.react-tel-input .md {\n  background-position: -224px -77px;\n}\n.react-tel-input .me {\n  background-position: -112px -154px;\n  height: 12px;\n}\n.react-tel-input .mg {\n  background-position: 0 -88px;\n}\n.react-tel-input .mh {\n  background-position: -16px -88px;\n}\n.react-tel-input .mk {\n  background-position: -32px -88px;\n}\n.react-tel-input .ml {\n  background-position: -48px -88px;\n}\n.react-tel-input .mm {\n  background-position: -64px -88px;\n}\n.react-tel-input .mn {\n  background-position: -80px -88px;\n}\n.react-tel-input .mo {\n  background-position: -96px -88px;\n}\n.react-tel-input .mp {\n  background-position: -112px -88px;\n}\n.react-tel-input .mq {\n  background-position: -128px -88px;\n}\n.react-tel-input .mr {\n  background-position: -144px -88px;\n}\n.react-tel-input .ms {\n  background-position: -160px -88px;\n}\n.react-tel-input .mt {\n  background-position: -176px -88px;\n}\n.react-tel-input .mu {\n  background-position: -192px -88px;\n}\n.react-tel-input .mv {\n  background-position: -208px -88px;\n}\n.react-tel-input .mw {\n  background-position: -224px -88px;\n}\n.react-tel-input .mx {\n  background-position: -240px -88px;\n}\n.react-tel-input .my {\n  background-position: 0 -99px;\n}\n.react-tel-input .mz {\n  background-position: -16px -99px;\n}\n.react-tel-input .na {\n  background-position: -32px -99px;\n}\n.react-tel-input .nc {\n  background-position: -48px -99px;\n}\n.react-tel-input .ne {\n  background-position: -64px -99px;\n}\n.react-tel-input .nf {\n  background-position: -80px -99px;\n}\n.react-tel-input .ng {\n  background-position: -96px -99px;\n}\n.react-tel-input .ni {\n  background-position: -112px -99px;\n}\n.react-tel-input .nl,\n.react-tel-input .bq {\n  background-position: -128px -99px;\n}\n.react-tel-input .no {\n  background-position: -144px -99px;\n}\n.react-tel-input .np {\n  background-position: -160px -99px;\n}\n.react-tel-input .nr {\n  background-position: -176px -99px;\n}\n.react-tel-input .nu {\n  background-position: -192px -99px;\n}\n.react-tel-input .nz {\n  background-position: -208px -99px;\n}\n.react-tel-input .om {\n  background-position: -224px -99px;\n}\n.react-tel-input .pa {\n  background-position: -240px -99px;\n}\n.react-tel-input .pe {\n  background-position: 0 -110px;\n}\n.react-tel-input .pf {\n  background-position: -16px -110px;\n}\n.react-tel-input .pg {\n  background-position: -32px -110px;\n}\n.react-tel-input .ph {\n  background-position: -48px -110px;\n}\n.react-tel-input .pk {\n  background-position: -64px -110px;\n}\n.react-tel-input .pl {\n  background-position: -80px -110px;\n}\n.react-tel-input .pm {\n  background-position: -96px -110px;\n}\n.react-tel-input .pr {\n  background-position: -112px -110px;\n}\n.react-tel-input .ps {\n  background-position: -128px -110px;\n}\n.react-tel-input .pt {\n  background-position: -144px -110px;\n}\n.react-tel-input .pw {\n  background-position: -160px -110px;\n}\n.react-tel-input .py {\n  background-position: -176px -110px;\n}\n.react-tel-input .qa {\n  background-position: -192px -110px;\n}\n.react-tel-input .re {\n  background-position: -208px -110px;\n}\n.react-tel-input .ro {\n  background-position: -224px -110px;\n}\n.react-tel-input .rs {\n  background-position: -240px -110px;\n}\n.react-tel-input .ru {\n  background-position: 0 -121px;\n}\n.react-tel-input .rw {\n  background-position: -16px -121px;\n}\n.react-tel-input .sa {\n  background-position: -32px -121px;\n}\n.react-tel-input .sb {\n  background-position: -48px -121px;\n}\n.react-tel-input .sc {\n  background-position: -64px -121px;\n}\n.react-tel-input .sd {\n  background-position: -80px -121px;\n}\n.react-tel-input .se {\n  background-position: -96px -121px;\n}\n.react-tel-input .sg {\n  background-position: -112px -121px;\n}\n.react-tel-input .sh {\n  background-position: -128px -121px;\n}\n.react-tel-input .si {\n  background-position: -144px -121px;\n}\n.react-tel-input .sk {\n  background-position: -160px -121px;\n}\n.react-tel-input .sl {\n  background-position: -176px -121px;\n}\n.react-tel-input .sm {\n  background-position: -192px -121px;\n}\n.react-tel-input .sn {\n  background-position: -208px -121px;\n}\n.react-tel-input .so {\n  background-position: -224px -121px;\n}\n.react-tel-input .sr {\n  background-position: -240px -121px;\n}\n.react-tel-input .ss {\n  background-position: 0 -132px;\n}\n.react-tel-input .st {\n  background-position: -16px -132px;\n}\n.react-tel-input .sv {\n  background-position: -32px -132px;\n}\n.react-tel-input .sx {\n  background-position: -48px -132px;\n}\n.react-tel-input .sy {\n  background-position: -64px -132px;\n}\n.react-tel-input .sz {\n  background-position: -80px -132px;\n}\n.react-tel-input .tc {\n  background-position: -96px -132px;\n}\n.react-tel-input .td {\n  background-position: -112px -132px;\n}\n.react-tel-input .tg {\n  background-position: -128px -132px;\n}\n.react-tel-input .th {\n  background-position: -144px -132px;\n}\n.react-tel-input .tj {\n  background-position: -160px -132px;\n}\n.react-tel-input .tk {\n  background-position: -176px -132px;\n}\n.react-tel-input .tl {\n  background-position: -192px -132px;\n}\n.react-tel-input .tm {\n  background-position: -208px -132px;\n}\n.react-tel-input .tn {\n  background-position: -224px -132px;\n}\n.react-tel-input .to {\n  background-position: -240px -132px;\n}\n.react-tel-input .tr {\n  background-position: 0 -143px;\n}\n.react-tel-input .tt {\n  background-position: -16px -143px;\n}\n.react-tel-input .tv {\n  background-position: -32px -143px;\n}\n.react-tel-input .tw {\n  background-position: -48px -143px;\n}\n.react-tel-input .tz {\n  background-position: -64px -143px;\n}\n.react-tel-input .ua {\n  background-position: -80px -143px;\n}\n.react-tel-input .ug {\n  background-position: -96px -143px;\n}\n.react-tel-input .us {\n  background-position: -112px -143px;\n}\n.react-tel-input .uy {\n  background-position: -128px -143px;\n}\n.react-tel-input .uz {\n  background-position: -144px -143px;\n}\n.react-tel-input .va {\n  background-position: -160px -143px;\n}\n.react-tel-input .vc {\n  background-position: -176px -143px;\n}\n.react-tel-input .ve {\n  background-position: -192px -143px;\n}\n.react-tel-input .vg {\n  background-position: -208px -143px;\n}\n.react-tel-input .vi {\n  background-position: -224px -143px;\n}\n.react-tel-input .vn {\n  background-position: -240px -143px;\n}\n.react-tel-input .vu {\n  background-position: 0 -154px;\n}\n.react-tel-input .wf {\n  background-position: -16px -154px;\n}\n.react-tel-input .ws {\n  background-position: -32px -154px;\n}\n.react-tel-input .ye {\n  background-position: -48px -154px;\n}\n.react-tel-input .za {\n  background-position: -64px -154px;\n}\n.react-tel-input .zm {\n  background-position: -80px -154px;\n}\n.react-tel-input .zw {\n  background-position: -96px -154px;\n}\n.react-tel-input * {\n  box-sizing: border-box;\n  -moz-box-sizing: border-box;\n}\n.react-tel-input .hide {\n  display: none;\n}\n.react-tel-input .v-hide {\n  visibility: hidden;\n}\n.react-tel-input input[type=text],\n.react-tel-input input[type=tel] {\n  position: relative;\n  z-index: 0;\n  margin-top: 0 !important;\n  margin-bottom: 0 !important;\n  padding-left: 44px;\n  margin-left: 0;\n  background: #FFFFFF;\n  border: 1px solid #CACACA;\n  border-radius: 3px;\n  box-shadow: 0 1px 2px #E3E3E3 inset;\n  line-height: 25px;\n  height: 28px;\n  width: 100%;\n}\n.react-tel-input input[type=text]:focus,\n.react-tel-input input[type=tel]:focus {\n  border-color: #42bdff;\n  border-left-color: #cacaca;\n}\n.react-tel-input input[type=text].invalid-number,\n.react-tel-input input[type=tel].invalid-number {\n  border: 1px solid #d79f9f;\n  background-color: #FAF0F0;\n  border-left-color: #cacaca;\n}\n.react-tel-input input[type=text].invalid-number:focus,\n.react-tel-input input[type=tel].invalid-number:focus {\n  border: 1px solid #d79f9f;\n  border-left-color: #cacaca;\n  background-color: #FAF0F0;\n}\n.react-tel-input .flag-dropdown {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  padding: 0;\n  background-color: #eaeaea;\n  border: 1px solid #cacaca;\n  border-radius: 3px 0 0 3px;\n}\n.react-tel-input .flag-dropdown.open-dropdown {\n  background: #fff;\n  border-bottom: 0;\n  border-radius: 3px 0 0 0;\n}\n.react-tel-input .flag-dropdown.open-dropdown .selected-flag {\n  background: #fff;\n  border-radius: 3px 0 0 0;\n}\n.react-tel-input .flag-dropdown:hover {\n  cursor: pointer;\n}\n.react-tel-input .flag-dropdown:hover .selected-flag {\n  background-color: #fff;\n}\n.react-tel-input input[disabled] + .flag-dropdown:hover {\n  cursor: default;\n}\n.react-tel-input input[disabled] + .flag-dropdown:hover .selected-flag {\n  background-color: transparent;\n}\n.react-tel-input .selected-flag {\n  z-index: 13;\n  position: relative;\n  width: 38px;\n  height: 26px;\n  padding: 0 0 0 8px;\n  border-radius: 3px 0 0 3px;\n}\n.react-tel-input .selected-flag .flag {\n  position: absolute;\n  top: 50%;\n  margin-top: -5px;\n}\n.react-tel-input .selected-flag .arrow {\n  position: relative;\n  top: 50%;\n  margin-top: -2px;\n  left: 20px;\n  width: 0;\n  height: 0;\n  border-left: 3px solid transparent;\n  border-right: 3px solid transparent;\n  border-top: 4px solid #555;\n}\n.react-tel-input .selected-flag .arrow.up {\n  border-top: none;\n  border-bottom: 4px solid #555;\n}\n.react-tel-input .country-list {\n  list-style: none;\n  position: absolute;\n  z-index: 2;\n  padding: 0;\n  margin: -1px 0 0 -1px;\n  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);\n  background-color: white;\n  border: 1px solid #ccc;\n  width: 400px;\n  max-height: 200px;\n  overflow-y: scroll;\n  border-radius: 0 0 3px 3px;\n  top: 26px;\n}\n.react-tel-input .country-list .flag {\n  display: inline-block;\n}\n.react-tel-input .country-list .divider {\n  padding-bottom: 5px;\n  margin-bottom: 5px;\n  border-bottom: 1px solid #ccc;\n}\n.react-tel-input .country-list .country {\n  padding: 5px 10px;\n}\n.react-tel-input .country-list .country .dial-code {\n  color: #999;\n}\n.react-tel-input .country-list .country:hover {\n  background-color: #e8f7fe;\n}\n.react-tel-input .country-list .country.highlight {\n  background-color: #c7e2f1;\n}\n.react-tel-input .country-list .flag {\n  margin-right: 6px;\n  margin-top: 2px;\n}\n.react-tel-input .country-list .country-name {\n  margin-right: 6px;\n}\n";(require('lessify'))(css); module.exports = css;
+},{"lessify":3}],2:[function(require,module,exports){
+module.exports = function (css, customDocument) {
+  var doc = customDocument || document;
+  if (doc.createStyleSheet) {
+    var sheet = doc.createStyleSheet()
+    sheet.cssText = css;
+    return sheet.ownerNode;
+  } else {
+    var head = doc.getElementsByTagName('head')[0],
+        style = doc.createElement('style');
+
+    style.type = 'text/css';
+
+    if (style.styleSheet) {
+      style.styleSheet.cssText = css;
+    } else {
+      style.appendChild(doc.createTextNode(css));
+    }
+
+    head.appendChild(style);
+    return style;
+  }
+};
+
+module.exports.byUrl = function(url) {
+  if (document.createStyleSheet) {
+    return document.createStyleSheet(url).ownerNode;
+  } else {
+    var head = document.getElementsByTagName('head')[0],
+        link = document.createElement('link');
+
+    link.rel = 'stylesheet';
+    link.href = url;
+
+    head.appendChild(link);
+    return link;
+  }
+};
+
+},{}],3:[function(require,module,exports){
+module.exports = require('cssify');
+
+},{"cssify":2}],4:[function(require,module,exports){
 var baseSlice = require('../internal/baseSlice'),
     isIterateeCall = require('../internal/isIterateeCall');
 
@@ -41,7 +83,7 @@ function drop(array, n, guard) {
 
 module.exports = drop;
 
-},{"../internal/baseSlice":39,"../internal/isIterateeCall":58}],3:[function(require,module,exports){
+},{"../internal/baseSlice":41,"../internal/isIterateeCall":60}],5:[function(require,module,exports){
 var createFindIndex = require('../internal/createFindIndex');
 
 /**
@@ -96,7 +138,7 @@ var findIndex = createFindIndex();
 
 module.exports = findIndex;
 
-},{"../internal/createFindIndex":48}],4:[function(require,module,exports){
+},{"../internal/createFindIndex":50}],6:[function(require,module,exports){
 /**
  * Gets the first element of `array`.
  *
@@ -120,7 +162,7 @@ function first(array) {
 
 module.exports = first;
 
-},{}],5:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /**
  * Gets the last element of `array`.
  *
@@ -141,7 +183,7 @@ function last(array) {
 
 module.exports = last;
 
-},{}],6:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 var drop = require('./drop');
 
 /**
@@ -164,10 +206,10 @@ function rest(array) {
 
 module.exports = rest;
 
-},{"./drop":2}],7:[function(require,module,exports){
+},{"./drop":4}],9:[function(require,module,exports){
 module.exports = require('./some');
 
-},{"./some":13}],8:[function(require,module,exports){
+},{"./some":15}],10:[function(require,module,exports){
 var arrayFilter = require('../internal/arrayFilter'),
     baseCallback = require('../internal/baseCallback'),
     baseFilter = require('../internal/baseFilter'),
@@ -230,7 +272,7 @@ function filter(collection, predicate, thisArg) {
 
 module.exports = filter;
 
-},{"../internal/arrayFilter":18,"../internal/baseCallback":22,"../internal/baseFilter":24,"../lang/isArray":74}],9:[function(require,module,exports){
+},{"../internal/arrayFilter":20,"../internal/baseCallback":24,"../internal/baseFilter":26,"../lang/isArray":76}],11:[function(require,module,exports){
 var baseEach = require('../internal/baseEach'),
     createFind = require('../internal/createFind');
 
@@ -288,7 +330,7 @@ var find = createFind(baseEach);
 
 module.exports = find;
 
-},{"../internal/baseEach":23,"../internal/createFind":47}],10:[function(require,module,exports){
+},{"../internal/baseEach":25,"../internal/createFind":49}],12:[function(require,module,exports){
 var baseMatches = require('../internal/baseMatches'),
     find = require('./find');
 
@@ -327,7 +369,7 @@ function findWhere(collection, source) {
 
 module.exports = findWhere;
 
-},{"../internal/baseMatches":34,"./find":9}],11:[function(require,module,exports){
+},{"../internal/baseMatches":36,"./find":11}],13:[function(require,module,exports){
 var arrayMap = require('../internal/arrayMap'),
     baseCallback = require('../internal/baseCallback'),
     baseMap = require('../internal/baseMap'),
@@ -397,7 +439,7 @@ function map(collection, iteratee, thisArg) {
 
 module.exports = map;
 
-},{"../internal/arrayMap":19,"../internal/baseCallback":22,"../internal/baseMap":33,"../lang/isArray":74}],12:[function(require,module,exports){
+},{"../internal/arrayMap":21,"../internal/baseCallback":24,"../internal/baseMap":35,"../lang/isArray":76}],14:[function(require,module,exports){
 var arrayReduce = require('../internal/arrayReduce'),
     baseEach = require('../internal/baseEach'),
     createReduce = require('../internal/createReduce');
@@ -442,7 +484,7 @@ var reduce = createReduce(arrayReduce, baseEach);
 
 module.exports = reduce;
 
-},{"../internal/arrayReduce":20,"../internal/baseEach":23,"../internal/createReduce":49}],13:[function(require,module,exports){
+},{"../internal/arrayReduce":22,"../internal/baseEach":25,"../internal/createReduce":51}],15:[function(require,module,exports){
 var arraySome = require('../internal/arraySome'),
     baseCallback = require('../internal/baseCallback'),
     baseSome = require('../internal/baseSome'),
@@ -511,7 +553,7 @@ function some(collection, predicate, thisArg) {
 
 module.exports = some;
 
-},{"../internal/arraySome":21,"../internal/baseCallback":22,"../internal/baseSome":40,"../internal/isIterateeCall":58,"../lang/isArray":74}],14:[function(require,module,exports){
+},{"../internal/arraySome":23,"../internal/baseCallback":24,"../internal/baseSome":42,"../internal/isIterateeCall":60,"../lang/isArray":76}],16:[function(require,module,exports){
 var getNative = require('../internal/getNative');
 
 /* Native method references for those with the same name as other `lodash` methods. */
@@ -537,7 +579,7 @@ var now = nativeNow || function() {
 
 module.exports = now;
 
-},{"../internal/getNative":55}],15:[function(require,module,exports){
+},{"../internal/getNative":57}],17:[function(require,module,exports){
 var isObject = require('../lang/isObject'),
     now = require('../date/now');
 
@@ -726,7 +768,7 @@ function debounce(func, wait, options) {
 
 module.exports = debounce;
 
-},{"../date/now":14,"../lang/isObject":76}],16:[function(require,module,exports){
+},{"../date/now":16,"../lang/isObject":78}],18:[function(require,module,exports){
 var MapCache = require('../internal/MapCache');
 
 /** Used as the `TypeError` message for "Functions" methods. */
@@ -808,7 +850,7 @@ memoize.Cache = MapCache;
 
 module.exports = memoize;
 
-},{"../internal/MapCache":17}],17:[function(require,module,exports){
+},{"../internal/MapCache":19}],19:[function(require,module,exports){
 var mapDelete = require('./mapDelete'),
     mapGet = require('./mapGet'),
     mapHas = require('./mapHas'),
@@ -834,7 +876,7 @@ MapCache.prototype.set = mapSet;
 
 module.exports = MapCache;
 
-},{"./mapDelete":64,"./mapGet":65,"./mapHas":66,"./mapSet":67}],18:[function(require,module,exports){
+},{"./mapDelete":66,"./mapGet":67,"./mapHas":68,"./mapSet":69}],20:[function(require,module,exports){
 /**
  * A specialized version of `_.filter` for arrays without support for callback
  * shorthands and `this` binding.
@@ -861,7 +903,7 @@ function arrayFilter(array, predicate) {
 
 module.exports = arrayFilter;
 
-},{}],19:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 /**
  * A specialized version of `_.map` for arrays without support for callback
  * shorthands and `this` binding.
@@ -884,7 +926,7 @@ function arrayMap(array, iteratee) {
 
 module.exports = arrayMap;
 
-},{}],20:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 /**
  * A specialized version of `_.reduce` for arrays without support for callback
  * shorthands and `this` binding.
@@ -912,7 +954,7 @@ function arrayReduce(array, iteratee, accumulator, initFromArray) {
 
 module.exports = arrayReduce;
 
-},{}],21:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 /**
  * A specialized version of `_.some` for arrays without support for callback
  * shorthands and `this` binding.
@@ -937,7 +979,7 @@ function arraySome(array, predicate) {
 
 module.exports = arraySome;
 
-},{}],22:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 var baseMatches = require('./baseMatches'),
     baseMatchesProperty = require('./baseMatchesProperty'),
     bindCallback = require('./bindCallback'),
@@ -974,7 +1016,7 @@ function baseCallback(func, thisArg, argCount) {
 
 module.exports = baseCallback;
 
-},{"../utility/identity":84,"../utility/property":85,"./baseMatches":34,"./baseMatchesProperty":35,"./bindCallback":42}],23:[function(require,module,exports){
+},{"../utility/identity":86,"../utility/property":87,"./baseMatches":36,"./baseMatchesProperty":37,"./bindCallback":44}],25:[function(require,module,exports){
 var baseForOwn = require('./baseForOwn'),
     createBaseEach = require('./createBaseEach');
 
@@ -991,7 +1033,7 @@ var baseEach = createBaseEach(baseForOwn);
 
 module.exports = baseEach;
 
-},{"./baseForOwn":28,"./createBaseEach":45}],24:[function(require,module,exports){
+},{"./baseForOwn":30,"./createBaseEach":47}],26:[function(require,module,exports){
 var baseEach = require('./baseEach');
 
 /**
@@ -1015,7 +1057,7 @@ function baseFilter(collection, predicate) {
 
 module.exports = baseFilter;
 
-},{"./baseEach":23}],25:[function(require,module,exports){
+},{"./baseEach":25}],27:[function(require,module,exports){
 /**
  * The base implementation of `_.find`, `_.findLast`, `_.findKey`, and `_.findLastKey`,
  * without support for callback shorthands and `this` binding, which iterates
@@ -1042,7 +1084,7 @@ function baseFind(collection, predicate, eachFunc, retKey) {
 
 module.exports = baseFind;
 
-},{}],26:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 /**
  * The base implementation of `_.findIndex` and `_.findLastIndex` without
  * support for callback shorthands and `this` binding.
@@ -1067,7 +1109,7 @@ function baseFindIndex(array, predicate, fromRight) {
 
 module.exports = baseFindIndex;
 
-},{}],27:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 var createBaseFor = require('./createBaseFor');
 
 /**
@@ -1086,7 +1128,7 @@ var baseFor = createBaseFor();
 
 module.exports = baseFor;
 
-},{"./createBaseFor":46}],28:[function(require,module,exports){
+},{"./createBaseFor":48}],30:[function(require,module,exports){
 var baseFor = require('./baseFor'),
     keys = require('../object/keys');
 
@@ -1105,7 +1147,7 @@ function baseForOwn(object, iteratee) {
 
 module.exports = baseForOwn;
 
-},{"../object/keys":78,"./baseFor":27}],29:[function(require,module,exports){
+},{"../object/keys":80,"./baseFor":29}],31:[function(require,module,exports){
 var toObject = require('./toObject');
 
 /**
@@ -1136,7 +1178,7 @@ function baseGet(object, path, pathKey) {
 
 module.exports = baseGet;
 
-},{"./toObject":69}],30:[function(require,module,exports){
+},{"./toObject":71}],32:[function(require,module,exports){
 var baseIsEqualDeep = require('./baseIsEqualDeep'),
     isObject = require('../lang/isObject'),
     isObjectLike = require('./isObjectLike');
@@ -1166,7 +1208,7 @@ function baseIsEqual(value, other, customizer, isLoose, stackA, stackB) {
 
 module.exports = baseIsEqual;
 
-},{"../lang/isObject":76,"./baseIsEqualDeep":31,"./isObjectLike":61}],31:[function(require,module,exports){
+},{"../lang/isObject":78,"./baseIsEqualDeep":33,"./isObjectLike":63}],33:[function(require,module,exports){
 var equalArrays = require('./equalArrays'),
     equalByTag = require('./equalByTag'),
     equalObjects = require('./equalObjects'),
@@ -1270,7 +1312,7 @@ function baseIsEqualDeep(object, other, equalFunc, customizer, isLoose, stackA, 
 
 module.exports = baseIsEqualDeep;
 
-},{"../lang/isArray":74,"../lang/isTypedArray":77,"./equalArrays":50,"./equalByTag":51,"./equalObjects":52}],32:[function(require,module,exports){
+},{"../lang/isArray":76,"../lang/isTypedArray":79,"./equalArrays":52,"./equalByTag":53,"./equalObjects":54}],34:[function(require,module,exports){
 var baseIsEqual = require('./baseIsEqual'),
     toObject = require('./toObject');
 
@@ -1324,7 +1366,7 @@ function baseIsMatch(object, matchData, customizer) {
 
 module.exports = baseIsMatch;
 
-},{"./baseIsEqual":30,"./toObject":69}],33:[function(require,module,exports){
+},{"./baseIsEqual":32,"./toObject":71}],35:[function(require,module,exports){
 var baseEach = require('./baseEach'),
     isArrayLike = require('./isArrayLike');
 
@@ -1349,7 +1391,7 @@ function baseMap(collection, iteratee) {
 
 module.exports = baseMap;
 
-},{"./baseEach":23,"./isArrayLike":56}],34:[function(require,module,exports){
+},{"./baseEach":25,"./isArrayLike":58}],36:[function(require,module,exports){
 var baseIsMatch = require('./baseIsMatch'),
     getMatchData = require('./getMatchData'),
     toObject = require('./toObject');
@@ -1381,7 +1423,7 @@ function baseMatches(source) {
 
 module.exports = baseMatches;
 
-},{"./baseIsMatch":32,"./getMatchData":54,"./toObject":69}],35:[function(require,module,exports){
+},{"./baseIsMatch":34,"./getMatchData":56,"./toObject":71}],37:[function(require,module,exports){
 var baseGet = require('./baseGet'),
     baseIsEqual = require('./baseIsEqual'),
     baseSlice = require('./baseSlice'),
@@ -1428,7 +1470,7 @@ function baseMatchesProperty(path, srcValue) {
 
 module.exports = baseMatchesProperty;
 
-},{"../array/last":5,"../lang/isArray":74,"./baseGet":29,"./baseIsEqual":30,"./baseSlice":39,"./isKey":59,"./isStrictComparable":63,"./toObject":69,"./toPath":70}],36:[function(require,module,exports){
+},{"../array/last":7,"../lang/isArray":76,"./baseGet":31,"./baseIsEqual":32,"./baseSlice":41,"./isKey":61,"./isStrictComparable":65,"./toObject":71,"./toPath":72}],38:[function(require,module,exports){
 /**
  * The base implementation of `_.property` without support for deep paths.
  *
@@ -1444,7 +1486,7 @@ function baseProperty(key) {
 
 module.exports = baseProperty;
 
-},{}],37:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 var baseGet = require('./baseGet'),
     toPath = require('./toPath');
 
@@ -1465,7 +1507,7 @@ function basePropertyDeep(path) {
 
 module.exports = basePropertyDeep;
 
-},{"./baseGet":29,"./toPath":70}],38:[function(require,module,exports){
+},{"./baseGet":31,"./toPath":72}],40:[function(require,module,exports){
 /**
  * The base implementation of `_.reduce` and `_.reduceRight` without support
  * for callback shorthands and `this` binding, which iterates over `collection`
@@ -1491,7 +1533,7 @@ function baseReduce(collection, iteratee, accumulator, initFromCollection, eachF
 
 module.exports = baseReduce;
 
-},{}],39:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 /**
  * The base implementation of `_.slice` without an iteratee call guard.
  *
@@ -1525,7 +1567,7 @@ function baseSlice(array, start, end) {
 
 module.exports = baseSlice;
 
-},{}],40:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 var baseEach = require('./baseEach');
 
 /**
@@ -1550,7 +1592,7 @@ function baseSome(collection, predicate) {
 
 module.exports = baseSome;
 
-},{"./baseEach":23}],41:[function(require,module,exports){
+},{"./baseEach":25}],43:[function(require,module,exports){
 /**
  * Converts `value` to a string if it's not one. An empty string is returned
  * for `null` or `undefined` values.
@@ -1568,7 +1610,7 @@ function baseToString(value) {
 
 module.exports = baseToString;
 
-},{}],42:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 var identity = require('../utility/identity');
 
 /**
@@ -1609,7 +1651,7 @@ function bindCallback(func, thisArg, argCount) {
 
 module.exports = bindCallback;
 
-},{"../utility/identity":84}],43:[function(require,module,exports){
+},{"../utility/identity":86}],45:[function(require,module,exports){
 /**
  * Used by `_.trim` and `_.trimLeft` to get the index of the first character
  * of `string` that is not found in `chars`.
@@ -1629,7 +1671,7 @@ function charsLeftIndex(string, chars) {
 
 module.exports = charsLeftIndex;
 
-},{}],44:[function(require,module,exports){
+},{}],46:[function(require,module,exports){
 /**
  * Used by `_.trim` and `_.trimRight` to get the index of the last character
  * of `string` that is not found in `chars`.
@@ -1648,7 +1690,7 @@ function charsRightIndex(string, chars) {
 
 module.exports = charsRightIndex;
 
-},{}],45:[function(require,module,exports){
+},{}],47:[function(require,module,exports){
 var getLength = require('./getLength'),
     isLength = require('./isLength'),
     toObject = require('./toObject');
@@ -1681,7 +1723,7 @@ function createBaseEach(eachFunc, fromRight) {
 
 module.exports = createBaseEach;
 
-},{"./getLength":53,"./isLength":60,"./toObject":69}],46:[function(require,module,exports){
+},{"./getLength":55,"./isLength":62,"./toObject":71}],48:[function(require,module,exports){
 var toObject = require('./toObject');
 
 /**
@@ -1710,7 +1752,7 @@ function createBaseFor(fromRight) {
 
 module.exports = createBaseFor;
 
-},{"./toObject":69}],47:[function(require,module,exports){
+},{"./toObject":71}],49:[function(require,module,exports){
 var baseCallback = require('./baseCallback'),
     baseFind = require('./baseFind'),
     baseFindIndex = require('./baseFindIndex'),
@@ -1737,7 +1779,7 @@ function createFind(eachFunc, fromRight) {
 
 module.exports = createFind;
 
-},{"../lang/isArray":74,"./baseCallback":22,"./baseFind":25,"./baseFindIndex":26}],48:[function(require,module,exports){
+},{"../lang/isArray":76,"./baseCallback":24,"./baseFind":27,"./baseFindIndex":28}],50:[function(require,module,exports){
 var baseCallback = require('./baseCallback'),
     baseFindIndex = require('./baseFindIndex');
 
@@ -1760,7 +1802,7 @@ function createFindIndex(fromRight) {
 
 module.exports = createFindIndex;
 
-},{"./baseCallback":22,"./baseFindIndex":26}],49:[function(require,module,exports){
+},{"./baseCallback":24,"./baseFindIndex":28}],51:[function(require,module,exports){
 var baseCallback = require('./baseCallback'),
     baseReduce = require('./baseReduce'),
     isArray = require('../lang/isArray');
@@ -1784,7 +1826,7 @@ function createReduce(arrayFunc, eachFunc) {
 
 module.exports = createReduce;
 
-},{"../lang/isArray":74,"./baseCallback":22,"./baseReduce":38}],50:[function(require,module,exports){
+},{"../lang/isArray":76,"./baseCallback":24,"./baseReduce":40}],52:[function(require,module,exports){
 var arraySome = require('./arraySome');
 
 /**
@@ -1837,7 +1879,7 @@ function equalArrays(array, other, equalFunc, customizer, isLoose, stackA, stack
 
 module.exports = equalArrays;
 
-},{"./arraySome":21}],51:[function(require,module,exports){
+},{"./arraySome":23}],53:[function(require,module,exports){
 /** `Object#toString` result references. */
 var boolTag = '[object Boolean]',
     dateTag = '[object Date]',
@@ -1887,7 +1929,7 @@ function equalByTag(object, other, tag) {
 
 module.exports = equalByTag;
 
-},{}],52:[function(require,module,exports){
+},{}],54:[function(require,module,exports){
 var keys = require('../object/keys');
 
 /** Used for native method references. */
@@ -1956,7 +1998,7 @@ function equalObjects(object, other, equalFunc, customizer, isLoose, stackA, sta
 
 module.exports = equalObjects;
 
-},{"../object/keys":78}],53:[function(require,module,exports){
+},{"../object/keys":80}],55:[function(require,module,exports){
 var baseProperty = require('./baseProperty');
 
 /**
@@ -1973,7 +2015,7 @@ var getLength = baseProperty('length');
 
 module.exports = getLength;
 
-},{"./baseProperty":36}],54:[function(require,module,exports){
+},{"./baseProperty":38}],56:[function(require,module,exports){
 var isStrictComparable = require('./isStrictComparable'),
     pairs = require('../object/pairs');
 
@@ -1996,7 +2038,7 @@ function getMatchData(object) {
 
 module.exports = getMatchData;
 
-},{"../object/pairs":80,"./isStrictComparable":63}],55:[function(require,module,exports){
+},{"../object/pairs":82,"./isStrictComparable":65}],57:[function(require,module,exports){
 var isNative = require('../lang/isNative');
 
 /**
@@ -2014,7 +2056,7 @@ function getNative(object, key) {
 
 module.exports = getNative;
 
-},{"../lang/isNative":75}],56:[function(require,module,exports){
+},{"../lang/isNative":77}],58:[function(require,module,exports){
 var getLength = require('./getLength'),
     isLength = require('./isLength');
 
@@ -2031,7 +2073,7 @@ function isArrayLike(value) {
 
 module.exports = isArrayLike;
 
-},{"./getLength":53,"./isLength":60}],57:[function(require,module,exports){
+},{"./getLength":55,"./isLength":62}],59:[function(require,module,exports){
 /** Used to detect unsigned integer values. */
 var reIsUint = /^\d+$/;
 
@@ -2057,7 +2099,7 @@ function isIndex(value, length) {
 
 module.exports = isIndex;
 
-},{}],58:[function(require,module,exports){
+},{}],60:[function(require,module,exports){
 var isArrayLike = require('./isArrayLike'),
     isIndex = require('./isIndex'),
     isObject = require('../lang/isObject');
@@ -2087,7 +2129,7 @@ function isIterateeCall(value, index, object) {
 
 module.exports = isIterateeCall;
 
-},{"../lang/isObject":76,"./isArrayLike":56,"./isIndex":57}],59:[function(require,module,exports){
+},{"../lang/isObject":78,"./isArrayLike":58,"./isIndex":59}],61:[function(require,module,exports){
 var isArray = require('../lang/isArray'),
     toObject = require('./toObject');
 
@@ -2117,7 +2159,7 @@ function isKey(value, object) {
 
 module.exports = isKey;
 
-},{"../lang/isArray":74,"./toObject":69}],60:[function(require,module,exports){
+},{"../lang/isArray":76,"./toObject":71}],62:[function(require,module,exports){
 /**
  * Used as the [maximum length](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-number.max_safe_integer)
  * of an array-like value.
@@ -2139,7 +2181,7 @@ function isLength(value) {
 
 module.exports = isLength;
 
-},{}],61:[function(require,module,exports){
+},{}],63:[function(require,module,exports){
 /**
  * Checks if `value` is object-like.
  *
@@ -2153,7 +2195,7 @@ function isObjectLike(value) {
 
 module.exports = isObjectLike;
 
-},{}],62:[function(require,module,exports){
+},{}],64:[function(require,module,exports){
 /**
  * Used by `trimmedLeftIndex` and `trimmedRightIndex` to determine if a
  * character code is whitespace.
@@ -2169,7 +2211,7 @@ function isSpace(charCode) {
 
 module.exports = isSpace;
 
-},{}],63:[function(require,module,exports){
+},{}],65:[function(require,module,exports){
 var isObject = require('../lang/isObject');
 
 /**
@@ -2186,7 +2228,7 @@ function isStrictComparable(value) {
 
 module.exports = isStrictComparable;
 
-},{"../lang/isObject":76}],64:[function(require,module,exports){
+},{"../lang/isObject":78}],66:[function(require,module,exports){
 /**
  * Removes `key` and its value from the cache.
  *
@@ -2202,7 +2244,7 @@ function mapDelete(key) {
 
 module.exports = mapDelete;
 
-},{}],65:[function(require,module,exports){
+},{}],67:[function(require,module,exports){
 /**
  * Gets the cached value for `key`.
  *
@@ -2218,7 +2260,7 @@ function mapGet(key) {
 
 module.exports = mapGet;
 
-},{}],66:[function(require,module,exports){
+},{}],68:[function(require,module,exports){
 /** Used for native method references. */
 var objectProto = Object.prototype;
 
@@ -2240,7 +2282,7 @@ function mapHas(key) {
 
 module.exports = mapHas;
 
-},{}],67:[function(require,module,exports){
+},{}],69:[function(require,module,exports){
 /**
  * Sets `value` to `key` of the cache.
  *
@@ -2260,7 +2302,7 @@ function mapSet(key, value) {
 
 module.exports = mapSet;
 
-},{}],68:[function(require,module,exports){
+},{}],70:[function(require,module,exports){
 var isArguments = require('../lang/isArguments'),
     isArray = require('../lang/isArray'),
     isIndex = require('./isIndex'),
@@ -2303,7 +2345,7 @@ function shimKeys(object) {
 
 module.exports = shimKeys;
 
-},{"../lang/isArguments":73,"../lang/isArray":74,"../object/keysIn":79,"./isIndex":57,"./isLength":60}],69:[function(require,module,exports){
+},{"../lang/isArguments":75,"../lang/isArray":76,"../object/keysIn":81,"./isIndex":59,"./isLength":62}],71:[function(require,module,exports){
 var isObject = require('../lang/isObject');
 
 /**
@@ -2319,7 +2361,7 @@ function toObject(value) {
 
 module.exports = toObject;
 
-},{"../lang/isObject":76}],70:[function(require,module,exports){
+},{"../lang/isObject":78}],72:[function(require,module,exports){
 var baseToString = require('./baseToString'),
     isArray = require('../lang/isArray');
 
@@ -2349,7 +2391,7 @@ function toPath(value) {
 
 module.exports = toPath;
 
-},{"../lang/isArray":74,"./baseToString":41}],71:[function(require,module,exports){
+},{"../lang/isArray":76,"./baseToString":43}],73:[function(require,module,exports){
 var isSpace = require('./isSpace');
 
 /**
@@ -2370,7 +2412,7 @@ function trimmedLeftIndex(string) {
 
 module.exports = trimmedLeftIndex;
 
-},{"./isSpace":62}],72:[function(require,module,exports){
+},{"./isSpace":64}],74:[function(require,module,exports){
 var isSpace = require('./isSpace');
 
 /**
@@ -2390,7 +2432,7 @@ function trimmedRightIndex(string) {
 
 module.exports = trimmedRightIndex;
 
-},{"./isSpace":62}],73:[function(require,module,exports){
+},{"./isSpace":64}],75:[function(require,module,exports){
 var isArrayLike = require('../internal/isArrayLike'),
     isObjectLike = require('../internal/isObjectLike');
 
@@ -2428,7 +2470,7 @@ function isArguments(value) {
 
 module.exports = isArguments;
 
-},{"../internal/isArrayLike":56,"../internal/isObjectLike":61}],74:[function(require,module,exports){
+},{"../internal/isArrayLike":58,"../internal/isObjectLike":63}],76:[function(require,module,exports){
 var getNative = require('../internal/getNative'),
     isLength = require('../internal/isLength'),
     isObjectLike = require('../internal/isObjectLike');
@@ -2470,7 +2512,7 @@ var isArray = nativeIsArray || function(value) {
 
 module.exports = isArray;
 
-},{"../internal/getNative":55,"../internal/isLength":60,"../internal/isObjectLike":61}],75:[function(require,module,exports){
+},{"../internal/getNative":57,"../internal/isLength":62,"../internal/isObjectLike":63}],77:[function(require,module,exports){
 var escapeRegExp = require('../string/escapeRegExp'),
     isObjectLike = require('../internal/isObjectLike');
 
@@ -2529,7 +2571,7 @@ function isNative(value) {
 
 module.exports = isNative;
 
-},{"../internal/isObjectLike":61,"../string/escapeRegExp":81}],76:[function(require,module,exports){
+},{"../internal/isObjectLike":63,"../string/escapeRegExp":83}],78:[function(require,module,exports){
 /**
  * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
  * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
@@ -2559,7 +2601,7 @@ function isObject(value) {
 
 module.exports = isObject;
 
-},{}],77:[function(require,module,exports){
+},{}],79:[function(require,module,exports){
 var isLength = require('../internal/isLength'),
     isObjectLike = require('../internal/isObjectLike');
 
@@ -2635,7 +2677,7 @@ function isTypedArray(value) {
 
 module.exports = isTypedArray;
 
-},{"../internal/isLength":60,"../internal/isObjectLike":61}],78:[function(require,module,exports){
+},{"../internal/isLength":62,"../internal/isObjectLike":63}],80:[function(require,module,exports){
 var getNative = require('../internal/getNative'),
     isArrayLike = require('../internal/isArrayLike'),
     isObject = require('../lang/isObject'),
@@ -2682,7 +2724,7 @@ var keys = !nativeKeys ? shimKeys : function(object) {
 
 module.exports = keys;
 
-},{"../internal/getNative":55,"../internal/isArrayLike":56,"../internal/shimKeys":68,"../lang/isObject":76}],79:[function(require,module,exports){
+},{"../internal/getNative":57,"../internal/isArrayLike":58,"../internal/shimKeys":70,"../lang/isObject":78}],81:[function(require,module,exports){
 var isArguments = require('../lang/isArguments'),
     isArray = require('../lang/isArray'),
     isIndex = require('../internal/isIndex'),
@@ -2748,7 +2790,7 @@ function keysIn(object) {
 
 module.exports = keysIn;
 
-},{"../internal/isIndex":57,"../internal/isLength":60,"../lang/isArguments":73,"../lang/isArray":74,"../lang/isObject":76}],80:[function(require,module,exports){
+},{"../internal/isIndex":59,"../internal/isLength":62,"../lang/isArguments":75,"../lang/isArray":76,"../lang/isObject":78}],82:[function(require,module,exports){
 var keys = require('./keys'),
     toObject = require('../internal/toObject');
 
@@ -2783,7 +2825,7 @@ function pairs(object) {
 
 module.exports = pairs;
 
-},{"../internal/toObject":69,"./keys":78}],81:[function(require,module,exports){
+},{"../internal/toObject":71,"./keys":80}],83:[function(require,module,exports){
 var baseToString = require('../internal/baseToString');
 
 /**
@@ -2817,7 +2859,7 @@ function escapeRegExp(string) {
 
 module.exports = escapeRegExp;
 
-},{"../internal/baseToString":41}],82:[function(require,module,exports){
+},{"../internal/baseToString":43}],84:[function(require,module,exports){
 var baseToString = require('../internal/baseToString');
 
 /* Native method references for those with the same name as other `lodash` methods. */
@@ -2855,7 +2897,7 @@ function startsWith(string, target, position) {
 
 module.exports = startsWith;
 
-},{"../internal/baseToString":41}],83:[function(require,module,exports){
+},{"../internal/baseToString":43}],85:[function(require,module,exports){
 var baseToString = require('../internal/baseToString'),
     charsLeftIndex = require('../internal/charsLeftIndex'),
     charsRightIndex = require('../internal/charsRightIndex'),
@@ -2899,7 +2941,7 @@ function trim(string, chars, guard) {
 
 module.exports = trim;
 
-},{"../internal/baseToString":41,"../internal/charsLeftIndex":43,"../internal/charsRightIndex":44,"../internal/isIterateeCall":58,"../internal/trimmedLeftIndex":71,"../internal/trimmedRightIndex":72}],84:[function(require,module,exports){
+},{"../internal/baseToString":43,"../internal/charsLeftIndex":45,"../internal/charsRightIndex":46,"../internal/isIterateeCall":60,"../internal/trimmedLeftIndex":73,"../internal/trimmedRightIndex":74}],86:[function(require,module,exports){
 /**
  * This method returns the first argument provided to it.
  *
@@ -2921,7 +2963,7 @@ function identity(value) {
 
 module.exports = identity;
 
-},{}],85:[function(require,module,exports){
+},{}],87:[function(require,module,exports){
 var baseProperty = require('../internal/baseProperty'),
     basePropertyDeep = require('../internal/basePropertyDeep'),
     isKey = require('../internal/isKey');
@@ -2954,7 +2996,9 @@ function property(path) {
 
 module.exports = property;
 
-},{"../internal/baseProperty":36,"../internal/basePropertyDeep":37,"../internal/isKey":59}],86:[function(require,module,exports){
+},{"../internal/baseProperty":38,"../internal/basePropertyDeep":39,"../internal/isKey":61}],88:[function(require,module,exports){
+'use strict';
+
 // So each country array has the following information:
 // [
 //    Country name,
@@ -2964,9 +3008,7 @@ module.exports = property;
 //    Order (if >1 country with same dial code),
 //    Area codes (if >1 country with same dial code)
 // ]
-"use strict";
-
-var allCountries = [["Afghanistan (‫افغانستان‬‎)", "af", "93"], ["Albania (Shqipëri)", "al", "355"], ["Algeria (‫الجزائر‬‎)", "dz", "213"], ["American Samoa", "as", "1684"], ["Andorra", "ad", "376"], ["Angola", "ao", "244"], ["Anguilla", "ai", "1264"], ["Antigua and Barbuda", "ag", "1268"], ["Argentina", "ar", "54"], ["Armenia (Հայաստան)", "am", "374"], ["Aruba", "aw", "297"], ["Australia", "au", "61", "+.. ... ... ..."], ["Austria (Österreich)", "at", "43"], ["Azerbaijan (Azərbaycan)", "az", "994"], ["Bahamas", "bs", "1242"], ["Bahrain (‫البحرين‬‎)", "bh", "973"], ["Bangladesh (বাংলাদেশ)", "bd", "880"], ["Barbados", "bb", "1246"], ["Belarus (Беларусь)", "by", "375"], ["Belgium (België)", "be", "32", "+.. ... .. .. .."], ["Belize", "bz", "501"], ["Benin (Bénin)", "bj", "229"], ["Bermuda", "bm", "1441"], ["Bhutan (འབྲུག)", "bt", "975"], ["Bolivia", "bo", "591"], ["Bosnia and Herzegovina (Босна и Херцеговина)", "ba", "387"], ["Botswana", "bw", "267"], ["Brazil (Brasil)", "br", "55"], ["British Indian Ocean Territory", "io", "246"], ["British Virgin Islands", "vg", "1284"], ["Brunei", "bn", "673"], ["Bulgaria (България)", "bg", "359"], ["Burkina Faso", "bf", "226"], ["Burundi (Uburundi)", "bi", "257"], ["Cambodia (កម្ពុជា)", "kh", "855"], ["Cameroon (Cameroun)", "cm", "237"], ["Canada", "ca", "1", "+. (...) ...-....", 1, ["204", "236", "249", "250", "289", "306", "343", "365", "387", "403", "416", "418", "431", "437", "438", "450", "506", "514", "519", "548", "579", "581", "587", "604", "613", "639", "647", "672", "705", "709", "742", "778", "780", "782", "807", "819", "825", "867", "873", "902", "905"]], ["Cape Verde (Kabu Verdi)", "cv", "238"], ["Caribbean Netherlands", "bq", "599", "", 1], ["Cayman Islands", "ky", "1345"], ["Central African Republic (République centrafricaine)", "cf", "236"], ["Chad (Tchad)", "td", "235"], ["Chile", "cl", "56"], ["China (中国)", "cn", "86", "+.. ..-........"], ["Colombia", "co", "57"], ["Comoros (‫جزر القمر‬‎)", "km", "269"], ["Congo (DRC) (Jamhuri ya Kidemokrasia ya Kongo)", "cd", "243"], ["Congo (Republic) (Congo-Brazzaville)", "cg", "242"], ["Cook Islands", "ck", "682"], ["Costa Rica", "cr", "506", "+... ....-...."], ["Côte d’Ivoire", "ci", "225"], ["Croatia (Hrvatska)", "hr", "385"], ["Cuba", "cu", "53"], ["Curaçao", "cw", "599", "", 0], ["Cyprus (Κύπρος)", "cy", "357"], ["Czech Republic (Česká republika)", "cz", "420"], ["Denmark (Danmark)", "dk", "45", "+.. .. .. .. .."], ["Djibouti", "dj", "253"], ["Dominica", "dm", "1767"], ["Dominican Republic (República Dominicana)", "do", "1", "", 2, ["809", "829", "849"]], ["Ecuador", "ec", "593"], ["Egypt (‫مصر‬‎)", "eg", "20"], ["El Salvador", "sv", "503", "+... ....-...."], ["Equatorial Guinea (Guinea Ecuatorial)", "gq", "240"], ["Eritrea", "er", "291"], ["Estonia (Eesti)", "ee", "372"], ["Ethiopia", "et", "251"], ["Falkland Islands (Islas Malvinas)", "fk", "500"], ["Faroe Islands (Føroyar)", "fo", "298"], ["Fiji", "fj", "679"], ["Finland (Suomi)", "fi", "358", "+... .. ... .. .."], ["France", "fr", "33", "+.. . .. .. .. .."], ["French Guiana (Guyane française)", "gf", "594"], ["French Polynesia (Polynésie française)", "pf", "689"], ["Gabon", "ga", "241"], ["Gambia", "gm", "220"], ["Georgia (საქართველო)", "ge", "995"], ["Germany (Deutschland)", "de", "49", "+.. ... ......."], ["Ghana (Gaana)", "gh", "233"], ["Gibraltar", "gi", "350"], ["Greece (Ελλάδα)", "gr", "30"], ["Greenland (Kalaallit Nunaat)", "gl", "299"], ["Grenada", "gd", "1473"], ["Guadeloupe", "gp", "590", "", 0], ["Guam", "gu", "1671"], ["Guatemala", "gt", "502", "+... ....-...."], ["Guinea (Guinée)", "gn", "224"], ["Guinea-Bissau (Guiné Bissau)", "gw", "245"], ["Guyana", "gy", "592"], ["Haiti", "ht", "509", "+... ....-...."], ["Honduras", "hn", "504"], ["Hong Kong (香港)", "hk", "852", "+... .... ...."], ["Hungary (Magyarország)", "hu", "36"], ["Iceland (Ísland)", "is", "354", "+... ... ...."], ["India (भारत)", "in", "91", "+.. .....-....."], ["Indonesia", "id", "62"], ["Iran (‫ایران‬‎)", "ir", "98"], ["Iraq (‫العراق‬‎)", "iq", "964"], ["Ireland", "ie", "353", "+... .. ......."], ["Israel (‫ישראל‬‎)", "il", "972"], ["Italy (Italia)", "it", "39", "+.. ... ......", 0], ["Jamaica", "jm", "1876"], ["Japan (日本)", "jp", "81", "+.. ... .. ...."], ["Jordan (‫الأردن‬‎)", "jo", "962"], ["Kazakhstan (Казахстан)", "kz", "7", "+. ... ...-..-..", 1], ["Kenya", "ke", "254"], ["Kiribati", "ki", "686"], ["Kuwait (‫الكويت‬‎)", "kw", "965"], ["Kyrgyzstan (Кыргызстан)", "kg", "996"], ["Laos (ລາວ)", "la", "856"], ["Latvia (Latvija)", "lv", "371"], ["Lebanon (‫لبنان‬‎)", "lb", "961"], ["Lesotho", "ls", "266"], ["Liberia", "lr", "231"], ["Libya (‫ليبيا‬‎)", "ly", "218"], ["Liechtenstein", "li", "423"], ["Lithuania (Lietuva)", "lt", "370"], ["Luxembourg", "lu", "352"], ["Macau (澳門)", "mo", "853"], ["Macedonia (FYROM) (Македонија)", "mk", "389"], ["Madagascar (Madagasikara)", "mg", "261"], ["Malawi", "mw", "265"], ["Malaysia", "my", "60", "+.. ..-....-...."], ["Maldives", "mv", "960"], ["Mali", "ml", "223"], ["Malta", "mt", "356"], ["Marshall Islands", "mh", "692"], ["Martinique", "mq", "596"], ["Mauritania (‫موريتانيا‬‎)", "mr", "222"], ["Mauritius (Moris)", "mu", "230"], ["Mexico (México)", "mx", "52"], ["Micronesia", "fm", "691"], ["Moldova (Republica Moldova)", "md", "373"], ["Monaco", "mc", "377"], ["Mongolia (Монгол)", "mn", "976"], ["Montenegro (Crna Gora)", "me", "382"], ["Montserrat", "ms", "1664"], ["Morocco (‫المغرب‬‎)", "ma", "212"], ["Mozambique (Moçambique)", "mz", "258"], ["Myanmar (Burma) (မြန်မာ)", "mm", "95"], ["Namibia (Namibië)", "na", "264"], ["Nauru", "nr", "674"], ["Nepal (नेपाल)", "np", "977"], ["Netherlands (Nederland)", "nl", "31", "+.. .. ........"], ["New Caledonia (Nouvelle-Calédonie)", "nc", "687"], ["New Zealand", "nz", "64", "+.. ...-...-...."], ["Nicaragua", "ni", "505"], ["Niger (Nijar)", "ne", "227"], ["Nigeria", "ng", "234"], ["Niue", "nu", "683"], ["Norfolk Island", "nf", "672"], ["North Korea (조선 민주주의 인민 공화국)", "kp", "850"], ["Northern Mariana Islands", "mp", "1670"], ["Norway (Norge)", "no", "47", "+.. ... .. ..."], ["Oman (‫عُمان‬‎)", "om", "968"], ["Pakistan (‫پاکستان‬‎)", "pk", "92", "+.. ...-......."], ["Palau", "pw", "680"], ["Palestine (‫فلسطين‬‎)", "ps", "970"], ["Panama (Panamá)", "pa", "507"], ["Papua New Guinea", "pg", "675"], ["Paraguay", "py", "595"], ["Peru (Perú)", "pe", "51"], ["Philippines", "ph", "63", "+.. ... ...."], ["Poland (Polska)", "pl", "48", "+.. ...-...-..."], ["Portugal", "pt", "351"], ["Puerto Rico", "pr", "1", "", 3, ["787", "939"]], ["Qatar (‫قطر‬‎)", "qa", "974"], ["Réunion (La Réunion)", "re", "262"], ["Romania (România)", "ro", "40"], ["Russia (Россия)", "ru", "7", "+. ... ...-..-..", 0], ["Rwanda", "rw", "250"], ["Saint Barthélemy (Saint-Barthélemy)", "bl", "590", "", 1], ["Saint Helena", "sh", "290"], ["Saint Kitts and Nevis", "kn", "1869"], ["Saint Lucia", "lc", "1758"], ["Saint Martin (Saint-Martin (partie française))", "mf", "590", "", 2], ["Saint Pierre and Miquelon (Saint-Pierre-et-Miquelon)", "pm", "508"], ["Saint Vincent and the Grenadines", "vc", "1784"], ["Samoa", "ws", "685"], ["San Marino", "sm", "378"], ["São Tomé and Príncipe (São Tomé e Príncipe)", "st", "239"], ["Saudi Arabia (‫المملكة العربية السعودية‬‎)", "sa", "966"], ["Senegal (Sénégal)", "sn", "221"], ["Serbia (Србија)", "rs", "381"], ["Seychelles", "sc", "248"], ["Sierra Leone", "sl", "232"], ["Singapore", "sg", "65", "+.. ....-...."], ["Sint Maarten", "sx", "1721"], ["Slovakia (Slovensko)", "sk", "421"], ["Slovenia (Slovenija)", "si", "386"], ["Solomon Islands", "sb", "677"], ["Somalia (Soomaaliya)", "so", "252"], ["South Africa", "za", "27"], ["South Korea (대한민국)", "kr", "82"], ["South Sudan (‫جنوب السودان‬‎)", "ss", "211"], ["Spain (España)", "es", "34", "+.. ... ... ..."], ["Sri Lanka (ශ්‍රී ලංකාව)", "lk", "94"], ["Sudan (‫السودان‬‎)", "sd", "249"], ["Suriname", "sr", "597"], ["Swaziland", "sz", "268"], ["Sweden (Sverige)", "se", "46", "+.. .. ... .. .."], ["Switzerland (Schweiz)", "ch", "41", "+.. .. ... .. .."], ["Syria (‫سوريا‬‎)", "sy", "963"], ["Taiwan (台灣)", "tw", "886"], ["Tajikistan", "tj", "992"], ["Tanzania", "tz", "255"], ["Thailand (ไทย)", "th", "66"], ["Timor-Leste", "tl", "670"], ["Togo", "tg", "228"], ["Tokelau", "tk", "690"], ["Tonga", "to", "676"], ["Trinidad and Tobago", "tt", "1868"], ["Tunisia (‫تونس‬‎)", "tn", "216"], ["Turkey (Türkiye)", "tr", "90", "+.. ... ... .. .."], ["Turkmenistan", "tm", "993"], ["Turks and Caicos Islands", "tc", "1649"], ["Tuvalu", "tv", "688"], ["U.S. Virgin Islands", "vi", "1340"], ["Uganda", "ug", "256"], ["Ukraine (Україна)", "ua", "380"], ["United Arab Emirates (‫الإمارات العربية المتحدة‬‎)", "ae", "971"], ["United Kingdom", "gb", "44", "+.. .... ......"], ["United States", "us", "1", "+. (...) ...-....", 0], ["Uruguay", "uy", "598"], ["Uzbekistan (Oʻzbekiston)", "uz", "998"], ["Vanuatu", "vu", "678"], ["Vatican City (Città del Vaticano)", "va", "39", "+.. .. .... ....", 1], ["Venezuela", "ve", "58"], ["Vietnam (Việt Nam)", "vn", "84"], ["Wallis and Futuna", "wf", "681"], ["Yemen (‫اليمن‬‎)", "ye", "967"], ["Zambia", "zm", "260"], ["Zimbabwe", "zw", "263"]];
+var allCountries = [['Afghanistan (‫افغانستان‬‎)', 'af', '93'], ['Albania (Shqipëri)', 'al', '355'], ['Algeria (‫الجزائر‬‎)', 'dz', '213'], ['American Samoa', 'as', '1684'], ['Andorra', 'ad', '376'], ['Angola', 'ao', '244'], ['Anguilla', 'ai', '1264'], ['Antigua and Barbuda', 'ag', '1268'], ['Argentina', 'ar', '54'], ['Armenia (Հայաստան)', 'am', '374'], ['Aruba', 'aw', '297'], ['Australia', 'au', '61', '+.. ... ... ...'], ['Austria (Österreich)', 'at', '43'], ['Azerbaijan (Azərbaycan)', 'az', '994'], ['Bahamas', 'bs', '1242'], ['Bahrain (‫البحرين‬‎)', 'bh', '973'], ['Bangladesh (বাংলাদেশ)', 'bd', '880'], ['Barbados', 'bb', '1246'], ['Belarus (Беларусь)', 'by', '375'], ['Belgium (België)', 'be', '32', '+.. ... .. .. ..'], ['Belize', 'bz', '501'], ['Benin (Bénin)', 'bj', '229'], ['Bermuda', 'bm', '1441'], ['Bhutan (འབྲུག)', 'bt', '975'], ['Bolivia', 'bo', '591'], ['Bosnia and Herzegovina (Босна и Херцеговина)', 'ba', '387'], ['Botswana', 'bw', '267'], ['Brazil (Brasil)', 'br', '55'], ['British Indian Ocean Territory', 'io', '246'], ['British Virgin Islands', 'vg', '1284'], ['Brunei', 'bn', '673'], ['Bulgaria (България)', 'bg', '359'], ['Burkina Faso', 'bf', '226'], ['Burundi (Uburundi)', 'bi', '257'], ['Cambodia (កម្ពុជា)', 'kh', '855'], ['Cameroon (Cameroun)', 'cm', '237'], ['Canada', 'ca', '1', '+. (...) ...-....', 1, ['204', '236', '249', '250', '289', '306', '343', '365', '387', '403', '416', '418', '431', '437', '438', '450', '506', '514', '519', '548', '579', '581', '587', '604', '613', '639', '647', '672', '705', '709', '742', '778', '780', '782', '807', '819', '825', '867', '873', '902', '905']], ['Cape Verde (Kabu Verdi)', 'cv', '238'], ['Caribbean Netherlands', 'bq', '599', '', 1], ['Cayman Islands', 'ky', '1345'], ['Central African Republic (République centrafricaine)', 'cf', '236'], ['Chad (Tchad)', 'td', '235'], ['Chile', 'cl', '56'], ['China (中国)', 'cn', '86', '+.. ..-........'], ['Colombia', 'co', '57'], ['Comoros (‫جزر القمر‬‎)', 'km', '269'], ['Congo (DRC) (Jamhuri ya Kidemokrasia ya Kongo)', 'cd', '243'], ['Congo (Republic) (Congo-Brazzaville)', 'cg', '242'], ['Cook Islands', 'ck', '682'], ['Costa Rica', 'cr', '506', '+... ....-....'], ['Côte d’Ivoire', 'ci', '225'], ['Croatia (Hrvatska)', 'hr', '385'], ['Cuba', 'cu', '53'], ['Curaçao', 'cw', '599', '', 0], ['Cyprus (Κύπρος)', 'cy', '357'], ['Czech Republic (Česká republika)', 'cz', '420'], ['Denmark (Danmark)', 'dk', '45', '+.. .. .. .. ..'], ['Djibouti', 'dj', '253'], ['Dominica', 'dm', '1767'], ['Dominican Republic (República Dominicana)', 'do', '1', '', 2, ['809', '829', '849']], ['Ecuador', 'ec', '593'], ['Egypt (‫مصر‬‎)', 'eg', '20'], ['El Salvador', 'sv', '503', '+... ....-....'], ['Equatorial Guinea (Guinea Ecuatorial)', 'gq', '240'], ['Eritrea', 'er', '291'], ['Estonia (Eesti)', 'ee', '372'], ['Ethiopia', 'et', '251'], ['Falkland Islands (Islas Malvinas)', 'fk', '500'], ['Faroe Islands (Føroyar)', 'fo', '298'], ['Fiji', 'fj', '679'], ['Finland (Suomi)', 'fi', '358', '+... .. ... .. ..'], ['France', 'fr', '33', '+.. . .. .. .. ..'], ['French Guiana (Guyane française)', 'gf', '594'], ['French Polynesia (Polynésie française)', 'pf', '689'], ['Gabon', 'ga', '241'], ['Gambia', 'gm', '220'], ['Georgia (საქართველო)', 'ge', '995'], ['Germany (Deutschland)', 'de', '49', '+.. ... .......'], ['Ghana (Gaana)', 'gh', '233'], ['Gibraltar', 'gi', '350'], ['Greece (Ελλάδα)', 'gr', '30'], ['Greenland (Kalaallit Nunaat)', 'gl', '299'], ['Grenada', 'gd', '1473'], ['Guadeloupe', 'gp', '590', '', 0], ['Guam', 'gu', '1671'], ['Guatemala', 'gt', '502', '+... ....-....'], ['Guinea (Guinée)', 'gn', '224'], ['Guinea-Bissau (Guiné Bissau)', 'gw', '245'], ['Guyana', 'gy', '592'], ['Haiti', 'ht', '509', '+... ....-....'], ['Honduras', 'hn', '504'], ['Hong Kong (香港)', 'hk', '852', '+... .... ....'], ['Hungary (Magyarország)', 'hu', '36'], ['Iceland (Ísland)', 'is', '354', '+... ... ....'], ['India (भारत)', 'in', '91', '+.. .....-.....'], ['Indonesia', 'id', '62'], ['Iran (‫ایران‬‎)', 'ir', '98'], ['Iraq (‫العراق‬‎)', 'iq', '964'], ['Ireland', 'ie', '353', '+... .. .......'], ['Israel (‫ישראל‬‎)', 'il', '972'], ['Italy (Italia)', 'it', '39', '+.. ... ......', 0], ['Jamaica', 'jm', '1876'], ['Japan (日本)', 'jp', '81', '+.. ... .. ....'], ['Jordan (‫الأردن‬‎)', 'jo', '962'], ['Kazakhstan (Казахстан)', 'kz', '7', '+. ... ...-..-..', 1], ['Kenya', 'ke', '254'], ['Kiribati', 'ki', '686'], ['Kuwait (‫الكويت‬‎)', 'kw', '965'], ['Kyrgyzstan (Кыргызстан)', 'kg', '996'], ['Laos (ລາວ)', 'la', '856'], ['Latvia (Latvija)', 'lv', '371'], ['Lebanon (‫لبنان‬‎)', 'lb', '961'], ['Lesotho', 'ls', '266'], ['Liberia', 'lr', '231'], ['Libya (‫ليبيا‬‎)', 'ly', '218'], ['Liechtenstein', 'li', '423'], ['Lithuania (Lietuva)', 'lt', '370'], ['Luxembourg', 'lu', '352'], ['Macau (澳門)', 'mo', '853'], ['Macedonia (FYROM) (Македонија)', 'mk', '389'], ['Madagascar (Madagasikara)', 'mg', '261'], ['Malawi', 'mw', '265'], ['Malaysia', 'my', '60', '+.. ..-....-....'], ['Maldives', 'mv', '960'], ['Mali', 'ml', '223'], ['Malta', 'mt', '356'], ['Marshall Islands', 'mh', '692'], ['Martinique', 'mq', '596'], ['Mauritania (‫موريتانيا‬‎)', 'mr', '222'], ['Mauritius (Moris)', 'mu', '230'], ['Mexico (México)', 'mx', '52'], ['Micronesia', 'fm', '691'], ['Moldova (Republica Moldova)', 'md', '373'], ['Monaco', 'mc', '377'], ['Mongolia (Монгол)', 'mn', '976'], ['Montenegro (Crna Gora)', 'me', '382'], ['Montserrat', 'ms', '1664'], ['Morocco (‫المغرب‬‎)', 'ma', '212'], ['Mozambique (Moçambique)', 'mz', '258'], ['Myanmar (Burma) (မြန်မာ)', 'mm', '95'], ['Namibia (Namibië)', 'na', '264'], ['Nauru', 'nr', '674'], ['Nepal (नेपाल)', 'np', '977'], ['Netherlands (Nederland)', 'nl', '31', '+.. .. ........'], ['New Caledonia (Nouvelle-Calédonie)', 'nc', '687'], ['New Zealand', 'nz', '64', '+.. ...-...-....'], ['Nicaragua', 'ni', '505'], ['Niger (Nijar)', 'ne', '227'], ['Nigeria', 'ng', '234'], ['Niue', 'nu', '683'], ['Norfolk Island', 'nf', '672'], ['North Korea (조선 민주주의 인민 공화국)', 'kp', '850'], ['Northern Mariana Islands', 'mp', '1670'], ['Norway (Norge)', 'no', '47', '+.. ... .. ...'], ['Oman (‫عُمان‬‎)', 'om', '968'], ['Pakistan (‫پاکستان‬‎)', 'pk', '92', '+.. ...-.......'], ['Palau', 'pw', '680'], ['Palestine (‫فلسطين‬‎)', 'ps', '970'], ['Panama (Panamá)', 'pa', '507'], ['Papua New Guinea', 'pg', '675'], ['Paraguay', 'py', '595'], ['Peru (Perú)', 'pe', '51'], ['Philippines', 'ph', '63', '+.. ... ....'], ['Poland (Polska)', 'pl', '48', '+.. ...-...-...'], ['Portugal', 'pt', '351'], ['Puerto Rico', 'pr', '1', '', 3, ['787', '939']], ['Qatar (‫قطر‬‎)', 'qa', '974'], ['Réunion (La Réunion)', 're', '262'], ['Romania (România)', 'ro', '40'], ['Russia (Россия)', 'ru', '7', '+. ... ...-..-..', 0], ['Rwanda', 'rw', '250'], ['Saint Barthélemy (Saint-Barthélemy)', 'bl', '590', '', 1], ['Saint Helena', 'sh', '290'], ['Saint Kitts and Nevis', 'kn', '1869'], ['Saint Lucia', 'lc', '1758'], ['Saint Martin (Saint-Martin (partie française))', 'mf', '590', '', 2], ['Saint Pierre and Miquelon (Saint-Pierre-et-Miquelon)', 'pm', '508'], ['Saint Vincent and the Grenadines', 'vc', '1784'], ['Samoa', 'ws', '685'], ['San Marino', 'sm', '378'], ['São Tomé and Príncipe (São Tomé e Príncipe)', 'st', '239'], ['Saudi Arabia (‫المملكة العربية السعودية‬‎)', 'sa', '966'], ['Senegal (Sénégal)', 'sn', '221'], ['Serbia (Србија)', 'rs', '381'], ['Seychelles', 'sc', '248'], ['Sierra Leone', 'sl', '232'], ['Singapore', 'sg', '65', '+.. ....-....'], ['Sint Maarten', 'sx', '1721'], ['Slovakia (Slovensko)', 'sk', '421'], ['Slovenia (Slovenija)', 'si', '386'], ['Solomon Islands', 'sb', '677'], ['Somalia (Soomaaliya)', 'so', '252'], ['South Africa', 'za', '27'], ['South Korea (대한민국)', 'kr', '82'], ['South Sudan (‫جنوب السودان‬‎)', 'ss', '211'], ['Spain (España)', 'es', '34', '+.. ... ... ...'], ['Sri Lanka (ශ්‍රී ලංකාව)', 'lk', '94'], ['Sudan (‫السودان‬‎)', 'sd', '249'], ['Suriname', 'sr', '597'], ['Swaziland', 'sz', '268'], ['Sweden (Sverige)', 'se', '46', '+.. .. ... .. ..'], ['Switzerland (Schweiz)', 'ch', '41', '+.. .. ... .. ..'], ['Syria (‫سوريا‬‎)', 'sy', '963'], ['Taiwan (台灣)', 'tw', '886'], ['Tajikistan', 'tj', '992'], ['Tanzania', 'tz', '255'], ['Thailand (ไทย)', 'th', '66'], ['Timor-Leste', 'tl', '670'], ['Togo', 'tg', '228'], ['Tokelau', 'tk', '690'], ['Tonga', 'to', '676'], ['Trinidad and Tobago', 'tt', '1868'], ['Tunisia (‫تونس‬‎)', 'tn', '216'], ['Turkey (Türkiye)', 'tr', '90', '+.. ... ... .. ..'], ['Turkmenistan', 'tm', '993'], ['Turks and Caicos Islands', 'tc', '1649'], ['Tuvalu', 'tv', '688'], ['U.S. Virgin Islands', 'vi', '1340'], ['Uganda', 'ug', '256'], ['Ukraine (Україна)', 'ua', '380'], ['United Arab Emirates (‫الإمارات العربية المتحدة‬‎)', 'ae', '971'], ['United Kingdom', 'gb', '44', '+.. .... ......'], ['United States', 'us', '1', '+. (...) ...-....', 0], ['Uruguay', 'uy', '598'], ['Uzbekistan (Oʻzbekiston)', 'uz', '998'], ['Vanuatu', 'vu', '678'], ['Vatican City (Città del Vaticano)', 'va', '39', '+.. .. .... ....', 1], ['Venezuela', 've', '58'], ['Vietnam (Việt Nam)', 'vn', '84'], ['Wallis and Futuna', 'wf', '681'], ['Yemen (‫اليمن‬‎)', 'ye', '967'], ['Zambia', 'zm', '260'], ['Zimbabwe', 'zw', '263']];
 
 // we will build this in the loop below
 var allCountryCodes = {};
@@ -3023,13 +3065,9 @@ module.exports = {
 };
 
 },{}],"react-telephone-input":[function(require,module,exports){
-/**
- * @jsx React.DOM
- */
+'use strict';
 
 // TODO - fix the onlyContries props. Currently expects that as an array of country object, but users should be able to send in array of country isos
-
-'use strict';
 
 var some = require('lodash/collection/some');
 var findWhere = require('lodash/collection/findWhere');
@@ -3085,20 +3123,9 @@ var ReactTelephoneInput = React.createClass({
 
     mixins: [onClickOutside],
     getInitialState: function getInitialState() {
-        var selectedCountryGuess,
-            selectedCountryGuessIndex,
-            inputNumber = this.props.value || '';
-
-        if (trim(inputNumber) !== '') {
-            selectedCountryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, ''));
-            if (!selectedCountryGuess || !selectedCountryGuess.name) {
-                selectedCountryGuess = findWhere(allCountries, { iso2: this.props.defaultCountry }) || this.props.onlyCountries[0];
-            }
-        } else {
-            selectedCountryGuess = findWhere(allCountries, { iso2: this.props.defaultCountry }) || this.props.onlyCountries[0];
-        }
-
-        selectedCountryGuessIndex = findIndex(allCountries, selectedCountryGuess);
+        var inputNumber = this.props.value || '';
+        var selectedCountryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, ''));
+        var selectedCountryGuessIndex = findIndex(allCountries, selectedCountryGuess);
         var formattedNumber = this.formatNumber(inputNumber.replace(/\D/g, ''), selectedCountryGuess ? selectedCountryGuess.format : null);
         var preferredCountries = [];
 
@@ -3111,13 +3138,12 @@ var ReactTelephoneInput = React.createClass({
         return {
             preferredCountries: preferredCountries,
             selectedCountry: selectedCountryGuess,
-            // highlightCountry: selectedCountryGuess,
             highlightCountryIndex: selectedCountryGuessIndex,
             formattedNumber: formattedNumber,
             showDropDown: false,
             queryString: '',
             freezeSelection: false,
-            debouncedQueryStingSearcher: debounce(this.searchCountry, 300)
+            debouncedQueryStingSearcher: debounce(this.searchCountry, 100)
         };
     },
     propTypes: {
@@ -3150,17 +3176,23 @@ var ReactTelephoneInput = React.createClass({
 
         this._cursorToEnd();
 
-        this.props.onChange && this.props.onChange(this.state.formattedNumber);
+        if (typeof this.props.onChange === 'function') {
+            this.props.onChange(this.state.formattedNumber);
+        }
     },
     componentWillUnmount: function componentWillUnmount() {
         document.removeEventListener('keydown', this.handleKeydown);
     },
     scrollTo: function scrollTo(country, middle) {
-        if (!country) return;
+        if (!country) {
+            return;
+        }
 
         var container = this.refs.flagDropdownList.getDOMNode();
 
-        if (!container) return;
+        if (!container) {
+            return;
+        }
 
         var containerHeight = container.offsetHeight;
         var containerOffset = container.getBoundingClientRect();
@@ -3202,21 +3234,21 @@ var ReactTelephoneInput = React.createClass({
             return '+' + text;
         }
 
-        var formattedObject = reduce(pattern, function (formattedObject, character, key) {
-            if (formattedObject.remainingText.length === 0) {
-                return formattedObject;
+        var formattedObject = reduce(pattern, function (acc, character) {
+            if (acc.remainingText.length === 0) {
+                return acc;
             }
 
             if (character !== '.') {
                 return {
-                    formattedText: formattedObject.formattedText + character,
-                    remainingText: formattedObject.remainingText
+                    formattedText: acc.formattedText + character,
+                    remainingText: acc.remainingText
                 };
             }
 
             return {
-                formattedText: formattedObject.formattedText + first(formattedObject.remainingText),
-                remainingText: rest(formattedObject.remainingText)
+                formattedText: acc.formattedText + first(acc.remainingText),
+                remainingText: rest(acc.remainingText)
             };
         }, { formattedText: '', remainingText: text.split('') });
         return formattedObject.formattedText + formattedObject.remainingText.join('');
@@ -3233,34 +3265,45 @@ var ReactTelephoneInput = React.createClass({
     },
     // memoize results based on the first 5/6 characters. That is all that matters
     guessSelectedCountry: memoize(function (inputNumber) {
-        return reduce(this.props.onlyCountries, function (selectedCountry, country) {
-            if (startsWith(inputNumber, country.dialCode)) {
-                if (country.dialCode.length > selectedCountry.dialCode.length) {
-                    return country;
+        var secondBestGuess = findWhere(allCountries, { iso2: this.props.defaultCountry }) || this.props.onlyCountries[0];
+        if (trim(inputNumber) !== '') {
+            var bestGuess = reduce(this.props.onlyCountries, function (selectedCountry, country) {
+                if (startsWith(inputNumber, country.dialCode)) {
+                    if (country.dialCode.length > selectedCountry.dialCode.length) {
+                        return country;
+                    }
+                    if (country.dialCode.length === selectedCountry.dialCode.length && country.priority < selectedCountry.priority) {
+                        return country;
+                    }
                 }
-                if (country.dialCode.length === selectedCountry.dialCode.length && country.priority < selectedCountry.priority) {
-                    return country;
-                }
-            }
 
-            return selectedCountry;
-        }, { dialCode: '', priority: 10001 }, this);
+                return selectedCountry;
+            }, { dialCode: '', priority: 10001 }, this);
+        } else {
+            return secondBestGuess;
+        }
+
+        if (!bestGuess.name) {
+            return secondBestGuess;
+        }
+
+        return bestGuess;
     }),
     getElement: function getElement(index) {
         return this.refs['flag_no_' + index].getDOMNode();
     },
     handleFlagDropdownClick: function handleFlagDropdownClick() {
+        var _this = this;
+
         // need to put the highlight on the current selected country if the dropdown is going to open up
-        var self = this;
         this.setState({
             showDropDown: !this.state.showDropDown,
             highlightCountry: findWhere(this.props.onlyCountries, this.state.selectedCountry),
             highlightCountryIndex: findIndex(this.props.onlyCountries, this.state.selectedCountry)
         }, function () {
-            self.scrollTo(self.getElement(self.state.highlightCountryIndex + self.state.preferredCountries.length));
+            _this.scrollTo(_this.getElement(_this.state.highlightCountryIndex + _this.state.preferredCountries.length));
         });
     },
-    // TODO: handle
     handleInput: function handleInput(event) {
 
         var formattedNumber = '+',
@@ -3273,7 +3316,11 @@ var ReactTelephoneInput = React.createClass({
         }
 
         // ie hack
-        event.preventDefault ? event.preventDefault() : event.returnValue = false;
+        if (event.preventDefault) {
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
 
         if (event.target.value.length > 0) {
             // before entering the number in new format, lets check if the dial code now matches some other country
@@ -3316,7 +3363,7 @@ var ReactTelephoneInput = React.createClass({
     handleInputClick: function handleInputClick() {
         this.setState({ showDropDown: false });
     },
-    handleFlagItemClick: function handleFlagItemClick(country, event) {
+    handleFlagItemClick: function handleFlagItemClick(country) {
         var currentSelectedCountry = this.state.selectedCountry;
         // var nextSelectedCountry = this.props.onlyCountries[countryIndex];
         var nextSelectedCountry = findWhere(this.props.onlyCountries, country);
@@ -3330,7 +3377,9 @@ var ReactTelephoneInput = React.createClass({
             formattedNumber: formattedNumber
         }, function () {
             this._cursorToEnd();
-            this.props.onChange && this.props.onChange(formattedNumber);
+            if (this.props.onChange) {
+                this.props.onChange(formattedNumber);
+            }
         });
     },
     handleInputFocus: function handleInputFocus() {
@@ -3339,10 +3388,13 @@ var ReactTelephoneInput = React.createClass({
             this.setState({ formattedNumber: '+' + this.state.selectedCountry.dialCode });
         }
     },
-    _findIndexOfCountry: function _findIndexOfCountry(allCountries, countryToFind, startIndex) {
-        if (!startIndex) startIndex = 0;
-        for (var i = startIndex; i < allCountries.length; i++) {
-            if (allCountries[i].iso2 === countryToFind.iso2) {
+    _findIndexOfCountry: function _findIndexOfCountry(allTheCountries, countryToFind, startIndex) {
+        if (!startIndex) {
+            startIndex = 0;
+        }
+
+        for (var i = startIndex; i < allTheCountries.length; i++) {
+            if (allTheCountries[i].iso2 === countryToFind.iso2) {
                 return i;
             }
         }
@@ -3386,13 +3438,19 @@ var ReactTelephoneInput = React.createClass({
         }
 
         // ie hack
-        event.preventDefault ? event.preventDefault() : event.returnValue = false;
-        var self = this;
+        if (event.preventDefault) {
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
+
         function _moveHighlight(direction) {
-            self.setState({
-                highlightCountryIndex: self._getHighlightCountryIndex(direction)
+            var _this2 = this;
+
+            this.setState({
+                highlightCountryIndex: this._getHighlightCountryIndex(direction)
             }, function () {
-                self.scrollTo(self.getElement(self.state.highlightCountryIndex), true);
+                _this2.scrollTo(_this2.getElement(_this2.state.highlightCountryIndex), true);
             });
         }
 
@@ -3425,18 +3483,42 @@ var ReactTelephoneInput = React.createClass({
             showDropDown: false
         });
     },
-    handleClickOutside: function handleClickOutside(event) {
-        var target = event.target;
-
+    handleClickOutside: function handleClickOutside() {
         if (this.state.showDropDown) {
             this.handleBlur();
         }
     },
-    render: function render() {
+    getCountryDropDownList: function getCountryDropDownList() {
         var dropDownClasses = classNames({
             'country-list': true,
             'hide': !this.state.showDropDown
         });
+
+        var countryDropDownList = map(this.state.preferredCountries.concat(this.props.onlyCountries), function (country, index) {
+            var itemClasses = classNames({
+                country: true,
+                preferred: country.iso2 === 'us' || country.iso2 === 'gb',
+                active: country.iso2 === 'us',
+                highlight: this.state.highlightCountryIndex === index
+            });
+
+            return React.createElement('li', {
+                ref: 'flag_no_' + index,
+                key: 'flag_no_' + index,
+                'data-flag-key': 'flag_no_' + index,
+                className: itemClasses,
+                'data-dial-code': '1',
+                'data-country-code': country.iso2,
+                onClick: this.handleFlagItemClick.bind(this, country) }, React.createElement('div', { className: 'flag ' + country.iso2 }), React.createElement('span', { className: 'country-name' }, country.name), React.createElement('span', { className: 'dial-code' }, '+' + country.dialCode));
+        }, this);
+
+        var dashedLi = React.createElement('li', { key: 'dashes', className: 'divider' });
+        // let's insert a dashed line in between preffered countries and the rest
+        countryDropDownList.splice(this.state.preferredCountries.length, 0, dashedLi);
+
+        return React.createElement('ul', { ref: 'flagDropdownList', className: dropDownClasses }, countryDropDownList);
+    },
+    render: function render() {
         var arrowClasses = classNames({
             'arrow': true,
             'up': this.state.showDropDown
@@ -3446,83 +3528,24 @@ var ReactTelephoneInput = React.createClass({
             'invalid-number': !this.props.isValid(this.state.formattedNumber.replace(/\D/g, ''))
         });
 
-        var dashedLi = React.createElement('li', { key: 'dashes', className: 'divider' });
-
-        var countryDropDownList = map(this.state.preferredCountries.concat(this.props.onlyCountries), function (country, index) {
-            var itemClasses = classNames({
-                'country': true,
-                'preferred': country.iso2 === 'us' || country.iso2 === 'gb',
-                'active': country.iso2 === 'us',
-                'highlight': this.state.highlightCountryIndex === index
-            });
-
-            return React.createElement(
-                'li',
-                {
-                    ref: 'flag_no_' + index,
-                    key: 'flag_no_' + index,
-                    'data-flag-key': 'flag_no_' + index,
-                    className: itemClasses,
-                    'data-dial-code': '1',
-                    'data-country-code': country.iso2,
-                    onClick: this.handleFlagItemClick.bind(this, country) },
-                React.createElement('div', { className: 'flag ' + country.iso2 }),
-                React.createElement(
-                    'span',
-                    { className: 'country-name' },
-                    country.name
-                ),
-                React.createElement(
-                    'span',
-                    { className: 'dial-code' },
-                    '+' + country.dialCode
-                )
-            );
-        }, this);
-
-        // let's insert a dashed line in between preffered countries and the rest
-        countryDropDownList.splice(this.state.preferredCountries.length, 0, dashedLi);
-
         var flagViewClasses = classNames({
             'flag-dropdown': true,
             'open-dropdown': this.state.showDropDown
         });
 
-        return React.createElement(
-            'div',
-            { className: 'react-tel-input' },
-            React.createElement('input', {
-                onChange: this.handleInput,
-                onClick: this.handleInputClick,
-                onFocus: this.handleInputFocus,
-                onKeyDown: this.handleInputKeyDown,
-                value: this.state.formattedNumber,
-                ref: 'numberInput',
-                type: 'tel',
-                className: inputClasses,
-                placeholder: '+1 (702) 123-4567' }),
-            React.createElement(
-                'div',
-                { ref: 'flagDropDownButton', className: flagViewClasses, onKeyDown: this.handleKeydown },
-                React.createElement(
-                    'div',
-                    { ref: 'selectedFlag', onClick: this.handleFlagDropdownClick, className: 'selected-flag', title: this.state.selectedCountry.name + ': +' + this.state.selectedCountry.dialCode },
-                    React.createElement(
-                        'div',
-                        { className: 'flag ' + this.state.selectedCountry.iso2 },
-                        React.createElement('div', { className: arrowClasses })
-                    )
-                ),
-                React.createElement(
-                    'ul',
-                    { ref: 'flagDropdownList', className: dropDownClasses },
-                    countryDropDownList
-                )
-            )
-        );
+        return React.createElement('div', { className: 'react-tel-input' }, React.createElement('input', {
+            onChange: this.handleInput,
+            onClick: this.handleInputClick,
+            onFocus: this.handleInputFocus,
+            onKeyDown: this.handleInputKeyDown,
+            value: this.state.formattedNumber,
+            ref: 'numberInput',
+            type: 'tel',
+            className: inputClasses,
+            placeholder: '+1 (702) 123-4567' }), React.createElement('div', { ref: 'flagDropDownButton', className: flagViewClasses, onKeyDown: this.handleKeydown }, React.createElement('div', { ref: 'selectedFlag', onClick: this.handleFlagDropdownClick, className: 'selected-flag', title: '' + this.state.selectedCountry.name + ': + ' + this.state.selectedCountry.dialCode }, React.createElement('div', { className: 'flag ' + this.state.selectedCountry.iso2 }, React.createElement('div', { className: arrowClasses }))), this.state.showDropDown ? this.getCountryDropDownList() : ''));
     }
 });
 
 module.exports = ReactTelephoneInput;
 
-},{"../less/default.less":1,"./country_data":86,"classnames":undefined,"lodash/array/findIndex":3,"lodash/array/first":4,"lodash/array/rest":6,"lodash/collection/any":7,"lodash/collection/filter":8,"lodash/collection/findWhere":10,"lodash/collection/map":11,"lodash/collection/reduce":12,"lodash/collection/some":13,"lodash/function/debounce":15,"lodash/function/memoize":16,"lodash/string/startsWith":82,"lodash/string/trim":83,"react":undefined,"react-onclickoutside":undefined}]},{},[]);
+},{"../less/default.less":1,"./country_data":88,"classnames":undefined,"lodash/array/findIndex":5,"lodash/array/first":6,"lodash/array/rest":8,"lodash/collection/any":9,"lodash/collection/filter":10,"lodash/collection/findWhere":12,"lodash/collection/map":13,"lodash/collection/reduce":14,"lodash/collection/some":15,"lodash/function/debounce":17,"lodash/function/memoize":18,"lodash/string/startsWith":84,"lodash/string/trim":85,"react":undefined,"react-onclickoutside":undefined}]},{},[]);
