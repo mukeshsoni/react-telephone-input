@@ -3068,6 +3068,14 @@ module.exports = {
 (function (global){
 'use strict';
 
+function _toConsumableArray(arr) {
+    if (Array.isArray(arr)) {
+        for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];return arr2;
+    } else {
+        return Array.from(arr);
+    }
+}
+
 // TODO - fix the onlyContries props. Currently expects that as an array of country object, but users should be able to send in array of country isos
 
 var some = require('lodash/collection/some');
@@ -3309,7 +3317,6 @@ var ReactTelephoneInput = React.createClass({
         });
     },
     handleInput: function handleInput(event) {
-
         var formattedNumber = '+',
             newSelectedCountry = this.state.selectedCountry,
             freezeSelection = this.state.freezeSelection;
@@ -3370,38 +3377,31 @@ var ReactTelephoneInput = React.createClass({
     handleFlagItemClick: function handleFlagItemClick(country) {
         var currentSelectedCountry = this.state.selectedCountry;
         var nextSelectedCountry = findWhere(this.props.onlyCountries, country);
-        var newNumber = this.state.formattedNumber.replace(currentSelectedCountry.dialCode, nextSelectedCountry.dialCode);
-        var formattedNumber = this.formatNumber(newNumber.replace(/\D/g, ''), nextSelectedCountry.format);
 
-        this.setState({
-            showDropDown: false,
-            selectedCountry: nextSelectedCountry,
-            freezeSelection: true,
-            formattedNumber: formattedNumber
-        }, function () {
-            this._cursorToEnd();
-            if (this.props.onChange) {
-                this.props.onChange(formattedNumber);
-            }
-        });
+        // tiny optimization
+        if (currentSelectedCountry.iso2 !== nextSelectedCountry.iso2) {
+            // TODO - the below replacement is a bug. It will replace stuff from middle too
+            var newNumber = this.state.formattedNumber.replace(currentSelectedCountry.dialCode, nextSelectedCountry.dialCode);
+            var formattedNumber = this.formatNumber(newNumber.replace(/\D/g, ''), nextSelectedCountry.format);
+
+            this.setState({
+                showDropDown: false,
+                selectedCountry: nextSelectedCountry,
+                freezeSelection: true,
+                formattedNumber: formattedNumber
+            }, function () {
+                this._cursorToEnd();
+                if (this.props.onChange) {
+                    this.props.onChange(formattedNumber);
+                }
+            });
+        }
     },
     handleInputFocus: function handleInputFocus() {
         // if the input is blank, insert dial code of the selected country
         if (this.refs.numberInput.getDOMNode().value === '+') {
             this.setState({ formattedNumber: '+' + this.state.selectedCountry.dialCode });
         }
-    },
-    _findIndexOfCountry: function _findIndexOfCountry(allTheCountries, countryToFind, startIndex) {
-        if (!startIndex) {
-            startIndex = 0;
-        }
-
-        for (var i = startIndex; i < allTheCountries.length; i++) {
-            if (allTheCountries[i].iso2 === countryToFind.iso2) {
-                return i;
-            }
-        }
-        return -1;
     },
     _getHighlightCountryIndex: function _getHighlightCountryIndex(direction) {
         // had to write own function because underscore does not have findIndex. lodash has it
@@ -3481,23 +3481,16 @@ var ReactTelephoneInput = React.createClass({
             this.props.onEnterKeyPress(event);
         }
     },
-    handleBlur: function handleBlur() {
-        this.setState({
-            showDropDown: false
-        });
-    },
     handleClickOutside: function handleClickOutside() {
         if (this.state.showDropDown) {
-            this.handleBlur();
+            this.setState({
+                showDropDown: false
+            });
         }
     },
     getCountryDropDownList: function getCountryDropDownList() {
-        var dropDownClasses = classNames({
-            'country-list': true,
-            'hide': !this.state.showDropDown
-        });
 
-        var countryDropDownList = map(this.state.preferredCountries.concat(this.props.onlyCountries), function (country, index) {
+        var countryDropDownList = map([this.state.preferredCountries].concat(_toConsumableArray(this.props.onlyCountries)), function (country, index) {
             var itemClasses = classNames({
                 country: true,
                 preferred: country.iso2 === 'us' || country.iso2 === 'gb',
@@ -3519,6 +3512,10 @@ var ReactTelephoneInput = React.createClass({
         // let's insert a dashed line in between preffered countries and the rest
         countryDropDownList.splice(this.state.preferredCountries.length, 0, dashedLi);
 
+        var dropDownClasses = classNames({
+            'country-list': true,
+            'hide': !this.state.showDropDown
+        });
         return React.createElement('ul', { ref: 'flagDropdownList', className: dropDownClasses }, countryDropDownList);
     },
     render: function render() {

@@ -2,3 +2,4 @@ node_modules
 .module-cache
 npm-debug.log
 lib
+.publish
