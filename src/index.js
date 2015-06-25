@@ -93,6 +93,7 @@ var ReactTelephoneInput = React.createClass({
             onlyCountries: allCountries,
             defaultCountry: allCountries[0].iso2,
             isValid: isNumberValid,
+            flagsImagePath: 'flags.png',
             onEnterKeyPress: function () {}
         };
     },
@@ -102,11 +103,16 @@ var ReactTelephoneInput = React.createClass({
     getValue() {
         return this.getNumber();
     },
+    setFlagPathForFlagCssClass() {
+        var node = document.createElement('style');
+        node.innerHTML = `.flag{background:url(${this.props.flagsImagePath})`;
+        document.body.appendChild(node);
+    },
     componentDidMount() {
         document.addEventListener('keydown', this.handleKeydown);
 
         this._cursorToEnd();
-
+        this.setFlagPathForFlagCssClass();
         if(typeof this.props.onChange === 'function') {
             this.props.onChange(this.state.formattedNumber);
         }
