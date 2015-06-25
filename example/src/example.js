@@ -1,8 +1,10 @@
+'use strict';
+
 var React = require('react');
 var ReactTelephoneInput = require('react-telephone-input');
 
 var App = React.createClass({
-    render () {
+    render() {
         return (
             <div>
                 <ReactTelephoneInput defaultCountry='us' />

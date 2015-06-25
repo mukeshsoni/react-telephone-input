@@ -103,16 +103,10 @@ var ReactTelephoneInput = React.createClass({
     getValue() {
         return this.getNumber();
     },
-    setFlagPathForFlagCssClass() {
-        var node = document.createElement('style');
-        node.innerHTML = `.flag{background:url(${this.props.flagsImagePath})`;
-        document.body.appendChild(node);
-    },
     componentDidMount() {
         document.addEventListener('keydown', this.handleKeydown);
 
         this._cursorToEnd();
-        this.setFlagPathForFlagCssClass();
         if(typeof this.props.onChange === 'function') {
             this.props.onChange(this.state.formattedNumber);
         }
@@ -423,6 +417,8 @@ var ReactTelephoneInput = React.createClass({
                 highlight: this.state.highlightCountryIndex === index
             });
 
+            var inputFlagClasses = `flag ${country.iso2}`;
+
             return (
                 <li
                     ref={`flag_no_${index}`}
@@ -432,7 +428,7 @@ var ReactTelephoneInput = React.createClass({
                     data-dial-code="1"
                     data-country-code={country.iso2}
                     onClick={this.handleFlagItemClick.bind(this, country)}>
-                    <div className={`flag ${country.iso2}`} />
+                    <div className={inputFlagClasses} style={this.getFlagStyle()} />
                     <span className='country-name'>{country.name}</span>
                     <span className='dial-code'>{'+' + country.dialCode}</span>
                 </li>
@@ -453,6 +449,13 @@ var ReactTelephoneInput = React.createClass({
             </ul>
         );
     },
+    getFlagStyle() {
+        return {
+            width: 16,
+            height: 11,
+            backgroundImage: `url(${this.props.flagsImagePath})`
+        };
+    },
     render() {
         var arrowClasses = classNames({
             'arrow': true,
@@ -468,6 +471,8 @@ var ReactTelephoneInput = React.createClass({
             'open-dropdown': this.state.showDropDown
         });
 
+        var inputFlagClasses = `flag ${this.state.selectedCountry.iso2}`;
+
         return (
             <div className='react-tel-input'>
                 <input
@@ -482,7 +487,7 @@ var ReactTelephoneInput = React.createClass({
                     placeholder='+1 (702) 123-4567'/>
                 <div ref='flagDropDownButton' className={flagViewClasses} onKeyDown={this.handleKeydown} >
                     <div ref='selectedFlag' onClick={this.handleFlagDropdownClick} className='selected-flag' title={`${this.state.selectedCountry.name}: + ${this.state.selectedCountry.dialCode}`}>
-                        <div className={`flag ${this.state.selectedCountry.iso2}`}>
+                        <div className={inputFlagClasses} style={this.getFlagStyle()}>
                             <div className={arrowClasses}></div>
                         </div>
                     </div>
