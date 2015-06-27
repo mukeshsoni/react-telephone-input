@@ -24,11 +24,11 @@ React.render(<ReactTelInput defaultCountry="in"/>, document.getElementById('my-c
 ## How to use it
 - If you install it from `npm install`, you can just do `var ReactTelephoneInut = require('react-telephone-input');`
 - You will need to copy flags.png from example/src folder to see the flag icons for each country.
-- Set the flagImagePath using the prop flagImagePath
+- Set the flagsImagePath using the prop flagsImagePath
 ```
-<ReactTelephoneInput defaultCountry='in' flagImagePath='/path/to/images/flags.png'>
+<ReactTelephoneInput defaultCountry='in' flagsImagePath='/path/to/images/flags.png'>
 ```
-The default value for flagImagePath is 'flags.png'
+The default value for flagsImagePath is 'flags.png'
 
 
 ## Features
