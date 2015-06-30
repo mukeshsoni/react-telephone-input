@@ -316,10 +316,13 @@ var ReactTelephoneInput = React.createClass({
             });
         }
     },
-    handleInputFocus() {
+    handleInputFocus(e) {
         // if the input is blank, insert dial code of the selected country
         if(this.refs.numberInput.getDOMNode().value === '+') {
             this.setState({formattedNumber: '+' + this.state.selectedCountry.dialCode});
+        }
+        if(typeof this.props.onFocus === 'function') {
+            this.props.onFocus(e);
         }
     },
     _getHighlightCountryIndex(direction) {
