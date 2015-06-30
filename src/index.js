@@ -23,7 +23,7 @@ var classNames = require('classnames');
 var countryData = require('./country_data');
 var allCountries = countryData.allCountries;
 
-require('../less/default.less');
+//require('../less/default.less');
 
 if (typeof document !== 'undefined') {
   var isModernBrowser = Boolean(document.createElement('input').setSelectionRange);
@@ -410,6 +410,9 @@ var ReactTelephoneInput = React.createClass({
     getCountryDropDownList() {
 
         var countryDropDownList = map([this.state.preferredCountries, ...this.props.onlyCountries], function(country, index) {
+            if (!country || !country.name) {
+                return undefined;
+            }
             let itemClasses = classNames({
                 country: true,
                 preferred: country.iso2 === 'us' || country.iso2 === 'gb',
