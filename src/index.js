@@ -105,6 +105,7 @@ var ReactTelephoneInput = React.createClass({
     },
     componentDidMount() {
         document.addEventListener('keydown', this.handleKeydown);
+        document.addEventListener(`focus:${this.props.name}`, this.onFocusEventHandler);
 
         this._cursorToEnd();
         if(typeof this.props.onChange === 'function') {
@@ -113,6 +114,7 @@ var ReactTelephoneInput = React.createClass({
     },
     componentWillUnmount() {
         document.removeEventListener('keydown', this.handleKeydown);
+        document.removeEventListener(`focus:${this.props.name}`, this.onFocusEventHandler);
     },
     scrollTo(country, middle) {
         if(!country) {
@@ -222,6 +224,12 @@ var ReactTelephoneInput = React.createClass({
     }),
     getElement(index) {
         return this.refs[`flag_no_${index}`].getDOMNode();
+    },
+    onFocusEventHandler() {
+        let node = this.refs.numberInput.getDOMNode();
+        if (node) {
+            node.focus();
+        }
     },
     handleFlagDropdownClick() {
         // need to put the highlight on the current selected country if the dropdown is going to open up
@@ -488,6 +496,7 @@ var ReactTelephoneInput = React.createClass({
                     onKeyDown={this.handleInputKeyDown}
                     value={this.state.formattedNumber}
                     ref="numberInput"
+                    name={this.props.name}
                     type="tel"
                     className={inputClasses}
                     placeholder='+1 (702) 123-4567'/>
