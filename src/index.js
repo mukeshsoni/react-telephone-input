@@ -228,7 +228,7 @@ var ReactTelephoneInput = React.createClass({
     onFocusEventHandler() {
         let node = this.refs.numberInput.getDOMNode();
         if (node) {
-            node.focus();
+            setTimeout(function() { node.focus(); }, 1);
         }
     },
     handleFlagDropdownClick() {
