@@ -490,6 +490,7 @@ var ReactTelephoneInput = React.createClass({
         return (
             <div className='react-tel-input'>
                 <input
+                    id={this.props.id}
                     onChange={this.handleInput}
                     onClick={this.handleInputClick}
                     onFocus={this.handleInputFocus}
