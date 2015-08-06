@@ -111,6 +111,8 @@ var ReactTelephoneInput = React.createClass({
         if(typeof this.props.onChange === 'function') {
             this.props.onChange(this.state.formattedNumber);
         }
+
+        this.handleInputFocus();
     },
     componentWillUnmount() {
         document.removeEventListener('keydown', this.handleKeydown);
@@ -487,10 +489,13 @@ var ReactTelephoneInput = React.createClass({
 
         var inputFlagClasses = `flag ${this.state.selectedCountry.iso2}`;
 
+        var disabled = this.props.disabled || false;
+
         return (
             <div className='react-tel-input'>
                 <input
                     id={this.props.id}
+                    disabled={disabled}
                     onChange={this.handleInput}
                     onClick={this.handleInputClick}
                     onFocus={this.handleInputFocus}
