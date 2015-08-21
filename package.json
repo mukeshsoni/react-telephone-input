@@ -46,10 +46,10 @@
     "react-component-gulp-tasks": "^0.7.0"
   },
   "dependencies": {
+    "classnames": "^2.1.2",
     "lodash": ">=2.4.1",
     "react": ">=0.12.1",
-    "classnames": "^2.1.2",
-    "react-onclickoutside": "^0.2.4"
+    "react-onclickoutside": "^0.3.1"
   },
   "browserify-shim": {
     "classnames": "global:classNames",
