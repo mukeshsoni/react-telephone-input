@@ -23,7 +23,7 @@ var classNames = require('classnames');
 var countryData = require('./country_data');
 var allCountries = countryData.allCountries;
 
-require('../less/default.less');
+//require('../less/default.less');
 
 if (typeof document !== 'undefined') {
   var isModernBrowser = Boolean(document.createElement('input').setSelectionRange);
@@ -105,14 +105,17 @@ var ReactTelephoneInput = React.createClass({
     },
     componentDidMount() {
         document.addEventListener('keydown', this.handleKeydown);
+        document.addEventListener(`focus:${this.props.name}`, this.onFocusEventHandler);
 
-        this._cursorToEnd();
         if(typeof this.props.onChange === 'function') {
             this.props.onChange(this.state.formattedNumber);
         }
+
+        this.handleInputFocus();
     },
     componentWillUnmount() {
         document.removeEventListener('keydown', this.handleKeydown);
+        document.removeEventListener(`focus:${this.props.name}`, this.onFocusEventHandler);
     },
     scrollTo(country, middle) {
         if(!country) {
@@ -223,6 +226,12 @@ var ReactTelephoneInput = React.createClass({
     getElement(index) {
         return this.refs[`flag_no_${index}`].getDOMNode();
     },
+    onFocusEventHandler() {
+        let node = this.refs.numberInput.getDOMNode();
+        if (node) {
+            setTimeout(function() { node.focus(); }, 1);
+        }
+    },
     handleFlagDropdownClick() {
         // need to put the highlight on the current selected country if the dropdown is going to open up
         this.setState({
@@ -316,10 +325,13 @@ var ReactTelephoneInput = React.createClass({
             });
         }
     },
-    handleInputFocus() {
+    handleInputFocus(e) {
         // if the input is blank, insert dial code of the selected country
         if(this.refs.numberInput.getDOMNode().value === '+') {
             this.setState({formattedNumber: '+' + this.state.selectedCountry.dialCode});
+        }
+        if(typeof this.props.onFocus === 'function') {
+            this.props.onFocus(e);
         }
     },
     _getHighlightCountryIndex(direction) {
@@ -410,6 +422,9 @@ var ReactTelephoneInput = React.createClass({
     getCountryDropDownList() {
 
         var countryDropDownList = map([this.state.preferredCountries, ...this.props.onlyCountries], function(country, index) {
+            if (!country || !country.name) {
+                return undefined;
+            }
             let itemClasses = classNames({
                 country: true,
                 preferred: country.iso2 === 'us' || country.iso2 === 'gb',
@@ -473,15 +488,20 @@ var ReactTelephoneInput = React.createClass({
 
         var inputFlagClasses = `flag ${this.state.selectedCountry.iso2}`;
 
+        var disabled = this.props.disabled || false;
+
         return (
             <div className='react-tel-input'>
                 <input
+                    id={this.props.id}
+                    disabled={disabled}
                     onChange={this.handleInput}
                     onClick={this.handleInputClick}
                     onFocus={this.handleInputFocus}
                     onKeyDown={this.handleInputKeyDown}
                     value={this.state.formattedNumber}
                     ref="numberInput"
+                    name={this.props.name}
                     type="tel"
                     className={inputClasses}
                     placeholder='+1 (702) 123-4567'/>
