@@ -408,8 +408,7 @@ var ReactTelephoneInput = React.createClass({
         }
     },
     getCountryDropDownList() {
-
-        var countryDropDownList = map([this.state.preferredCountries, ...this.props.onlyCountries], function(country, index) {
+        var countryDropDownList = map(this.state.preferredCountries.concat(this.props.onlyCountries), function(country, index) {
             let itemClasses = classNames({
                 country: true,
                 preferred: country.iso2 === 'us' || country.iso2 === 'gb',
