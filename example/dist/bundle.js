@@ -3067,14 +3067,6 @@ module.exports = {
 },{}],"react-telephone-input":[function(require,module,exports){
 'use strict';
 
-function _toConsumableArray(arr) {
-    if (Array.isArray(arr)) {
-        for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];return arr2;
-    } else {
-        return Array.from(arr);
-    }
-}
-
 // TODO - fix the onlyContries props. Currently expects that as an array of country object, but users should be able to send in array of country isos
 
 var some = require('lodash/collection/some');
@@ -3489,7 +3481,7 @@ var ReactTelephoneInput = React.createClass({
     },
     getCountryDropDownList: function getCountryDropDownList() {
 
-        var countryDropDownList = map([this.state.preferredCountries].concat(_toConsumableArray(this.props.onlyCountries)), function (country, index) {
+        var countryDropDownList = map(this.state.preferredCountries.concat(this.props.onlyCountries), function (country, index) {
             var itemClasses = classNames({
                 country: true,
                 preferred: country.iso2 === 'us' || country.iso2 === 'gb',
@@ -3552,7 +3544,7 @@ var ReactTelephoneInput = React.createClass({
             ref: 'numberInput',
             type: 'tel',
             className: inputClasses,
-            placeholder: '+1 (702) 123-4567' }), React.createElement('div', { ref: 'flagDropDownButton', className: flagViewClasses, onKeyDown: this.handleKeydown }, React.createElement('div', { ref: 'selectedFlag', onClick: this.handleFlagDropdownClick, className: 'selected-flag', title: '' + this.state.selectedCountry.name + ': + ' + this.state.selectedCountry.dialCode }, React.createElement('div', { className: inputFlagClasses, style: this.getFlagStyle() }, React.createElement('div', { className: arrowClasses }))), this.state.showDropDown ? this.getCountryDropDownList() : ''));
+            placeholder: '+1 (702) 123-4567' }), React.createElement('div', { ref: 'flagDropDownButton', className: flagViewClasses, onKeyDown: this.handleKeydown }, React.createElement('div', { ref: 'selectedFlag', onClick: this.handleFlagDropdownClick, className: 'selected-flag', title: this.state.selectedCountry.name + ': + ' + this.state.selectedCountry.dialCode }, React.createElement('div', { className: inputFlagClasses, style: this.getFlagStyle() }, React.createElement('div', { className: arrowClasses }))), this.state.showDropDown ? this.getCountryDropDownList() : ''));
     }
 });
 
