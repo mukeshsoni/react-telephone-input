@@ -3538,12 +3538,13 @@ var ReactTelephoneInput = React.createClass({
         return React.createElement('div', { className: 'react-tel-input' }, React.createElement('input', {
             onChange: this.handleInput,
             onClick: this.handleInputClick,
-            onFocus: this.handleInputFocus,
+            oncdFocus: this.handleInputFocus,
             onKeyDown: this.handleInputKeyDown,
             value: this.state.formattedNumber,
             ref: 'numberInput',
             type: 'tel',
             className: inputClasses,
+            autoComplete: 'tel',
             placeholder: '+1 (702) 123-4567' }), React.createElement('div', { ref: 'flagDropDownButton', className: flagViewClasses, onKeyDown: this.handleKeydown }, React.createElement('div', { ref: 'selectedFlag', onClick: this.handleFlagDropdownClick, className: 'selected-flag', title: this.state.selectedCountry.name + ': + ' + this.state.selectedCountry.dialCode }, React.createElement('div', { className: inputFlagClasses, style: this.getFlagStyle() }, React.createElement('div', { className: arrowClasses }))), this.state.showDropDown ? this.getCountryDropDownList() : ''));
     }
 });
