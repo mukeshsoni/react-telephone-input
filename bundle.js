@@ -3538,7 +3538,7 @@ var ReactTelephoneInput = React.createClass({
         return React.createElement('div', { className: 'react-tel-input' }, React.createElement('input', {
             onChange: this.handleInput,
             onClick: this.handleInputClick,
-            oncdFocus: this.handleInputFocus,
+            onFocus: this.handleInputFocus,
             onKeyDown: this.handleInputKeyDown,
             value: this.state.formattedNumber,
             ref: 'numberInput',
