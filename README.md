@@ -17,8 +17,12 @@ var ReactTelInput = require('react-telephone-input');
 </MyAwesomeReactComponent>
 
 // or render standalone
+function handleInputChange(telNumber) {
+	console.log('input number changed to: ', telNumber);
+}
+
 var ReactTelInput = require('react-telephone-input');
-React.render(<ReactTelInput defaultCountry="in"/>, document.getElementById('my-container'));
+React.render(<ReactTelInput defaultCountry="in" onChange={handleInputChange}/>, document.getElementById('my-container'));
 ```
 
 ## How to use it
@@ -26,7 +30,11 @@ React.render(<ReactTelInput defaultCountry="in"/>, document.getElementById('my-c
 - You will need to copy flags.png from example/src folder to see the flag icons for each country.
 - Set the path to the flags image using the prop `flagsImagePath`
 ```
-<ReactTelephoneInput defaultCountry='in' flagsImagePath='/path/to/images/flags.png'>
+function handleInputChange(telNumber) {
+	console.log('input number changed to: ', telNumber);
+}
+
+<ReactTelephoneInput defaultCountry='in' flagsImagePath='/path/to/images/flags.png' onChange={handleInputChange}>
 ```
 The default value for `flagsImagePath` is 'flags.png'
 
