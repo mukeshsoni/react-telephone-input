@@ -17,13 +17,17 @@ function handleInputChange(telNumber) {
 // Use declaratively within another react components render method
 var ReactTelInput = require('react-telephone-input');
 <MyAwesomeReactComponent>
-  <ReactTelInput defaultCountry="in"/>
+  <ReactTelInput 
+        defaultCountry="in"
+        flagsImagePath='/path/to/images/flags.png'
+        onChange={handleInputChange}/>
 </MyAwesomeReactComponent>
 
 // or render standalone
 var ReactTelInput = require('react-telephone-input');
 React.render(<ReactTelInput 
-                defaultCountry="in" 
+                defaultCountry="in"
+                flagsImagePath='/path/to/images/flags.png'
                 onChange={handleInputChange}/>, 
                 document.getElementById('my-container'));
 ```
