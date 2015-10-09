@@ -10,6 +10,10 @@ Live Demo here - [http://unstack.in/react-telephone-input/](http://unstack.in/re
 ![How it looks](/images/react-telephone-number-screenshot.png?raw=true "How it looks")
 
 ```
+function handleInputChange(telNumber) {
+    console.log('input number changed to: ', telNumber);
+}
+
 // Use declaratively within another react components render method
 var ReactTelInput = require('react-telephone-input');
 <MyAwesomeReactComponent>
@@ -17,12 +21,11 @@ var ReactTelInput = require('react-telephone-input');
 </MyAwesomeReactComponent>
 
 // or render standalone
-function handleInputChange(telNumber) {
-	console.log('input number changed to: ', telNumber);
-}
-
 var ReactTelInput = require('react-telephone-input');
-React.render(<ReactTelInput defaultCountry="in" onChange={handleInputChange}/>, document.getElementById('my-container'));
+React.render(<ReactTelInput 
+                defaultCountry="in" 
+                onChange={handleInputChange}/>, 
+                document.getElementById('my-container'));
 ```
 
 ## How to use it
@@ -34,7 +37,10 @@ function handleInputChange(telNumber) {
 	console.log('input number changed to: ', telNumber);
 }
 
-<ReactTelephoneInput defaultCountry='in' flagsImagePath='/path/to/images/flags.png' onChange={handleInputChange}>
+<ReactTelephoneInput 
+        defaultCountry='in' 
+        flagsImagePath='/path/to/images/flags.png' 
+        onChange={handleInputChange}>
 ```
 The default value for `flagsImagePath` is 'flags.png'
 
