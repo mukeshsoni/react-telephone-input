@@ -37,13 +37,13 @@
   "homepage": "https://github.com/mukeshsoni/react-telephone-input",
   "devDependencies": {
     "babel-eslint": "^3.1.17",
-    "babelify": "^6.1.2",
+    "babelify": "^6.3.0",
     "chai": "^3.0.0",
     "eslint": "^0.23.0",
     "gulp": "^3.9.0",
     "lessify": "^1.0.1",
     "mochify": "^2.9.0",
-    "react-component-gulp-tasks": "^0.7.0"
+    "react-component-gulp-tasks": "^0.7.6"
   },
   "dependencies": {
     "classnames": "^2.1.2",
