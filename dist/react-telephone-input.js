@@ -3247,6 +3247,8 @@ var ReactTelephoneInput = React.createClass({
         var input = this.refs.numberInput.getDOMNode();
         if (!skipFocus) {
           input.focus();
+        } else {
+          this.handleInputFocus();
         }
         if (isModernBrowser) {
             var len = input.value.length;
