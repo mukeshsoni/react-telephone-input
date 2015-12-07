@@ -3245,14 +3245,14 @@ var ReactTelephoneInput = React.createClass({
     _cursorToEnd: function _cursorToEnd(skipFocus) {
         var input = this.refs.numberInput.getDOMNode();
         if (skipFocus) {
-          this.handleInputFocus();
+            this.handleInputFocus();
         } else {
-          input.focus();
+            input.focus();
 
-          if (isModernBrowser) {
-              var len = input.value.length;
-              input.setSelectionRange(len, len);
-          }
+            if (isModernBrowser) {
+                var len = input.value.length;
+                input.setSelectionRange(len, len);
+            }
         }
     },
     // memoize results based on the first 5/6 characters. That is all that matters
