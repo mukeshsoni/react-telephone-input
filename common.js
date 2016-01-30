@@ -31374,7 +31374,12 @@ module.exports = warning;
 }.call(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],"react-onclickoutside":[function(require,module,exports){
+},{}],"react-dom":[function(require,module,exports){
+'use strict';
+
+module.exports = require('react/lib/ReactDOM');
+
+},{"react/lib/ReactDOM":36}],"react-onclickoutside":[function(require,module,exports){
 /**
  * A mixin for handling (effectively) onClickOutside for React components.
  * Note that we're not intercepting any events in this approach, and we're
@@ -31392,17 +31397,19 @@ module.exports = warning;
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['react'], factory);
+    define(['react-dom'], function(reactDom) {
+      return factory(root, reactDom);
+    });
   } else if (typeof exports === 'object') {
     // Node. Note that this does not work with strict
     // CommonJS, but only CommonJS-like environments
     // that support module.exports
-    module.exports = factory(require('react'));
+    module.exports = factory(root, require('react-dom'));
   } else {
     // Browser globals (root is window)
-    root.OnClickOutside = factory(React);
+    root.OnClickOutside = factory(root, ReactDOM);
   }
-}(this, function (React) {
+}(this, function (root, ReactDOM) {
   "use strict";
 
   // Use a parallel array because we can't use
@@ -31450,7 +31457,7 @@ module.exports = warning;
           }
           eventHandler(evt);
         }
-      }(React.findDOMNode(this), this.handleClickOutside));
+      }(ReactDOM.findDOMNode(this), this.handleClickOutside));
 
       var pos = registeredComponents.length;
       registeredComponents.push(this);
@@ -31482,8 +31489,10 @@ module.exports = warning;
      */
     enableOnClickOutside: function() {
       var fn = this.__outsideClickHandler;
-      document.addEventListener("mousedown", fn);
-      document.addEventListener("touchstart", fn);
+      if (document != null) {
+        document.addEventListener("mousedown", fn);
+        document.addEventListener("touchstart", fn);
+      }
     },
 
     /**
@@ -31492,14 +31501,16 @@ module.exports = warning;
      */
     disableOnClickOutside: function() {
       var fn = this.__outsideClickHandler;
-      document.removeEventListener("mousedown", fn);
-      document.removeEventListener("touchstart", fn);
+      if (document != null) {
+        document.removeEventListener("mousedown", fn);
+        document.removeEventListener("touchstart", fn);
+      }
     }
   };
 
 }));
 
-},{"react":"react"}],"react":[function(require,module,exports){
+},{"react-dom":"react-dom"}],"react":[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/React');

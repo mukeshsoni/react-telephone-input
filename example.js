@@ -2,6 +2,7 @@ require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof requ
 'use strict';
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var ReactTelephoneInput = require('react-telephone-input');
 
 var App = React.createClass({
@@ -12,6 +13,6 @@ var App = React.createClass({
     }
 });
 
-React.render(React.createElement(App, null), document.getElementById('app'));
+ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
 
-},{"react":undefined,"react-telephone-input":undefined}]},{},[1]);
+},{"react":undefined,"react-dom":undefined,"react-telephone-input":undefined}]},{},[1]);
