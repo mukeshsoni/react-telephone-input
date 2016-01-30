@@ -3380,6 +3380,8 @@ var ReactTelephoneInput = React.createClass({
                     this.props.onChange(formattedNumber);
                 }
             });
+        } else {
+            this.setState({ showDropDown: false });
         }
     },
     handleInputFocus: function handleInputFocus() {
