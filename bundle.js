@@ -3245,7 +3245,7 @@ var ReactTelephoneInput = React.createClass({
 
     // put the cursor to the end of the input (usually after a focus event)
     _cursorToEnd: function _cursorToEnd(skipFocus) {
-        var input = ReactDOM.findDOMNode(this.refs.numberInput);
+        var input = this.refs.numberInput;
         if (skipFocus) {
             this.handleInputFocus();
         } else {
@@ -3347,7 +3347,7 @@ var ReactTelephoneInput = React.createClass({
                 }
 
                 if (caretPosition > 0 && oldFormattedText.length >= formattedNumber.length) {
-                    ReactDOM.findDOMNode(this.refs.numberInput).setSelectionRange(caretPosition, caretPosition);
+                    this.refs.numberInput.setSelectionRange(caretPosition, caretPosition);
                 }
             }
 
@@ -3386,7 +3386,7 @@ var ReactTelephoneInput = React.createClass({
     },
     handleInputFocus: function handleInputFocus() {
         // if the input is blank, insert dial code of the selected country
-        if (ReactDOM.findDOMNode(this.refs.numberInput).value === '+') {
+        if (this.refs.numberInput.value === '+') {
             this.setState({ formattedNumber: '+' + this.state.selectedCountry.dialCode });
         }
     },
