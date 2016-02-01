@@ -3454,7 +3454,7 @@ var ReactTelephoneInput = React.createClass({
             self.setState({
                 highlightCountryIndex: self._getHighlightCountryIndex(direction)
             }, function () {
-                self.scrollTo(_this2.getElement(_this2.state.highlightCountryIndex), true);
+                self.scrollTo(self.getElement(_this2.state.highlightCountryIndex), true);
             });
         }
 
