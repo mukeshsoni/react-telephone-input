@@ -375,11 +375,12 @@ var ReactTelephoneInput = React.createClass({
             event.returnValue = false;
         }
 
+        var self = this;
         function _moveHighlight(direction) {
-            this.setState({
-                highlightCountryIndex: this._getHighlightCountryIndex(direction)
+            self.setState({
+                highlightCountryIndex: self._getHighlightCountryIndex(direction)
             }, () => {
-                this.scrollTo(this.getElement(this.state.highlightCountryIndex), true);
+                self.scrollTo(this.getElement(this.state.highlightCountryIndex), true);
             });
         }
 
