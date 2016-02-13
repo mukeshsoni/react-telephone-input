@@ -9,7 +9,7 @@ Live Demo here - [http://unstack.in/react-telephone-input/](http://unstack.in/re
 
 ![How it looks](/images/react-telephone-number-screenshot.png?raw=true "How it looks")
 
-```
+```js
 function handleInputChange(telNumber) {
     console.log('input number changed to: ', telNumber);
 }
@@ -17,7 +17,7 @@ function handleInputChange(telNumber) {
 // Use declaratively within another react components render method
 var ReactTelInput = require('react-telephone-input');
 <MyAwesomeReactComponent>
-  <ReactTelInput 
+  <ReactTelInput
         defaultCountry="in"
         flagsImagePath='/path/to/images/flags.png'
         onChange={handleInputChange}/>
@@ -25,10 +25,10 @@ var ReactTelInput = require('react-telephone-input');
 
 // or render standalone
 var ReactTelInput = require('react-telephone-input');
-React.render(<ReactTelInput 
+React.render(<ReactTelInput
                 defaultCountry="in"
                 flagsImagePath='/path/to/images/flags.png'
-                onChange={handleInputChange}/>, 
+                onChange={handleInputChange}/>,
                 document.getElementById('my-container'));
 ```
 
@@ -36,14 +36,14 @@ React.render(<ReactTelInput
 - If you install it from `npm install`, you can just do `var ReactTelephoneInut = require('react-telephone-input');`
 - You will need to copy flags.png from example/src folder to see the flag icons for each country.
 - Set the path to the flags image using the prop `flagsImagePath`
-```
+```js
 function handleInputChange(telNumber) {
 	console.log('input number changed to: ', telNumber);
 }
 
-<ReactTelephoneInput 
-        defaultCountry='in' 
-        flagsImagePath='/path/to/images/flags.png' 
+<ReactTelephoneInput
+        defaultCountry='in'
+        flagsImagePath='/path/to/images/flags.png'
         onChange={handleInputChange}>
 ```
 The default value for `flagsImagePath` is 'flags.png'
