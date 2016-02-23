@@ -2,20 +2,14 @@
   "name": "react-telephone-input",
   "version": "2.0.6",
   "description": "React component for entering and validating international telephone numbers",
-  "main": "lib/index.js",
+  "main": "src/index.jsx",
   "scripts": {
     "lint": "eslint src",
-    "build": "gulp clean && NODE_ENV=production gulp build",
-    "examples": "gulp dev:server",
-    "publish:site": "gulp publish:examples",
-    "release": "gulp release",
-    "start": "gulp dev",
-    "test": "mochify --watch",
-    "watch": "gulp watch:lib"
+    "test": "mochify --watch"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mukeshsoni/react-telephone-input"
+    "url": "https://github.com/hudl/react-telephone-input"
   },
   "keywords": [
     "react-component",
@@ -23,17 +17,8 @@
     "international-telephone-input",
     "react"
   ],
-  "browserify": {
-    "transform": [
-      "babelify",
-      "lessify"
-    ]
-  },
   "author": "Mukesh Soni",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mukeshsoni/react-telephone-input/issues"
-  },
   "homepage": "https://github.com/mukeshsoni/react-telephone-input",
   "devDependencies": {
     "babel-eslint": "^3.1.17",
@@ -47,14 +32,11 @@
   },
   "dependencies": {
     "classnames": "^2.1.2",
-    "lodash": ">=2.4.1",
+    "lodash": "^3.10.1"
+  },
+  "peerDependencies": {
     "react": ">=0.14.0",
     "react-dom": "^0.14.7",
     "react-onclickoutside": "^4.5.0"
-  },
-  "browserify-shim": {
-    "classnames": "global:classNames",
-    "react": "global:React",
-    "lodash": "global:lodash"
   }
 }
