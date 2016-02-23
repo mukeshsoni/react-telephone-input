@@ -4,8 +4,8 @@
 var expect = require('chai').expect;
 var React = require('react/addons');
 var TestUtils = React.addons.TestUtils;
-var ReactTelephoneInput = require('../src/index.js');
-var allCountries = require('../src/country_data.js').allCountries;
+var ReactTelephoneInput = require('../src/index.jsx');
+var allCountries = require('../src/country_data.jsx').allCountries;
 
 describe('react telephone input', function() {
     // beforeEach(function() {

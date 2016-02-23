@@ -1,6 +1,6 @@
 {
   "name": "react-telephone-input",
-  "version": "2.0.6",
+  "version": "3.0.0",
   "description": "React component for entering and validating international telephone numbers",
   "main": "src/index.jsx",
   "scripts": {
@@ -10,6 +10,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/hudl/react-telephone-input"
+  },
+  "publishConfig": {
+    "registry": "http://npm.thorhudl.com"
   },
   "keywords": [
     "react-component",
@@ -22,11 +25,9 @@
   "homepage": "https://github.com/mukeshsoni/react-telephone-input",
   "devDependencies": {
     "babel-eslint": "^3.1.17",
-    "babelify": "^6.3.0",
     "chai": "^3.0.0",
     "eslint": "^0.23.0",
     "gulp": "^3.9.0",
-    "lessify": "^1.0.1",
     "mochify": "^2.9.0",
     "react-component-gulp-tasks": "^0.7.6"
   },
