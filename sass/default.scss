@@ -807,6 +807,11 @@
         .flag {
             display: inline-block;
         }
+        .divider {
+          padding-bottom: 5px;
+          margin-bottom: 5px;
+          border-bottom: 1px solid $ui_text_extra_light_color;
+        }
         .country {
             padding: 5px 10px;
             .dial-code {
