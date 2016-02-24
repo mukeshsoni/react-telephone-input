@@ -2,7 +2,9 @@
 
 .react-tel-input {
     position: relative;
-    width: 200px;
+    display: inline-block;
+    width: 100%;
+
     .ad {
         background-position: -16px 0;
     }
@@ -706,32 +708,27 @@
     }
     input[type=text],
     input[type=tel] {
+        @include font-size(p);
         position: relative;
         z-index: 0;
         margin-top: 0 !important;
         margin-bottom: 0 !important;
-        padding-left: 44px;
+        padding: 1rem 1rem 1rem 4rem;
         margin-left: 0;
-        background: #FFFFFF;
-        border: 1px solid #CACACA;
-        border-radius: 3px;
-        box-shadow: 0 1px 2px #E3E3E3 inset;
-        line-height: 25px;
-        height: 28px;
+        background: $ui_white_color;
+        border: 1px solid $ui_gray_medium_color;
+        border-radius: 2px;
+        box-shadow: none;
+        line-height: 1.2rem;
         width: 100%;
+        transition: border-color 0.2s;
         &:focus {
-            border-color: #42bdff;
-            border-left-color: #cacaca;
+            border-color: $ui_orange_color;
+            box-shadow: none;
+            outline: none;
         }
         &.invalid-number {
-            border: 1px solid #d79f9f;
-            background-color: #FAF0F0;
-            border-left-color: #cacaca;
-            &:focus {
-                border: 1px solid #d79f9f;
-                border-left-color: #cacaca;
-                background-color: #FAF0F0;
-            }
+            border: 1px solid $team_red_color;
         }
     }
     .flag-dropdown {
@@ -739,22 +736,19 @@
         top: 0;
         bottom: 0;
         padding: 0;
-        background-color: #eaeaea;
-        border: 1px solid #cacaca;
-        border-radius: 3px 0 0 3px;
         &.open-dropdown {
-            background: #fff;
+            background: $ui_white_color;
             border-bottom: 0;
             border-radius: 3px 0 0 0;
             .selected-flag {
-                background: #fff;
+                background: $ui_white_color;
                 border-radius: 3px 0 0 0;
             }
         }
         &:hover {
             cursor: pointer;
             .selected-flag {
-                background-color: #fff;
+                background-color: $ui_white_color;
             }
         }
     }
@@ -772,9 +766,9 @@
         z-index: 13;
         position: relative;
         width: 38px;
-        height: 26px;
+        height: 100%;
         padding: 0 0 0 8px;
-        border-radius: 3px 0 0 3px;
+
         .flag {
             position: absolute;
             top: 50%;
@@ -789,10 +783,10 @@
             height: 0;
             border-left: 3px solid transparent;
             border-right: 3px solid transparent;
-            border-top: 4px solid #555;
+            border-top: 4px solid $ui_text_medium_color;
             &.up {
                 border-top: none;
-                border-bottom: 4px solid #555;
+                border-bottom: 4px solid $ui_text_medium_color;
             }
         }
     }
@@ -813,21 +807,16 @@
         .flag {
             display: inline-block;
         }
-        .divider {
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-            border-bottom: 1px solid #ccc;
-        }
         .country {
             padding: 5px 10px;
             .dial-code {
-                color: #999;
+                color: $ui_text_light_color;
             }
             &:hover {
-                background-color: #e8f7fe;
+                background-color: rgba(0, 0, 0, 0.05);
             }
             &.highlight {
-                background-color: #c7e2f1;
+                background-color: rgba(0, 0, 0, 0.05);
             }
         }
         .flag {
