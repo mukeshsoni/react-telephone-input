@@ -736,19 +736,13 @@
         top: 0;
         bottom: 0;
         padding: 0;
+        margin: 1rem;
+        cursor: pointer;
         &.open-dropdown {
-            background: $ui_white_color;
             border-bottom: 0;
             border-radius: 3px 0 0 0;
             .selected-flag {
-                background: $ui_white_color;
                 border-radius: 3px 0 0 0;
-            }
-        }
-        &:hover {
-            cursor: pointer;
-            .selected-flag {
-                background-color: $ui_white_color;
             }
         }
     }
