@@ -6,7 +6,7 @@ var pkg = JSON.parse(require('fs').readFileSync('./package.json'));
 var taskConfig = {
 
     component: {
-        file: 'index.js',
+        file: 'ReactTelephoneInput.js',
         // The component name controls the standalone module name
         name: 'ReactTelephoneInput',
         src: 'src',

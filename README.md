@@ -1,6 +1,8 @@
 Reactjs Component for International Telephone Input
 ===================================================
 
+*IMP*: From 3.*, the styles won't be included by default. Can use `require('react-telephone-input/lib/withStyles')` to get the styles.
+
 Inspired from the awesome jquery plugin for <a href="https://github.com/Bluefieldscom/intl-tel-input" target="_blank">International Telephone Input</a>.
 
 This one is written as a [reactjs](http://facebook.github.io/react/) component.
@@ -16,6 +18,8 @@ function handleInputChange(telNumber) {
 
 // Use declaratively within another react components render method
 var ReactTelInput = require('react-telephone-input');
+// var ReactTelInput = require('react-telephone-input/lib/withStyles'), if you need the styles
+
 <MyAwesomeReactComponent>
   <ReactTelInput
         defaultCountry="in"
@@ -33,7 +37,7 @@ React.render(<ReactTelInput
 ```
 
 ## How to use it
-- If you install it from `npm install`, you can just do `var ReactTelephoneInut = require('react-telephone-input');`
+- If you install it from `npm install`, you can just do `var ReactTelephoneInput = require('react-telephone-input');`
 - You will need to copy flags.png from example/src folder to see the flag icons for each country.
 - Set the path to the flags image using the prop `flagsImagePath`
 ```js
