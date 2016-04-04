@@ -1,3 +1,9 @@
+3.0.0-beta05
+=====
+- Added onBlur event handler to input via props
+- Added label to display error message above input
+- Added classnames to set invalid styling
+
 3.0.0-beta04
 =====
 - Changed proptype for preferredCountries
