@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "classnames": "^2.1.2",
-    "lodash": ">=2.4.1",
+    "lodash": "^3.10.1",
     "react": ">=0.14.0",
     "react-dom": "^0.14.7",
     "react-onclickoutside": "^4.5.0"
