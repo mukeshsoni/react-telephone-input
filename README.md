@@ -24,7 +24,9 @@ var ReactTelInput = require('react-telephone-input');
   <ReactTelInput
         defaultCountry="in"
         flagsImagePath='/path/to/images/flags.png'
-        onChange={handleInputChange}/>
+        onChange={handleInputChange}
+        onBlur={handleInputBlur}
+        />
 </MyAwesomeReactComponent>
 
 // or render standalone
@@ -32,7 +34,8 @@ var ReactTelInput = require('react-telephone-input');
 React.render(<ReactTelInput
                 defaultCountry="in"
                 flagsImagePath='/path/to/images/flags.png'
-                onChange={handleInputChange}/>,
+                onChange={handleInputChange}/>
+                onBlur={handleInputBlur}
                 document.getElementById('my-container'));
 ```
 
@@ -45,10 +48,16 @@ function handleInputChange(telNumber) {
 	console.log('input number changed to: ', telNumber);
 }
 
+function handleInputBlur(telNumber) {
+  console.log('Focus off the ReactTelephoneInput component. Tel number entered is: ', telNumber);
+}
+
 <ReactTelephoneInput
         defaultCountry='in'
         flagsImagePath='/path/to/images/flags.png'
-        onChange={handleInputChange}>
+        onChange={handleInputChange}
+        onBlur={handleInputBlur}
+        />
 ```
 The default value for `flagsImagePath` is 'flags.png'
 
