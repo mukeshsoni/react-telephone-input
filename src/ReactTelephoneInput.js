@@ -463,6 +463,11 @@ var ReactTelephoneInput = React.createClass({
             backgroundImage: `url(${this.props.flagsImagePath})`
         };
     },
+    handleInputBlur() {
+      if(typeof this.props.onBlur === 'function') {
+        this.props.onBlur(this.state.formattedNumber);
+      }
+    },
     render() {
         var arrowClasses = classNames({
             'arrow': true,
@@ -486,6 +491,7 @@ var ReactTelephoneInput = React.createClass({
                     onChange={this.handleInput}
                     onClick={this.handleInputClick}
                     onFocus={this.handleInputFocus}
+                    onBlur={this.handleInputBlur}
                     onKeyDown={this.handleInputKeyDown}
                     value={this.state.formattedNumber}
                     ref="numberInput"
