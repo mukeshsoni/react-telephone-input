@@ -83,6 +83,7 @@ var ReactTelephoneInput = React.createClass({
         onlyCountries: React.PropTypes.arrayOf(React.PropTypes.object),
         preferredCountries: React.PropTypes.arrayOf(React.PropTypes.object),
         onChange: React.PropTypes.func,
+        onCountryChange: React.PropTypes.func,
         onEnterKeyPress: React.PropTypes.func
     },
     getDefaultProps() {
@@ -273,6 +274,10 @@ var ReactTelephoneInput = React.createClass({
         var oldFormattedText = this.state.formattedNumber;
         var diff = formattedNumber.length - oldFormattedText.length;
 
+        if((newSelectedCountry.iso2 !== this.state.selectedCountry.iso2) && (this.props.onCountryChange)) {
+            this.props.onCountryChange(newSelectedCountry);
+        }
+
         this.setState({
             formattedNumber: formattedNumber,
             freezeSelection: freezeSelection,
@@ -306,6 +311,10 @@ var ReactTelephoneInput = React.createClass({
             // TODO - the below replacement is a bug. It will replace stuff from middle too
             var newNumber = this.state.formattedNumber.replace(currentSelectedCountry.dialCode, nextSelectedCountry.dialCode);
             var formattedNumber = this.formatNumber(newNumber.replace(/\D/g, ''), nextSelectedCountry.format);
+
+            if(this.props.onCountryChange) {
+                this.props.onCountryChange(nextSelectedCountry);
+            }
 
             this.setState({
                 showDropDown: false,
