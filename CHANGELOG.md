@@ -1,3 +1,8 @@
+3.0.0-beta06
+=====
+- Added missing classnames
+- Updated CSS to override default kickoff styling to properly indent numbers
+
 3.0.0-beta05
 =====
 - Added onBlur event handler to input via props

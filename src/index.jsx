@@ -479,7 +479,7 @@ var ReactTelephoneInput = React.createClass({
     var inputClasses = classNames({
       'form-control': true,
       'invalid-number': !this.props.isValid(this.state.formattedNumber.replace(/\D/g, '')),
-      kickoffClasses,
+      'ko-invalid': this.props.errorMessage,
     });
 
     var flagViewClasses = classNames({
@@ -489,7 +489,7 @@ var ReactTelephoneInput = React.createClass({
 
     var inputFlagClasses = `flag ${this.state.selectedCountry.iso2}`;
     return (
-      <div className='react-tel-input'>
+      <div className='ko-field react-tel-input'>
         <label className={kickoffClasses}>{this.props.errorMessage}</label>
         <input
           onChange={this.handleInput}
