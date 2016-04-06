@@ -12,8 +12,8 @@ Live Demo here - [http://unstack.in/react-telephone-input/](http://unstack.in/re
 ![How it looks](/images/react-telephone-number-screenshot.png?raw=true "How it looks")
 
 ```js
-function handleInputChange(telNumber) {
-    console.log('input number changed to: ', telNumber);
+function handleInputChange(telNumber, selectedCountry) {
+    console.log('input changed. number: ', telNumber, 'selected country: ', selectedCountry);
 }
 
 // Use declaratively within another react components render method
@@ -44,12 +44,12 @@ React.render(<ReactTelInput
 - You will need to copy flags.png from example/src folder to see the flag icons for each country.
 - Set the path to the flags image using the prop `flagsImagePath`
 ```js
-function handleInputChange(telNumber) {
-	console.log('input number changed to: ', telNumber);
+function handleInputChange(telNumber, selectedCountry) {
+	console.log('input changed. number: ', telNumber, 'selected country: ', selectedCountry);
 }
 
-function handleInputBlur(telNumber) {
-  console.log('Focus off the ReactTelephoneInput component. Tel number entered is: ', telNumber);
+function handleInputBlur(telNumber, selectedCountry) {
+  console.log('Focus off the ReactTelephoneInput component. Tel number entered is: ', telNumber, ' selected country is: ', selectedCountry);
 }
 
 <ReactTelephoneInput
