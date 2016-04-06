@@ -107,7 +107,7 @@ var ReactTelephoneInput = React.createClass({
 
         this._cursorToEnd(true);
         if(typeof this.props.onChange === 'function') {
-            this.props.onChange(this.state.formattedNumber);
+            this.props.onChange(this.state.formattedNumber, this.state.selectedCountry);
         }
     },
     componentWillUnmount() {
@@ -289,7 +289,7 @@ var ReactTelephoneInput = React.createClass({
             }
 
             if(this.props.onChange) {
-                this.props.onChange(this.state.formattedNumber);
+                this.props.onChange(this.state.formattedNumber, this.state.selectedCountry);
             }
         });
 
@@ -315,7 +315,7 @@ var ReactTelephoneInput = React.createClass({
             }, function() {
                 this._cursorToEnd();
                 if(this.props.onChange) {
-                    this.props.onChange(formattedNumber);
+                    this.props.onChange(formattedNumber, nextSelectedCountry);
                 }
             });
         } else {
@@ -465,7 +465,7 @@ var ReactTelephoneInput = React.createClass({
     },
     handleInputBlur() {
       if(typeof this.props.onBlur === 'function') {
-        this.props.onBlur(this.state.formattedNumber);
+        this.props.onBlur(this.state.formattedNumber, this.state.selectedCountry);
       }
     },
     render() {
