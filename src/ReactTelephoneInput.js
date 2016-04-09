@@ -81,7 +81,7 @@ var ReactTelephoneInput = React.createClass({
         autoFormat: React.PropTypes.bool,
         defaultCountry: React.PropTypes.string,
         onlyCountries: React.PropTypes.arrayOf(React.PropTypes.object),
-        preferredCountries: React.PropTypes.arrayOf(React.PropTypes.object),
+        preferredCountries: React.PropTypes.arrayOf(React.PropTypes.string),
         onChange: React.PropTypes.func,
         onEnterKeyPress: React.PropTypes.func
     },
@@ -279,6 +279,10 @@ var ReactTelephoneInput = React.createClass({
             selectedCountry: newSelectedCountry.dialCode.length > 0 ? newSelectedCountry : this.state.selectedCountry
         }, function() {
             if(isModernBrowser) {
+                if(caretPosition == 1) {
+                    caretPosition++;
+                }
+
                 if(diff > 0) {
                     caretPosition = caretPosition - diff;
                 }
