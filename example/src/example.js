@@ -8,7 +8,7 @@ var App = React.createClass({
     render() {
         return (
             <div>
-                <ReactTelephoneInput defaultCountry='us' />
+                <ReactTelephoneInput defaultCountry='us' preferredCountries={['us', 'ca', 'zz', 'hk']} />
             </div>
         );
     }
