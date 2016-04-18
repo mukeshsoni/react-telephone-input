@@ -1237,6 +1237,7 @@ var allCountries = [
 
 // we will build this in the loop below
 var allCountryCodes = {};
+var allCountriesIso2Lookup = {};
 var addCountryCode = function(iso2, dialCode, priority) {
   if (!(dialCode in allCountryCodes)) {
     allCountryCodes[dialCode] = [];
@@ -1268,6 +1269,8 @@ for (var i = 0; i < allCountries.length; i++) {
     // format
     if (c[3]) {
       allCountries[i].format = c[3];
+    } else {
+      allCountries[i].format = "+" + Array(allCountries[i].dialCode.length + 1).join(".").toString() + " .";
     }
 
     // area codes
@@ -1282,9 +1285,12 @@ for (var i = 0; i < allCountries.length; i++) {
 
     // dial codes
     addCountryCode(c[1], c[2], c[4]);
+
+    allCountriesIso2Lookup[allCountries[i].iso2] = i;
 }
 
 module.exports = {
             allCountries: allCountries,
+            allCountriesIso2Lookup: allCountriesIso2Lookup,
             allCountryCodes: allCountryCodes
         };
