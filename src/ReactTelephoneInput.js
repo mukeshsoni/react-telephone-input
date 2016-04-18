@@ -23,6 +23,7 @@ var onClickOutside = require('react-onclickoutside');
 var classNames = require('classnames');
 var countryData = require('./country_data');
 var allCountries = countryData.allCountries;
+var allCountriesIso2Lookup = countryData.allCountriesIso2Lookup;
 
 if (typeof document !== 'undefined') {
   var isModernBrowser = Boolean(document.createElement('input').setSelectionRange);
@@ -59,11 +60,14 @@ var ReactTelephoneInput = React.createClass({
         var formattedNumber = this.formatNumber(inputNumber.replace(/\D/g, ''), selectedCountryGuess ? selectedCountryGuess.format : null);
         var preferredCountries = [];
 
-        preferredCountries = filter(allCountries, function(country) {
-            return any(this.props.preferredCountries, function(preferredCountry) {
-                return preferredCountry === country.iso2;
-            });
-        }, this);
+
+        preferredCountries = this.props.preferredCountries.map(iso2 => {
+            return allCountriesIso2Lookup.hasOwnProperty(iso2) ? allCountries[allCountriesIso2Lookup[iso2]] : null;
+        }).filter(function (val) {
+            return val !== null;
+        });
+
+        // TODO: filter out nulls
 
         return {
             preferredCountries: preferredCountries,
@@ -81,7 +85,7 @@ var ReactTelephoneInput = React.createClass({
         autoFormat: React.PropTypes.bool,
         defaultCountry: React.PropTypes.string,
         onlyCountries: React.PropTypes.arrayOf(React.PropTypes.object),
-        preferredCountries: React.PropTypes.arrayOf(React.PropTypes.object),
+        preferredCountries: React.PropTypes.arrayOf(React.PropTypes.string),
         onChange: React.PropTypes.func,
         onEnterKeyPress: React.PropTypes.func
     },
@@ -279,6 +283,10 @@ var ReactTelephoneInput = React.createClass({
             selectedCountry: newSelectedCountry.dialCode.length > 0 ? newSelectedCountry : this.state.selectedCountry
         }, function() {
             if(isModernBrowser) {
+                if(caretPosition == 1) {
+                    caretPosition++;
+                }
+
                 if(diff > 0) {
                     caretPosition = caretPosition - diff;
                 }
