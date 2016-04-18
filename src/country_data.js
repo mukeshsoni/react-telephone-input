@@ -1237,6 +1237,7 @@ var allCountries = [
 
 // we will build this in the loop below
 var allCountryCodes = {};
+var allCountriesIso2Lookup = {};
 var addCountryCode = function(iso2, dialCode, priority) {
   if (!(dialCode in allCountryCodes)) {
     allCountryCodes[dialCode] = [];
@@ -1279,6 +1280,7 @@ for (var i = 0; i < allCountries.length; i++) {
             addCountryCode(c[1], dialCode);
         }
     }
+    allCountriesIso2Lookup[allCountries[i].iso2] = i;
 
     // dial codes
     addCountryCode(c[1], c[2], c[4]);
@@ -1286,5 +1288,6 @@ for (var i = 0; i < allCountries.length; i++) {
 
 module.exports = {
             allCountries: allCountries,
+            allCountriesIso2Lookup: allCountriesIso2Lookup,
             allCountryCodes: allCountryCodes
         };
