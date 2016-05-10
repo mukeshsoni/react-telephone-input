@@ -43,6 +43,7 @@
     "gulp": "^3.9.0",
     "lessify": "^1.0.1",
     "mochify": "^2.9.0",
+    "react-addons-test-utils": "^15.0.0",
     "react-component-gulp-tasks": "^0.7.6"
   },
   "dependencies": {

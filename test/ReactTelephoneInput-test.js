@@ -2,9 +2,9 @@
 'use strict';
 
 var expect = require('chai').expect;
-var React = require('react/addons');
-var TestUtils = React.addons.TestUtils;
-var ReactTelephoneInput = require('../src/index.js');
+var React = require('react');
+var TestUtils = require('react-addons-test-utils');
+var ReactTelephoneInput = require('../src/ReactTelephoneInput.js');
 var allCountries = require('../src/country_data.js').allCountries;
 
 describe('react telephone input', function() {
