@@ -53,7 +53,7 @@ function isNumberValid(inputNumber) {
 var ReactTelephoneInput = React.createClass({
     mixins: [onClickOutside],
     getInitialState() {
-        var inputNumber = this.props.value || '';
+        var inputNumber = this.props.initialValue || this.props.value || '';
         var selectedCountryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, ''));
         var selectedCountryGuessIndex = findIndex(allCountries, selectedCountryGuess);
         var formattedNumber = this.formatNumber(inputNumber.replace(/\D/g, ''), selectedCountryGuess ? selectedCountryGuess.format : null);
@@ -78,6 +78,7 @@ var ReactTelephoneInput = React.createClass({
     },
     propTypes: {
         value: React.PropTypes.string,
+        initialValue: React.PropTypes.string,
         autoFormat: React.PropTypes.bool,
         defaultCountry: React.PropTypes.string,
         onlyCountries: React.PropTypes.arrayOf(React.PropTypes.object),
@@ -89,6 +90,7 @@ var ReactTelephoneInput = React.createClass({
     getDefaultProps() {
         return {
             value: '',
+            initialValue: '',
             autoFormat: true,
             onlyCountries: allCountries,
             defaultCountry: allCountries[0].iso2,
