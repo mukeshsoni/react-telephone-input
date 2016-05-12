@@ -43,6 +43,7 @@
     "gulp": "^3.9.0",
     "lessify": "^1.0.1",
     "mochify": "^2.9.0",
+    "react-addons-test-utils": ">=0.14.0 || ^15.0.0",
     "react-component-gulp-tasks": "^0.7.6"
   },
   "dependencies": {
@@ -51,8 +52,8 @@
     "react-onclickoutside": "^4.5.0"
   },
   "peerDependencies": {
-    "react": ">=0.14.0",
-    "react-dom": "^0.14.7"
+    "react": ">=0.14.0 || ^15.0.0",
+    "react-dom": "^0.14.7 || ^15.0.0"
   },
   "browserify-shim": {
     "classnames": "global:classNames",
