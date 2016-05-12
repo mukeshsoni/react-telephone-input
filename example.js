@@ -9,7 +9,7 @@ var App = React.createClass({
     displayName: 'App',
 
     render: function render() {
-        return React.createElement('div', null, React.createElement(ReactTelephoneInput, { defaultCountry: 'us' }));
+        return React.createElement('div', null, React.createElement(ReactTelephoneInput, { defaultCountry: 'us', preferredCountries: ['us', 'ca', 'zz', 'hk'] }));
     }
 });
 
