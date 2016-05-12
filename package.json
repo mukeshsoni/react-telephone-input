@@ -1,6 +1,6 @@
 {
   "name": "react-telephone-input",
-  "version": "3.2.4",
+  "version": "3.3.4",
   "description": "React component for entering and validating international telephone numbers",
   "main": "lib/ReactTelephoneInput.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "publish:site": "gulp publish:examples",
     "release": "gulp release",
     "start": "gulp dev",
-    "test": "mochify --watch",
+    "test": "mochify --watch -R spec",
     "watch": "gulp watch:lib"
   },
   "repository": {
@@ -39,6 +39,7 @@
     "babel-eslint": "^3.1.17",
     "babelify": "^6.3.0",
     "chai": "^3.0.0",
+    "dirty-chai": "^1.2.2",
     "eslint": "^0.23.0",
     "gulp": "^3.9.0",
     "lessify": "^1.0.1",

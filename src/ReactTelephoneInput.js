@@ -7,7 +7,6 @@ var findWhere = require('lodash/collection/findWhere');
 var reduce = require('lodash/collection/reduce');
 var map = require('lodash/collection/map');
 var filter = require('lodash/collection/filter');
-var any = require('lodash/collection/any');
 var findIndex = require('lodash/array/findIndex');
 var first = require('lodash/array/first');
 var rest = require('lodash/array/rest');
@@ -84,17 +83,19 @@ var ReactTelephoneInput = React.createClass({
         onlyCountries: React.PropTypes.arrayOf(React.PropTypes.object),
         preferredCountries: React.PropTypes.arrayOf(React.PropTypes.string),
         onChange: React.PropTypes.func,
-        onEnterKeyPress: React.PropTypes.func
+        onEnterKeyPress: React.PropTypes.func,
+        classNames: React.PropTypes.string
     },
     getDefaultProps() {
         return {
             value: '',
             autoFormat: true,
             onlyCountries: allCountries,
-            defaultCountry: allCountries[1].iso2,
+            defaultCountry: allCountries[0].iso2,
             isValid: isNumberValid,
             flagsImagePath: 'flags.png',
-            onEnterKeyPress: function () {}
+            onEnterKeyPress: function () {},
+            preferredCountries: []
         };
     },
     getNumber() {
@@ -487,7 +488,7 @@ var ReactTelephoneInput = React.createClass({
         var inputFlagClasses = `flag ${this.state.selectedCountry.iso2}`;
 
         return (
-            <div className='react-tel-input'>
+            <div className={classNames('react-tel-input', this.props.classNames)}>
                 <input
                     onChange={this.handleInput}
                     onClick={this.handleInputClick}

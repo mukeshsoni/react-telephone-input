@@ -1,32 +1,49 @@
-/* global describe, it*/
+/* global describe, it, afterEach*/
+/* eslint: no-unused-expressions: false*/
 'use strict';
 
-var expect = require('chai').expect;
+var chai = require('chai');
+var dirtyChai = require('dirty-chai');
+var expect = chai.expect;
+chai.use(dirtyChai);
+
 var React = require('react');
+var ReactDOM = require('react-dom');
 var TestUtils = require('react-addons-test-utils');
 var ReactTelephoneInput = require('../src/ReactTelephoneInput.js');
 var allCountries = require('../src/country_data.js').allCountries;
+var rti;
 
 describe('react telephone input', function() {
-    // beforeEach(function() {
-
-    // });
-
-    // afterEach(function() {
-
-    // });
-
-    it('mandatory existential crisis test', function() {
-        var rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {}));
-        expect(rti).to.be.defined;
-        expect(rti.refs.numberInput).to.be.defined;
-        expect(true).to.be.true;
+    afterEach(function() {
+        if(rti) {
+            ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(rti).parentNode);
+            rti = null;
+        }
     });
 
-    it('should guess selected country', function() {
-        var rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {}));
+    it('should render the top divs and inputses', () => {
+        const renderer = TestUtils.createRenderer();
+        renderer.render(<ReactTelephoneInput/>);
+        const renderedTree = renderer.getRenderOutput();
+
+        expect(renderedTree.type).to.equal('div');
+        expect(renderedTree.props.className).to.equal('react-tel-input');
+        expect(renderedTree.props.children[0].type).to.equal('input');
+    });
+
+    it('mandatory existential crisis test', () => {
+        rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {}));
+        expect(rti).to.be.defined;
+        expect(rti.refs.numberInput).to.be.defined;
+        expect(true).to.be.true();
+    });
+
+    it('should guess selected country', () => {
+        rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {}));
         // if nothing is sent in, select the first country in allCountries list as the default
         expect(rti.guessSelectedCountry('').iso2).to.equal(allCountries[0].iso2);
+
         // if input value is sent, select appropriately
         expect(rti.guessSelectedCountry('12').iso2).to.equal('us'); // based on priority
         expect(rti.guessSelectedCountry('12112121').iso2).to.equal('us');
@@ -34,6 +51,7 @@ describe('react telephone input', function() {
         expect(rti.guessSelectedCountry('237').iso2).to.equal('cm'); // based on priority
         expect(rti.guessSelectedCountry('599').iso2).to.equal('cw');
         expect(rti.guessSelectedCountry('590').iso2).to.equal('gp');
+
         // select the first one if not able to resolve completely
         expect(rti.guessSelectedCountry('59').iso2).to.equal(allCountries[0].iso2);
     });
