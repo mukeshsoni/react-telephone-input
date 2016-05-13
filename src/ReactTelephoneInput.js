@@ -194,7 +194,7 @@ var ReactTelephoneInput = React.createClass({
     _cursorToEnd(skipFocus) {
         var input = this.refs.numberInput;
         if (skipFocus) {
-            this.handleInputFocus();
+            this._fillDialCode();
         } else {
             input.focus();
 
@@ -329,18 +329,17 @@ var ReactTelephoneInput = React.createClass({
         }
     },
     handleInputFocus() {
-        var formattedNumer = this.state.formattedNumer;
-        var selectedCountry = this.state.selectedCountry;
-
-        // if the input is blank, insert dial code of the selected country
-        if(this.refs.numberInput.value === '+') {
-            formattedNumer = '+' + selectedCountry.dialCode;
-            this.setState({formattedNumber: formattedNumer});
-        }
-
         // trigger parent component's onFocus handler
         if(typeof this.props.onFocus === 'function') {
-            this.props.onFocus(formattedNumer, selectedCountry);
+            this.props.onFocus(this.state.formattedNumer, this.state.selectedCountry);
+        }
+
+        this._fillDialCode();
+    },
+    _fillDialCode() {
+        // if the input is blank, insert dial code of the selected country
+        if(this.refs.numberInput.value === '+') {
+            this.setState({formattedNumber: '+' + this.state.selectedCountry.dialCode});
         }
     },
     _getHighlightCountryIndex(direction) {
