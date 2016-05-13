@@ -55,4 +55,30 @@ describe('react telephone input', function() {
         // select the first one if not able to resolve completely
         expect(rti.guessSelectedCountry('59').iso2).to.equal(allCountries[0].iso2);
     });
+
+    it('should trigger onFocus event handler when input element is focused', (done) => {
+        const onFocus = (number, country) => {
+            expect(number).to.be.a.string;
+            expect(country).to.be.string;
+            done();
+        };
+
+        rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {onFocus}));
+        expect(rti).to.be.defined;
+
+        TestUtils.Simulate.focus(rti.refs.numberInput);
+    });
+
+    it('should trigger onBlur event handler when input element is unfocused', (done) => {
+        const onBlur = (number, country) => {
+            expect(number).to.be.a.string;
+            expect(country).to.be.string;
+            done();
+        };
+
+        rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {onBlur}));
+        expect(rti).to.be.defined;
+
+        TestUtils.Simulate.blur(rti.refs.numberInput);
+    });
 });
