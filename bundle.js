@@ -3095,9 +3095,11 @@ var ReactTelephoneInput = React.createClass({
         defaultCountry: React.PropTypes.string,
         onlyCountries: React.PropTypes.arrayOf(React.PropTypes.object),
         preferredCountries: React.PropTypes.arrayOf(React.PropTypes.string),
+        classNames: React.PropTypes.string,
         onChange: React.PropTypes.func,
         onEnterKeyPress: React.PropTypes.func,
-        classNames: React.PropTypes.string
+        onBlur: React.PropTypes.func,
+        onFocus: React.PropTypes.func
     },
     getDefaultProps: function getDefaultProps() {
         return {
@@ -3204,7 +3206,7 @@ var ReactTelephoneInput = React.createClass({
     _cursorToEnd: function _cursorToEnd(skipFocus) {
         var input = this.refs.numberInput;
         if (skipFocus) {
-            this.handleInputFocus();
+            this._fillDialCode();
         } else {
             input.focus();
 
@@ -3342,6 +3344,14 @@ var ReactTelephoneInput = React.createClass({
         }
     },
     handleInputFocus: function handleInputFocus() {
+        // trigger parent component's onFocus handler
+        if (typeof this.props.onFocus === 'function') {
+            this.props.onFocus(this.state.formattedNumer, this.state.selectedCountry);
+        }
+
+        this._fillDialCode();
+    },
+    _fillDialCode: function _fillDialCode() {
         // if the input is blank, insert dial code of the selected country
         if (this.refs.numberInput.value === '+') {
             this.setState({ formattedNumber: '+' + this.state.selectedCountry.dialCode });
