@@ -474,6 +474,7 @@ var ReactTelephoneInput = React.createClass({
 
     var kickoffClasses = classNames({
       'ko-invalid': this.props.errorMessage,
+      'ko-active': this.props.value !== '',
     });
 
     var inputClasses = classNames({
@@ -490,7 +491,7 @@ var ReactTelephoneInput = React.createClass({
     var inputFlagClasses = `flag ${this.state.selectedCountry.iso2}`;
     return (
       <div className='ko-field react-tel-input'>
-        <label className={kickoffClasses}>{this.props.errorMessage}</label>
+        <label className={kickoffClasses}>{this.props.errorMessage || this.props.fieldName}</label>
         <input
           onChange={this.handleInput}
           onClick={this.handleInputClick}
