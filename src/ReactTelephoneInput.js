@@ -13,6 +13,7 @@ var rest = require('lodash/array/rest');
 var debounce = require('lodash/function/debounce');
 var memoize = require('lodash/function/memoize');
 var assign = require('lodash/object/assign');
+var isEqual = require('lodash/lang/isEqual');
 // import lodash string methods
 var trim = require('lodash/string/trim');
 var startsWith = require('lodash/string/startsWith');
@@ -109,6 +110,9 @@ var ReactTelephoneInput = React.createClass({
         if(typeof this.props.onChange === 'function') {
             this.props.onChange(this.state.formattedNumber, this.state.selectedCountry);
         }
+    },
+    shouldComponentUpdate(nextProps) {
+        return !isEqual(nextProps, this.props);
     },
     componentWillReceiveProps(nextProps) {
         this.setState(this._mapPropsToState(nextProps));
