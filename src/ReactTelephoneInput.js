@@ -112,7 +112,7 @@ var ReactTelephoneInput = React.createClass({
         }
     },
     shouldComponentUpdate(nextProps, nextState) {
-        return !isEqual(nextProps, this.props) && !isEqual(nextState, this.state);
+        return !isEqual(nextProps, this.props) || !isEqual(nextState, this.state);
     },
     componentWillReceiveProps(nextProps) {
         this.setState(this._mapPropsToState(nextProps));
