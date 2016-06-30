@@ -238,7 +238,7 @@ var ReactTelephoneInput = React.createClass({
         this.setState({
             showDropDown: !this.state.showDropDown,
             highlightCountry: findWhere(this.props.onlyCountries, this.state.selectedCountry),
-            highlightCountryIndex: findIndex(this.props.onlyCountries, this.state.selectedCountry)
+            highlightCountryIndex: findIndex(this.state.preferredCountries.concat(this.props.onlyCountries), this.state.selectedCountry)
         }, () => {
             // only need to scrool if the dropdown list is alive
             if(this.state.showDropDown) {

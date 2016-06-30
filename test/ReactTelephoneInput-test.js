@@ -56,6 +56,48 @@ describe('react telephone input', function() {
         expect(rti.guessSelectedCountry('59').iso2).to.equal(allCountries[0].iso2);
     });
 
+    it('should set the correct highlightCountryIndex', () => {
+      var afghanistan = {
+        name: 'Afghanistan (‫افغانستان‬‎)',
+        iso2: 'af',
+        dialCode: '93',
+        priority: 0
+      }
+      var albania = {
+        name: 'Albania (Shqipëri)',
+        iso2: 'al',
+        dialCode: '355',
+        priority: 0,
+      }
+      var algeria = {
+        name: 'Algeria (‫الجزائر‬‎)',
+        iso2: 'dz',
+        dialCode: '213',
+        priority: 0
+      }
+
+      // Setup ReactTelephoneInput with a fixed set of countries
+      // so we know the expected indexes for sure
+      rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {
+        onlyCountries: [afghanistan, albania, algeria],
+        preferredCountries: [algeria.iso2],
+      }));
+
+      // Emulate clicking a countryk and opening the dropdown,
+      // then check if the highlightCountryIndex is correct
+      rti.handleFlagItemClick(algeria)
+      rti.handleFlagDropdownClick()
+      expect(rti.state.highlightCountryIndex).to.equal(0)
+
+      rti.handleFlagItemClick(afghanistan)
+      rti.handleFlagDropdownClick()
+      expect(rti.state.highlightCountryIndex).to.equal(1)
+
+      rti.handleFlagItemClick(albania)
+      rti.handleFlagDropdownClick()
+      expect(rti.state.highlightCountryIndex).to.equal(2)
+    });
+
     it('should trigger onFocus event handler when input element is focused', (done) => {
         const onFocus = (number, country) => {
             expect(number).to.be.a.string;
