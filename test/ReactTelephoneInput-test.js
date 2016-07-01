@@ -123,4 +123,16 @@ describe('react telephone input', function() {
 
         TestUtils.Simulate.blur(rti.refs.numberInput);
     });
+
+    it('should re-render with correct phone number once value prop changed', () => {
+        const div = document.createElement('div');
+        //initial call will mount the component into node, further renders will update already existing
+        const renderInput = (node, props) => ReactDOM.render(<ReactTelephoneInput {...props}/>, node);
+
+        rti = renderInput(div, {value: '+12313123132'});
+        expect(rti.state.formattedNumber).to.equal('+1 (231) 312-3132');
+
+        renderInput(div, {value: '+12313123133'});
+        expect(rti.state.formattedNumber).to.equal('+1 (231) 312-3133');
+    });
 });
