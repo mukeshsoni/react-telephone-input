@@ -1,9 +1,10 @@
 'use strict';
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var ReactTelephoneInput = require('react-telephone-input');
+import React from 'react'
+import ReactDOM from 'react-dom'
+import ReactTelephoneInput from 'react-telephone-input'
 
+console.log('ReactTelephoneInput: ', ReactTelephoneInput);
 var App = React.createClass({
     render() {
         return (

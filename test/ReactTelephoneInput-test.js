@@ -10,7 +10,7 @@ chai.use(dirtyChai);
 var React = require('react');
 var ReactDOM = require('react-dom');
 var TestUtils = require('react-addons-test-utils');
-var ReactTelephoneInput = require('../src/ReactTelephoneInput.js');
+var {ReactTelephoneInput} = require('../src/ReactTelephoneInput.js');
 var allCountries = require('../src/country_data.js').allCountries;
 var rti;
 
