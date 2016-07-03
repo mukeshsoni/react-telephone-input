@@ -2,27 +2,27 @@
 
 // TODO - fix the onlyContries props. Currently expects that as an array of country object, but users should be able to send in array of country isos
 
-var some = require('lodash/collection/some');
-var findWhere = require('lodash/collection/findWhere');
-var reduce = require('lodash/collection/reduce');
-var map = require('lodash/collection/map');
-var filter = require('lodash/collection/filter');
-var findIndex = require('lodash/array/findIndex');
-var first = require('lodash/array/first');
-var rest = require('lodash/array/rest');
-var debounce = require('lodash/function/debounce');
-var memoize = require('lodash/function/memoize');
-var assign = require('lodash/object/assign');
-var isEqual = require('lodash/lang/isEqual');
+import some from 'lodash/collection/some';
+import findWhere from 'lodash/collection/findWhere';
+import reduce from 'lodash/collection/reduce';
+import map from 'lodash/collection/map';
+import filter from 'lodash/collection/filter';
+import findIndex from 'lodash/array/findIndex';
+import first from 'lodash/array/first';
+import rest from 'lodash/array/rest';
+import debounce from 'lodash/function/debounce';
+import memoize from 'lodash/function/memoize';
+import assign from 'lodash/object/assign';
+import isEqual from 'lodash/lang/isEqual';
 // import lodash string methods
-var trim = require('lodash/string/trim');
-var startsWith = require('lodash/string/startsWith');
+import trim from 'lodash/string/trim';
+import startsWith from 'lodash/string/startsWith';
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var onClickOutside = require('react-onclickoutside');
-var classNames = require('classnames');
-var countryData = require('./country_data');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import onClickOutside from 'react-onclickoutside';
+import classNames from 'classnames';
+import countryData from './country_data';
 var allCountries = countryData.allCountries;
 var allCountriesIso2Lookup = countryData.allCountriesIso2Lookup;
 
@@ -52,7 +52,7 @@ function isNumberValid(inputNumber) {
     });
 }
 
-  export var ReactTelephoneInput = React.createClass({
+export var ReactTelephoneInput = React.createClass({
     getInitialState() {
         var preferredCountries = this.props.preferredCountries.map(
             iso2 => allCountriesIso2Lookup.hasOwnProperty(iso2) ? allCountries[allCountriesIso2Lookup[iso2]] : null
