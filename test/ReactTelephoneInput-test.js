@@ -2,16 +2,14 @@
 /* eslint: no-unused-expressions: false*/
 'use strict';
 
-var chai = require('chai');
-var dirtyChai = require('dirty-chai');
-var expect = chai.expect;
-chai.use(dirtyChai);
-
 var React = require('react');
 var ReactDOM = require('react-dom');
 var TestUtils = require('react-addons-test-utils');
-var {ReactTelephoneInput} = require('../src/ReactTelephoneInput.js');
-var allCountries = require('../src/country_data.js').allCountries;
+// var {ReactTelephoneInput} = require('../src/ReactTelephoneInput.js');
+import {ReactTelephoneInput} from '../src/ReactTelephoneInput'
+import allCountriesData from '../src/country_data'
+const allCountries = allCountriesData.allCountries
+// var allCountries = require('../src/country_data.js').allCountries;
 var rti;
 
 describe('react telephone input', function() {
@@ -36,7 +34,7 @@ describe('react telephone input', function() {
         rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {}));
         expect(rti).to.be.defined;
         expect(rti.refs.numberInput).to.be.defined;
-        expect(true).to.be.true();
+        expect(true).to.be.true;
     });
 
     it('should guess selected country', () => {
