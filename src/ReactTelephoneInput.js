@@ -81,7 +81,8 @@ function isNumberValid(inputNumber) {
         onChange: React.PropTypes.func,
         onEnterKeyPress: React.PropTypes.func,
         onBlur: React.PropTypes.func,
-        onFocus: React.PropTypes.func
+        onFocus: React.PropTypes.func,
+        pattern: React.PropTypes.string
     },
     getDefaultProps() {
         return {
@@ -525,6 +526,7 @@ function isNumberValid(inputNumber) {
                     type="tel"
                     className={inputClasses}
                     autoComplete='tel'
+                    pattern={this.props.pattern}
                     placeholder='+1 (702) 123-4567'/>
                 <div ref='flagDropDownButton' className={flagViewClasses} onKeyDown={this.handleKeydown} >
                     <div ref='selectedFlag' onClick={this.handleFlagDropdownClick} className='selected-flag' title={`${this.state.selectedCountry.name}: + ${this.state.selectedCountry.dialCode}`}>
