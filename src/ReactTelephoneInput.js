@@ -450,12 +450,10 @@ console.log('probableCandidateIndex', probableCandidateIndex)
         }
     },
     getCountryDropDownList() {
-
         var countryDropDownList = map(this.state.preferredCountries.concat(this.props.onlyCountries), function(country, index) {
             let itemClasses = classNames({
                 country: true,
-                preferred: country.iso2 === 'us' || country.iso2 === 'gb',
-                active: country.iso2 === 'us',
+                preferred: findIndex(this.state.preferredCountries, {iso2: country.iso2}) >= 0,
                 highlight: this.state.highlightCountryIndex === index
             });
 
