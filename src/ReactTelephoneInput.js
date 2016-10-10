@@ -292,6 +292,10 @@ function isNumberValid(inputNumber) {
             selectedCountry: newSelectedCountry.dialCode.length > 0 ? newSelectedCountry : this.state.selectedCountry
         }, function() {
             if(isModernBrowser) {
+                if((caretPosition === 1) && (formattedNumber.length === 2)) {
+                    caretPosition++;
+                }
+
                 if(diff > 0) {
                     caretPosition = caretPosition - diff;
                 }
@@ -344,10 +348,19 @@ function isNumberValid(inputNumber) {
         this._fillDialCode();
     },
     _mapPropsToState(props) {
-        var inputNumber = props.initialValue || props.value || '';
-        var selectedCountryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, ''));
-        var selectedCountryGuessIndex = findIndex(allCountries, selectedCountryGuess);
-        var formattedNumber = this.formatNumber(
+        let inputNumber;
+
+        if(props.value !== this.props.value) {
+          inputNumber = props.initialValue
+        } else if(props.initialValue !== this.props.initialValue) {
+          inputNumber = props.initialValue
+        } else {
+          inputNumber = ''
+        }
+
+        let selectedCountryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, ''));
+        let selectedCountryGuessIndex = findIndex(allCountries, selectedCountryGuess);
+        let formattedNumber = this.formatNumber(
             inputNumber.replace(/\D/g, ''), selectedCountryGuess ? selectedCountryGuess.format : null
         );
         return {
