@@ -65,7 +65,7 @@ function isNumberValid(inputNumber) {
                 showDropDown: false,
                 queryString: '',
                 freezeSelection: false,
-                debouncedQueryStingSearcher: debounce(this.searchCountry, 100)
+                debouncedQueryStingSearcher: debounce(this.searchCountry, 300)
             },
             this._mapPropsToState(this.props)
         );
@@ -344,7 +344,7 @@ function isNumberValid(inputNumber) {
         this._fillDialCode();
     },
     _mapPropsToState(props) {
-        var inputNumber = props.initialValue || props.value || '';
+        var inputNumber = props.value || '';
         var selectedCountryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, ''));
         var selectedCountryGuessIndex = findIndex(allCountries, selectedCountryGuess);
         var formattedNumber = this.formatNumber(
@@ -387,7 +387,7 @@ function isNumberValid(inputNumber) {
     searchCountry() {
         const probableCandidate = this._searchCountry(this.state.queryString) || this.props.onlyCountries[0];
         const probableCandidateIndex = findIndex(this.props.onlyCountries, probableCandidate) + this.state.preferredCountries.length;
-
+console.log('probableCandidateIndex', probableCandidateIndex)
         this.scrollTo(this.getElement(probableCandidateIndex), true);
 
         this.setState({
@@ -424,7 +424,8 @@ function isNumberValid(inputNumber) {
                     _moveHighlight(-1);
                     break;
             case keys.ENTER:
-                    this.handleFlagItemClick(this.props.onlyCountries[this.state.highlightCountryIndex], event);
+            console.log('enter key', this.state.highlightCountryIndex, this.props.onlyCountries[this.state.highlightCountryIndex])
+                    this.handleFlagItemClick(this.state.preferredCountries.concat(this.props.onlyCountries)[this.state.highlightCountryIndex], event);
                     break;
             case keys.ESC:
                 this.setState({showDropDown: false}, this._cursorToEnd);
