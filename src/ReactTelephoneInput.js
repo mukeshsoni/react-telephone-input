@@ -22,9 +22,10 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var onClickOutside = require('react-onclickoutside');
 var classNames = require('classnames');
-var countryData = require('./country_data');
+var countryData = require('country-telephone-data')
 var allCountries = countryData.allCountries;
-var allCountriesIso2Lookup = countryData.allCountriesIso2Lookup;
+var iso2Lookup = countryData.iso2Lookup;
+
 
 if (typeof document !== 'undefined') {
   var isModernBrowser = Boolean(document.createElement('input').setSelectionRange);
@@ -55,7 +56,7 @@ function isNumberValid(inputNumber) {
   export var ReactTelephoneInput = React.createClass({
     getInitialState() {
         var preferredCountries = this.props.preferredCountries.map(
-            iso2 => allCountriesIso2Lookup.hasOwnProperty(iso2) ? allCountries[allCountriesIso2Lookup[iso2]] : null
+            iso2 => iso2Lookup.hasOwnProperty(iso2) ? allCountries[iso2Lookup[iso2]] : null
         ).filter(val => val !== null);
 
         return assign(
