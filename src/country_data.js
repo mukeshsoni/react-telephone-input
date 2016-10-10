@@ -1269,6 +1269,9 @@ for (var i = 0; i < allCountries.length; i++) {
     // format
     if (c[3]) {
       allCountries[i].format = c[3];
+    } else {
+      // If there is no format string, separate out the country code
+      allCountries[i].format = "+" + Array(allCountries[i].dialCode.length + 1).join(".").toString() + " .";
     }
 
     // area codes
