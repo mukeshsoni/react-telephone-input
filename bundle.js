@@ -3593,6 +3593,10 @@ var ReactTelephoneInput = React.createClass({
             selectedCountry: newSelectedCountry.dialCode.length > 0 ? newSelectedCountry : this.state.selectedCountry
         }, function () {
             if (isModernBrowser) {
+                if (caretPosition === 1 && formattedNumber.length === 2) {
+                    caretPosition++;
+                }
+
                 if (diff > 0) {
                     caretPosition = caretPosition - diff;
                 }
@@ -3644,7 +3648,16 @@ var ReactTelephoneInput = React.createClass({
         this._fillDialCode();
     },
     _mapPropsToState: function _mapPropsToState(props) {
-        var inputNumber = props.initialValue || props.value || '';
+        var inputNumber = undefined;
+
+        if (props.value !== this.props.value) {
+            inputNumber = props.initialValue;
+        } else if (props.initialValue !== this.props.initialValue) {
+            inputNumber = props.initialValue;
+        } else {
+            inputNumber = '';
+        }
+
         var selectedCountryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, ''));
         var selectedCountryGuessIndex = findIndex(allCountries, selectedCountryGuess);
         var formattedNumber = this.formatNumber(inputNumber.replace(/\D/g, ''), selectedCountryGuess ? selectedCountryGuess.format : null);
