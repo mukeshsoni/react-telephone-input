@@ -82,7 +82,8 @@ function isNumberValid(inputNumber) {
         onEnterKeyPress: React.PropTypes.func,
         onBlur: React.PropTypes.func,
         onFocus: React.PropTypes.func,
-        disabled: React.PropTypes.bool
+        disabled: React.PropTypes.bool,
+        pattern: React.PropTypes.string,
     },
     getDefaultProps() {
         return {
@@ -94,7 +95,8 @@ function isNumberValid(inputNumber) {
             isValid: isNumberValid,
             flagsImagePath: 'flags.png',
             onEnterKeyPress: function () {},
-            preferredCountries: []
+            preferredCountries: [],
+            disabled: false,
         };
     },
     getNumber() {
@@ -529,6 +531,7 @@ function isNumberValid(inputNumber) {
                     type="tel"
                     className={inputClasses}
                     autoComplete='tel'
+                    pattern={this.props.pattern}
                     placeholder='+1 (702) 123-4567'
                     disabled={this.props.disabled}/>
                 <div ref='flagDropDownButton' className={flagViewClasses} onKeyDown={this.handleKeydown} >
