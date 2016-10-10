@@ -292,6 +292,10 @@ function isNumberValid(inputNumber) {
             selectedCountry: newSelectedCountry.dialCode.length > 0 ? newSelectedCountry : this.state.selectedCountry
         }, function() {
             if(isModernBrowser) {
+                if((caretPosition == 1) && (formattedNumber.length == 2)) {
+                    caretPosition++;
+                }
+
                 if(diff > 0) {
                     caretPosition = caretPosition - diff;
                 }
