@@ -39,6 +39,48 @@ React.render(<ReactTelInput
                 document.getElementById('my-container'));
 ```
 
+The component accepts other props to customize it -
+
+#### value and initialValue
+Both the props have the same purpose - for setting the initial value of the input programatically.
+
+#### initialValue
+See `value` above.
+
+#### autoFormat
+`true` by default. Setting it to false will turn off all auto formatting.
+
+#### defaultCountry
+The component selects the country code of a country by default. You can change it by passing the iso2 name of a country. E.g. for United States, set `defaultCountry` to 'us'.
+
+#### onlyCountries
+If you don't want all countries to be shown in the dropdown list, you can pass an array of country iso2 names to be shown in the dropdown list.
+
+#### preferredCountries
+Preferred countries show up in the top of the list. This prop also accepts an array of country iso2 names.
+
+#### classNames
+You can send in additional classes to be applied to the top container div of the component.
+
+#### onChange
+Function, which is called whenever there is a change of value in the input box.
+
+#### onEnterKeyPress
+Function, which is called when user presses the 'enter' key when the input box is in focus.
+
+#### onBlur
+Function, which is called when the focus goes away from the input box.
+
+#### onFocus
+Function, which is called when the input box gets the focus.
+
+#### disabled
+Boolean value. When set to true, the input box is disabled and clicking on flag dropdown does nothing.
+
+#### pattern
+String. This is passed on to the input field and works like it should for any other input field.
+
+
 ## How to use it
 - If you install it from `npm install`, you can just do `var ReactTelephoneInput = require('react-telephone-input');`
 - You will need to copy flags.png from example/src folder to see the flag icons for each country.
