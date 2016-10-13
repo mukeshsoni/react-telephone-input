@@ -81,21 +81,26 @@ describe('react telephone input', function() {
       rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {
         onlyCountries: [afghanistan, albania, algeria],
         preferredCountries: [algeria.iso2],
+        initialValue: '+121345',
       }));
+
 
       // Emulate clicking a countryk and opening the dropdown,
       // then check if the highlightCountryIndex is correct
       rti.handleFlagItemClick(algeria)
       rti.handleFlagDropdownClick()
       expect(rti.state.highlightCountryIndex).to.equal(0)
+      expect(rti.state.formattedNumber).to.equal('+213121345');
 
       rti.handleFlagItemClick(afghanistan)
       rti.handleFlagDropdownClick()
       expect(rti.state.highlightCountryIndex).to.equal(1)
+      expect(rti.state.formattedNumber).to.equal('+93121345');
 
       rti.handleFlagItemClick(albania)
       rti.handleFlagDropdownClick()
       expect(rti.state.highlightCountryIndex).to.equal(2)
+      expect(rti.state.formattedNumber).to.equal('+355121345');
     });
 
     it('should trigger onFocus event handler when input element is focused', (done) => {
