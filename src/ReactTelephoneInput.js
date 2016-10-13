@@ -322,8 +322,8 @@ function isNumberValid(inputNumber) {
 
         // tiny optimization
         if(currentSelectedCountry.iso2 !== nextSelectedCountry.iso2) {
-            // TODO - the below replacement is a bug. It will replace stuff from middle too
-            var newNumber = this.state.formattedNumber.replace(currentSelectedCountry.dialCode, nextSelectedCountry.dialCode);
+            var dialCodeRegex = RegExp('^(\\+' + currentSelectedCountry.dialCode + ')|\\+');
+            var newNumber = this.state.formattedNumber.replace(dialCodeRegex, '+' + nextSelectedCountry.dialCode);
             var formattedNumber = this.formatNumber(newNumber.replace(/\D/g, ''), nextSelectedCountry.format);
 
             this.setState({
