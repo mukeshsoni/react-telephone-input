@@ -353,7 +353,7 @@ function isNumberValid(inputNumber) {
         let inputNumber;
 
         if(props.value !== this.props.value) {
-          inputNumber = props.initialValue
+          inputNumber = props.value
         } else if(props.initialValue !== this.props.initialValue) {
           inputNumber = props.initialValue
         } else {
