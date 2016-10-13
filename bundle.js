@@ -3347,7 +3347,7 @@ var ReactTelephoneInput = React.createClass({
             queryString: '',
             freezeSelection: false,
             debouncedQueryStingSearcher: debounce(this.searchCountry, 300)
-        }, this._mapPropsToState(this.props));
+        }, this._mapPropsToState(this.props, true));
     },
     propTypes: {
         value: React.PropTypes.string,
@@ -3366,8 +3366,6 @@ var ReactTelephoneInput = React.createClass({
     },
     getDefaultProps: function getDefaultProps() {
         return {
-            value: '',
-            initialValue: '',
             autoFormat: true,
             onlyCountries: allCountries,
             defaultCountry: allCountries[0].iso2,
@@ -3630,12 +3628,16 @@ var ReactTelephoneInput = React.createClass({
         this._fillDialCode();
     },
     _mapPropsToState: function _mapPropsToState(props) {
+        var firstCall = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
+
         var inputNumber = undefined;
 
-        if (props.value !== this.props.value) {
+        if (props.value) {
             inputNumber = props.value;
-        } else if (props.initialValue !== this.props.initialValue) {
+        } else if (props.initialValue && firstCall) {
             inputNumber = props.initialValue;
+        } else if (this.state && this.state.formattedNumber && this.state.formattedNumber.length > 0) {
+            inputNumber = this.state.formattedNumber;
         } else {
             inputNumber = '';
         }
