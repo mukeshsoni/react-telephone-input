@@ -69,7 +69,7 @@ function isNumberValid(inputNumber) {
                 freezeSelection: false,
                 debouncedQueryStingSearcher: debounce(this.searchCountry, 300)
             },
-            this._mapPropsToState(this.props)
+            this._mapPropsToState(this.props, true)
         );
     },
     propTypes: {
@@ -89,8 +89,6 @@ function isNumberValid(inputNumber) {
     },
     getDefaultProps() {
         return {
-            value: '',
-            initialValue: '',
             autoFormat: true,
             onlyCountries: allCountries,
             defaultCountry: allCountries[0].iso2,
@@ -349,15 +347,17 @@ function isNumberValid(inputNumber) {
 
         this._fillDialCode();
     },
-    _mapPropsToState(props) {
+    _mapPropsToState(props, firstCall = false) {
         let inputNumber;
 
-        if(props.value !== this.props.value) {
-          inputNumber = props.value
-        } else if(props.initialValue !== this.props.initialValue) {
-          inputNumber = props.initialValue
+        if(props.value) {
+            inputNumber = props.value
+        } else if(props.initialValue && firstCall) {
+            inputNumber = props.initialValue
+        } else if(this.state && this.state.formattedNumber && this.state.formattedNumber.length > 0) {
+            inputNumber = this.state.formattedNumber
         } else {
-          inputNumber = ''
+            inputNumber = ''
         }
 
         let selectedCountryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, ''));
