@@ -212,6 +212,7 @@ function isNumberValid(inputNumber) {
     // memoize results based on the first 5/6 characters. That is all that matters
     guessSelectedCountry: memoize(function(inputNumber) {
         var secondBestGuess = findWhere(allCountries, {iso2: this.props.defaultCountry}) || this.props.onlyCountries[0];
+	var inputNumberForCountries = inputNumber.substr(0, 4);
         if (trim(inputNumber) !== '') {
             var bestGuess = reduce(this.props.onlyCountries, function (selectedCountry, country) {
 
