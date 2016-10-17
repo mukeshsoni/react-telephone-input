@@ -26,6 +26,7 @@ var countryData = require('./country_data.js')
 // var countryData = require('country-telephone-data')
 var allCountries = countryData.allCountries;
 var iso2Lookup = countryData.iso2Lookup;
+var allCountryCodes = countryData.allCountryCodes;
 
 
 if (typeof document !== 'undefined') {
@@ -211,19 +212,34 @@ function isNumberValid(inputNumber) {
     // memoize results based on the first 5/6 characters. That is all that matters
     guessSelectedCountry: memoize(function(inputNumber) {
         var secondBestGuess = findWhere(allCountries, {iso2: this.props.defaultCountry}) || this.props.onlyCountries[0];
-        if(trim(inputNumber) !== '') {
-            var bestGuess = reduce(this.props.onlyCountries, function(selectedCountry, country) {
-                            if(startsWith(inputNumber, country.dialCode)) {
-                                if(country.dialCode.length > selectedCountry.dialCode.length) {
-                                    return country;
-                                }
-                                if(country.dialCode.length === selectedCountry.dialCode.length && country.priority < selectedCountry.priority) {
-                                    return country;
-                                }
-                            }
+	var inputNumberForCountries = inputNumber.substr(0, 4);
+        if (trim(inputNumber) !== '') {
+            var bestGuess = reduce(this.props.onlyCountries, function (selectedCountry, country) {
 
-                            return selectedCountry;
-                        }, {dialCode: '', priority: 10001}, this);
+                // if the country dialCode exists WITH area code
+
+                if (allCountryCodes[inputNumberForCountries] && allCountryCodes[inputNumberForCountries][0] === country.iso2) {
+                    return country;
+
+                // if the selected country dialCode is there with the area code
+
+                } else if (allCountryCodes[inputNumberForCountries] && allCountryCodes[inputNumberForCountries][0] === selectedCountry.iso2) {
+                    return selectedCountry;
+
+                // else do the original if statement
+                    
+                } else {
+                    if (startsWith(inputNumber, country.dialCode)) {
+                        if (country.dialCode.length > selectedCountry.dialCode.length) {
+                            return country;
+                        }
+                        if (country.dialCode.length === selectedCountry.dialCode.length && country.priority < selectedCountry.priority) {
+                            return country;
+                        }
+                    }
+                }
+                return selectedCountry;
+            }, { dialCode: '', priority: 10001 }, this);
         } else {
             return secondBestGuess;
         }

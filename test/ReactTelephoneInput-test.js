@@ -51,6 +51,10 @@ describe('react telephone input', function() {
         expect(rti.guessSelectedCountry('237').iso2).to.equal('cm'); // based on priority
         expect(rti.guessSelectedCountry('599').iso2).to.equal('cw');
         expect(rti.guessSelectedCountry('590').iso2).to.equal('gp');
+	expect(rti.guessSelectedCountry('1403').iso2).to.equal('ca');
+	expect(rti.guessSelectedCountry('18005').iso2).to.equal('us');
+	expect(rti.guessSelectedCountry('1809').iso2).to.equal('do');
+
 
         // select the first one if not able to resolve completely
         expect(rti.guessSelectedCountry('59').iso2).to.equal(allCountries[0].iso2);
