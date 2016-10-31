@@ -81,7 +81,7 @@ function isNumberValid(inputNumber) {
         onlyCountries: React.PropTypes.arrayOf(React.PropTypes.object),
         preferredCountries: React.PropTypes.arrayOf(React.PropTypes.string),
         classNames: React.PropTypes.string,
-	inputStyle: React.PropTypes.object,    
+	id: React.PropTypes.string,
         onChange: React.PropTypes.func,
         onEnterKeyPress: React.PropTypes.func,
         onBlur: React.PropTypes.func,
@@ -99,8 +99,7 @@ function isNumberValid(inputNumber) {
             onEnterKeyPress: function () {},
             preferredCountries: [],
             disabled: false,
-            placeholder: '+1 (702) 123-4567',
-            inputStyle: {}		
+            placeholder: '+1 (702) 123-4567'
         };
     },
     getNumber() {
@@ -560,7 +559,7 @@ console.log('probableCandidateIndex', probableCandidateIndex)
                     onBlur={this.handleInputBlur}
                     onKeyDown={this.handleInputKeyDown}
                     value={this.state.formattedNumber}
-                    style={this.props.inputStyle}
+                    id={this.props.id}
                     ref="numberInput"
                     type="tel"
                     className={inputClasses}
