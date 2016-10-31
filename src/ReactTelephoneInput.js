@@ -549,7 +549,7 @@ console.log('probableCandidateIndex', probableCandidateIndex)
         });
 
         var inputFlagClasses = `flag ${this.state.selectedCountry.iso2}`;
-
+        var idValue = this.props.inputId ? this.props.inputId : '';
         return (
             <div className={classNames('react-tel-input', this.props.classNames)}>
                 <input
@@ -559,7 +559,7 @@ console.log('probableCandidateIndex', probableCandidateIndex)
                     onBlur={this.handleInputBlur}
                     onKeyDown={this.handleInputKeyDown}
                     value={this.state.formattedNumber}
-                    id={this.props.inputId}
+                    id=idValue
                     ref="numberInput"
                     type="tel"
                     className={inputClasses}
