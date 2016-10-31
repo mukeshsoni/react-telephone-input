@@ -549,7 +549,10 @@ console.log('probableCandidateIndex', probableCandidateIndex)
         });
 
         var inputFlagClasses = `flag ${this.state.selectedCountry.iso2}`;
-        var idValue = this.props.inputId ? this.props.inputId : '';
+        let otherProps = {}
+        if(this.props.inputId) {
+            otherProps.id = this.props.inputId
+        }
         return (
             <div className={classNames('react-tel-input', this.props.classNames)}>
                 <input
@@ -559,14 +562,13 @@ console.log('probableCandidateIndex', probableCandidateIndex)
                     onBlur={this.handleInputBlur}
                     onKeyDown={this.handleInputKeyDown}
                     value={this.state.formattedNumber}
-                    id=idValue
                     ref="numberInput"
                     type="tel"
                     className={inputClasses}
                     autoComplete='tel'
                     pattern={this.props.pattern}
                     placeholder={this.state.placeholder}
-                    disabled={this.props.disabled}/>
+                    disabled={this.props.disabled} {...otherProps}/>
                 <div ref='flagDropDownButton' className={flagViewClasses} onKeyDown={this.handleKeydown} >
                     <div ref='selectedFlag' onClick={this.handleFlagDropdownClick} className='selected-flag' title={`${this.state.selectedCountry.name}: + ${this.state.selectedCountry.dialCode}`}>
                         <div className={inputFlagClasses} style={this.getFlagStyle()}>
