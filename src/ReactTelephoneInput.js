@@ -81,6 +81,7 @@ function isNumberValid(inputNumber) {
         onlyCountries: React.PropTypes.arrayOf(React.PropTypes.object),
         preferredCountries: React.PropTypes.arrayOf(React.PropTypes.string),
         classNames: React.PropTypes.string,
+	inputId: React.PropTypes.string,
         onChange: React.PropTypes.func,
         onEnterKeyPress: React.PropTypes.func,
         onBlur: React.PropTypes.func,
@@ -548,7 +549,10 @@ console.log('probableCandidateIndex', probableCandidateIndex)
         });
 
         var inputFlagClasses = `flag ${this.state.selectedCountry.iso2}`;
-
+        let otherProps = {}
+        if(this.props.inputId) {
+            otherProps.id = this.props.inputId
+        }
         return (
             <div className={classNames('react-tel-input', this.props.classNames)}>
                 <input
@@ -564,7 +568,7 @@ console.log('probableCandidateIndex', probableCandidateIndex)
                     autoComplete='tel'
                     pattern={this.props.pattern}
                     placeholder={this.state.placeholder}
-                    disabled={this.props.disabled}/>
+                    disabled={this.props.disabled} {...otherProps}/>
                 <div ref='flagDropDownButton' className={flagViewClasses} onKeyDown={this.handleKeydown} >
                     <div ref='selectedFlag' onClick={this.handleFlagDropdownClick} className='selected-flag' title={`${this.state.selectedCountry.name}: + ${this.state.selectedCountry.dialCode}`}>
                         <div className={inputFlagClasses} style={this.getFlagStyle()}>
