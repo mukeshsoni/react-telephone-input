@@ -3280,6 +3280,17 @@ module.exports = {
 Object.defineProperty(exports, '__esModule', {
     value: true
 });
+
+var _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];for (var key in source) {
+            if (Object.prototype.hasOwnProperty.call(source, key)) {
+                target[key] = source[key];
+            }
+        }
+    }return target;
+};
+
 var some = require('lodash/collection/some');
 var findWhere = require('lodash/collection/findWhere');
 var reduce = require('lodash/collection/reduce');
@@ -3304,6 +3315,7 @@ var countryData = require('./country_data.js');
 // var countryData = require('country-telephone-data')
 var allCountries = countryData.allCountries;
 var iso2Lookup = countryData.iso2Lookup;
+var allCountryCodes = countryData.allCountryCodes;
 
 if (typeof document !== 'undefined') {
     var isModernBrowser = Boolean(document.createElement('input').setSelectionRange);
@@ -3357,6 +3369,7 @@ var ReactTelephoneInput = React.createClass({
         onlyCountries: React.PropTypes.arrayOf(React.PropTypes.object),
         preferredCountries: React.PropTypes.arrayOf(React.PropTypes.string),
         classNames: React.PropTypes.string,
+        inputId: React.PropTypes.string,
         onChange: React.PropTypes.func,
         onEnterKeyPress: React.PropTypes.func,
         onBlur: React.PropTypes.func,
@@ -3488,17 +3501,30 @@ var ReactTelephoneInput = React.createClass({
     // memoize results based on the first 5/6 characters. That is all that matters
     guessSelectedCountry: memoize(function (inputNumber) {
         var secondBestGuess = findWhere(allCountries, { iso2: this.props.defaultCountry }) || this.props.onlyCountries[0];
+        var inputNumberForCountries = inputNumber.substr(0, 4);
         if (trim(inputNumber) !== '') {
             var bestGuess = reduce(this.props.onlyCountries, function (selectedCountry, country) {
-                if (startsWith(inputNumber, country.dialCode)) {
-                    if (country.dialCode.length > selectedCountry.dialCode.length) {
-                        return country;
-                    }
-                    if (country.dialCode.length === selectedCountry.dialCode.length && country.priority < selectedCountry.priority) {
-                        return country;
-                    }
-                }
 
+                // if the country dialCode exists WITH area code
+
+                if (allCountryCodes[inputNumberForCountries] && allCountryCodes[inputNumberForCountries][0] === country.iso2) {
+                    return country;
+
+                    // if the selected country dialCode is there with the area code
+                } else if (allCountryCodes[inputNumberForCountries] && allCountryCodes[inputNumberForCountries][0] === selectedCountry.iso2) {
+                        return selectedCountry;
+
+                        // else do the original if statement
+                    } else {
+                            if (startsWith(inputNumber, country.dialCode)) {
+                                if (country.dialCode.length > selectedCountry.dialCode.length) {
+                                    return country;
+                                }
+                                if (country.dialCode.length === selectedCountry.dialCode.length && country.priority < selectedCountry.priority) {
+                                    return country;
+                                }
+                            }
+                        }
                 return selectedCountry;
             }, { dialCode: '', priority: 10001 }, this);
         } else {
@@ -3800,8 +3826,11 @@ var ReactTelephoneInput = React.createClass({
         });
 
         var inputFlagClasses = 'flag ' + this.state.selectedCountry.iso2;
-
-        return React.createElement('div', { className: classNames('react-tel-input', this.props.classNames) }, React.createElement('input', {
+        var otherProps = {};
+        if (this.props.inputId) {
+            otherProps.id = this.props.inputId;
+        }
+        return React.createElement('div', { className: classNames('react-tel-input', this.props.classNames) }, React.createElement('input', _extends({
             onChange: this.handleInput,
             onClick: this.handleInputClick,
             onFocus: this.handleInputFocus,
@@ -3814,7 +3843,7 @@ var ReactTelephoneInput = React.createClass({
             autoComplete: 'tel',
             pattern: this.props.pattern,
             placeholder: this.state.placeholder,
-            disabled: this.props.disabled }), React.createElement('div', { ref: 'flagDropDownButton', className: flagViewClasses, onKeyDown: this.handleKeydown }, React.createElement('div', { ref: 'selectedFlag', onClick: this.handleFlagDropdownClick, className: 'selected-flag', title: this.state.selectedCountry.name + ': + ' + this.state.selectedCountry.dialCode }, React.createElement('div', { className: inputFlagClasses, style: this.getFlagStyle() }, React.createElement('div', { className: arrowClasses }))), this.state.showDropDown ? this.getCountryDropDownList() : ''));
+            disabled: this.props.disabled }, otherProps)), React.createElement('div', { ref: 'flagDropDownButton', className: flagViewClasses, onKeyDown: this.handleKeydown }, React.createElement('div', { ref: 'selectedFlag', onClick: this.handleFlagDropdownClick, className: 'selected-flag', title: this.state.selectedCountry.name + ': + ' + this.state.selectedCountry.dialCode }, React.createElement('div', { className: inputFlagClasses, style: this.getFlagStyle() }, React.createElement('div', { className: arrowClasses }))), this.state.showDropDown ? this.getCountryDropDownList() : ''));
     }
 });
 
