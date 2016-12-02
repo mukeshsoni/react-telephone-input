@@ -45,15 +45,16 @@ describe('react telephone input', function() {
         expect(rti.guessSelectedCountry('').iso2).to.equal(allCountries[0].iso2);
 
         // if input value is sent, select appropriately
+        expect(rti.guessSelectedCountry('1').iso2).to.equal(allCountries[0].iso2); // only guess after 2 or more digits entered
         expect(rti.guessSelectedCountry('12').iso2).to.equal('us'); // based on priority
         expect(rti.guessSelectedCountry('12112121').iso2).to.equal('us');
         expect(rti.guessSelectedCountry('913212121').iso2).to.equal('in');
         expect(rti.guessSelectedCountry('237').iso2).to.equal('cm'); // based on priority
         expect(rti.guessSelectedCountry('599').iso2).to.equal('cw');
         expect(rti.guessSelectedCountry('590').iso2).to.equal('gp');
-	expect(rti.guessSelectedCountry('1403').iso2).to.equal('ca');
-	expect(rti.guessSelectedCountry('18005').iso2).to.equal('us');
-	expect(rti.guessSelectedCountry('1809').iso2).to.equal('do');
+        expect(rti.guessSelectedCountry('1403').iso2).to.equal('ca');
+        expect(rti.guessSelectedCountry('18005').iso2).to.equal('us');
+        expect(rti.guessSelectedCountry('1809').iso2).to.equal('do');
 
 
         // select the first one if not able to resolve completely
@@ -105,6 +106,42 @@ describe('react telephone input', function() {
       rti.handleFlagDropdownClick()
       expect(rti.state.highlightCountryIndex).to.equal(2)
       expect(rti.state.formattedNumber).to.equal('+355121345');
+    });
+
+    it('should not switch selectedCountry back to USA after Canada is selected and number is 1', () => {
+      var canada = {
+        name: '‬‎Canada',
+        iso2: 'ca',
+        dialCode: '1',
+        priority: 0
+      };
+      var unitedStates = {
+        name: 'United States',
+        iso2: 'us',
+        dialCode: '1',
+        priority: 0
+      };
+
+      // Setup ReactTelephoneInput with a fixed set of countries
+      // so we know the expected indexes for sure
+      rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {
+        onlyCountries: [canada, unitedStates],
+        preferredCountries: [unitedStates.iso2],
+        initialValue: '+1',
+      }));
+
+
+      // Emulate clicking a country and opening the dropdown,
+      // then check if the state.selectedCountry.iso2 is correct
+      rti.handleFlagItemClick(canada)
+      rti.handleFlagDropdownClick()
+      expect(rti.state.selectedCountry.iso2).to.equal('ca');
+      expect(rti.state.formattedNumber).to.equal('+1');
+
+      rti.handleFlagItemClick(unitedStates)
+      rti.handleFlagDropdownClick()
+      expect(rti.state.selectedCountry.iso2).to.equal('us');
+      expect(rti.state.formattedNumber).to.equal('+1');
     });
 
     it('should trigger onFocus event handler when input element is focused', (done) => {
