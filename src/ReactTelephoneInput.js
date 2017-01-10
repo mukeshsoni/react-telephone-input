@@ -81,6 +81,7 @@ function isNumberValid(inputNumber) {
         onlyCountries: React.PropTypes.arrayOf(React.PropTypes.object),
         preferredCountries: React.PropTypes.arrayOf(React.PropTypes.string),
         classNames: React.PropTypes.string,
+        className: React.PropTypes.string,
 	inputId: React.PropTypes.string,
         onChange: React.PropTypes.func,
         onEnterKeyPress: React.PropTypes.func,
@@ -554,7 +555,7 @@ console.log('probableCandidateIndex', probableCandidateIndex)
             otherProps.id = this.props.inputId
         }
         return (
-            <div className={classNames('react-tel-input', this.props.classNames)}>
+            <div className={classNames('react-tel-input', this.props.classNames, this.props.className)}>
                 <input
                     onChange={this.handleInput}
                     onClick={this.handleInputClick}
