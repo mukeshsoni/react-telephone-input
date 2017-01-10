@@ -88,6 +88,7 @@ function isNumberValid(inputNumber) {
         onFocus: React.PropTypes.func,
         disabled: React.PropTypes.bool,
         pattern: React.PropTypes.string,
+        required: React.PropTypes.bool,
     },
     getDefaultProps() {
         return {
@@ -567,6 +568,7 @@ console.log('probableCandidateIndex', probableCandidateIndex)
                     className={inputClasses}
                     autoComplete='tel'
                     pattern={this.props.pattern}
+                    required={this.props.required}
                     placeholder={this.state.placeholder}
                     disabled={this.props.disabled} {...otherProps}/>
                 <div ref='flagDropDownButton' className={flagViewClasses} onKeyDown={this.handleKeydown} >
