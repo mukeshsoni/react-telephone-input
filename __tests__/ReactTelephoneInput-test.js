@@ -7,12 +7,12 @@ var dirtyChai = require('dirty-chai');
 var expect = chai.expect;
 chai.use(dirtyChai);
 
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { shallow, mount } from 'enzyme'
-var TestUtils = require('react-addons-test-utils');
+import TestUtils from 'react-addons-test-utils'
 import renderer from 'react-test-renderer'
-var {ReactTelephoneInput} = require('../src/ReactTelephoneInput.js');
+import  { ReactTelephoneInput } from '../src/ReactTelephoneInput.js'
 var allCountries = require('../src/country_data.js').allCountries;
 var rti;
 
