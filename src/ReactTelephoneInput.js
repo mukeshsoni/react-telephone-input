@@ -81,13 +81,14 @@ function isNumberValid(inputNumber) {
         onlyCountries: React.PropTypes.arrayOf(React.PropTypes.object),
         preferredCountries: React.PropTypes.arrayOf(React.PropTypes.string),
         classNames: React.PropTypes.string,
-	inputId: React.PropTypes.string,
+	      inputId: React.PropTypes.string,
         onChange: React.PropTypes.func,
         onEnterKeyPress: React.PropTypes.func,
         onBlur: React.PropTypes.func,
         onFocus: React.PropTypes.func,
         disabled: React.PropTypes.bool,
         pattern: React.PropTypes.string,
+        required: React.PropTypes.bool,
     },
     getDefaultProps() {
         return {
@@ -100,7 +101,8 @@ function isNumberValid(inputNumber) {
             preferredCountries: [],
             disabled: false,
             placeholder: '+1 (702) 123-4567',
-            autoComplete: 'tel'
+            autoComplete: 'tel',
+            required: false,
         };
     },
     getNumber() {
@@ -569,6 +571,7 @@ console.log('probableCandidateIndex', probableCandidateIndex)
                     className={inputClasses}
                     autoComplete={this.props.autoComplete}
                     pattern={this.props.pattern}
+                    required={this.props.required}
                     placeholder={this.props.placeholder}
                     disabled={this.props.disabled} {...otherProps}/>
                 <div ref='flagDropDownButton' className={flagViewClasses} onKeyDown={this.handleKeydown} >
