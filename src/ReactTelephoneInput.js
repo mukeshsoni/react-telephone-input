@@ -55,7 +55,8 @@ function isNumberValid(inputNumber) {
     });
 }
 
-  export var ReactTelephoneInput = React.createClass({
+
+export var ReactTelephoneInput = React.createClass({    
     getInitialState() {
         var preferredCountries = this.props.preferredCountries.map(
             iso2 => iso2Lookup.hasOwnProperty(iso2) ? allCountries[iso2Lookup[iso2]] : null
@@ -81,7 +82,7 @@ function isNumberValid(inputNumber) {
         onlyCountries: React.PropTypes.arrayOf(React.PropTypes.object),
         preferredCountries: React.PropTypes.arrayOf(React.PropTypes.string),
         classNames: React.PropTypes.string,
-	      inputId: React.PropTypes.string,
+          inputId: React.PropTypes.string,
         onChange: React.PropTypes.func,
         onEnterKeyPress: React.PropTypes.func,
         onBlur: React.PropTypes.func,
@@ -214,9 +215,9 @@ function isNumberValid(inputNumber) {
         }
     },
     // memoize results based on the first 5/6 characters. That is all that matters
-    guessSelectedCountry: memoize(function(inputNumber) {
+    guessSelectedCountry: function(inputNumber) {
         var secondBestGuess = find(allCountries, {iso2: this.props.defaultCountry}) || this.props.onlyCountries[0];
-	var inputNumberForCountries = inputNumber.substr(0, 4);
+        var inputNumberForCountries = inputNumber.substr(0, 4);
         if (trim(inputNumber) !== '') {
             var bestGuess = reduce(this.props.onlyCountries, function (selectedCountry, country) {
 
@@ -231,7 +232,6 @@ function isNumberValid(inputNumber) {
                     return selectedCountry;
 
                 // else do the original if statement
-                    
                 } else {
                     if (startsWith(inputNumber, country.dialCode)) {
                         if (country.dialCode.length > selectedCountry.dialCode.length) {
@@ -253,7 +253,7 @@ function isNumberValid(inputNumber) {
         }
 
         return bestGuess;
-    }),
+    },
     getElement(index) {
         return ReactDOM.findDOMNode(this.refs[`flag_no_${index}`]);
     },
@@ -385,6 +385,7 @@ function isNumberValid(inputNumber) {
         let formattedNumber = this.formatNumber(
             inputNumber.replace(/\D/g, ''), selectedCountryGuess ? selectedCountryGuess.format : null
         );
+
         return {
             selectedCountry: selectedCountryGuess,
             highlightCountryIndex: selectedCountryGuessIndex,
@@ -422,7 +423,6 @@ function isNumberValid(inputNumber) {
     searchCountry() {
         const probableCandidate = this._searchCountry(this.state.queryString) || this.props.onlyCountries[0];
         const probableCandidateIndex = findIndex(this.props.onlyCountries, probableCandidate) + this.state.preferredCountries.length;
-console.log('probableCandidateIndex', probableCandidateIndex)
         this.scrollTo(this.getElement(probableCandidateIndex), true);
 
         this.setState({
@@ -459,7 +459,6 @@ console.log('probableCandidateIndex', probableCandidateIndex)
                     _moveHighlight(-1);
                     break;
             case keys.ENTER:
-            console.log('enter key', this.state.highlightCountryIndex, this.props.onlyCountries[this.state.highlightCountryIndex])
                     this.handleFlagItemClick(this.state.preferredCountries.concat(this.props.onlyCountries)[this.state.highlightCountryIndex], event);
                     break;
             case keys.ESC:

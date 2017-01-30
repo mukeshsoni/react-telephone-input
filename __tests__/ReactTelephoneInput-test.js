@@ -24,14 +24,18 @@ describe('react telephone input', function() {
         }
     });
 
-    it('should render the top divs and inputses', () => {
-        const renderer = TestUtils.createRenderer();
-        renderer.render(<ReactTelephoneInput/>);
-        const renderedTree = renderer.getRenderOutput();
+    it('mandatory existential crisis test', () => {
+        rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {}));
+        expect(rti).to.be.defined;
+        expect(rti.refs.numberInput).to.be.defined;
+        expect(true).to.be.true();
+    });
 
-        expect(renderedTree.type).to.equal('div');
-        expect(renderedTree.props.className).to.equal('react-tel-input');
-        expect(renderedTree.props.children[0].type).to.equal('input');
+    it('should render the top divs and inputses', () => {
+        const wrapper = shallow(<ReactTelephoneInput/>);
+
+        expect(wrapper.find('div.react-tel-input')).to.have.length(1);
+        expect(wrapper.find('input')).to.have.length(1);
     });
 
     it('should show the placeholder as passed in the prop', () => {
@@ -39,6 +43,24 @@ describe('react telephone input', function() {
         const component = mount(<ReactTelephoneInput placeholder={placeholder} />)
         const input = component.find('input')
         expect(input.prop('placeholder')).to.eql(placeholder)
+    })
+
+    // refer issue - https://github.com/mukeshsoni/react-telephone-input/issues/103
+    it('should guess correct country when flag is changed manually from the dropdown', () => {
+        const wrapper = mount(<ReactTelephoneInput defaultCountry='us'   preferredCountries={['us', 'ca', 'zz', 'hk']}  />)
+        expect(wrapper.find('div.flag-dropdown')).to.have.length(1)
+        expect(wrapper.find('div.selected-flag > div.us')).to.have.length(1)
+
+        // the dropdown list is not there
+        expect(wrapper.find('ul.country-list')).to.have.length(0)
+        // let's click on the selected flag
+        wrapper.find('div.selected-flag').simulate('click')
+        expect(wrapper.find('ul.country-list')).to.have.length(1)
+
+        // now let's click on canada
+        wrapper.find('ul.country-list > li').at(1).simulate('click')
+        expect(wrapper.find('ul.country-list')).to.have.length(0)
+        expect(wrapper.find('div.selected-flag > div.ca')).to.have.length(1)
     })
 
     it('should allow custom value for autoComplete input property', () => {
@@ -49,12 +71,6 @@ describe('react telephone input', function() {
         expect(wrapper2.find('input').prop('autoComplete')).to.equal('off')
     })
 
-    it('mandatory existential crisis test', () => {
-        rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {}));
-        expect(rti).to.be.defined;
-        expect(rti.refs.numberInput).to.be.defined;
-        expect(true).to.be.true();
-    });
 
     it('should guess selected country', () => {
         rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {}));
@@ -68,60 +84,59 @@ describe('react telephone input', function() {
         expect(rti.guessSelectedCountry('237').iso2).to.equal('cm'); // based on priority
         expect(rti.guessSelectedCountry('599').iso2).to.equal('cw');
         expect(rti.guessSelectedCountry('590').iso2).to.equal('gp');
-	expect(rti.guessSelectedCountry('1403').iso2).to.equal('ca');
-	expect(rti.guessSelectedCountry('18005').iso2).to.equal('us');
-	expect(rti.guessSelectedCountry('1809').iso2).to.equal('do');
-
+        expect(rti.guessSelectedCountry('1403').iso2).to.equal('ca');
+        expect(rti.guessSelectedCountry('18005').iso2).to.equal('us');
+        expect(rti.guessSelectedCountry('1809').iso2).to.equal('do');
 
         // select the first one if not able to resolve completely
         expect(rti.guessSelectedCountry('59').iso2).to.equal(allCountries[0].iso2);
     });
 
     it('should set the correct highlightCountryIndex', () => {
-      var afghanistan = {
-        name: 'Afghanistan (‫افغانستان‬‎)',
-        iso2: 'af',
-        dialCode: '93',
-        priority: 0
-      }
-      var albania = {
-        name: 'Albania (Shqipëri)',
-        iso2: 'al',
-        dialCode: '355',
-        priority: 0,
-      }
-      var algeria = {
-        name: 'Algeria (‫الجزائر‬‎)',
-        iso2: 'dz',
-        dialCode: '213',
-        priority: 0
-      }
+        var afghanistan = {
+            name: 'Afghanistan (‫افغانستان‬‎)',
+            iso2: 'af',
+            dialCode: '93',
+            priority: 0
+        }
+        var albania = {
+            name: 'Albania (Shqipëri)',
+            iso2: 'al',
+            dialCode: '355',
+            priority: 0,
+        }
+        var algeria = {
+            name: 'Algeria (‫الجزائر‬‎)',
+            iso2: 'dz',
+            dialCode: '213',
+            priority: 0
+        }
 
-      // Setup ReactTelephoneInput with a fixed set of countries
-      // so we know the expected indexes for sure
-      rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {
-        onlyCountries: [afghanistan, albania, algeria],
-        preferredCountries: [algeria.iso2],
-        initialValue: '+121345',
-      }));
+        // Setup ReactTelephoneInput with a fixed set of countries
+        // so we know the expected indexes for sure
+        rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {
+            onlyCountries: [afghanistan, albania, algeria],
+            preferredCountries: [algeria.iso2],
+            initialValue: '+121345',
+        }));
 
 
-      // Emulate clicking a countryk and opening the dropdown,
-      // then check if the highlightCountryIndex is correct
-      rti.handleFlagItemClick(algeria)
-      rti.handleFlagDropdownClick()
-      expect(rti.state.highlightCountryIndex).to.equal(0)
-      expect(rti.state.formattedNumber).to.equal('+213121345');
+        // Emulate clicking a countryk and opening the dropdown,
+        // then check if the highlightCountryIndex is correct
+        rti.handleFlagItemClick(algeria)
+        rti.handleFlagDropdownClick()
+        expect(rti.state.highlightCountryIndex).to.equal(0)
+        expect(rti.state.formattedNumber).to.equal('+213121345');
 
-      rti.handleFlagItemClick(afghanistan)
-      rti.handleFlagDropdownClick()
-      expect(rti.state.highlightCountryIndex).to.equal(1)
-      expect(rti.state.formattedNumber).to.equal('+93121345');
+        rti.handleFlagItemClick(afghanistan)
+        rti.handleFlagDropdownClick()
+        expect(rti.state.highlightCountryIndex).to.equal(1)
+        expect(rti.state.formattedNumber).to.equal('+93121345');
 
-      rti.handleFlagItemClick(albania)
-      rti.handleFlagDropdownClick()
-      expect(rti.state.highlightCountryIndex).to.equal(2)
-      expect(rti.state.formattedNumber).to.equal('+355121345');
+        rti.handleFlagItemClick(albania)
+        rti.handleFlagDropdownClick()
+        expect(rti.state.highlightCountryIndex).to.equal(2)
+        expect(rti.state.formattedNumber).to.equal('+355121345');
     });
 
     it('should trigger onFocus event handler when input element is focused', (done) => {
@@ -151,15 +166,9 @@ describe('react telephone input', function() {
     });
 
     it('should re-render with correct phone number once value prop changed', () => {
-        const div = document.createElement('div');
-        //initial call will mount the component into node, further renders will update already existing
-        const renderInput = (node, props) => ReactDOM.render(<ReactTelephoneInput {...props}/>, node);
-
-        rti = renderInput(div, {value: '+12313123132'});
-        expect(rti.state.formattedNumber).to.equal('+1 (231) 312-3132');
-
-        renderInput(div, {value: '+12313123133'});
-        console.log('formattedNumber', rti.state.formattedNumber);
-        expect(rti.state.formattedNumber).to.equal('+1 (231) 312-3133');
+        const wrapper = shallow(<ReactTelephoneInput value='+12313123132' />)
+        expect(wrapper.state('formattedNumber')).to.equal('+1 (231) 312-3132');
+        wrapper.setProps({value: '+12313123133'})
+        expect(wrapper.state('formattedNumber')).to.equal('+1 (231) 312-3133');
     });
 });
