@@ -210,8 +210,16 @@ function isNumberValid(inputNumber) {
             }
         }
     },
-    // memoize results based on the first 5/6 characters. That is all that matters
-    guessSelectedCountry: memoize(function(inputNumber) {
+    guessSelectedCountry: function(inputNumber) {
+          // Fix for issue #103: When selecting Canada flag, guessSelectedCountry immediately switches it back to US flag.
+          // Issue arises because both US and Canada share country code 1, and memoize stores this result.
+          if (this.state !== null && inputNumber.length < 2) {
+              return this.state.selectedCountry;
+          }
+          return this.guessSelectedCountryWithMemoize(inputNumber);
+      },
+      // memoize results based on the first 5/6 characters. That is all that matters
+      guessSelectedCountryWithMemoize: memoize(function (inputNumber) {
         var secondBestGuess = findWhere(allCountries, {iso2: this.props.defaultCountry}) || this.props.onlyCountries[0];
 	var inputNumberForCountries = inputNumber.substr(0, 4);
         if (trim(inputNumber) !== '') {
