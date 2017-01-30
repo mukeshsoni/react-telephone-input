@@ -99,7 +99,8 @@ function isNumberValid(inputNumber) {
             onEnterKeyPress: function () {},
             preferredCountries: [],
             disabled: false,
-            placeholder: '+1 (702) 123-4567'
+            placeholder: '+1 (702) 123-4567',
+            autoComplete: 'tel'
         };
     },
     getNumber() {
@@ -565,9 +566,9 @@ console.log('probableCandidateIndex', probableCandidateIndex)
                     ref="numberInput"
                     type="tel"
                     className={inputClasses}
-                    autoComplete='tel'
+                    autoComplete={this.props.autoComplete}
                     pattern={this.props.pattern}
-                    placeholder={this.state.placeholder}
+                    placeholder={this.props.placeholder}
                     disabled={this.props.disabled} {...otherProps}/>
                 <div ref='flagDropDownButton' className={flagViewClasses} onKeyDown={this.handleKeydown} >
                     <div ref='selectedFlag' onClick={this.handleFlagDropdownClick} className='selected-flag' title={`${this.state.selectedCountry.name}: + ${this.state.selectedCountry.dialCode}`}>

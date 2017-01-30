@@ -9,7 +9,9 @@ chai.use(dirtyChai);
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+import { shallow, mount } from 'enzyme'
 var TestUtils = require('react-addons-test-utils');
+import renderer from 'react-test-renderer'
 var {ReactTelephoneInput} = require('../src/ReactTelephoneInput.js');
 var allCountries = require('../src/country_data.js').allCountries;
 var rti;
@@ -31,6 +33,21 @@ describe('react telephone input', function() {
         expect(renderedTree.props.className).to.equal('react-tel-input');
         expect(renderedTree.props.children[0].type).to.equal('input');
     });
+
+    it('should show the placeholder as passed in the prop', () => {
+        const placeholder = '0001-121-212'
+        const component = mount(<ReactTelephoneInput placeholder={placeholder} />)
+        const input = component.find('input')
+        expect(input.prop('placeholder')).to.eql(placeholder)
+    })
+
+    it('should allow custom value for autoComplete input property', () => {
+        const wrapper = shallow(<ReactTelephoneInput />)
+        expect(wrapper.find('input').prop('autoComplete')).to.equal('tel')
+
+        const wrapper2 = shallow(<ReactTelephoneInput autoComplete='off' />)
+        expect(wrapper2.find('input').prop('autoComplete')).to.equal('off')
+    })
 
     it('mandatory existential crisis test', () => {
         rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {}));
@@ -142,6 +159,7 @@ describe('react telephone input', function() {
         expect(rti.state.formattedNumber).to.equal('+1 (231) 312-3132');
 
         renderInput(div, {value: '+12313123133'});
+        console.log('formattedNumber', rti.state.formattedNumber);
         expect(rti.state.formattedNumber).to.equal('+1 (231) 312-3133');
     });
 });
