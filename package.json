@@ -49,7 +49,6 @@
     "gulp": "^3.9.0",
     "jest": "18.1.0",
     "lessify": "^1.0.1",
-    "mochify": "^2.9.0",
     "react": "^15.3.2",
     "react-addons-test-utils": "^15.4.2",
     "react-component-gulp-tasks": "^0.7.6",
