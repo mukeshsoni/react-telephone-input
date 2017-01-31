@@ -50,7 +50,7 @@
     "jest": "18.1.0",
     "lessify": "^1.0.1",
     "react": "^15.3.2",
-    "react-addons-test-utils": "^15.4.2",
+    "react-addons-test-utils": ">=0.14.0 || ^15.0.0",
     "react-component-gulp-tasks": "^0.7.6",
     "react-dom": "^15.3.2",
     "react-test-renderer": "15.4.2"
