@@ -1,18 +1,14 @@
 {
   "name": "react-telephone-input",
-  "version": "3.8.6",
+  "version": "4.0.0",
   "description": "React component for entering and validating international telephone numbers",
   "main": "lib/ReactTelephoneInput.js",
   "scripts": {
     "lint": "eslint src",
-    "build": "gulp clean && NODE_ENV=production gulp build",
-    "examples": "gulp dev:server",
-    "publish:site": "gulp publish:examples",
-    "release": "gulp release",
-    "start": "gulp dev",
+    "build": "npm run clean && NODE_ENV=production babel src --out-dir lib",
+    "clean": "rimraf lib/*",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "watch": "gulp watch:lib"
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -24,12 +20,6 @@
     "international-telephone-input",
     "react"
   ],
-  "browserify": {
-    "transform": [
-      "babelify",
-      "lessify"
-    ]
-  },
   "author": "Mukesh Soni",
   "license": "MIT",
   "bugs": {
@@ -41,19 +31,17 @@
     "babel-jest": "18.0.0",
     "babel-preset-es2015": "6.22.0",
     "babel-preset-react": "6.22.0",
-    "babelify": "^6.3.0",
     "chai": "^3.0.0",
     "dirty-chai": "^1.2.2",
     "enzyme": "^2.7.1",
     "eslint": "0.23.0",
     "gulp": "^3.9.0",
     "jest": "18.1.0",
-    "lessify": "^1.0.1",
     "react": "^15.3.2",
     "react-addons-test-utils": ">=0.14.0 || ^15.0.0",
-    "react-component-gulp-tasks": "^0.7.6",
     "react-dom": "^15.3.2",
-    "react-test-renderer": "15.4.2"
+    "react-test-renderer": "15.4.2",
+    "rimraf": "2.5.4"
   },
   "dependencies": {
     "classnames": "^2.1.2",
