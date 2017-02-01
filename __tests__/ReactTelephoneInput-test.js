@@ -13,7 +13,8 @@ import { shallow, mount } from 'enzyme'
 import TestUtils from 'react-addons-test-utils'
 import renderer from 'react-test-renderer'
 import  { ReactTelephoneInput } from '../src/ReactTelephoneInput.js'
-var allCountries = require('../src/country_data.js').allCountries;
+import countryData from 'country-telephone-data'
+var allCountries = countryData.allCountries
 var rti;
 
 describe('react telephone input', function() {
