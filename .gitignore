@@ -1,6 +1,7 @@
 node_modules
 .module-cache
 npm-debug.log
+npm-debug.log.*
 .publish
 example/dist
 dist
