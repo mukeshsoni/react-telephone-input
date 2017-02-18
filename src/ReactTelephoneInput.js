@@ -55,7 +55,7 @@ function isNumberValid(inputNumber) {
 }
 
 
-export var ReactTelephoneInput = React.createClass({    
+export var ReactTelephoneInput = React.createClass({
     getInitialState() {
         var preferredCountries = this.props.preferredCountries.map(
             iso2 => iso2Lookup.hasOwnProperty(iso2) ? allCountries[iso2Lookup[iso2]] : null
@@ -359,10 +359,10 @@ export var ReactTelephoneInput = React.createClass({
           this.setState({showDropDown: false});
         }
     },
-    handleInputFocus() {
+    handleInputFocus(evt) {
         // trigger parent component's onFocus handler
         if(typeof this.props.onFocus === 'function') {
-            this.props.onFocus(this.state.formattedNumer, this.state.selectedCountry);
+            this.props.onFocus(evt, this.state.formattedNumer, this.state.selectedCountry);
         }
 
         this._fillDialCode();
