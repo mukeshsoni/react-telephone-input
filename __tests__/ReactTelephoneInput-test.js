@@ -172,4 +172,11 @@ describe('react telephone input', function() {
         wrapper.setProps({value: '+12313123133'})
         expect(wrapper.state('formattedNumber')).to.equal('+1 (231) 312-3133');
     });
+
+    it('should re-render as empty once value prop becomes null', () => {
+        const wrapper = shallow(<ReactTelephoneInput defaultCountry='us' value='+12313123132' />)
+        expect(wrapper.state('formattedNumber')).to.equal('+1 (231) 312-3132');
+        wrapper.setProps({value: null})
+        expect(wrapper.state('formattedNumber')).to.equal('+');
+    });
 });

@@ -55,7 +55,7 @@ function isNumberValid(inputNumber) {
 }
 
 
-export var ReactTelephoneInput = React.createClass({    
+export var ReactTelephoneInput = React.createClass({
     getInitialState() {
         var preferredCountries = this.props.preferredCountries.map(
             iso2 => iso2Lookup.hasOwnProperty(iso2) ? allCountries[iso2Lookup[iso2]] : null
@@ -374,6 +374,9 @@ export var ReactTelephoneInput = React.createClass({
             inputNumber = props.value
         } else if(props.initialValue && firstCall) {
             inputNumber = props.initialValue
+        } else if (this.props.value){
+            // just cleared the value
+            inputNumber = '';
         } else if(this.state && this.state.formattedNumber && this.state.formattedNumber.length > 0) {
             inputNumber = this.state.formattedNumber
         } else {
