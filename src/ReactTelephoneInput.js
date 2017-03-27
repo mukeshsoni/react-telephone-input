@@ -359,10 +359,10 @@ export var ReactTelephoneInput = React.createClass({
           this.setState({showDropDown: false});
         }
     },
-    handleInputFocus() {
+    handleInputFocus(evt) {
         // trigger parent component's onFocus handler
         if(typeof this.props.onFocus === 'function') {
-            this.props.onFocus(this.state.formattedNumer, this.state.selectedCountry);
+            this.props.onFocus(evt, this.state.formattedNumer, this.state.selectedCountry);
         }
 
         this._fillDialCode();
