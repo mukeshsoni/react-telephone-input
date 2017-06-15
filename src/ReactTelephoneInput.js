@@ -18,6 +18,7 @@ var isEqual = require('lodash/isEqual');
 var trim = require('lodash/trim');
 var startsWith = require('lodash/startsWith');
 var PropTypes = require('prop-types');
+var createReactClass = require('create-react-class');
 
 var React = require('react');
 var ReactDOM = require('react-dom');
@@ -56,7 +57,7 @@ function isNumberValid(inputNumber) {
 }
 
 
-export var ReactTelephoneInput = React.createClass({
+export var ReactTelephoneInput = createReactClass({
     getInitialState() {
         var preferredCountries = this.props.preferredCountries.map(
             iso2 => iso2Lookup.hasOwnProperty(iso2) ? allCountries[iso2Lookup[iso2]] : null
