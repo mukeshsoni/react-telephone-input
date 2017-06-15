@@ -17,6 +17,7 @@ var isEqual = require('lodash/isEqual');
 // import lodash string methods
 var trim = require('lodash/trim');
 var startsWith = require('lodash/startsWith');
+var PropTypes = require('prop-types');
 
 var React = require('react');
 var ReactDOM = require('react-dom');
@@ -74,22 +75,22 @@ export var ReactTelephoneInput = React.createClass({
         );
     },
     propTypes: {
-        value: React.PropTypes.string,
-        initialValue: React.PropTypes.string,
-        autoFormat: React.PropTypes.bool,
-        defaultCountry: React.PropTypes.string,
-        onlyCountries: React.PropTypes.arrayOf(React.PropTypes.object),
-        preferredCountries: React.PropTypes.arrayOf(React.PropTypes.string),
-        classNames: React.PropTypes.string,
-        className: React.PropTypes.string,
-        inputId: React.PropTypes.string,
-        onChange: React.PropTypes.func,
-        onEnterKeyPress: React.PropTypes.func,
-        onBlur: React.PropTypes.func,
-        onFocus: React.PropTypes.func,
-        disabled: React.PropTypes.bool,
-        pattern: React.PropTypes.string,
-        required: React.PropTypes.bool,
+        value: PropTypes.string,
+        initialValue: PropTypes.string,
+        autoFormat: PropTypes.bool,
+        defaultCountry: PropTypes.string,
+        onlyCountries: PropTypes.arrayOf(PropTypes.object),
+        preferredCountries: PropTypes.arrayOf(PropTypes.string),
+        classNames: PropTypes.string,
+        className: PropTypes.string,
+        inputId: PropTypes.string,
+        onChange: PropTypes.func,
+        onEnterKeyPress: PropTypes.func,
+        onBlur: PropTypes.func,
+        onFocus: PropTypes.func,
+        disabled: PropTypes.bool,
+        pattern: PropTypes.string,
+        required: PropTypes.bool,
     },
     getDefaultProps() {
         return {
