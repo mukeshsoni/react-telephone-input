@@ -497,7 +497,7 @@ export var ReactTelephoneInput = createReactClass({
                 highlight: self.state.highlightCountryIndex === index
             });
 
-            var inputFlagClasses = `flag ${country.iso2}`;
+            var inputFlagClasses = `flag-icon flag-icon-${country.iso2}`;
 
             return (
                 <li
@@ -533,7 +533,6 @@ export var ReactTelephoneInput = createReactClass({
         return {
             width: 16,
             height: 11,
-            backgroundImage: `url(${this.props.flagsImagePath})`
         };
     },
     handleInputBlur() {
@@ -556,7 +555,7 @@ export var ReactTelephoneInput = createReactClass({
             'open-dropdown': this.state.showDropDown
         });
 
-        var inputFlagClasses = `flag ${this.state.selectedCountry.iso2}`;
+        var inputFlagClasses = `flag-icon flag-icon-${this.state.selectedCountry.iso2}`;
         let otherProps = {}
         if(this.props.inputId) {
             otherProps.id = this.props.inputId
