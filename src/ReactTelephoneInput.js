@@ -531,8 +531,8 @@ export var ReactTelephoneInput = createReactClass({
     },
     getFlagStyle() {
         return {
-            width: 16,
-            height: 11,
+            width: 18.66,
+            height: 14,
         };
     },
     handleInputBlur() {
