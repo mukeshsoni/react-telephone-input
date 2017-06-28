@@ -506,7 +506,7 @@ export var ReactTelephoneInput = createReactClass({
                     data-dial-code="1"
                     data-country-code={country.iso2}
                     onClick={self.handleFlagItemClick.bind(self, country)}>
-                    <div className={inputFlagClasses} style={self.getFlagStyle()} />
+                    <div className={inputFlagClasses} />
                     <span className='country-name'>{country.name}</span>
                     <span className='dial-code'>{'+' + country.dialCode}</span>
                 </li>
@@ -526,12 +526,6 @@ export var ReactTelephoneInput = createReactClass({
                 {countryDropDownList}
             </ul>
         );
-    },
-    getFlagStyle() {
-        return {
-            width: 18.66,
-            height: 14,
-        };
     },
     handleInputBlur() {
       if(typeof this.props.onBlur === 'function') {
@@ -577,7 +571,7 @@ export var ReactTelephoneInput = createReactClass({
                     disabled={this.props.disabled} {...otherProps}/>
                 <div ref='flagDropDownButton' className={flagViewClasses} onKeyDown={this.handleKeydown} >
                     <div ref='selectedFlag' onClick={this.handleFlagDropdownClick} className='selected-flag' title={`${this.state.selectedCountry.name}: + ${this.state.selectedCountry.dialCode}`}>
-                        <div className={inputFlagClasses} style={this.getFlagStyle()}>
+                        <div className={inputFlagClasses}>
                             <div className={arrowClasses}></div>
                         </div>
                     </div>
