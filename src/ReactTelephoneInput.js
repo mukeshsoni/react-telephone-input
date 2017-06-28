@@ -215,11 +215,11 @@ export var ReactTelephoneInput = createReactClass({
         }
     },
     // memoize results based on the first 5/6 characters. That is all that matters
-    guessSelectedCountry: function(inputNumber) {
-        var secondBestGuess = find(allCountries, {iso2: this.props.defaultCountry}) || this.props.onlyCountries[0];
+    guessSelectedCountry: function(inputNumber, props) {
+        var secondBestGuess = find(allCountries, {iso2: props.defaultCountry}) || props.onlyCountries[0];
         var inputNumberForCountries = inputNumber.substr(0, 4);
         if (trim(inputNumber) !== '') {
-            var bestGuess = reduce(this.props.onlyCountries, function (selectedCountry, country) {
+            var bestGuess = reduce(props.onlyCountries, function (selectedCountry, country) {
 
                 // if the country dialCode exists WITH area code
 
@@ -383,7 +383,7 @@ export var ReactTelephoneInput = createReactClass({
             inputNumber = ''
         }
 
-        let selectedCountryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, ''));
+        let selectedCountryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, ''), props);
         let selectedCountryGuessIndex = findIndex(allCountries, selectedCountryGuess);
         let formattedNumber = this.formatNumber(
             inputNumber.replace(/\D/g, ''), selectedCountryGuess ? selectedCountryGuess.format : null
