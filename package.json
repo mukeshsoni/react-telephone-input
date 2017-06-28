@@ -2,7 +2,7 @@
   "name": "react-telephone-input",
   "version": "4.0.1",
   "description": "React component for entering and validating international telephone numbers",
-  "main": "lib/withStyles.js",
+  "main": "lib/ReactTelephoneInput.js",
   "scripts": {
     "lint": "eslint src",
     "build": "npm run clean && NODE_ENV=production babel src --out-dir lib",
