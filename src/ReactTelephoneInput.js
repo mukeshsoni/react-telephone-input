@@ -63,6 +63,17 @@ export var ReactTelephoneInput = createReactClass({
             iso2 => iso2Lookup.hasOwnProperty(iso2) ? allCountries[iso2Lookup[iso2]] : null
         ).filter(val => val !== null);
 
+        var onlyCountries = this.state.onlyCountries.map(
+            iso2 => {
+                if (typeof(iso2) === 'string'){
+                    return (iso2Lookup.hasOwnProperty(iso2) ? allCountries[iso2Lookup[iso2]] : null)
+                }
+                else {
+                    return iso2
+                }
+            }
+        ).filter(val => val !== null);
+
         return assign(
             {},
             {
@@ -70,7 +81,8 @@ export var ReactTelephoneInput = createReactClass({
                 showDropDown: false,
                 queryString: '',
                 freezeSelection: false,
-                debouncedQueryStingSearcher: debounce(this.searchCountry, 300)
+                debouncedQueryStingSearcher: debounce(this.searchCountry, 300),
+                onlyCountries: onlyCountries
             },
             this._mapPropsToState(this.props, true)
         );
@@ -80,7 +92,7 @@ export var ReactTelephoneInput = createReactClass({
         initialValue: PropTypes.string,
         autoFormat: PropTypes.bool,
         defaultCountry: PropTypes.string,
-        onlyCountries: PropTypes.arrayOf(PropTypes.object),
+        onlyCountries: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object, PropTypes.string])),
         preferredCountries: PropTypes.arrayOf(PropTypes.string),
         classNames: PropTypes.string,
         className: PropTypes.string,
@@ -218,10 +230,10 @@ export var ReactTelephoneInput = createReactClass({
     },
     // memoize results based on the first 5/6 characters. That is all that matters
     guessSelectedCountry: function(inputNumber) {
-        var secondBestGuess = find(allCountries, {iso2: this.props.defaultCountry}) || this.props.onlyCountries[0];
+        var secondBestGuess = find(allCountries, {iso2: this.props.defaultCountry}) || this.state.onlyCountries[0];
         var inputNumberForCountries = inputNumber.substr(0, 4);
         if (trim(inputNumber) !== '') {
-            var bestGuess = reduce(this.props.onlyCountries, function (selectedCountry, country) {
+            var bestGuess = reduce(this.state.onlyCountries, function (selectedCountry, country) {
 
                 // if the country dialCode exists WITH area code
 
@@ -266,8 +278,8 @@ export var ReactTelephoneInput = createReactClass({
         // need to put the highlight on the current selected country if the dropdown is going to open up
         this.setState({
             showDropDown: !this.state.showDropDown,
-            highlightCountry: find(this.props.onlyCountries, this.state.selectedCountry),
-            highlightCountryIndex: findIndex(this.state.preferredCountries.concat(this.props.onlyCountries), this.state.selectedCountry)
+            highlightCountry: find(this.state.onlyCountries, this.state.selectedCountry),
+            highlightCountryIndex: findIndex(this.state.preferredCountries.concat(this.state.onlyCountries), this.state.selectedCountry)
         }, () => {
             // only need to scrool if the dropdown list is alive
             if(this.state.showDropDown) {
@@ -338,7 +350,7 @@ export var ReactTelephoneInput = createReactClass({
     },
     handleFlagItemClick(country) {
         var currentSelectedCountry = this.state.selectedCountry;
-        var nextSelectedCountry = find(this.props.onlyCountries, country);
+        var nextSelectedCountry = find(this.state.onlyCountries, country);
 
         // tiny optimization
         if(currentSelectedCountry.iso2 !== nextSelectedCountry.iso2) {
@@ -408,7 +420,7 @@ export var ReactTelephoneInput = createReactClass({
         var highlightCountryIndex = this.state.highlightCountryIndex + direction;
 
         if(highlightCountryIndex < 0
-            || highlightCountryIndex >= (this.props.onlyCountries.length + this.state.preferredCountries.length)) {
+            || highlightCountryIndex >= (this.state.onlyCountries.length + this.state.preferredCountries.length)) {
             return highlightCountryIndex - direction;
         }
 
@@ -420,14 +432,14 @@ export var ReactTelephoneInput = createReactClass({
             return null;
         }
         // don't include the preferred countries in search
-        var probableCountries = filter(this.props.onlyCountries, function(country) {
+        var probableCountries = filter(this.state.onlyCountries, function(country) {
             return startsWith(country.name.toLowerCase(), queryString.toLowerCase());
         }, this);
         return probableCountries[0];
     }),
     searchCountry() {
-        const probableCandidate = this._searchCountry(this.state.queryString) || this.props.onlyCountries[0];
-        const probableCandidateIndex = findIndex(this.props.onlyCountries, probableCandidate) + this.state.preferredCountries.length;
+        const probableCandidate = this._searchCountry(this.state.queryString) || this.state.onlyCountries[0];
+        const probableCandidateIndex = findIndex(this.state.onlyCountries, probableCandidate) + this.state.preferredCountries.length;
         this.scrollTo(this.getElement(probableCandidateIndex), true);
 
         this.setState({
@@ -464,7 +476,7 @@ export var ReactTelephoneInput = createReactClass({
                     _moveHighlight(-1);
                     break;
             case keys.ENTER:
-                    this.handleFlagItemClick(this.state.preferredCountries.concat(this.props.onlyCountries)[this.state.highlightCountryIndex], event);
+                    this.handleFlagItemClick(this.state.preferredCountries.concat(this.state.onlyCountries)[this.state.highlightCountryIndex], event);
                     break;
             case keys.ESC:
                 this.setState({showDropDown: false}, this._cursorToEnd);
@@ -490,7 +502,7 @@ export var ReactTelephoneInput = createReactClass({
     },
     getCountryDropDownList() {
         var self = this
-        var countryDropDownList = map(this.state.preferredCountries.concat(this.props.onlyCountries), function(country, index) {
+        var countryDropDownList = map(this.state.preferredCountries.concat(this.state.onlyCountries), function(country, index) {
             let itemClasses = classNames({
                 country: true,
                 preferred: findIndex(self.state.preferredCountries, {iso2: country.iso2}) >= 0,
