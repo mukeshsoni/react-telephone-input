@@ -2,8 +2,6 @@
 
 // TODO - fix the onlyContries props. Currently expects that as an array of country object, but users should be able to send in array of country isos
 
-exports.__esModule = true;
-
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var some = require('lodash/some');
@@ -59,7 +57,7 @@ function isNumberValid(inputNumber) {
     });
 }
 
-var ReactTelephoneInput = exports.ReactTelephoneInput = createReactClass({
+export var ReactTelephoneInput = createReactClass({
     displayName: 'ReactTelephoneInput',
     getInitialState: function getInitialState() {
         var preferredCountries = this.props.preferredCountries.map(function (iso2) {
@@ -610,4 +608,4 @@ var ReactTelephoneInput = exports.ReactTelephoneInput = createReactClass({
     }
 });
 
-exports.default = onClickOutside(ReactTelephoneInput);
+export default onClickOutside(ReactTelephoneInput);

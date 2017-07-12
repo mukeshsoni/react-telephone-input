@@ -1,8 +1,6 @@
-'use strict';
-
 // TODO - fix the onlyContries props. Currently expects that as an array of country object, but users should be able to send in array of country isos
 
-var some = require('lodash/some');
+var some = require('lodash/some')
 var find = require('lodash/find');
 var reduce = require('lodash/reduce');
 var map = require('lodash/map');
