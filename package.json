@@ -16,7 +16,13 @@
     "start": "nwb serve-react-demo",
     "lint": "eslint src",
     "test": "jest",
+      "test: coverage": "jest --coverage",
     "test:watch": "jest --watch"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "./jest.transform.js"
+    }
   },
   "repository": {
     "type": "git",
@@ -36,6 +42,8 @@
   "homepage": "https://github.com/mukeshsoni/react-telephone-input",
   "devDependencies": {
     "babel-jest": "20.0.3",
+    "babel-preset-latest": "6.24.1",
+    "babel-preset-react": "6.24.1",
     "chai": "^3.0.0",
     "dirty-chai": "^1.2.2",
     "enzyme": "^2.7.1",
@@ -43,7 +51,9 @@
     "jest": "20.0.4",
     "nwb": "0.18.x",
     "react": "^15.x",
+    "react-addons-test-utils": "15.6.0",
     "react-dom": "^15.3.2",
+    "react-test-renderer": "15.6.1",
     "regenerator-runtime": "0.10.5"
   },
   "dependencies": {
