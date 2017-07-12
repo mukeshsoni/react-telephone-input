@@ -118,5 +118,5 @@ You can try the app by downloading everything and running the commands given bel
 $ npm install
 $ npm start
 
-go to your browser and type `http://localhost:8000`
+go to your browser and type `http://localhost:3000`
 ```
