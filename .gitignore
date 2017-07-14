@@ -5,3 +5,4 @@ npm-debug.log.*
 .publish
 example/dist
 dist
+coverage
