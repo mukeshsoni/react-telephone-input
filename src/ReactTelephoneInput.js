@@ -345,7 +345,7 @@ export var ReactTelephoneInput = createReactClass({
             var newNumber = this.state.formattedNumber.replace(dialCodeRegex, '+' + nextSelectedCountry.dialCode);
             newNumber = newNumber.replace(/\D/g, '');
             if (currentSelectedCountry.dialCode.length > 3) {
-                newNumber = newNumber.replace(/\D/g, '').replace(currentSelectedCountry.dialCode, '');
+                newNumber = newNumber.replace(currentSelectedCountry.dialCode, '');
             }
             var formattedNumber = this.formatNumber(newNumber, nextSelectedCountry.format);
             
