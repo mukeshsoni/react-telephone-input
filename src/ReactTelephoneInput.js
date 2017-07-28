@@ -362,7 +362,7 @@ export var ReactTelephoneInput = createReactClass({
     handleInputFocus() {
         // trigger parent component's onFocus handler
         if(typeof this.props.onFocus === 'function') {
-            this.props.onFocus(this.state.formattedNumer, this.state.selectedCountry);
+            this.props.onFocus(this.state.formattedNumber, this.state.selectedCountry);
         }
 
         this._fillDialCode();
