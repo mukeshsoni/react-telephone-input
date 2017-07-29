@@ -311,6 +311,7 @@ export var ReactTelephoneInput = createReactClass({
             freezeSelection: freezeSelection,
             selectedCountry: newSelectedCountry.dialCode.length > 0 ? newSelectedCountry : this.state.selectedCountry
         }, function() {
+
             if(isModernBrowser) {
                 if((caretPosition === 1) && (formattedNumber.length === 2)) {
                     caretPosition++;
@@ -342,8 +343,12 @@ export var ReactTelephoneInput = createReactClass({
         if(currentSelectedCountry.iso2 !== nextSelectedCountry.iso2) {
             var dialCodeRegex = RegExp('^(\\+' + currentSelectedCountry.dialCode + ')|\\+');
             var newNumber = this.state.formattedNumber.replace(dialCodeRegex, '+' + nextSelectedCountry.dialCode);
-            var formattedNumber = this.formatNumber(newNumber.replace(/\D/g, ''), nextSelectedCountry.format);
-
+            newNumber = newNumber.replace(/\D/g, '');
+            if (currentSelectedCountry.dialCode.length > 3) {
+                newNumber = newNumber.replace(currentSelectedCountry.dialCode, '');
+            }
+            var formattedNumber = this.formatNumber(newNumber, nextSelectedCountry.format);
+            
             this.setState({
                 showDropDown: false,
                 selectedCountry: nextSelectedCountry,
