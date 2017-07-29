@@ -534,7 +534,8 @@ export var ReactTelephoneInput = createReactClass({
             backgroundImage: `url(${this.props.flagsImagePath})`
         };
     },
-    handleInputBlur() {
+    handleInputBlur(event) {
+      this.handleInput(event);
       if(typeof this.props.onBlur === 'function') {
         this.props.onBlur(this.state.formattedNumber, this.state.selectedCountry);
       }
