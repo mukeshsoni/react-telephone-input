@@ -217,11 +217,11 @@ export var ReactTelephoneInput = createReactClass({
     },
 
     // memoize results based on the first 5/6 characters. That is all that matters
-    guessSelectedCountry: function guessSelectedCountry(inputNumber) {
-        var secondBestGuess = find(allCountries, { iso2: this.props.defaultCountry }) || this.props.onlyCountries[0];
+    guessSelectedCountry: function guessSelectedCountry(inputNumber, props) {
+        var secondBestGuess = find(allCountries, { iso2: props.defaultCountry }) || props.onlyCountries[0];
         var inputNumberForCountries = inputNumber.substr(0, 4);
         if (trim(inputNumber) !== '') {
-            var bestGuess = reduce(this.props.onlyCountries, function (selectedCountry, country) {
+            var bestGuess = reduce(props.onlyCountries, function (selectedCountry, country) {
 
                 // if the country dialCode exists WITH area code
 
@@ -300,7 +300,7 @@ export var ReactTelephoneInput = createReactClass({
             // we don't need to send the whole number to guess the country... only the first 6 characters are enough
             // the guess country function can then use memoization much more effectively since the set of input it gets has drastically reduced
             if (!this.state.freezeSelection || this.state.selectedCountry.dialCode.length > inputNumber.length) {
-                newSelectedCountry = this.guessSelectedCountry(inputNumber.substring(0, 6));
+                newSelectedCountry = this.guessSelectedCountry(inputNumber.substring(0, 6), this.props);
                 freezeSelection = false;
             }
             // let us remove all non numerals from the input
@@ -389,7 +389,7 @@ export var ReactTelephoneInput = createReactClass({
             inputNumber = '';
         }
 
-        var selectedCountryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, ''));
+        var selectedCountryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, ''), props);
         var selectedCountryGuessIndex = findIndex(allCountries, selectedCountryGuess);
         var formattedNumber = this.formatNumber(inputNumber.replace(/\D/g, ''), selectedCountryGuess ? selectedCountryGuess.format : null);
 
@@ -498,7 +498,7 @@ export var ReactTelephoneInput = createReactClass({
                 highlight: self.state.highlightCountryIndex === index
             });
 
-            var inputFlagClasses = 'flag ' + country.iso2;
+            var inputFlagClasses = 'flag-icon flag-icon-' + country.iso2;
 
             return React.createElement(
                 'li',
@@ -510,7 +510,7 @@ export var ReactTelephoneInput = createReactClass({
                     'data-dial-code': '1',
                     'data-country-code': country.iso2,
                     onClick: self.handleFlagItemClick.bind(self, country) },
-                React.createElement('div', { className: inputFlagClasses, style: self.getFlagStyle() }),
+                React.createElement('div', { className: inputFlagClasses }),
                 React.createElement(
                     'span',
                     { className: 'country-name' },
@@ -538,13 +538,6 @@ export var ReactTelephoneInput = createReactClass({
             countryDropDownList
         );
     },
-    getFlagStyle: function getFlagStyle() {
-        return {
-            width: 16,
-            height: 11,
-            backgroundImage: 'url(' + this.props.flagsImagePath + ')'
-        };
-    },
     handleInputBlur: function handleInputBlur() {
         if (typeof this.props.onBlur === 'function') {
             this.props.onBlur(this.state.formattedNumber, this.state.selectedCountry);
@@ -565,7 +558,7 @@ export var ReactTelephoneInput = createReactClass({
             'open-dropdown': this.state.showDropDown
         });
 
-        var inputFlagClasses = 'flag ' + this.state.selectedCountry.iso2;
+        var inputFlagClasses = 'flag-icon flag-icon-' + this.state.selectedCountry.iso2;
         var otherProps = {};
         if (this.props.inputId) {
             otherProps.id = this.props.inputId;
@@ -596,7 +589,7 @@ export var ReactTelephoneInput = createReactClass({
                     { ref: 'selectedFlag', onClick: this.handleFlagDropdownClick, className: 'selected-flag', title: this.state.selectedCountry.name + ': + ' + this.state.selectedCountry.dialCode },
                     React.createElement(
                         'div',
-                        { className: inputFlagClasses, style: this.getFlagStyle() },
+                        { className: inputFlagClasses },
                         React.createElement('div', { className: arrowClasses })
                     )
                 ),
