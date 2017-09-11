@@ -89,7 +89,8 @@ export var ReactTelephoneInput = createReactClass({
         onFocus: PropTypes.func,
         disabled: PropTypes.bool,
         pattern: PropTypes.string,
-        required: PropTypes.bool
+        required: PropTypes.bool,
+        name: PropTypes.string
     },
     getDefaultProps: function getDefaultProps() {
         return {
@@ -103,7 +104,8 @@ export var ReactTelephoneInput = createReactClass({
             disabled: false,
             placeholder: '+1 (702) 123-4567',
             autoComplete: 'tel',
-            required: false
+            required: false,
+            name: 'telephone'
         };
     },
     getNumber: function getNumber() {
@@ -580,7 +582,8 @@ export var ReactTelephoneInput = createReactClass({
                 pattern: this.props.pattern,
                 required: this.props.required,
                 placeholder: this.props.placeholder,
-                disabled: this.props.disabled }, otherProps)),
+                disabled: this.props.disabled,
+                name: this.props.name }, otherProps)),
             React.createElement(
                 'div',
                 { ref: 'flagDropDownButton', className: flagViewClasses, onKeyDown: this.handleKeydown },
