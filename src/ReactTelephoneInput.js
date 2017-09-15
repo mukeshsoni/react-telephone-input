@@ -299,10 +299,12 @@ export var ReactTelephoneInput = createReactClass({
     getElement(index) {
         return ReactDOM.findDOMNode(this.refs[`flag_no_${index}`])
     },
-    handleFlagDropdownClick() {
+    handleFlagDropdownClick(e) {
         if (this.props.disabled) {
             return
         }
+
+        e.preventDefault()
         // need to put the highlight on the current selected country if the dropdown is going to open up
         this.setState(
             {
