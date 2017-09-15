@@ -22,7 +22,7 @@ var createReactClass = require('create-react-class');
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-var onClickOutside = require('react-onclickoutside');
+var onClickOutside = require('react-onclickoutside').default;
 var classNames = require('classnames');
 var countryData = require('country-telephone-data');
 var allCountries = countryData.allCountries;
@@ -222,7 +222,6 @@ export var ReactTelephoneInput = createReactClass({
         var inputNumberForCountries = inputNumber.substr(0, 4);
         if (trim(inputNumber) !== '') {
             var bestGuess = reduce(this.props.onlyCountries, function (selectedCountry, country) {
-
                 // if the country dialCode exists WITH area code
 
                 if (allCountryCodes[inputNumberForCountries] && allCountryCodes[inputNumberForCountries][0] === country.iso2) {
@@ -402,7 +401,9 @@ export var ReactTelephoneInput = createReactClass({
     _fillDialCode: function _fillDialCode() {
         // if the input is blank, insert dial code of the selected country
         if (this.refs.numberInput.value === '+') {
-            this.setState({ formattedNumber: '+' + this.state.selectedCountry.dialCode });
+            this.setState({
+                formattedNumber: '+' + this.state.selectedCountry.dialCode
+            });
         }
     },
     _getHighlightCountryIndex: function _getHighlightCountryIndex(direction) {
@@ -473,7 +474,9 @@ export var ReactTelephoneInput = createReactClass({
                 break;
             default:
                 if (event.which >= keys.A && event.which <= keys.Z || event.which === keys.SPACE) {
-                    this.setState({ queryString: this.state.queryString + String.fromCharCode(event.which) }, this.state.debouncedQueryStingSearcher);
+                    this.setState({
+                        queryString: this.state.queryString + String.fromCharCode(event.which)
+                    }, this.state.debouncedQueryStingSearcher);
                 }
         }
     },
@@ -494,7 +497,9 @@ export var ReactTelephoneInput = createReactClass({
         var countryDropDownList = map(this.state.preferredCountries.concat(this.props.onlyCountries), function (country, index) {
             var itemClasses = classNames({
                 country: true,
-                preferred: findIndex(self.state.preferredCountries, { iso2: country.iso2 }) >= 0,
+                preferred: findIndex(self.state.preferredCountries, {
+                    iso2: country.iso2
+                }) >= 0,
                 highlight: self.state.highlightCountryIndex === index
             });
 
@@ -509,8 +514,12 @@ export var ReactTelephoneInput = createReactClass({
                     className: itemClasses,
                     'data-dial-code': '1',
                     'data-country-code': country.iso2,
-                    onClick: self.handleFlagItemClick.bind(self, country) },
-                React.createElement('div', { className: inputFlagClasses, style: self.getFlagStyle() }),
+                    onClick: self.handleFlagItemClick.bind(self, country)
+                },
+                React.createElement('div', {
+                    className: inputFlagClasses,
+                    style: self.getFlagStyle()
+                }),
                 React.createElement(
                     'span',
                     { className: 'country-name' },
@@ -524,13 +533,13 @@ export var ReactTelephoneInput = createReactClass({
             );
         });
 
-        var dashedLi = React.createElement('li', { key: "dashes", className: 'divider' });
+        var dashedLi = React.createElement('li', { key: 'dashes', className: 'divider' });
         // let's insert a dashed line in between preffered countries and the rest
         countryDropDownList.splice(this.state.preferredCountries.length, 0, dashedLi);
 
         var dropDownClasses = classNames({
             'country-list': true,
-            'hide': !this.state.showDropDown
+            hide: !this.state.showDropDown
         });
         return React.createElement(
             'ul',
@@ -552,8 +561,8 @@ export var ReactTelephoneInput = createReactClass({
     },
     render: function render() {
         var arrowClasses = classNames({
-            'arrow': true,
-            'up': this.state.showDropDown
+            arrow: true,
+            up: this.state.showDropDown
         });
         var inputClasses = classNames({
             'form-control': true,
@@ -572,7 +581,9 @@ export var ReactTelephoneInput = createReactClass({
         }
         return React.createElement(
             'div',
-            { className: classNames('react-tel-input', this.props.classNames, this.props.className) },
+            {
+                className: classNames('react-tel-input', this.props.classNames, this.props.className)
+            },
             React.createElement('input', _extends({
                 onChange: this.handleInput,
                 onClick: this.handleInputClick,
@@ -587,16 +598,29 @@ export var ReactTelephoneInput = createReactClass({
                 pattern: this.props.pattern,
                 required: this.props.required,
                 placeholder: this.props.placeholder,
-                disabled: this.props.disabled }, otherProps)),
+                disabled: this.props.disabled
+            }, otherProps)),
             React.createElement(
                 'div',
-                { ref: 'flagDropDownButton', className: flagViewClasses, onKeyDown: this.handleKeydown },
+                {
+                    ref: 'flagDropDownButton',
+                    className: flagViewClasses,
+                    onKeyDown: this.handleKeydown
+                },
                 React.createElement(
                     'div',
-                    { ref: 'selectedFlag', onClick: this.handleFlagDropdownClick, className: 'selected-flag', title: this.state.selectedCountry.name + ': + ' + this.state.selectedCountry.dialCode },
+                    {
+                        ref: 'selectedFlag',
+                        onClick: this.handleFlagDropdownClick,
+                        className: 'selected-flag',
+                        title: this.state.selectedCountry.name + ': + ' + this.state.selectedCountry.dialCode
+                    },
                     React.createElement(
                         'div',
-                        { className: inputFlagClasses, style: this.getFlagStyle() },
+                        {
+                            className: inputFlagClasses,
+                            style: this.getFlagStyle()
+                        },
                         React.createElement('div', { className: arrowClasses })
                     )
                 ),
