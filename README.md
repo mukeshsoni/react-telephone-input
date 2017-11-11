@@ -86,6 +86,16 @@ Boolean value. When set to true, the input box is disabled and clicking on flag 
 #### pattern
 String. This is passed on to the input field and works like it should for any other input field.
 
+#### inputProps
+Object. If you want to set some property on the input element, you can pass in an object with the attribute. E.g.
+```javascript
+let inputProps={
+    readOnly: true
+}
+
+<ReactTelephoneInput inputProps={inputProps} ... />
+```
+
 
 ## How to use it
 - If you install it from `npm install`, you can just do `var ReactTelephoneInput = require('react-telephone-input');`

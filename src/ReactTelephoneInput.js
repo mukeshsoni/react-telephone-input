@@ -97,7 +97,8 @@ export var ReactTelephoneInput = createReactClass({
         onFocus: PropTypes.func,
         disabled: PropTypes.bool,
         pattern: PropTypes.string,
-        required: PropTypes.bool
+        required: PropTypes.bool,
+        inputProps: PropTypes.object
     },
     getDefaultProps() {
         return {
@@ -111,7 +112,8 @@ export var ReactTelephoneInput = createReactClass({
             disabled: false,
             placeholder: '+1 (702) 123-4567',
             autoComplete: 'tel',
-            required: false
+            required: false,
+            inputProps: {}
         }
     },
     getNumber() {
@@ -728,7 +730,7 @@ export var ReactTelephoneInput = createReactClass({
         })
 
         var inputFlagClasses = `flag ${this.state.selectedCountry.iso2}`
-        let otherProps = {}
+        let otherProps = this.props.inputProps
         if (this.props.inputId) {
             otherProps.id = this.props.inputId
         }
