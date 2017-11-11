@@ -60,7 +60,7 @@ export function formatNumber(text, pattern, autoFormat) {
     }
 
     var formattedObject = reduce(pattern, function (acc, character) {
-        if (acc.remainingText.length === 0 && character !== ')') {
+        if (acc.remainingText.length === 0) {
             return acc;
         }
 
