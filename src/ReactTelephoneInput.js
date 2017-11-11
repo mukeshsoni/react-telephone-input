@@ -48,7 +48,7 @@ var keys = {
     SPACE: 32
 }
 
-function isNumberValid(inputNumber) {
+export function isNumberValid(inputNumber) {
     var countries = countryData.allCountries
     return some(countries, function(country) {
         return (
@@ -56,6 +56,22 @@ function isNumberValid(inputNumber) {
             startsWith(country.dialCode, inputNumber)
         )
     })
+}
+
+export function replaceCountryCode(
+    currentSelectedCountry,
+    nextSelectedCountry,
+    number
+) {
+    var dialCodeRegex = RegExp('^(' + currentSelectedCountry.dialCode + ')')
+    var newNumber = number.replace(dialCodeRegex, nextSelectedCountry.dialCode)
+
+    // if we couldn't find any replacement, just attach the new country's dial code at the front
+    if (newNumber === number) {
+        return nextSelectedCountry.dialCode + number
+    } else {
+        return newNumber
+    }
 }
 
 export var ReactTelephoneInput = createReactClass({
@@ -86,6 +102,7 @@ export var ReactTelephoneInput = createReactClass({
         initialValue: PropTypes.string,
         autoFormat: PropTypes.bool,
         defaultCountry: PropTypes.string,
+        isValid: PropTypes.func,
         onlyCountries: PropTypes.arrayOf(PropTypes.object),
         preferredCountries: PropTypes.arrayOf(PropTypes.string),
         classNames: PropTypes.string,
@@ -426,15 +443,14 @@ export var ReactTelephoneInput = createReactClass({
 
         // tiny optimization
         if (currentSelectedCountry.iso2 !== nextSelectedCountry.iso2) {
-            var dialCodeRegex = RegExp(
-                '^(\\+' + currentSelectedCountry.dialCode + ')|\\+'
+            let newNumber = replaceCountryCode(
+                currentSelectedCountry,
+                nextSelectedCountry,
+                this.state.formattedNumber.replace(/\D/g, '') // let's convert formatted number to just numbers for easy find/replace
             )
-            var newNumber = this.state.formattedNumber.replace(
-                dialCodeRegex,
-                '+' + nextSelectedCountry.dialCode
-            )
+
             var formattedNumber = this.formatNumber(
-                newNumber.replace(/\D/g, ''),
+                newNumber,
                 nextSelectedCountry.format
             )
 

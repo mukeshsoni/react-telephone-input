@@ -9,10 +9,14 @@ chai.use(dirtyChai)
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+var find = require('lodash/find')
 import { shallow, mount } from 'enzyme'
 import TestUtils from 'react-addons-test-utils'
 import renderer from 'react-test-renderer'
-import { ReactTelephoneInput } from '../src/ReactTelephoneInput.js'
+import {
+    ReactTelephoneInput,
+    replaceCountryCode
+} from '../src/ReactTelephoneInput.js'
 import countryData from 'country-telephone-data'
 var allCountries = countryData.allCountries
 var rti
@@ -203,5 +207,37 @@ describe('react telephone input', function() {
         expect(wrapper.state('formattedNumber')).to.equal('+1 (231) 312-3132')
         wrapper.setProps({ value: null })
         expect(wrapper.state('formattedNumber')).to.equal('+')
+    })
+
+    describe('country code replacement', () => {
+        it('simple replacements', () => {
+            let oldNumber = '+91'
+            let currentSelectedCountry = find(allCountries, { iso2: 'in' })
+            let nextSelectedCountry = find(allCountries, { iso2: 'iq' })
+            let expectedNumber = '964'
+
+            let newNumber = replaceCountryCode(
+                currentSelectedCountry,
+                nextSelectedCountry,
+                oldNumber.replace(/\D/g, '')
+            )
+            expect(newNumber).to.equal(expectedNumber)
+        })
+
+        it('should take care of formatting nuances when replacing country codes', () => {
+            // e.g. US virgin islands number formats to something like this '+1(340)'
+            // the problem would be solved if we just take the numbers and replace country code and then reformat the number
+            let oldNumber = '+1(340)'
+            let currentSelectedCountry = find(allCountries, { iso2: 'vi' })
+            let nextSelectedCountry = find(allCountries, { iso2: 'iq' })
+            let expectedNumber = '964'
+
+            let newNumber = replaceCountryCode(
+                currentSelectedCountry,
+                nextSelectedCountry,
+                oldNumber.replace(/\D/g, '')
+            )
+            expect(newNumber).to.equal(expectedNumber)
+        })
     })
 })
