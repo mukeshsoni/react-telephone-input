@@ -48,6 +48,43 @@ var keys = {
     SPACE: 32
 }
 
+export function formatNumber(text, pattern, autoFormat) {
+    if (!text || text.length === 0) {
+        return '+'
+    }
+
+    // for all strings with length less than 3, just return it (1, 2 etc.)
+    // also return the same text if the selected country has no fixed format
+    if ((text && text.length < 2) || !pattern || !autoFormat) {
+        return `+${text}`
+    }
+
+    var formattedObject = reduce(
+        pattern,
+        function(acc, character) {
+            if (acc.remainingText.length === 0) {
+                return acc
+            }
+
+            if (character !== '.') {
+                return {
+                    formattedText: acc.formattedText + character,
+                    remainingText: acc.remainingText
+                }
+            }
+
+            return {
+                formattedText: acc.formattedText + first(acc.remainingText),
+                remainingText: tail(acc.remainingText)
+            }
+        },
+        { formattedText: '', remainingText: text.split('') }
+    )
+    return (
+        formattedObject.formattedText + formattedObject.remainingText.join('')
+    )
+}
+
 export function isNumberValid(inputNumber) {
     var countries = countryData.allCountries
     return some(countries, function(country) {
@@ -203,43 +240,6 @@ export var ReactTelephoneInput = createReactClass({
             container.scrollTop = newScrollTop - heightDifference
         }
     },
-    formatNumber(text, pattern) {
-        if (!text || text.length === 0) {
-            return '+'
-        }
-
-        // for all strings with length less than 3, just return it (1, 2 etc.)
-        // also return the same text if the selected country has no fixed format
-        if ((text && text.length < 2) || !pattern || !this.props.autoFormat) {
-            return `+${text}`
-        }
-
-        var formattedObject = reduce(
-            pattern,
-            function(acc, character) {
-                if (acc.remainingText.length === 0) {
-                    return acc
-                }
-
-                if (character !== '.') {
-                    return {
-                        formattedText: acc.formattedText + character,
-                        remainingText: acc.remainingText
-                    }
-                }
-
-                return {
-                    formattedText: acc.formattedText + first(acc.remainingText),
-                    remainingText: tail(acc.remainingText)
-                }
-            },
-            { formattedText: '', remainingText: text.split('') }
-        )
-        return (
-            formattedObject.formattedText +
-            formattedObject.remainingText.join('')
-        )
-    },
 
     // put the cursor to the end of the input (usually after a focus event)
     _cursorToEnd(skipFocus) {
@@ -385,9 +385,10 @@ export var ReactTelephoneInput = createReactClass({
                 freezeSelection = false
             }
             // let us remove all non numerals from the input
-            formattedNumber = this.formatNumber(
+            formattedNumber = formatNumber(
                 inputNumber,
-                newSelectedCountry.format
+                newSelectedCountry.format,
+                this.props.autoFormat
             )
         }
 
@@ -449,9 +450,10 @@ export var ReactTelephoneInput = createReactClass({
                 this.state.formattedNumber.replace(/\D/g, '') // let's convert formatted number to just numbers for easy find/replace
             )
 
-            var formattedNumber = this.formatNumber(
+            var formattedNumber = formatNumber(
                 newNumber,
-                nextSelectedCountry.format
+                nextSelectedCountry.format,
+                this.props.autoFormat
             )
 
             this.setState(
@@ -513,9 +515,10 @@ export var ReactTelephoneInput = createReactClass({
             allCountries,
             selectedCountryGuess
         )
-        let formattedNumber = this.formatNumber(
+        let formattedNumber = formatNumber(
             inputNumber.replace(/\D/g, ''),
-            selectedCountryGuess ? selectedCountryGuess.format : null
+            selectedCountryGuess ? selectedCountryGuess.format : null,
+            this.props.autoFormat
         )
 
         return {
