@@ -152,7 +152,8 @@ export var ReactTelephoneInput = createReactClass({
         disabled: PropTypes.bool,
         pattern: PropTypes.string,
         required: PropTypes.bool,
-        inputProps: PropTypes.object
+        inputProps: PropTypes.object,
+        inputClassName: PropTypes.string
     },
     getDefaultProps() {
         return {
@@ -736,7 +737,7 @@ export var ReactTelephoneInput = createReactClass({
             arrow: true,
             up: this.state.showDropDown
         })
-        var inputClasses = classNames({
+        var inputClasses = classNames(this.props.inputClassName, {
             'form-control': true,
             'invalid-number': !this.props.isValid(
                 this.state.formattedNumber.replace(/\D/g, '')
