@@ -1,6 +1,7 @@
 {
   // I want to use babel-eslint for parsing!
   "parser": "babel-eslint",
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "env": {
     // I write for browser
     "browser": true,
