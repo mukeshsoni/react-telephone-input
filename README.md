@@ -62,7 +62,7 @@ Preferred countries show up in the top of the list. This prop also accepts an ar
 E.g.
 ```
 <ReactTelephoneInput
-  preferredCountries={['in', 'us', 'uk']}
+  preferredCountries={['in', 'us', 'gb']}
   />
 ```
 #### classNames
