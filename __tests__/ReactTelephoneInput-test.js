@@ -7,18 +7,23 @@ var dirtyChai = require('dirty-chai')
 var expect = chai.expect
 chai.use(dirtyChai)
 
+import 'raf/polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
 var find = require('lodash/find')
-import { shallow, mount } from 'enzyme'
-import TestUtils from 'react-addons-test-utils'
-import renderer from 'react-test-renderer'
+import Enzyme, { shallow, mount } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
+
+import TestUtils from 'react-dom/test-utils'
 import {
     ReactTelephoneInput,
     formatNumber,
     replaceCountryCode
 } from '../src/ReactTelephoneInput.js'
 import countryData from 'country-telephone-data'
+
+Enzyme.configure({ adapter: new Adapter() });
+
 var allCountries = countryData.allCountries
 var rti
 
@@ -38,7 +43,6 @@ describe('react telephone input', function() {
         )
         expect(rti).to.be.defined
         expect(rti.refs.numberInput).to.be.defined
-        expect(true).to.be.true()
     })
 
     it('should render the top divs and inputses', () => {
@@ -176,7 +180,7 @@ describe('react telephone input', function() {
         )
         expect(rti).to.be.defined
 
-        TestUtils.Simulate.focus(rti.refs.numberInput)
+        TestUtils.Simulate.focus(rti.numberInputRef)
     })
 
     it('should trigger onBlur event handler when input element is unfocused', done => {
@@ -191,7 +195,7 @@ describe('react telephone input', function() {
         )
         expect(rti).to.be.defined
 
-        TestUtils.Simulate.blur(rti.refs.numberInput)
+        TestUtils.Simulate.blur(rti.numberInputRef)
     })
 
     it('should re-render with correct phone number once value prop changed', () => {
@@ -207,7 +211,7 @@ describe('react telephone input', function() {
         )
         expect(wrapper.state('formattedNumber')).to.equal('+1 (231) 312-3132')
         wrapper.setProps({ value: null })
-        expect(wrapper.state('formattedNumber')).to.equal('+')
+        expect(wrapper.state('formattedNumber')).to.equal('')
     })
 
     describe('country code replacement', () => {
@@ -268,7 +272,6 @@ describe('react telephone input', function() {
             let number = '187124'
             let expectedFormattedNumber = '+1 (871) 24'
             let formattedNumber = formatNumber(number, country.format, true)
-            console.log('formatted nubmer ', formattedNumber)
 
             expect(formattedNumber).to.equal(expectedFormattedNumber)
         })
@@ -280,7 +283,6 @@ describe('react telephone input', function() {
             let number = '1871'
             let expectedFormattedNumber = '+1 (871'
             let formattedNumber = formatNumber(number, country.format, true)
-            console.log('formatted nubmer ', formattedNumber)
 
             expect(formattedNumber).to.equal(expectedFormattedNumber)
         })

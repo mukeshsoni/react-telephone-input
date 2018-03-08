@@ -1,4 +1,5 @@
 // TODO - fix the onlyContries props. Currently expects that as an array of country object, but users should be able to send in array of country isos
+'use strict'
 
 var some = require('lodash/some')
 var find = require('lodash/find')
@@ -19,20 +20,20 @@ var PropTypes = require('prop-types')
 var createReactClass = require('create-react-class')
 
 var React = require('react')
-var ReactDOM = require('react-dom')
 var onClickOutside = require('react-onclickoutside').default
 var classNames = require('classnames')
 var countryData = require('country-telephone-data')
 var allCountries = countryData.allCountries
 var iso2Lookup = countryData.iso2Lookup
 var allCountryCodes = countryData.allCountryCodes
+var isModernBrowser
 
 if (typeof document !== 'undefined') {
-    var isModernBrowser = Boolean(
+    isModernBrowser = Boolean(
         document.createElement('input').setSelectionRange
     )
 } else {
-    var isModernBrowser = true
+    isModernBrowser = true
 }
 
 var keys = {
@@ -50,6 +51,10 @@ var keys = {
 
 export function formatNumber(text, pattern, autoFormat) {
     if (!text || text.length === 0) {
+        return ''
+    }
+
+    if (text === '+') {
         return '+'
     }
 
@@ -152,7 +157,10 @@ export var ReactTelephoneInput = createReactClass({
         disabled: PropTypes.bool,
         pattern: PropTypes.string,
         required: PropTypes.bool,
-        inputProps: PropTypes.object
+        inputProps: PropTypes.object,
+        flagsImagePath: PropTypes.string,
+        autoComplete: PropTypes.string,
+        placeholder: PropTypes.string
     },
     getDefaultProps() {
         return {
@@ -205,7 +213,7 @@ export var ReactTelephoneInput = createReactClass({
             return
         }
 
-        var container = ReactDOM.findDOMNode(this.refs.flagDropdownList)
+        var container = this.flagDropdownListRef
 
         if (!container) {
             return
@@ -243,7 +251,7 @@ export var ReactTelephoneInput = createReactClass({
 
     // put the cursor to the end of the input (usually after a focus event)
     _cursorToEnd(skipFocus) {
-        var input = this.refs.numberInput
+        var input = this.numberInputRef
         if (skipFocus) {
             this._fillDialCode()
         } else {
@@ -316,7 +324,8 @@ export var ReactTelephoneInput = createReactClass({
         return bestGuess
     },
     getElement(index) {
-        return ReactDOM.findDOMNode(this.refs[`flag_no_${index}`])
+        // eslint-disable-next-line
+        return this.refs[`flag_no_${index}`] 
     },
     handleFlagDropdownClick(e) {
         if (this.props.disabled) {
@@ -369,28 +378,29 @@ export var ReactTelephoneInput = createReactClass({
             event.returnValue = false
         }
 
-        if (event.target.value.length > 0) {
-            // before entering the number in new format, lets check if the dial code now matches some other country
-            var inputNumber = event.target.value.replace(/\D/g, '')
-
-            // we don't need to send the whole number to guess the country... only the first 6 characters are enough
-            // the guess country function can then use memoization much more effectively since the set of input it gets has drastically reduced
-            if (
-                !this.state.freezeSelection ||
-                this.state.selectedCountry.dialCode.length > inputNumber.length
-            ) {
-                newSelectedCountry = this.guessSelectedCountry(
-                    inputNumber.substring(0, 6)
-                )
-                freezeSelection = false
-            }
-            // let us remove all non numerals from the input
-            formattedNumber = formatNumber(
-                inputNumber,
-                newSelectedCountry.format,
-                this.props.autoFormat
-            )
+        var inputNumber
+        if (event.target.value === '+') {
+            inputNumber = '+'
+        } else {
+            inputNumber = event.target.value.replace(/\D/g, '')
         }
+        // we don't need to send the whole number to guess the country... only the first 6 characters are enough
+        // the guess country function can then use memoization much more effectively since the set of input it gets has drastically reduced
+        if (
+            !this.state.freezeSelection ||
+            this.state.selectedCountry.dialCode.length > inputNumber.length
+        ) {
+            newSelectedCountry = this.guessSelectedCountry(
+                inputNumber.substring(0, 6)
+            )
+            freezeSelection = false
+        }
+        // let us remove all non numerals from the input
+        formattedNumber = formatNumber(
+            inputNumber,
+            newSelectedCountry.format,
+            this.props.autoFormat
+        )
 
         var caretPosition = event.target.selectionStart
         var oldFormattedText = this.state.formattedNumber
@@ -419,7 +429,7 @@ export var ReactTelephoneInput = createReactClass({
                         caretPosition > 0 &&
                         oldFormattedText.length >= formattedNumber.length
                     ) {
-                        this.refs.numberInput.setSelectionRange(
+                        this.numberInputRef.setSelectionRange(
                             caretPosition,
                             caretPosition
                         )
@@ -527,9 +537,9 @@ export var ReactTelephoneInput = createReactClass({
             formattedNumber: formattedNumber
         }
     },
-    _fillDialCode() {
+    _fillDialCode() {        
         // if the input is blank, insert dial code of the selected country
-        if (this.refs.numberInput.value === '+') {
+        if (this.numberInputRef && this.numberInputRef.value === '+') {
             this.setState({
                 formattedNumber: '+' + this.state.selectedCountry.dialCode
             })
@@ -711,7 +721,7 @@ export var ReactTelephoneInput = createReactClass({
             hide: !this.state.showDropDown
         })
         return (
-            <ul ref="flagDropdownList" className={dropDownClasses}>
+            <ul ref={el => {this.flagDropdownListRef = el}} className={dropDownClasses}>
                 {countryDropDownList}
             </ul>
         )
@@ -768,7 +778,7 @@ export var ReactTelephoneInput = createReactClass({
                     onBlur={this.handleInputBlur}
                     onKeyDown={this.handleInputKeyDown}
                     value={this.state.formattedNumber}
-                    ref="numberInput"
+                    ref={el => {this.numberInputRef = el}}
                     type="tel"
                     className={inputClasses}
                     autoComplete={this.props.autoComplete}
@@ -779,12 +789,12 @@ export var ReactTelephoneInput = createReactClass({
                     {...otherProps}
                 />
                 <div
-                    ref="flagDropDownButton"
+                    ref={el => {this.flagDropDownButtonRef = el}}
                     className={flagViewClasses}
                     onKeyDown={this.handleKeydown}
                 >
                     <div
-                        ref="selectedFlag"
+                        ref={el => {this.selectedFlagRef = el}}
                         onClick={this.handleFlagDropdownClick}
                         className="selected-flag"
                         title={`${this.state.selectedCountry.name}: + ${this
