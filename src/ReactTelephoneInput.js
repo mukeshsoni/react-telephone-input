@@ -198,7 +198,13 @@ export var ReactTelephoneInput = createReactClass({
         )
     },
     componentWillReceiveProps(nextProps) {
-        this.setState(this._mapPropsToState(nextProps))
+        const prevFormattedNumber = this.state.formattedNumber;
+        this.setState(this._mapPropsToState(nextProps), function() {
+            // If formatted number has changed, call on change
+            if (this.state.formattedNumber !== prevFormattedNumber) {
+                this.props.onChange(this.state.formattedNumber, this.state.selectedCountry)
+            }
+        })
     },
     componentWillUnmount() {
         document.removeEventListener('keydown', this.handleKeydown)

@@ -173,7 +173,13 @@ export var ReactTelephoneInput = createReactClass({
         return !isEqual(nextProps, this.props) || !isEqual(nextState, this.state);
     },
     componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-        this.setState(this._mapPropsToState(nextProps));
+        var prevFormattedNumber = this.state.formattedNumber;
+        this.setState(this._mapPropsToState(nextProps), function () {
+            // If formatted number has changed, call on change
+            if (this.state.formattedNumber !== prevFormattedNumber) {
+                this.props.onChange(this.state.formattedNumber, this.state.selectedCountry);
+            }
+        });
     },
     componentWillUnmount: function componentWillUnmount() {
         document.removeEventListener('keydown', this.handleKeydown);
