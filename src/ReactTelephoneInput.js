@@ -533,7 +533,7 @@ export var ReactTelephoneInput = createReactClass({
     }
     // don't include the preferred countries in search
     var probableCountries = this.props.onlyCountries.filter(function(country) {
-      return startsWith(country.name.toLowerCase(), queryString.toLowerCase())
+      return startsWith(queryString.toLowerCase(), country.name.toLowerCase())
     }, this)
     return probableCountries[0]
   }),
