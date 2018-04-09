@@ -1,71 +1,71 @@
 {
-    "name": "react-telephone-input",
-    "version": "4.4.5",
-    "description":
-        "React component for entering and validating international telephone numbers",
-    "main": "lib/ReactTelephoneInput.js",
-    "modules": "es/ReactTelephoneInput.js",
-    "files": ["css", "es", "lib", "umd"],
-    "scripts": {
-        "build": "npx nwb build-react-component",
-        "clean": "npx nwb clean-module && npx clean-demo",
-        "start": "nwb serve-react-demo",
-        "lint": "eslint src",
-        "test": "jest",
-        "test: coverage": "jest --coverage",
-        "test:watch": "jest --watch"
-    },
-    "jest": {
-        "transform": {
-            "^.+\\.js$": "./jest.transform.js"
-        }
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/mukeshsoni/react-telephone-input"
-    },
-    "keywords": [
-        "react-component",
-        "react-telephone-input",
-        "international-telephone-input",
-        "react"
-    ],
-    "author": "Mukesh Soni",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/mukeshsoni/react-telephone-input/issues"
-    },
-    "homepage": "https://github.com/mukeshsoni/react-telephone-input",
-    "devDependencies": {
-        "babel-jest": "20.0.3",
-        "babel-preset-latest": "6.24.1",
-        "babel-preset-react": "6.24.1",
-        "chai": "^3.0.0",
-        "dirty-chai": "^1.2.2",
-        "enzyme": "^2.7.1",
-        "eslint": "0.23.0",
-        "jest": "20.0.4",
-        "nwb": "0.18.x",
-        "react": "^15.x",
-        "react-addons-test-utils": "15.6.0",
-        "react-dom": "^15.3.2",
-        "react-test-renderer": "15.6.1",
-        "regenerator-runtime": "0.10.5"
-    },
-    "dependencies": {
-        "classnames": "^2.1.2",
-        "country-telephone-data": "0.4.2",
-        "create-react-class": "^15.6.0",
-        "lodash": "4.17.4",
-        "prop-types": "^15.5.10",
-        "react-onclickoutside": "^6.5.0"
-    },
-    "peerDependencies": {
-        "react": ">=0.14.0 || ^15.0.0"
-    },
-    "browserify-shim": {
-        "classnames": "global:classNames",
-        "react": "global:React",
-        "lodash": "global:lodash"
+  "name": "react-telephone-input",
+  "version": "4.4.5",
+  "description":
+    "React component for entering and validating international telephone numbers",
+  "main": "lib/ReactTelephoneInput.js",
+  "modules": "es/ReactTelephoneInput.js",
+  "files": ["css", "es", "lib", "umd"],
+  "scripts": {
+    "build": "npx nwb build-react-component",
+    "clean": "npx nwb clean-module && npx clean-demo",
+    "start": "nwb serve-react-demo",
+    "lint": "eslint src",
+    "test": "jest",
+    "test: coverage": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "./jest.transform.js"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mukeshsoni/react-telephone-input"
+  },
+  "keywords": [
+    "react-component",
+    "react-telephone-input",
+    "international-telephone-input",
+    "react"
+  ],
+  "author": "Mukesh Soni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mukeshsoni/react-telephone-input/issues"
+  },
+  "homepage": "https://github.com/mukeshsoni/react-telephone-input",
+  "devDependencies": {
+    "babel-jest": "20.0.3",
+    "babel-preset-latest": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "chai": "^3.0.0",
+    "dirty-chai": "^1.2.2",
+    "enzyme": "^2.7.1",
+    "eslint": "0.23.0",
+    "jest": "20.0.4",
+    "nwb": "0.18.x",
+    "react": "^15.x",
+    "react-addons-test-utils": "15.6.0",
+    "react-dom": "^15.3.2",
+    "react-test-renderer": "15.6.1",
+    "regenerator-runtime": "0.10.5"
+  },
+  "dependencies": {
+    "classnames": "^2.1.2",
+    "country-telephone-data": "0.4.2",
+    "create-react-class": "^15.6.0",
+    "debounce": "^1.1.0",
+    "mem": "^3.0.0",
+    "prop-types": "^15.5.10",
+    "react-onclickoutside": "^6.5.0"
+  },
+  "peerDependencies": {
+    "react": ">=0.14.0 || ^15.0.0"
+  },
+  "browserify-shim": {
+    "classnames": "global:classNames",
+    "react": "global:React"
+  }
 }
