@@ -306,6 +306,9 @@ export var ReactTelephoneInput = createReactClass({
     }
 
     e.preventDefault()
+    const { preferredCountries, selectedCountry } = this.state
+    const { onlyCountries } = this.props
+
     // need to put the highlight on the current selected country if the dropdown is going to open up
     this.setState(
       {
@@ -315,8 +318,8 @@ export var ReactTelephoneInput = createReactClass({
           this.props.onlyCountries
         ),
         highlightCountryIndex: findIndex(
-          propEq("iso2", this.state.selectedCountry.iso2),
-          this.state.preferredCountries.concat(this.props.onlyCountries)
+          propEq("iso2", selectedCountry.iso2),
+          preferredCountries.concat(onlyCountries)
         )
       },
       () => {

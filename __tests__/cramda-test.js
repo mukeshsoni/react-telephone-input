@@ -21,6 +21,29 @@ describe("findIndex", () => {
     expect(findIndex(propEq("name", "ritesh"), people)).toBe(1)
     expect(findIndex(propEq("name", "rohan"), people)).toBe(-1)
   })
+
+  it("should return the first items index in case of multiple hits", () => {
+    let people = [
+      {
+        id: 1,
+        name: "mukesh"
+      },
+      {
+        id: 2,
+        name: "ritesh"
+      },
+      {
+        id: 3,
+        name: "Rakesh"
+      },
+      {
+        id: 4,
+        name: "mukesh"
+      }
+    ]
+
+    expect(findIndex(propEq("name", "mukesh"), people)).toBe(0)
+  })
 })
 
 describe("tail", () => {

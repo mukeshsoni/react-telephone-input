@@ -38,13 +38,20 @@ export const equals = curry((a, b) => {
 })
 
 export const findIndex = curry((finder, list) => {
-  return list.reduce((acc, item, index) => {
-    if (finder(item)) {
-      return index
-    } else {
-      return acc
+  if (!list) {
+    return -1
+  }
+
+  let itemIndex = -1
+
+  for (let i = 0; i < list.length; i++) {
+    if (finder(list[i])) {
+      itemIndex = i
+      break
     }
-  }, -1)
+  }
+
+  return itemIndex
 })
 
 export function first(list) {
