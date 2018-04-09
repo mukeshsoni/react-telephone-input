@@ -641,10 +641,10 @@ export var ReactTelephoneInput = createReactClass({
         return (
           <li
             ref={`flag_no_${index}`}
-            key={`flag_no_${index}`}
+            key={`flag_no_` + country.iso2}
             data-flag-key={`flag_no_${index}`}
             className={itemClasses}
-            data-dial-code="1"
+            data-dial-code={country.dialCode}
             data-country-code={country.iso2}
             onClick={self.handleFlagItemClick.bind(self, country)}
           >
