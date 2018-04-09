@@ -1,11 +1,15 @@
 {
   "name": "react-telephone-input",
   "version": "4.5.6",
-  "description":
-    "React component for entering and validating international telephone numbers",
+  "description": "React component for entering and validating international telephone numbers",
   "main": "lib/ReactTelephoneInput.js",
   "modules": "es/ReactTelephoneInput.js",
-  "files": ["css", "es", "lib", "umd"],
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
   "scripts": {
     "build": "npx nwb build-react-component",
     "clean": "npx nwb clean-module && npx clean-demo",
@@ -13,7 +17,8 @@
     "lint": "eslint src",
     "test": "jest",
     "test: coverage": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "deploy": "gh-pages -d demo/dist"
   },
   "jest": {
     "transform": {
@@ -45,6 +50,7 @@
     "dirty-chai": "^1.2.2",
     "enzyme": "^2.7.1",
     "eslint": "0.23.0",
+    "gh-pages": "^1.1.0",
     "jest": "20.0.4",
     "nwb": "0.18.x",
     "react": "^15.x",
