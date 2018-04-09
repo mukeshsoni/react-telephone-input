@@ -182,12 +182,6 @@ export var ReactTelephoneInput = createReactClass({
         document.addEventListener('keydown', this.handleKeydown)
 
         this._cursorToEnd(true)
-        if (typeof this.props.onChange === 'function') {
-            this.props.onChange(
-                this.state.formattedNumber,
-                this.state.selectedCountry
-            )
-        }
     },
     shouldComponentUpdate(nextProps, nextState) {
         return (
