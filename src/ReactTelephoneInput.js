@@ -11,7 +11,7 @@ import {
   startsWith
 } from "./cramda"
 import debounce from "debounce"
-import memoize from "mem"
+import memoize from "lodash.memoize"
 
 var PropTypes = require("prop-types")
 var createReactClass = require("create-react-class")

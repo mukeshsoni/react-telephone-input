@@ -1,6 +1,6 @@
 {
   "name": "react-telephone-input",
-  "version": "4.4.5",
+  "version": "4.5.5",
   "description":
     "React component for entering and validating international telephone numbers",
   "main": "lib/ReactTelephoneInput.js",
@@ -57,7 +57,7 @@
     "country-telephone-data": "0.4.2",
     "create-react-class": "^15.6.0",
     "debounce": "^1.1.0",
-    "mem": "^3.0.0",
+    "lodash.memoize": "^4.1.2",
     "prop-types": "^15.5.10",
     "react-onclickoutside": "^6.5.0"
   },
