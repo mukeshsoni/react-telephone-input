@@ -2,35 +2,35 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 // TODO - fix the onlyContries props. Currently expects that as an array of country object, but users should be able to send in array of country isos
 
-var some = require('lodash/some');
-var find = require('lodash/find');
-var reduce = require('lodash/reduce');
-var map = require('lodash/map');
-var filter = require('lodash/filter');
-var findIndex = require('lodash/findIndex');
-var first = require('lodash/first');
-var tail = require('lodash/tail');
-var debounce = require('lodash/debounce');
-var memoize = require('lodash/memoize');
-var assign = require('lodash/assign');
-var isEqual = require('lodash/isEqual');
+var some = require("lodash/some");
+var find = require("lodash/find");
+var reduce = require("lodash/reduce");
+var map = require("lodash/map");
+var filter = require("lodash/filter");
+var findIndex = require("lodash/findIndex");
+var first = require("lodash/first");
+var tail = require("lodash/tail");
+var debounce = require("lodash/debounce");
+var memoize = require("lodash/memoize");
+var assign = require("lodash/assign");
+var isEqual = require("lodash/isEqual");
 // import lodash string methods
-var trim = require('lodash/trim');
-var startsWith = require('lodash/startsWith');
-var PropTypes = require('prop-types');
-var createReactClass = require('create-react-class');
+var trim = require("lodash/trim");
+var startsWith = require("lodash/startsWith");
+var PropTypes = require("prop-types");
+var createReactClass = require("create-react-class");
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var onClickOutside = require('react-onclickoutside').default;
-var classNames = require('classnames');
-var countryData = require('country-telephone-data');
+var React = require("react");
+var ReactDOM = require("react-dom");
+var onClickOutside = require("react-onclickoutside").default;
+var classNames = require("classnames");
+var countryData = require("country-telephone-data");
 var allCountries = countryData.allCountries;
 var iso2Lookup = countryData.iso2Lookup;
 var allCountryCodes = countryData.allCountryCodes;
 
-if (typeof document !== 'undefined') {
-    var isModernBrowser = Boolean(document.createElement('input').setSelectionRange);
+if (typeof document !== "undefined") {
+    var isModernBrowser = Boolean(document.createElement("input").setSelectionRange);
 } else {
     var isModernBrowser = true;
 }
@@ -50,13 +50,13 @@ var keys = {
 
 export function formatNumber(text, pattern, autoFormat) {
     if (!text || text.length === 0) {
-        return '+';
+        return "+";
     }
 
     // for all strings with length less than 3, just return it (1, 2 etc.)
     // also return the same text if the selected country has no fixed format
     if (text && text.length < 2 || !pattern || !autoFormat) {
-        return '+' + text;
+        return "+" + text;
     }
 
     var formattedObject = reduce(pattern, function (acc, character) {
@@ -64,7 +64,7 @@ export function formatNumber(text, pattern, autoFormat) {
             return acc;
         }
 
-        if (character !== '.') {
+        if (character !== ".") {
             return {
                 formattedText: acc.formattedText + character,
                 remainingText: acc.remainingText
@@ -75,8 +75,8 @@ export function formatNumber(text, pattern, autoFormat) {
             formattedText: acc.formattedText + first(acc.remainingText),
             remainingText: tail(acc.remainingText)
         };
-    }, { formattedText: '', remainingText: text.split('') });
-    return formattedObject.formattedText + formattedObject.remainingText.join('');
+    }, { formattedText: "", remainingText: text.split("") });
+    return formattedObject.formattedText + formattedObject.remainingText.join("");
 }
 
 export function isNumberValid(inputNumber) {
@@ -87,7 +87,7 @@ export function isNumberValid(inputNumber) {
 }
 
 export function replaceCountryCode(currentSelectedCountry, nextSelectedCountry, number) {
-    var dialCodeRegex = RegExp('^(' + currentSelectedCountry.dialCode + ')');
+    var dialCodeRegex = RegExp("^(" + currentSelectedCountry.dialCode + ")");
     var newNumber = number.replace(dialCodeRegex, nextSelectedCountry.dialCode);
 
     // if we couldn't find any replacement, just attach the new country's dial code at the front
@@ -99,7 +99,7 @@ export function replaceCountryCode(currentSelectedCountry, nextSelectedCountry, 
 }
 
 export var ReactTelephoneInput = createReactClass({
-    displayName: 'ReactTelephoneInput',
+    displayName: "ReactTelephoneInput",
     getInitialState: function getInitialState() {
         var preferredCountries = this.props.preferredCountries.map(function (iso2) {
             return iso2Lookup.hasOwnProperty(iso2) ? allCountries[iso2Lookup[iso2]] : null;
@@ -107,10 +107,10 @@ export var ReactTelephoneInput = createReactClass({
             return val !== null;
         });
 
-        return assign({}, {
+        return Object.assign({}, {
             preferredCountries: preferredCountries,
             showDropDown: false,
-            queryString: '',
+            queryString: "",
             freezeSelection: false,
             debouncedQueryStingSearcher: debounce(this.searchCountry, 300)
         }, this._mapPropsToState(this.props, true));
@@ -142,24 +142,24 @@ export var ReactTelephoneInput = createReactClass({
             onlyCountries: allCountries,
             defaultCountry: allCountries[0].iso2,
             isValid: isNumberValid,
-            flagsImagePath: 'flags.png',
+            flagsImagePath: "flags.png",
             onEnterKeyPress: function onEnterKeyPress() {},
             preferredCountries: [],
             disabled: false,
-            placeholder: '+1 (702) 123-4567',
-            autoComplete: 'tel',
+            placeholder: "+1 (702) 123-4567",
+            autoComplete: "tel",
             required: false,
             inputProps: {}
         };
     },
     getNumber: function getNumber() {
-        return this.state.formattedNumber !== '+' ? this.state.formattedNumber : '';
+        return this.state.formattedNumber !== "+" ? this.state.formattedNumber : "";
     },
     getValue: function getValue() {
         return this.getNumber();
     },
     componentDidMount: function componentDidMount() {
-        document.addEventListener('keydown', this.handleKeydown);
+        document.addEventListener("keydown", this.handleKeydown);
 
         this._cursorToEnd(true);
     },
@@ -170,7 +170,7 @@ export var ReactTelephoneInput = createReactClass({
         this.setState(this._mapPropsToState(nextProps));
     },
     componentWillUnmount: function componentWillUnmount() {
-        document.removeEventListener('keydown', this.handleKeydown);
+        document.removeEventListener("keydown", this.handleKeydown);
     },
     scrollTo: function scrollTo(country, middle) {
         if (!country) {
@@ -233,7 +233,7 @@ export var ReactTelephoneInput = createReactClass({
     guessSelectedCountry: function guessSelectedCountry(inputNumber) {
         var secondBestGuess = find(allCountries, { iso2: this.props.defaultCountry }) || this.props.onlyCountries[0];
         var inputNumberForCountries = inputNumber.substr(0, 4);
-        if (trim(inputNumber) !== '') {
+        if (trim(inputNumber) !== "") {
             var bestGuess = reduce(this.props.onlyCountries, function (selectedCountry, country) {
                 // if the country dialCode exists WITH area code
 
@@ -256,7 +256,7 @@ export var ReactTelephoneInput = createReactClass({
                     }
                 }
                 return selectedCountry;
-            }, { dialCode: '', priority: 10001 }, this);
+            }, { dialCode: "", priority: 10001 }, this);
         } else {
             return secondBestGuess;
         }
@@ -268,7 +268,7 @@ export var ReactTelephoneInput = createReactClass({
         return bestGuess;
     },
     getElement: function getElement(index) {
-        return ReactDOM.findDOMNode(this.refs['flag_no_' + index]);
+        return ReactDOM.findDOMNode(this.refs["flag_no_" + index]);
     },
     handleFlagDropdownClick: function handleFlagDropdownClick(e) {
         var _this = this;
@@ -291,7 +291,7 @@ export var ReactTelephoneInput = createReactClass({
         });
     },
     handleInput: function handleInput(event) {
-        var formattedNumber = '+',
+        var formattedNumber = "+",
             newSelectedCountry = this.state.selectedCountry,
             freezeSelection = this.state.freezeSelection;
 
@@ -309,7 +309,7 @@ export var ReactTelephoneInput = createReactClass({
 
         if (event.target.value.length > 0) {
             // before entering the number in new format, lets check if the dial code now matches some other country
-            var inputNumber = event.target.value.replace(/\D/g, '');
+            var inputNumber = event.target.value.replace(/\D/g, "");
 
             // we don't need to send the whole number to guess the country... only the first 6 characters are enough
             // the guess country function can then use memoization much more effectively since the set of input it gets has drastically reduced
@@ -358,7 +358,7 @@ export var ReactTelephoneInput = createReactClass({
 
         // tiny optimization
         if (currentSelectedCountry.iso2 !== nextSelectedCountry.iso2) {
-            var newNumber = replaceCountryCode(currentSelectedCountry, nextSelectedCountry, this.state.formattedNumber.replace(/\D/g, '') // let's convert formatted number to just numbers for easy find/replace
+            var newNumber = replaceCountryCode(currentSelectedCountry, nextSelectedCountry, this.state.formattedNumber.replace(/\D/g, "") // let's convert formatted number to just numbers for easy find/replace
             );
 
             var formattedNumber = formatNumber(newNumber, nextSelectedCountry.format, this.props.autoFormat);
@@ -380,7 +380,7 @@ export var ReactTelephoneInput = createReactClass({
     },
     handleInputFocus: function handleInputFocus() {
         // trigger parent component's onFocus handler
-        if (typeof this.props.onFocus === 'function') {
+        if (typeof this.props.onFocus === "function") {
             this.props.onFocus(this.state.formattedNumber, this.state.selectedCountry);
         }
 
@@ -396,17 +396,17 @@ export var ReactTelephoneInput = createReactClass({
         } else if (props.initialValue && firstCall) {
             inputNumber = props.initialValue;
         } else if (this.props.value) {
-            // just cleared the value
-            inputNumber = '';
+            // just clear the value
+            inputNumber = "";
         } else if (this.state && this.state.formattedNumber && this.state.formattedNumber.length > 0) {
             inputNumber = this.state.formattedNumber;
         } else {
-            inputNumber = '';
+            inputNumber = "";
         }
 
-        var selectedCountryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, ''));
+        var selectedCountryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, ""));
         var selectedCountryGuessIndex = findIndex(allCountries, selectedCountryGuess);
-        var formattedNumber = formatNumber(inputNumber.replace(/\D/g, ''), selectedCountryGuess ? selectedCountryGuess.format : null, this.props.autoFormat);
+        var formattedNumber = formatNumber(inputNumber.replace(/\D/g, ""), selectedCountryGuess ? selectedCountryGuess.format : null, this.props.autoFormat);
 
         return {
             selectedCountry: selectedCountryGuess,
@@ -416,9 +416,9 @@ export var ReactTelephoneInput = createReactClass({
     },
     _fillDialCode: function _fillDialCode() {
         // if the input is blank, insert dial code of the selected country
-        if (this.refs.numberInput.value === '+') {
+        if (this.refs.numberInput && this.refs.numberInput.value === "+") {
             this.setState({
-                formattedNumber: '+' + this.state.selectedCountry.dialCode
+                formattedNumber: "+" + this.state.selectedCountry.dialCode
             });
         }
     },
@@ -450,7 +450,7 @@ export var ReactTelephoneInput = createReactClass({
         this.scrollTo(this.getElement(probableCandidateIndex), true);
 
         this.setState({
-            queryString: '',
+            queryString: "",
             highlightCountryIndex: probableCandidateIndex
         });
     },
@@ -519,47 +519,47 @@ export var ReactTelephoneInput = createReactClass({
                 highlight: self.state.highlightCountryIndex === index
             });
 
-            var inputFlagClasses = 'flag ' + country.iso2;
+            var inputFlagClasses = "flag " + country.iso2;
 
             return React.createElement(
-                'li',
+                "li",
                 {
-                    ref: 'flag_no_' + index,
-                    key: 'flag_no_' + index,
-                    'data-flag-key': 'flag_no_' + index,
+                    ref: "flag_no_" + index,
+                    key: "flag_no_" + index,
+                    "data-flag-key": "flag_no_" + index,
                     className: itemClasses,
-                    'data-dial-code': '1',
-                    'data-country-code': country.iso2,
+                    "data-dial-code": "1",
+                    "data-country-code": country.iso2,
                     onClick: self.handleFlagItemClick.bind(self, country)
                 },
-                React.createElement('div', {
+                React.createElement("div", {
                     className: inputFlagClasses,
                     style: self.getFlagStyle()
                 }),
                 React.createElement(
-                    'span',
-                    { className: 'country-name' },
+                    "span",
+                    { className: "country-name" },
                     country.name
                 ),
                 React.createElement(
-                    'span',
-                    { className: 'dial-code' },
-                    '+' + country.dialCode
+                    "span",
+                    { className: "dial-code" },
+                    "+" + country.dialCode
                 )
             );
         });
 
-        var dashedLi = React.createElement('li', { key: 'dashes', className: 'divider' });
+        var dashedLi = React.createElement("li", { key: "dashes", className: "divider" });
         // let's insert a dashed line in between preffered countries and the rest
         countryDropDownList.splice(this.state.preferredCountries.length, 0, dashedLi);
 
         var dropDownClasses = classNames({
-            'country-list': true,
+            "country-list": true,
             hide: !this.state.showDropDown
         });
         return React.createElement(
-            'ul',
-            { ref: 'flagDropdownList', className: dropDownClasses },
+            "ul",
+            { ref: "flagDropdownList", className: dropDownClasses },
             countryDropDownList
         );
     },
@@ -567,11 +567,11 @@ export var ReactTelephoneInput = createReactClass({
         return {
             width: 16,
             height: 11,
-            backgroundImage: 'url(' + this.props.flagsImagePath + ')'
+            backgroundImage: "url(" + this.props.flagsImagePath + ")"
         };
     },
     handleInputBlur: function handleInputBlur() {
-        if (typeof this.props.onBlur === 'function') {
+        if (typeof this.props.onBlur === "function") {
             this.props.onBlur(this.state.formattedNumber, this.state.selectedCountry);
         }
     },
@@ -581,34 +581,36 @@ export var ReactTelephoneInput = createReactClass({
             up: this.state.showDropDown
         });
         var inputClasses = classNames({
-            'form-control': true,
-            'invalid-number': !this.props.isValid(this.state.formattedNumber.replace(/\D/g, ''))
+            "form-control": true,
+            "invalid-number": !this.props.isValid(this.state.formattedNumber.replace(/\D/g, ""))
         });
 
         var flagViewClasses = classNames({
-            'flag-dropdown': true,
-            'open-dropdown': this.state.showDropDown
+            "flag-dropdown": true,
+            "open-dropdown": this.state.showDropDown
         });
 
-        var inputFlagClasses = 'flag ' + this.state.selectedCountry.iso2;
+        var inputFlagClasses = "flag " + this.state.selectedCountry.iso2;
         var otherProps = this.props.inputProps;
         if (this.props.inputId) {
             otherProps.id = this.props.inputId;
         }
+
+        console.log();
         return React.createElement(
-            'div',
+            "div",
             {
-                className: classNames('react-tel-input', this.props.classNames, this.props.className)
+                className: classNames("react-tel-input", this.props.classNames, this.props.className)
             },
-            React.createElement('input', _extends({
+            React.createElement("input", _extends({
                 onChange: this.handleInput,
                 onClick: this.handleInputClick,
                 onFocus: this.handleInputFocus,
                 onBlur: this.handleInputBlur,
                 onKeyDown: this.handleInputKeyDown,
                 value: this.state.formattedNumber,
-                ref: 'numberInput',
-                type: 'tel',
+                ref: "numberInput",
+                type: "tel",
                 className: inputClasses,
                 autoComplete: this.props.autoComplete,
                 pattern: this.props.pattern,
@@ -617,30 +619,30 @@ export var ReactTelephoneInput = createReactClass({
                 disabled: this.props.disabled
             }, otherProps)),
             React.createElement(
-                'div',
+                "div",
                 {
-                    ref: 'flagDropDownButton',
+                    ref: "flagDropDownButton",
                     className: flagViewClasses,
                     onKeyDown: this.handleKeydown
                 },
                 React.createElement(
-                    'div',
+                    "div",
                     {
-                        ref: 'selectedFlag',
+                        ref: "selectedFlag",
                         onClick: this.handleFlagDropdownClick,
-                        className: 'selected-flag',
-                        title: this.state.selectedCountry.name + ': + ' + this.state.selectedCountry.dialCode
+                        className: "selected-flag",
+                        title: this.state.selectedCountry.name + ": + " + this.state.selectedCountry.dialCode
                     },
                     React.createElement(
-                        'div',
+                        "div",
                         {
                             className: inputFlagClasses,
                             style: this.getFlagStyle()
                         },
-                        React.createElement('div', { className: arrowClasses })
+                        React.createElement("div", { className: arrowClasses })
                     )
                 ),
-                this.state.showDropDown ? this.getCountryDropDownList() : ''
+                this.state.showDropDown ? this.getCountryDropDownList() : ""
             )
         );
     }

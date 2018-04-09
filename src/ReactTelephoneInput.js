@@ -1,35 +1,35 @@
 // TODO - fix the onlyContries props. Currently expects that as an array of country object, but users should be able to send in array of country isos
 
-var some = require('lodash/some')
-var find = require('lodash/find')
-var reduce = require('lodash/reduce')
-var map = require('lodash/map')
-var filter = require('lodash/filter')
-var findIndex = require('lodash/findIndex')
-var first = require('lodash/first')
-var tail = require('lodash/tail')
-var debounce = require('lodash/debounce')
-var memoize = require('lodash/memoize')
-var assign = require('lodash/assign')
-var isEqual = require('lodash/isEqual')
+var some = require("lodash/some")
+var find = require("lodash/find")
+var reduce = require("lodash/reduce")
+var map = require("lodash/map")
+var filter = require("lodash/filter")
+var findIndex = require("lodash/findIndex")
+var first = require("lodash/first")
+var tail = require("lodash/tail")
+var debounce = require("lodash/debounce")
+var memoize = require("lodash/memoize")
+var assign = require("lodash/assign")
+var isEqual = require("lodash/isEqual")
 // import lodash string methods
-var trim = require('lodash/trim')
-var startsWith = require('lodash/startsWith')
-var PropTypes = require('prop-types')
-var createReactClass = require('create-react-class')
+var trim = require("lodash/trim")
+var startsWith = require("lodash/startsWith")
+var PropTypes = require("prop-types")
+var createReactClass = require("create-react-class")
 
-var React = require('react')
-var ReactDOM = require('react-dom')
-var onClickOutside = require('react-onclickoutside').default
-var classNames = require('classnames')
-var countryData = require('country-telephone-data')
+var React = require("react")
+var ReactDOM = require("react-dom")
+var onClickOutside = require("react-onclickoutside").default
+var classNames = require("classnames")
+var countryData = require("country-telephone-data")
 var allCountries = countryData.allCountries
 var iso2Lookup = countryData.iso2Lookup
 var allCountryCodes = countryData.allCountryCodes
 
-if (typeof document !== 'undefined') {
+if (typeof document !== "undefined") {
     var isModernBrowser = Boolean(
-        document.createElement('input').setSelectionRange
+        document.createElement("input").setSelectionRange
     )
 } else {
     var isModernBrowser = true
@@ -50,7 +50,7 @@ var keys = {
 
 export function formatNumber(text, pattern, autoFormat) {
     if (!text || text.length === 0) {
-        return '+'
+        return "+"
     }
 
     // for all strings with length less than 3, just return it (1, 2 etc.)
@@ -66,7 +66,7 @@ export function formatNumber(text, pattern, autoFormat) {
                 return acc
             }
 
-            if (character !== '.') {
+            if (character !== ".") {
                 return {
                     formattedText: acc.formattedText + character,
                     remainingText: acc.remainingText
@@ -78,10 +78,10 @@ export function formatNumber(text, pattern, autoFormat) {
                 remainingText: tail(acc.remainingText)
             }
         },
-        { formattedText: '', remainingText: text.split('') }
+        { formattedText: "", remainingText: text.split("") }
     )
     return (
-        formattedObject.formattedText + formattedObject.remainingText.join('')
+        formattedObject.formattedText + formattedObject.remainingText.join("")
     )
 }
 
@@ -100,7 +100,7 @@ export function replaceCountryCode(
     nextSelectedCountry,
     number
 ) {
-    var dialCodeRegex = RegExp('^(' + currentSelectedCountry.dialCode + ')')
+    var dialCodeRegex = RegExp("^(" + currentSelectedCountry.dialCode + ")")
     var newNumber = number.replace(dialCodeRegex, nextSelectedCountry.dialCode)
 
     // if we couldn't find any replacement, just attach the new country's dial code at the front
@@ -122,12 +122,12 @@ export var ReactTelephoneInput = createReactClass({
             )
             .filter(val => val !== null)
 
-        return assign(
+        return Object.assign(
             {},
             {
                 preferredCountries: preferredCountries,
                 showDropDown: false,
-                queryString: '',
+                queryString: "",
                 freezeSelection: false,
                 debouncedQueryStingSearcher: debounce(this.searchCountry, 300)
             },
@@ -160,26 +160,26 @@ export var ReactTelephoneInput = createReactClass({
             onlyCountries: allCountries,
             defaultCountry: allCountries[0].iso2,
             isValid: isNumberValid,
-            flagsImagePath: 'flags.png',
+            flagsImagePath: "flags.png",
             onEnterKeyPress: function() {},
             preferredCountries: [],
             disabled: false,
-            placeholder: '+1 (702) 123-4567',
-            autoComplete: 'tel',
+            placeholder: "+1 (702) 123-4567",
+            autoComplete: "tel",
             required: false,
             inputProps: {}
         }
     },
     getNumber() {
-        return this.state.formattedNumber !== '+'
+        return this.state.formattedNumber !== "+"
             ? this.state.formattedNumber
-            : ''
+            : ""
     },
     getValue() {
         return this.getNumber()
     },
     componentDidMount() {
-        document.addEventListener('keydown', this.handleKeydown)
+        document.addEventListener("keydown", this.handleKeydown)
 
         this._cursorToEnd(true)
     },
@@ -192,7 +192,7 @@ export var ReactTelephoneInput = createReactClass({
         this.setState(this._mapPropsToState(nextProps))
     },
     componentWillUnmount() {
-        document.removeEventListener('keydown', this.handleKeydown)
+        document.removeEventListener("keydown", this.handleKeydown)
     },
     scrollTo(country, middle) {
         if (!country) {
@@ -255,7 +255,7 @@ export var ReactTelephoneInput = createReactClass({
             find(allCountries, { iso2: this.props.defaultCountry }) ||
             this.props.onlyCountries[0]
         var inputNumberForCountries = inputNumber.substr(0, 4)
-        if (trim(inputNumber) !== '') {
+        if (trim(inputNumber) !== "") {
             var bestGuess = reduce(
                 this.props.onlyCountries,
                 function(selectedCountry, country) {
@@ -296,7 +296,7 @@ export var ReactTelephoneInput = createReactClass({
                     }
                     return selectedCountry
                 },
-                { dialCode: '', priority: 10001 },
+                { dialCode: "", priority: 10001 },
                 this
             )
         } else {
@@ -347,7 +347,7 @@ export var ReactTelephoneInput = createReactClass({
         )
     },
     handleInput(event) {
-        var formattedNumber = '+',
+        var formattedNumber = "+",
             newSelectedCountry = this.state.selectedCountry,
             freezeSelection = this.state.freezeSelection
 
@@ -365,7 +365,7 @@ export var ReactTelephoneInput = createReactClass({
 
         if (event.target.value.length > 0) {
             // before entering the number in new format, lets check if the dial code now matches some other country
-            var inputNumber = event.target.value.replace(/\D/g, '')
+            var inputNumber = event.target.value.replace(/\D/g, "")
 
             // we don't need to send the whole number to guess the country... only the first 6 characters are enough
             // the guess country function can then use memoization much more effectively since the set of input it gets has drastically reduced
@@ -441,7 +441,7 @@ export var ReactTelephoneInput = createReactClass({
             let newNumber = replaceCountryCode(
                 currentSelectedCountry,
                 nextSelectedCountry,
-                this.state.formattedNumber.replace(/\D/g, '') // let's convert formatted number to just numbers for easy find/replace
+                this.state.formattedNumber.replace(/\D/g, "") // let's convert formatted number to just numbers for easy find/replace
             )
 
             var formattedNumber = formatNumber(
@@ -473,7 +473,7 @@ export var ReactTelephoneInput = createReactClass({
     },
     handleInputFocus() {
         // trigger parent component's onFocus handler
-        if (typeof this.props.onFocus === 'function') {
+        if (typeof this.props.onFocus === "function") {
             this.props.onFocus(
                 this.state.formattedNumber,
                 this.state.selectedCountry
@@ -490,8 +490,8 @@ export var ReactTelephoneInput = createReactClass({
         } else if (props.initialValue && firstCall) {
             inputNumber = props.initialValue
         } else if (this.props.value) {
-            // just cleared the value
-            inputNumber = ''
+            // just clear the value
+            inputNumber = ""
         } else if (
             this.state &&
             this.state.formattedNumber &&
@@ -499,18 +499,18 @@ export var ReactTelephoneInput = createReactClass({
         ) {
             inputNumber = this.state.formattedNumber
         } else {
-            inputNumber = ''
+            inputNumber = ""
         }
 
         let selectedCountryGuess = this.guessSelectedCountry(
-            inputNumber.replace(/\D/g, '')
+            inputNumber.replace(/\D/g, "")
         )
         let selectedCountryGuessIndex = findIndex(
             allCountries,
             selectedCountryGuess
         )
         let formattedNumber = formatNumber(
-            inputNumber.replace(/\D/g, ''),
+            inputNumber.replace(/\D/g, ""),
             selectedCountryGuess ? selectedCountryGuess.format : null,
             this.props.autoFormat
         )
@@ -523,9 +523,9 @@ export var ReactTelephoneInput = createReactClass({
     },
     _fillDialCode() {
         // if the input is blank, insert dial code of the selected country
-        if (this.refs.numberInput.value === '+') {
+        if (this.refs.numberInput && this.refs.numberInput.value === "+") {
             this.setState({
-                formattedNumber: '+' + this.state.selectedCountry.dialCode
+                formattedNumber: "+" + this.state.selectedCountry.dialCode
             })
         }
     },
@@ -572,7 +572,7 @@ export var ReactTelephoneInput = createReactClass({
         this.scrollTo(this.getElement(probableCandidateIndex), true)
 
         this.setState({
-            queryString: '',
+            queryString: "",
             highlightCountryIndex: probableCandidateIndex
         })
     },
@@ -681,18 +681,16 @@ export var ReactTelephoneInput = createReactClass({
                             className={inputFlagClasses}
                             style={self.getFlagStyle()}
                         />
-                        <span className="country-name">
-                            {country.name}
-                        </span>
+                        <span className="country-name">{country.name}</span>
                         <span className="dial-code">
-                            {'+' + country.dialCode}
+                            {"+" + country.dialCode}
                         </span>
                     </li>
                 )
             }
         )
 
-        const dashedLi = <li key={'dashes'} className="divider" />
+        const dashedLi = <li key={"dashes"} className="divider" />
         // let's insert a dashed line in between preffered countries and the rest
         countryDropDownList.splice(
             this.state.preferredCountries.length,
@@ -701,7 +699,7 @@ export var ReactTelephoneInput = createReactClass({
         )
 
         const dropDownClasses = classNames({
-            'country-list': true,
+            "country-list": true,
             hide: !this.state.showDropDown
         })
         return (
@@ -718,7 +716,7 @@ export var ReactTelephoneInput = createReactClass({
         }
     },
     handleInputBlur() {
-        if (typeof this.props.onBlur === 'function') {
+        if (typeof this.props.onBlur === "function") {
             this.props.onBlur(
                 this.state.formattedNumber,
                 this.state.selectedCountry
@@ -731,15 +729,15 @@ export var ReactTelephoneInput = createReactClass({
             up: this.state.showDropDown
         })
         var inputClasses = classNames({
-            'form-control': true,
-            'invalid-number': !this.props.isValid(
-                this.state.formattedNumber.replace(/\D/g, '')
+            "form-control": true,
+            "invalid-number": !this.props.isValid(
+                this.state.formattedNumber.replace(/\D/g, "")
             )
         })
 
         var flagViewClasses = classNames({
-            'flag-dropdown': true,
-            'open-dropdown': this.state.showDropDown
+            "flag-dropdown": true,
+            "open-dropdown": this.state.showDropDown
         })
 
         var inputFlagClasses = `flag ${this.state.selectedCountry.iso2}`
@@ -747,10 +745,12 @@ export var ReactTelephoneInput = createReactClass({
         if (this.props.inputId) {
             otherProps.id = this.props.inputId
         }
+
+        console.log()
         return (
             <div
                 className={classNames(
-                    'react-tel-input',
+                    "react-tel-input",
                     this.props.classNames,
                     this.props.className
                 )}
@@ -781,8 +781,9 @@ export var ReactTelephoneInput = createReactClass({
                         ref="selectedFlag"
                         onClick={this.handleFlagDropdownClick}
                         className="selected-flag"
-                        title={`${this.state.selectedCountry.name}: + ${this
-                            .state.selectedCountry.dialCode}`}
+                        title={`${this.state.selectedCountry.name}: + ${
+                            this.state.selectedCountry.dialCode
+                        }`}
                     >
                         <div
                             className={inputFlagClasses}
@@ -793,7 +794,7 @@ export var ReactTelephoneInput = createReactClass({
                     </div>
                     {this.state.showDropDown
                         ? this.getCountryDropDownList()
-                        : ''}
+                        : ""}
                 </div>
             </div>
         )
