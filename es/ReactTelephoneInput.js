@@ -288,7 +288,7 @@ export var ReactTelephoneInput = createReactClass({
         return ReactDOM.findDOMNode(this.flagElems['flag_no_' + index]);
     },
     handleFlagDropdownClick: function handleFlagDropdownClick(e) {
-        var _this = this;
+        var _this2 = this;
 
         if (this.props.disabled) {
             return;
@@ -302,12 +302,14 @@ export var ReactTelephoneInput = createReactClass({
             highlightCountryIndex: findIndex(this.state.preferredCountries.concat(this.props.onlyCountries), this.state.selectedCountry)
         }, function () {
             // only need to scrool if the dropdown list is alive
-            if (_this.state.showDropDown) {
-                _this.scrollTo(_this.getElement(_this.state.highlightCountryIndex + _this.state.preferredCountries.length));
+            if (_this2.state.showDropDown) {
+                _this2.scrollTo(_this2.getElement(_this2.state.highlightCountryIndex + _this2.state.preferredCountries.length));
             }
         });
     },
     handleInput: function handleInput(event) {
+        var _this3 = this;
+
         var formattedNumber = '+',
             newSelectedCountry = this.state.selectedCountry,
             freezeSelection = this.state.freezeSelection;
@@ -341,6 +343,7 @@ export var ReactTelephoneInput = createReactClass({
         var caretPosition = event.target.selectionStart;
         var oldFormattedText = this.state.formattedNumber;
         var diff = formattedNumber.length - oldFormattedText.length;
+        var _this = this;
 
         this.setState({
             formattedNumber: formattedNumber,
@@ -356,13 +359,13 @@ export var ReactTelephoneInput = createReactClass({
                     caretPosition = caretPosition - diff;
                 }
 
-                if (caretPosition > 0 && oldFormattedText.length >= formattedNumber.length) {
-                    this.numberInput.setSelectionRange(caretPosition, caretPosition);
+                if (_this3.numberInput && caretPosition > 0 && oldFormattedText.length >= formattedNumber.length) {
+                    _this3.numberInput.setSelectionRange(caretPosition, caretPosition);
                 }
             }
 
-            if (this.props.onChange) {
-                this.props.onChange(this.state.formattedNumber, this.state.selectedCountry);
+            if (_this3.props.onChange) {
+                _this3.props.onChange(_this3.state.formattedNumber, _this3.state.selectedCountry);
             }
         });
     },
