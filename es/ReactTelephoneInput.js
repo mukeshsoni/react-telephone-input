@@ -303,7 +303,7 @@ export var ReactTelephoneInput = createReactClass({
         }, function () {
             // only need to scrool if the dropdown list is alive
             if (_this2.state.showDropDown) {
-                _this2.scrollTo(_this2.getElement(_this2.state.highlightCountryIndex + _this2.state.preferredCountries.length));
+                _this2.scrollTo(_this2.getElement(_this2.state.highlightCountryIndex));
             }
         });
     },
