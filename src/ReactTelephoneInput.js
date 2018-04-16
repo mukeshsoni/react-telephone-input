@@ -674,10 +674,12 @@ export var ReactTelephoneInput = createReactClass({
     )
   },
   getFlagStyle() {
-    return {
-      width: 16,
-      height: 11,
-      backgroundImage: `url(${this.props.flagsImagePath})`
+    if (this.props.flagsImagePath) {
+      return {
+        backgroundImage: `url(${this.props.flagsImagePath})`
+      }
+    } else {
+      return {}
     }
   },
   handleInputBlur() {

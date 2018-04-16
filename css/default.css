@@ -706,38 +706,38 @@
 .react-tel-input .v-hide {
   visibility: hidden;
 }
-.react-tel-input input[type=text],
-.react-tel-input input[type=tel] {
+.react-tel-input input[type="text"],
+.react-tel-input input[type="tel"] {
   position: relative;
   z-index: 0;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   padding-left: 44px;
   margin-left: 0;
-  background: #FFFFFF;
-  border: 1px solid #CACACA;
+  background: #ffffff;
+  border: 1px solid #cacaca;
   border-radius: 3px;
-  box-shadow: 0 1px 2px #E3E3E3 inset;
+  box-shadow: 0 1px 2px #e3e3e3 inset;
   line-height: 25px;
   height: 28px;
   width: 100%;
 }
-.react-tel-input input[type=text]:focus,
-.react-tel-input input[type=tel]:focus {
+.react-tel-input input[type="text"]:focus,
+.react-tel-input input[type="tel"]:focus {
   border-color: #42bdff;
   border-left-color: #cacaca;
 }
-.react-tel-input input[type=text].invalid-number,
-.react-tel-input input[type=tel].invalid-number {
+.react-tel-input input[type="text"].invalid-number,
+.react-tel-input input[type="tel"].invalid-number {
   border: 1px solid #d79f9f;
-  background-color: #FAF0F0;
+  background-color: #faf0f0;
   border-left-color: #cacaca;
 }
-.react-tel-input input[type=text].invalid-number:focus,
-.react-tel-input input[type=tel].invalid-number:focus {
+.react-tel-input input[type="text"].invalid-number:focus,
+.react-tel-input input[type="tel"].invalid-number:focus {
   border: 1px solid #d79f9f;
   border-left-color: #cacaca;
-  background-color: #FAF0F0;
+  background-color: #faf0f0;
 }
 .react-tel-input .flag-dropdown {
   position: absolute;
@@ -781,6 +781,8 @@
   position: absolute;
   top: 50%;
   margin-top: -5px;
+  width: 16px;
+  height: 11px;
 }
 .react-tel-input .selected-flag .arrow {
   position: relative;
@@ -814,6 +816,10 @@
 }
 .react-tel-input .country-list .flag {
   display: inline-block;
+  margin-right: 6px;
+  margin-top: 2px;
+  width: 16px;
+  height: 11px;
 }
 .react-tel-input .country-list .divider {
   padding-bottom: 5px;
@@ -831,10 +837,6 @@
 }
 .react-tel-input .country-list .country.highlight {
   background-color: #c7e2f1;
-}
-.react-tel-input .country-list .flag {
-  margin-right: 6px;
-  margin-top: 2px;
 }
 .react-tel-input .country-list .country-name {
   margin-right: 6px;
