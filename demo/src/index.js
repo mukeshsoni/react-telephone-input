@@ -10,6 +10,7 @@ class Demo extends Component {
         <h1>React Telephone Input Demo</h1>
         <h4>Base case</h4>
         <RTI
+          preferredCountries={['af', 'al']}
           defaultCountry="in"
           flagsImagePath="./images/flags.png"
           initialValue="+9112121"

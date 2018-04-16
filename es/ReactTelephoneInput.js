@@ -457,7 +457,7 @@ export var ReactTelephoneInput = createReactClass({
     });
   },
   handleKeydown: function handleKeydown(event) {
-    if (!this.state.showDropDown) {
+    if (!this.state.showDropDown || event.metaKey || event.altKey) {
       return;
     }
 
@@ -525,7 +525,7 @@ export var ReactTelephoneInput = createReactClass({
         "li",
         {
           ref: "flag_no_" + index,
-          key: "flag_no_" + country.iso2,
+          key: "flag_no_" + index,
           "data-flag-key": "flag_no_" + index,
           className: itemClasses,
           "data-dial-code": country.dialCode,
