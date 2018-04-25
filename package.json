@@ -1,15 +1,11 @@
 {
-  "name": "@lennd/react-telephone-input",
+  "name": "react-telephone-input",
   "version": "4.5.8",
-  "description": "React component for entering and validating international telephone numbers",
+  "description":
+    "React component for entering and validating international telephone numbers",
   "main": "lib/ReactTelephoneInput.js",
   "modules": "es/ReactTelephoneInput.js",
-  "files": [
-    "css",
-    "es",
-    "lib",
-    "umd"
-  ],
+  "files": ["css", "es", "lib", "umd"],
   "scripts": {
     "build": "npx nwb build-react-component",
     "clean": "npx nwb clean-module && npx clean-demo",
