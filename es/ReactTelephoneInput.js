@@ -326,11 +326,12 @@ export var ReactTelephoneInput = createReactClass({
     var caretPosition = event.target.selectionStart;
     var oldFormattedText = this.state.formattedNumber;
     var diff = formattedNumber.length - oldFormattedText.length;
+    var selectedCountry = newSelectedCountry.dialCode.length > 0 ? newSelectedCountry : this.state.selectedCountry;
 
     this.setState({
       formattedNumber: formattedNumber,
       freezeSelection: freezeSelection,
-      selectedCountry: newSelectedCountry.dialCode.length > 0 ? newSelectedCountry : this.state.selectedCountry
+      selectedCountry: selectedCountry
     }, function () {
       if (isModernBrowser) {
         if (caretPosition === 1 && formattedNumber.length === 2) {
@@ -347,7 +348,7 @@ export var ReactTelephoneInput = createReactClass({
       }
 
       if (this.props.onChange) {
-        this.props.onChange(this.state.formattedNumber, this.state.selectedCountry);
+        this.props.onChange(formattedNumber, selectedCountry);
       }
     });
   },
@@ -561,11 +562,13 @@ export var ReactTelephoneInput = createReactClass({
     );
   },
   getFlagStyle: function getFlagStyle() {
-    return {
-      width: 16,
-      height: 11,
-      backgroundImage: "url(" + this.props.flagsImagePath + ")"
-    };
+    if (this.props.flagsImagePath) {
+      return {
+        backgroundImage: "url(" + this.props.flagsImagePath + ")"
+      };
+    } else {
+      return {};
+    }
   },
   handleInputBlur: function handleInputBlur() {
     if (typeof this.props.onBlur === "function") {

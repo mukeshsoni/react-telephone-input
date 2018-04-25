@@ -378,15 +378,15 @@ export var ReactTelephoneInput = createReactClass({
     var caretPosition = event.target.selectionStart
     var oldFormattedText = this.state.formattedNumber
     var diff = formattedNumber.length - oldFormattedText.length
+    var selectedCountry = newSelectedCountry.dialCode.length > 0
+      ? newSelectedCountry
+      : this.state.selectedCountry
 
     this.setState(
       {
         formattedNumber: formattedNumber,
         freezeSelection: freezeSelection,
-        selectedCountry:
-          newSelectedCountry.dialCode.length > 0
-            ? newSelectedCountry
-            : this.state.selectedCountry
+        selectedCountry: selectedCountry
       },
       function() {
         if (isModernBrowser) {
@@ -411,8 +411,8 @@ export var ReactTelephoneInput = createReactClass({
 
         if (this.props.onChange) {
           this.props.onChange(
-            this.state.formattedNumber,
-            this.state.selectedCountry
+            formattedNumber,
+            selectedCountry
           )
         }
       }
