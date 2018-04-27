@@ -5,4 +5,8 @@ npm-debug.log.*
 .publish
 example/dist
 dist
+/es
+/lib
+/umd
+.DS_Store
 coverage
