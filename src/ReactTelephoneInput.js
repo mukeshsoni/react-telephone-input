@@ -1,15 +1,7 @@
-// TODO - fix the onlyContries props. Currently expects that as an array of country object, but users should be able to send in array of country isos
+import R from "cramda"
+const { any, find, propEq, equals, findIndex, first, tail, startsWith } = R
+console.log("startsWith", R, startsWith, any)
 
-import {
-  any,
-  find,
-  propEq,
-  equals,
-  findIndex,
-  first,
-  tail,
-  startsWith
-} from "./cramda"
 import debounce from "debounce"
 import memoize from "lodash.memoize"
 
@@ -124,7 +116,7 @@ export var ReactTelephoneInput = createReactClass({
         showDropDown: false,
         queryString: "",
         freezeSelection: false,
-        debouncedQueryStingSearcher: debounce(this.searchCountry, 300)
+        debouncedQueryStingSearcher: debounce(this.searchCountry, 600)
       },
       this._mapPropsToState(this.props, true)
     )
