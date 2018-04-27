@@ -13,14 +13,14 @@ import {
 import debounce from "debounce"
 import memoize from "lodash.memoize"
 
-var PropTypes = require("prop-types")
-var createReactClass = require("create-react-class")
+import React from "react"
+import PropTypes from "prop-types"
+import createReactClass from "create-react-class"
+import ReactDOM from "react-dom"
+import onClickOutside from "react-onclickoutside"
+import classNames from "classnames"
+import countryData from "country-telephone-data"
 
-var React = require("react")
-var ReactDOM = require("react-dom")
-var onClickOutside = require("react-onclickoutside").default
-var classNames = require("classnames")
-var countryData = require("country-telephone-data")
 var allCountries = countryData.allCountries
 var iso2Lookup = countryData.iso2Lookup
 var allCountryCodes = countryData.allCountryCodes
@@ -378,9 +378,10 @@ export var ReactTelephoneInput = createReactClass({
     var caretPosition = event.target.selectionStart
     var oldFormattedText = this.state.formattedNumber
     var diff = formattedNumber.length - oldFormattedText.length
-    var selectedCountry = newSelectedCountry.dialCode.length > 0
-      ? newSelectedCountry
-      : this.state.selectedCountry
+    var selectedCountry =
+      newSelectedCountry.dialCode.length > 0
+        ? newSelectedCountry
+        : this.state.selectedCountry
 
     this.setState(
       {
@@ -410,10 +411,7 @@ export var ReactTelephoneInput = createReactClass({
         }
 
         if (this.props.onChange) {
-          this.props.onChange(
-            formattedNumber,
-            selectedCountry
-          )
+          this.props.onChange(formattedNumber, selectedCountry)
         }
       }
     )
