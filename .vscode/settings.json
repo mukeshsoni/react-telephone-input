@@ -1,3 +1,5 @@
 {
-    "prettier.tabWidth": 2
+  "prettier.tabWidth": 2,
+  "flow.useNPMPackagedFlow": true,
+  "typescript.validate.enable": false
 }

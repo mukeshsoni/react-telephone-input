@@ -10,6 +10,9 @@ import ReactDOM from "react-dom"
 import onClickOutside from "react-onclickoutside"
 import classNames from "classnames"
 import countryData from "country-telephone-data"
+import formatNumber from "./format_number"
+import replaceCountryCode from "./replace_country_code"
+import isNumberValid from "./number_validator"
 
 var allCountries = countryData.allCountries
 var iso2Lookup = countryData.iso2Lookup
@@ -34,66 +37,6 @@ var keys = {
   A: 65,
   Z: 90,
   SPACE: 32
-}
-
-export function formatNumber(text, pattern, autoFormat) {
-  if (!text || text.length === 0) {
-    return "+"
-  }
-
-  // for all strings with length less than 3, just return it (1, 2 etc.)
-  // also return the same text if the selected country has no fixed format
-  if ((text && text.length < 2) || !pattern || !autoFormat) {
-    return `+${text}`
-  }
-
-  var formattedObject = pattern.split("").reduce(
-    function(acc, character) {
-      if (acc.remainingText.length === 0) {
-        return acc
-      }
-
-      if (character !== ".") {
-        return {
-          formattedText: acc.formattedText + character,
-          remainingText: acc.remainingText
-        }
-      }
-
-      return {
-        formattedText: acc.formattedText + first(acc.remainingText),
-        remainingText: tail(acc.remainingText)
-      }
-    },
-    { formattedText: "", remainingText: text.split("") }
-  )
-  return formattedObject.formattedText + formattedObject.remainingText.join("")
-}
-
-export function isNumberValid(inputNumber) {
-  var countries = countryData.allCountries
-  return any(function(country) {
-    return (
-      startsWith(country.dialCode, inputNumber) ||
-      startsWith(inputNumber, country.dialCode)
-    )
-  }, countries)
-}
-
-export function replaceCountryCode(
-  currentSelectedCountry,
-  nextSelectedCountry,
-  number
-) {
-  var dialCodeRegex = RegExp("^(" + currentSelectedCountry.dialCode + ")")
-  var newNumber = number.replace(dialCodeRegex, nextSelectedCountry.dialCode)
-
-  // if we couldn't find any replacement, just attach the new country's dial code at the front
-  if (newNumber === number) {
-    return nextSelectedCountry.dialCode + number
-  } else {
-    return newNumber
-  }
 }
 
 export class ReactTelephoneInput extends Component {

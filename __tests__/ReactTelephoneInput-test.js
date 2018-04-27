@@ -7,15 +7,11 @@ import React from "react"
 import ReactDOM from "react-dom"
 var find = require("lodash/find")
 import Enzyme, { shallow, mount } from "enzyme"
-// import Adapter from "enzyme-adapter-react-15"
 import Adapter from "enzyme-adapter-react-16"
 import TestUtils from "react-dom/test-utils"
-// import TestUtils from "react-addons-test-utils"
-import {
-  ReactTelephoneInput,
-  formatNumber,
-  replaceCountryCode
-} from "../src/ReactTelephoneInput.js"
+import { ReactTelephoneInput } from "../src/ReactTelephoneInput.js"
+import formatNumber from "../src/format_number"
+import replaceCountryCode from "../src/replace_country_code"
 import countryData from "country-telephone-data"
 var allCountries = countryData.allCountries
 var rti
