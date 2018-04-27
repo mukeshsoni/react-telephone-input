@@ -7,9 +7,10 @@ import React from "react"
 import ReactDOM from "react-dom"
 var find = require("lodash/find")
 import Enzyme, { shallow, mount } from "enzyme"
-import Adapter from "enzyme-adapter-react-15"
+// import Adapter from "enzyme-adapter-react-15"
+import Adapter from "enzyme-adapter-react-16"
 import TestUtils from "react-dom/test-utils"
-import renderer from "react-test-renderer"
+// import TestUtils from "react-addons-test-utils"
 import {
   ReactTelephoneInput,
   formatNumber,

@@ -19,7 +19,8 @@
   "jest": {
     "transform": {
       "^.+\\.js$": "./jest.transform.js"
-    }
+    },
+    "moduleFileExtensions": ["js"]
   },
   "repository": {
     "type": "git",
@@ -38,20 +39,20 @@
   },
   "homepage": "https://github.com/mukeshsoni/react-telephone-input",
   "devDependencies": {
-    "babel-jest": "20.0.3",
+    "babel-jest": "^22.4.3",
     "babel-preset-env": "^1.6.1",
     "babel-preset-latest": "6.24.1",
     "babel-preset-react": "6.24.1",
     "chai": "^3.0.0",
     "dirty-chai": "^1.2.2",
     "enzyme": "3.3.0",
-    "enzyme-adapter-react-15": "^1.0.5",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "0.23.0",
     "gh-pages": "^1.1.0",
-    "jest": "20.0.4",
+    "jest": "^22.4.3",
     "nwb": "0.18.x",
-    "react": "^15.6.0",
-    "react-dom": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "react-test-renderer": "15.6.1",
     "regenerator-runtime": "0.10.5"
   },
