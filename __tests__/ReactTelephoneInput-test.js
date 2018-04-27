@@ -1,7 +1,3 @@
-/* global describe, it, afterEach*/
-/* eslint: no-unused-expressions: false*/
-"use strict"
-
 var chai = require("chai")
 var dirtyChai = require("dirty-chai")
 var expect = chai.expect
@@ -10,7 +6,8 @@ chai.use(dirtyChai)
 import React from "react"
 import ReactDOM from "react-dom"
 var find = require("lodash/find")
-import { shallow, mount } from "enzyme"
+import Enzyme, { shallow, mount } from "enzyme"
+import Adapter from "enzyme-adapter-react-15"
 import TestUtils from "react-dom/test-utils"
 import renderer from "react-test-renderer"
 import {
@@ -21,6 +18,8 @@ import {
 import countryData from "country-telephone-data"
 var allCountries = countryData.allCountries
 var rti
+
+Enzyme.configure({ adapter: new Adapter() })
 
 describe("react telephone input", function() {
   afterEach(function() {
