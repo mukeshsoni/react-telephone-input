@@ -1,5 +1,8 @@
 # Reactjs Component for International Telephone Input
 
+[![Travis][build-badge]][build]
+[![npm package][npm-badge]][npm]
+
 _IMP_: From 3.\*, the styles won't be included by default. Can use `require('react-telephone-input/lib/withStyles')` to get the styles.
 
 Inspired from the awesome jquery plugin for <a href="https://github.com/Bluefieldscom/intl-tel-input" target="_blank">International Telephone Input</a>.
@@ -165,3 +168,8 @@ $ npm start
 
 go to your browser and type `http://localhost:3000`
 ```
+
+[build-badge]: https://img.shields.io/travis/mukeshsoni/react-telephone-input/master.png?style=flat-square
+[build]: https://travis-ci.org/mukeshsoni/react-telephone-input
+[npm-badge]: https://img.shields.io/npm/v/react-telephone-input.svg?style=flat-square
+[npm]: https://www.npmjs.org/package/react-telephone-input

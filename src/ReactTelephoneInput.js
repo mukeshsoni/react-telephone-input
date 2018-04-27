@@ -1,6 +1,5 @@
 import R from "cramda"
 const { any, find, propEq, equals, findIndex, first, tail, startsWith } = R
-console.log("startsWith", R, startsWith, any)
 
 import debounce from "debounce"
 import memoize from "lodash.memoize"
