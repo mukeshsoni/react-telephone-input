@@ -4,9 +4,8 @@ const { any, find, propEq, equals, findIndex, first, tail, startsWith } = R
 import debounce from "debounce"
 import memoize from "lodash.memoize"
 
-import React from "react"
+import React, { Component } from "react"
 import PropTypes from "prop-types"
-import createReactClass from "create-react-class"
 import ReactDOM from "react-dom"
 import onClickOutside from "react-onclickoutside"
 import classNames from "classnames"
@@ -97,9 +96,26 @@ export function replaceCountryCode(
   }
 }
 
-export var ReactTelephoneInput = createReactClass({
-  getInitialState() {
-    var preferredCountries = this.props.preferredCountries
+export class ReactTelephoneInput extends Component {
+  static defaultProps = {
+    autoFormat: true,
+    onlyCountries: allCountries,
+    defaultCountry: allCountries[0].iso2,
+    isValid: isNumberValid,
+    flagsImagePath: "flags.png",
+    onEnterKeyPress: function() {},
+    preferredCountries: [],
+    disabled: false,
+    placeholder: "+1 (702) 123-4567",
+    autoComplete: "tel",
+    required: false,
+    inputProps: {}
+  }
+
+  constructor(props) {
+    super(props)
+
+    var preferredCountries = props.preferredCountries
       .map(
         iso2 =>
           iso2Lookup.hasOwnProperty(iso2)
@@ -108,75 +124,43 @@ export var ReactTelephoneInput = createReactClass({
       )
       .filter(val => val !== null)
 
-    return Object.assign(
-      {},
-      {
-        preferredCountries: preferredCountries,
-        showDropDown: false,
-        queryString: "",
-        freezeSelection: false,
-        debouncedQueryStingSearcher: debounce(this.searchCountry, 600)
-      },
-      this._mapPropsToState(this.props, true)
-    )
-  },
-  propTypes: {
-    value: PropTypes.string,
-    initialValue: PropTypes.string,
-    autoFormat: PropTypes.bool,
-    defaultCountry: PropTypes.string,
-    isValid: PropTypes.func,
-    onlyCountries: PropTypes.arrayOf(PropTypes.object),
-    preferredCountries: PropTypes.arrayOf(PropTypes.string),
-    classNames: PropTypes.string,
-    className: PropTypes.string,
-    inputId: PropTypes.string,
-    onChange: PropTypes.func,
-    onEnterKeyPress: PropTypes.func,
-    onBlur: PropTypes.func,
-    onFocus: PropTypes.func,
-    disabled: PropTypes.bool,
-    pattern: PropTypes.string,
-    required: PropTypes.bool,
-    inputProps: PropTypes.object
-  },
-  getDefaultProps() {
-    return {
-      autoFormat: true,
-      onlyCountries: allCountries,
-      defaultCountry: allCountries[0].iso2,
-      isValid: isNumberValid,
-      flagsImagePath: "flags.png",
-      onEnterKeyPress: function() {},
-      preferredCountries: [],
-      disabled: false,
-      placeholder: "+1 (702) 123-4567",
-      autoComplete: "tel",
-      required: false,
-      inputProps: {}
+    this.state = {
+      preferredCountries: preferredCountries,
+      showDropDown: false,
+      queryString: "",
+      freezeSelection: false,
+      debouncedQueryStingSearcher: debounce(this.searchCountry, 600),
+      ...this._mapPropsToState(props, true)
     }
-  },
-  getNumber() {
+  }
+
+  getNumber = () => {
     return this.state.formattedNumber !== "+" ? this.state.formattedNumber : ""
-  },
-  getValue() {
+  }
+
+  getValue = () => {
     return this.getNumber()
-  },
+  }
+
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeydown)
 
     this._cursorToEnd(true)
-  },
+  }
+
   shouldComponentUpdate(nextProps, nextState) {
     return !equals(nextProps, this.props) || !equals(nextState, this.state)
-  },
+  }
+
   componentWillReceiveProps(nextProps) {
     this.setState(this._mapPropsToState(nextProps))
-  },
+  }
+
   componentWillUnmount() {
     document.removeEventListener("keydown", this.handleKeydown)
-  },
-  scrollTo(country, middle) {
+  }
+
+  scrollTo = (country, middle) => {
     if (!country) {
       return
     }
@@ -215,10 +199,10 @@ export var ReactTelephoneInput = createReactClass({
       var heightDifference = containerHeight - elementHeight
       container.scrollTop = newScrollTop - heightDifference
     }
-  },
+  }
 
   // put the cursor to the end of the input (usually after a focus event)
-  _cursorToEnd(skipFocus) {
+  _cursorToEnd = skipFocus => {
     var input = this.refs.numberInput
     if (skipFocus) {
       this._fillDialCode()
@@ -230,9 +214,10 @@ export var ReactTelephoneInput = createReactClass({
         input.setSelectionRange(len, len)
       }
     }
-  },
+  }
+
   // memoize results based on the first 5/6 characters. That is all that matters
-  guessSelectedCountry: function(inputNumber) {
+  guessSelectedCountry = inputNumber => {
     const { defaultCountry, onlyCountries } = this.props
 
     var secondBestGuess =
@@ -287,11 +272,13 @@ export var ReactTelephoneInput = createReactClass({
     }
 
     return bestGuess
-  },
-  getElement(index) {
+  }
+
+  getElement = index => {
     return ReactDOM.findDOMNode(this.refs[`flag_no_${index}`])
-  },
-  handleFlagDropdownClick(e) {
+  }
+
+  handleFlagDropdownClick = e => {
     if (this.props.disabled) {
       return
     }
@@ -325,8 +312,9 @@ export var ReactTelephoneInput = createReactClass({
         }
       }
     )
-  },
-  handleInput(event) {
+  }
+
+  handleInput = event => {
     var formattedNumber = "+",
       newSelectedCountry = this.state.selectedCountry,
       freezeSelection = this.state.freezeSelection
@@ -406,11 +394,13 @@ export var ReactTelephoneInput = createReactClass({
         }
       }
     )
-  },
-  handleInputClick() {
+  }
+
+  handleInputClick = () => {
     this.setState({ showDropDown: false })
-  },
-  handleFlagItemClick(country) {
+  }
+
+  handleFlagItemClick = country => {
     var currentSelectedCountry = this.state.selectedCountry
     var nextSelectedCountry = find(equals(country), this.props.onlyCountries)
 
@@ -445,16 +435,18 @@ export var ReactTelephoneInput = createReactClass({
     } else {
       this.setState({ showDropDown: false })
     }
-  },
-  handleInputFocus() {
+  }
+
+  handleInputFocus = () => {
     // trigger parent component's onFocus handler
     if (typeof this.props.onFocus === "function") {
       this.props.onFocus(this.state.formattedNumber, this.state.selectedCountry)
     }
 
     this._fillDialCode()
-  },
-  _mapPropsToState(props, firstCall = false) {
+  }
+
+  _mapPropsToState = (props, firstCall = false) => {
     let inputNumber
 
     if (props.value) {
@@ -492,16 +484,18 @@ export var ReactTelephoneInput = createReactClass({
       highlightCountryIndex: selectedCountryGuessIndex,
       formattedNumber: formattedNumber
     }
-  },
-  _fillDialCode() {
+  }
+
+  _fillDialCode = () => {
     // if the input is blank, insert dial code of the selected country
     if (this.refs.numberInput && this.refs.numberInput.value === "+") {
       this.setState({
         formattedNumber: "+" + this.state.selectedCountry.dialCode
       })
     }
-  },
-  _getHighlightCountryIndex(direction) {
+  }
+
+  _getHighlightCountryIndex = direction => {
     // had to write own function because underscore does not have findIndex. lodash has it
     var highlightCountryIndex = this.state.highlightCountryIndex + direction
 
@@ -514,9 +508,10 @@ export var ReactTelephoneInput = createReactClass({
     }
 
     return highlightCountryIndex
-  },
+  }
+
   // memoize search results... caching all the way
-  _searchCountry: memoize(function(queryString) {
+  _searchCountry = memoize(function(queryString) {
     if (!queryString || queryString.length === 0) {
       return null
     }
@@ -525,8 +520,9 @@ export var ReactTelephoneInput = createReactClass({
       return startsWith(queryString.toLowerCase(), country.name.toLowerCase())
     }, this)
     return probableCountries[0]
-  }),
-  searchCountry() {
+  })
+
+  searchCountry = () => {
     const probableCandidate =
       this._searchCountry(this.state.queryString) || this.props.onlyCountries[0]
     const probableCandidateIndex =
@@ -540,8 +536,9 @@ export var ReactTelephoneInput = createReactClass({
       queryString: "",
       highlightCountryIndex: probableCandidateIndex
     })
-  },
-  handleKeydown(event) {
+  }
+
+  handleKeydown = event => {
     if (!this.state.showDropDown || event.metaKey || event.altKey) {
       return
     }
@@ -597,20 +594,23 @@ export var ReactTelephoneInput = createReactClass({
           )
         }
     }
-  },
-  handleInputKeyDown(event) {
+  }
+
+  handleInputKeyDown = event => {
     if (event.which === keys.ENTER) {
       this.props.onEnterKeyPress(event)
     }
-  },
-  handleClickOutside() {
+  }
+
+  handleClickOutside = () => {
     if (this.state.showDropDown) {
       this.setState({
         showDropDown: false
       })
     }
-  },
-  getCountryDropDownList() {
+  }
+
+  getCountryDropDownList = () => {
     var self = this
     var countryDropDownList = this.state.preferredCountries
       .concat(this.props.onlyCountries)
@@ -661,8 +661,9 @@ export var ReactTelephoneInput = createReactClass({
         {countryDropDownList}
       </ul>
     )
-  },
-  getFlagStyle() {
+  }
+
+  getFlagStyle = () => {
     if (this.props.flagsImagePath) {
       return {
         backgroundImage: `url(${this.props.flagsImagePath})`
@@ -670,12 +671,14 @@ export var ReactTelephoneInput = createReactClass({
     } else {
       return {}
     }
-  },
-  handleInputBlur() {
+  }
+
+  handleInputBlur = () => {
     if (typeof this.props.onBlur === "function") {
       this.props.onBlur(this.state.formattedNumber, this.state.selectedCountry)
     }
-  },
+  }
+
   render() {
     var arrowClasses = classNames({
       arrow: true,
@@ -746,6 +749,28 @@ export var ReactTelephoneInput = createReactClass({
       </div>
     )
   }
-})
+}
 
-export default onClickOutside(ReactTelephoneInput)
+ReactTelephoneInput.propTypes = {
+  value: PropTypes.string,
+  initialValue: PropTypes.string,
+  autoFormat: PropTypes.bool,
+  defaultCountry: PropTypes.string,
+  isValid: PropTypes.func,
+  onlyCountries: PropTypes.arrayOf(PropTypes.object),
+  preferredCountries: PropTypes.arrayOf(PropTypes.string),
+  classNames: PropTypes.string,
+  className: PropTypes.string,
+  inputId: PropTypes.string,
+  onChange: PropTypes.func,
+  onEnterKeyPress: PropTypes.func,
+  onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
+  disabled: PropTypes.bool,
+  pattern: PropTypes.string,
+  required: PropTypes.bool,
+  inputProps: PropTypes.object
+}
+
+// export default onClickOutside(ReactTelephoneInput)
+export default ReactTelephoneInput
