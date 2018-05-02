@@ -10,8 +10,6 @@ import Enzyme, { shallow, mount } from "enzyme"
 import Adapter from "enzyme-adapter-react-16"
 import TestUtils from "react-dom/test-utils"
 import { ReactTelephoneInput } from "../src/ReactTelephoneInput.js"
-import formatNumber from "../src/format_number"
-import replaceCountryCode from "../src/replace_country_code"
 import countryData from "country-telephone-data"
 var allCountries = countryData.allCountries
 var rti
@@ -201,79 +199,5 @@ describe("react telephone input", function() {
     expect(wrapper.state("formattedNumber")).to.equal("+1 (231) 312-3132")
     wrapper.setProps({ value: null })
     expect(wrapper.state("formattedNumber")).to.equal("+")
-  })
-
-  describe("country code replacement", () => {
-    it("simple replacements", () => {
-      let oldNumber = "+91"
-      let currentSelectedCountry = find(allCountries, { iso2: "in" })
-      let nextSelectedCountry = find(allCountries, { iso2: "iq" })
-      let expectedNumber = "964"
-
-      let newNumber = replaceCountryCode(
-        currentSelectedCountry,
-        nextSelectedCountry,
-        oldNumber.replace(/\D/g, "")
-      )
-      expect(newNumber).to.equal(expectedNumber)
-    })
-
-    it("should take care of formatting nuances when replacing country codes", () => {
-      // e.g. US virgin islands number formats to something like this '+1(340)'
-      // the problem would be solved if we just take the numbers and replace country code and then reformat the number
-      let oldNumber = "+1(340)"
-      let currentSelectedCountry = find(allCountries, { iso2: "vi" })
-      let nextSelectedCountry = find(allCountries, { iso2: "iq" })
-      let expectedNumber = "964"
-
-      let newNumber = replaceCountryCode(
-        currentSelectedCountry,
-        nextSelectedCountry,
-        oldNumber.replace(/\D/g, "")
-      )
-      expect(newNumber).to.equal(expectedNumber)
-    })
-  })
-
-  describe("format number", () => {
-    it("should format number with just dial code", () => {
-      let country = find(allCountries, { iso2: "in" })
-      let number = "91"
-      let expectedFormattedNumber = "+91"
-
-      expect(formatNumber(number, country.format, true)).to.equal(
-        expectedFormattedNumber
-      )
-    })
-
-    it("simple format - should format number with dial code and some other numeric text", () => {
-      let country = find(allCountries, { iso2: "in" })
-      let number = "9187124"
-      let expectedFormattedNumber = "+91 87124"
-
-      expect(formatNumber(number, country.format, true)).to.equal(
-        expectedFormattedNumber
-      )
-    })
-
-    it("complex format - should format number with dashes in them", () => {
-      let country = find(allCountries, { iso2: "us" })
-      let number = "187124"
-      let expectedFormattedNumber = "+1 (871) 24"
-      let formattedNumber = formatNumber(number, country.format, true)
-
-      expect(formattedNumber).to.equal(expectedFormattedNumber)
-    })
-
-    // the number if formatted without closing bracket because otherwise user can never delete characters using backspace
-    // when the cursor is at a backspace
-    it("should format number correctly at the boundary of brackets", () => {
-      let country = find(allCountries, { iso2: "us" })
-      let number = "1871"
-      let expectedFormattedNumber = "+1 (871"
-      let formattedNumber = formatNumber(number, country.format, true)
-
-      expect(formattedNumber).to.equal(expectedFormattedNumber)
-    })
   })
 })
