@@ -1,4 +1,5 @@
 import R from 'cramda'
+import VirtualList from 'react-tiny-virtual-list'
 
 import debounce from 'debounce'
 import memoize from 'lodash.memoize'
@@ -516,46 +517,51 @@ export class ReactTelephoneInput extends Component {
 
   getCountryDropDownList = () => {
     const self = this
-    const countryDropDownList = this.state.preferredCountries
-      .concat(this.props.onlyCountries)
-      .map((country, index) => {
-        const itemClasses = classNames({
-          country: true,
-          preferred: findIndex(propEq('iso2', country.iso2), self.state.preferredCountries) >= 0,
-          highlight: self.state.highlightCountryIndex === index,
-        })
+    const data = this.state.preferredCountries.concat(this.props.onlyCountries)
 
-        const inputFlagClasses = `flag ${country.iso2}`
+    const selectedCountryIndex = findIndex(
+      propEq('iso2', this.state.selectedCountry.iso2),
+      data,
+    )
 
-        return (
-          <li
-            ref={`flag_no_${index}`}
-            key={`flag_no_${index}`}
-            data-flag-key={`flag_no_${index}`}
-            className={itemClasses}
-            data-dial-code={country.dialCode}
-            data-country-code={country.iso2}
-            onClick={self.handleFlagItemClick.bind(self, country)}
-          >
-            <div className={inputFlagClasses} style={self.getFlagStyle()} />
-            <span className="country-name">{country.name}</span>
-            <span className="dial-code">{`+${country.dialCode}`}</span>
-          </li>
-        )
-      })
-
-    const dashedLi = <li key={'dashes'} className="divider" />
-    // let's insert a dashed line in between preffered countries and the rest
-    countryDropDownList.splice(this.state.preferredCountries.length, 0, dashedLi)
-
-    const dropDownClasses = classNames({
-      'country-list': true,
-      hide: !this.state.showDropDown,
-    })
     return (
-      <ul ref="flagDropdownList" className={dropDownClasses}>
-        {countryDropDownList}
-      </ul>
+      <VirtualList
+        width={400}
+        height={300}
+        itemCount={data.length}
+        itemSize={40}
+        style={{ zIndex: 20, backgroundColor: 'white' }}
+        className='country-list'
+        scrollToIndex={selectedCountryIndex}
+        renderItem={({ index, style }) => {
+          const country = data[index]
+          const itemClasses = classNames({
+            country: true,
+            preferred: findIndex(propEq('iso2', country.iso2), self.state.preferredCountries) >= 0,
+            highlight: self.state.highlightCountryIndex === index,
+          })
+
+          const inputFlagClasses = `flag ${country.iso2}`
+
+          return (
+            <div
+              ref={`flag_no_${index}`}
+              key={`flag_no_${index}`}
+              data-flag-key={`flag_no_${index}`}
+              className={itemClasses}
+              data-dial-code={country.dialCode}
+              data-country-code={country.iso2}
+              onClick={self.handleFlagItemClick.bind(self, country)}
+              style={style}
+              title={`${country.name} - ${country.dialCode}`}
+            >
+              <div className={inputFlagClasses} style={self.getFlagStyle()} />
+              <span className="country-name">{country.name}</span>
+              <span className="dial-code">{`+${country.dialCode}`}</span>
+            </div>
+          )
+        }}
+      />
     )
   }
 

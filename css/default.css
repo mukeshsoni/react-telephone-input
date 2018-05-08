@@ -809,7 +809,7 @@
   background-color: white;
   border: 1px solid #ccc;
   width: 400px;
-  max-height: 200px;
+  /* max-height: 200px; */
   overflow-y: scroll;
   border-radius: 0 0 3px 3px;
   top: 26px;
@@ -828,6 +828,9 @@
 }
 .react-tel-input .country-list .country {
   padding: 5px 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .react-tel-input .country-list .country .dial-code {
   color: #999;
