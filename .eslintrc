@@ -12,6 +12,9 @@
     "semi": 0,
     "no-underscore-dangle": "off",
     "no-mixed-operators": "off",
-    "max-len": "off"
+    "max-len": "off",
+    "comma-dangle": "off",
+    "arrow-parens": "off",
+    "no-else-return": "off"
   }
 }
