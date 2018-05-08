@@ -6,7 +6,7 @@
   "modules": "es/ReactTelephoneInput.js",
   "files": ["css", "es", "lib", "umd"],
   "scripts": {
-    "build": "npx nwb build-react-component",
+    "build": "npx nwb build-react-component --copy-files",
     "clean": "npx nwb clean-module && npx clean-demo",
     "start": "nwb serve-react-demo",
     "lint": "eslint src",
