@@ -1,8 +1,7 @@
 {
   "name": "react-telephone-input",
   "version": "4.5.9",
-  "description":
-    "React component for entering and validating international telephone numbers",
+  "description": "React component for entering and validating international telephone numbers",
   "main": "lib/ReactTelephoneInput.js",
   "modules": "es/ReactTelephoneInput.js",
   "files": ["css", "es", "lib", "umd"],
@@ -39,6 +38,7 @@
   },
   "homepage": "https://github.com/mukeshsoni/react-telephone-input",
   "devDependencies": {
+    "babel-eslint": "^8.2.3",
     "babel-jest": "^22.4.3",
     "babel-preset-env": "^1.6.1",
     "babel-preset-latest": "6.24.1",
@@ -47,23 +47,26 @@
     "dirty-chai": "^1.2.2",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "0.23.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
     "gh-pages": "^1.1.0",
     "jest": "^22.4.3",
     "nwb": "0.18.x",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2",
     "react-test-renderer": "15.6.1",
     "regenerator-runtime": "0.10.5"
   },
   "dependencies": {
+    "react-dom": "^16.3.2",
     "classnames": "^2.1.2",
     "country-telephone-data": "0.4.2",
     "cramda": "^0.4.4",
     "debounce": "^1.1.0",
     "lodash.memoize": "^4.1.2",
-    "prop-types": "^15.5.10",
-    "react-onclickoutside": "^6.5.0"
+    "prop-types": "^15.5.10"
   },
   "peerDependencies": {
     "react": ">=0.14.0 || ^15.0.0"

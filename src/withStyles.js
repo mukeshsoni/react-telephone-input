@@ -1,4 +1,4 @@
-'use strict';
-require('../css/default.css');
-var ReactTelephoneInput = require('./ReactTelephoneInput');
-module.exports = ReactTelephoneInput;
+require('../css/default.css')
+const ReactTelephoneInput = require('./ReactTelephoneInput')
+
+module.exports = ReactTelephoneInput

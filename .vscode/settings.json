@@ -1,5 +1,7 @@
 {
   "prettier.tabWidth": 2,
   "flow.useNPMPackagedFlow": true,
-  "typescript.validate.enable": false
+  "typescript.validate.enable": false,
+  "prettier.eslintIntegration": true,
+  "prettier.printWidth": 100
 }

@@ -1,10 +1,10 @@
-import R from "cramda"
+import R from 'cramda'
 
 const { first, tail } = R
 
 function formatNumber(text, pattern, autoFormat) {
   if (!text || text.length === 0) {
-    return "+"
+    return '+'
   }
 
   // for all strings with length less than 3, just return it (1, 2 etc.)
@@ -13,27 +13,27 @@ function formatNumber(text, pattern, autoFormat) {
     return `+${text}`
   }
 
-  var formattedObject = pattern.split("").reduce(
-    function(acc, character) {
+  const formattedObject = pattern.split('').reduce(
+    (acc, character) => {
       if (acc.remainingText.length === 0) {
         return acc
       }
 
-      if (character !== ".") {
+      if (character !== '.') {
         return {
           formattedText: acc.formattedText + character,
-          remainingText: acc.remainingText
+          remainingText: acc.remainingText,
         }
       }
 
       return {
         formattedText: acc.formattedText + first(acc.remainingText),
-        remainingText: tail(acc.remainingText)
+        remainingText: tail(acc.remainingText),
       }
     },
-    { formattedText: "", remainingText: text.split("") }
+    { formattedText: '', remainingText: text.split('') },
   )
-  return formattedObject.formattedText + formattedObject.remainingText.join("")
+  return formattedObject.formattedText + formattedObject.remainingText.join('')
 }
 
 export default formatNumber
