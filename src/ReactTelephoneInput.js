@@ -74,7 +74,7 @@ export class ReactTelephoneInput extends Component {
 
     const preferredCountries = props.preferredCountries
       .map(iso2 => {
-        return Object.prototype.hasOwnProperty.call(iso2Lookup, 'iso2')
+        return Object.prototype.hasOwnProperty.call(iso2Lookup, iso2)
           ? allCountries[iso2Lookup[iso2]]
           : null
       })
@@ -659,7 +659,7 @@ ReactTelephoneInput.propTypes = {
   preferredCountries: PropTypes.arrayOf(PropTypes.string),
   flagsImagePath: PropTypes.string,
   placeholder: PropTypes.string,
-  autoComplete: PropTypes.bool,
+  autoComplete: PropTypes.string,
   classNames: PropTypes.string,
   className: PropTypes.string,
   inputId: PropTypes.string,

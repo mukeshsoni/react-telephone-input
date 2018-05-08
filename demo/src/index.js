@@ -1,7 +1,7 @@
-import React, { Component } from "react"
-import { render } from "react-dom"
+import React, { Component } from 'react'
+import { render } from 'react-dom'
 
-import RTI from "../../src/withStyles"
+import RTI from '../../src/withStyles'
 
 class Demo extends Component {
   render() {
@@ -17,11 +17,7 @@ class Demo extends Component {
           inputProps={{ autoFocus: true }}
         />
         <h4>With initial value</h4>
-        <RTI
-          defaultCountry="in"
-          flagsImagePath="./images/flags.png"
-          initialValue="+9112121"
-        />
+        <RTI defaultCountry="in" flagsImagePath="./images/flags.png" initialValue="+9112121" />
         <h4>With initial value and autoFocus on input</h4>
         <RTI
           defaultCountry="in"
@@ -30,14 +26,17 @@ class Demo extends Component {
           inputProps={{ autoFocus: true }}
         />
         <h4>Different country - Albania</h4>
+        <RTI defaultCountry="al" flagsImagePath="./images/flags.png" initialValue="3559112121" />
+        <h4>With preferred countries</h4>
         <RTI
-          defaultCountry="al"
+          defaultCountry="us"
           flagsImagePath="./images/flags.png"
-          initialValue="3559112121"
+          initialValue="+13559112121"
+          preferredCountries={['us', 'ca', 'zz', 'hk']}
         />
       </div>
     )
   }
 }
 
-render(<Demo />, document.querySelector("#demo"))
+render(<Demo />, document.querySelector('#demo'))

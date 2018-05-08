@@ -11,7 +11,7 @@ This one is written as a [reactjs](http://facebook.github.io/react/) component.
 
 Live Demo here - [http://unstack.in/react-telephone-input/](http://unstack.in/react-telephone-input/)
 
-![How it looks](/images/react-telephone-number-screenshot.png?raw=true "How it looks")
+![How it looks](/images/react-telephone-number-screenshot.png?raw=true 'How it looks')
 
 ```js
 function handleInputChange(telNumber, selectedCountry) {
@@ -116,6 +116,27 @@ let inputProps={
 <ReactTelephoneInput inputProps={inputProps} ... />
 ```
 
+#### autoComplete
+
+string. Specify the type of autocomplete for the input element.
+
+Default value - 'tel'
+
+#### listStyle
+
+Object. Style applied to the dropdown list container. There is a default value for it
+
+```
+listStyle = {
+  zIndex: 20,
+  backgroundColor: 'white'
+}
+```
+
+#### listItemClassName
+
+string. Classname which will be applied to each item in the dropdown list. The default is `country`
+
 ## How to use it
 
 * If you install it from `npm install`, you can just do `var ReactTelephoneInput = require('react-telephone-input');`
@@ -124,19 +145,14 @@ let inputProps={
 
 ```js
 function handleInputChange(telNumber, selectedCountry) {
-  console.log(
-    "input changed. number: ",
-    telNumber,
-    "selected country: ",
-    selectedCountry
-  )
+  console.log('input changed. number: ', telNumber, 'selected country: ', selectedCountry)
 }
 
 function handleInputBlur(telNumber, selectedCountry) {
   console.log(
-    "Focus off the ReactTelephoneInput component. Tel number entered is: ",
+    'Focus off the ReactTelephoneInput component. Tel number entered is: ',
     telNumber,
-    " selected country is: ",
+    ' selected country is: ',
     selectedCountry
   )
 }
