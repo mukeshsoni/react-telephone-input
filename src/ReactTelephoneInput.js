@@ -7,6 +7,7 @@ import memoize from 'lodash.memoize'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import enhanceWithClickOutside from 'react-click-outside'
 import countryData from 'country-telephone-data'
 import formatNumber from './format_number'
 import replaceCountryCode from './replace_country_code'
@@ -620,4 +621,4 @@ ReactTelephoneInput.propTypes = {
   listItemClassName: PropTypes.string
 }
 
-export default ReactTelephoneInput
+export default enhanceWithClickOutside(ReactTelephoneInput)
