@@ -6,6 +6,12 @@ import RTI from '../../src/withStyles'
 const Demo = () => {
   return (
     <div>
+      <h1>
+        Github repo -{' '}
+        <a href="https://github.com/mukeshsoni/react-telephone-input">
+          https://github.com/mukeshsoni/react-telephone-input
+        </a>
+      </h1>
       <h1>React Telephone Input Demo</h1>
       <h4>Base case</h4>
       <RTI
