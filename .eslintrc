@@ -17,6 +17,7 @@
     "arrow-parens": "off",
     "no-else-return": "off",
     "object-curly-newline": "off",
-    "no-confusing-arrow": "off"
+    "no-confusing-arrow": "off",
+    "function-paren-newline": "off"
   }
 }
