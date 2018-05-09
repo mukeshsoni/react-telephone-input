@@ -159,7 +159,7 @@ describe('react telephone input', () => {
     rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, { onFocus }))
     expect(rti).to.be.defined
 
-    TestUtils.Simulate.focus(rti.refs.numberInput)
+    TestUtils.Simulate.focus(rti.numberInputRef)
   })
 
   it('should trigger onBlur event handler when input element is unfocused', done => {
@@ -172,7 +172,7 @@ describe('react telephone input', () => {
     rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, { onBlur }))
     expect(rti).to.be.defined
 
-    TestUtils.Simulate.blur(rti.refs.numberInput)
+    TestUtils.Simulate.blur(rti.numberInputRef)
   })
 
   it('should re-render with correct phone number once value prop changed', () => {
