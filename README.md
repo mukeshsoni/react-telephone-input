@@ -61,7 +61,23 @@ The component selects the country code of a country by default. You can change i
 
 #### onlyCountries
 
-If you don't want all countries to be shown in the dropdown list, you can pass an array of country iso2 names to be shown in the dropdown list.
+If you don't want all countries to be shown in the dropdown list, you can pass an array of objects representing the countries. The structure of each country object can be seen here [https://github.com/mukeshsoni/country-telephone-data/blob/master/country_telephone_data.js](https://github.com/mukeshsoni/country-telephone-data/blob/master/country_telephone_data.js)
+
+E.g.
+
+```
+<ReactTelInput
+    defaultCountry='us'
+    value={value}
+    onChange={onPhoneChange}
+    onlyCountries={[
+        {name: "United States", iso2: "us", dialCode: "1", priority: 0, format: "+. (...) ...-...."},
+        {name: "Canada", iso2: "ca", dialCode: "1", priority: 1, format: "+. (...) ...-....", hasAreaCodes: true},
+        {name: "Mexico (México)", iso2: "mx", dialCode: "52", priority: 0, format: "+..-..-..-...."},
+        {name: "Brazil (Brasil)", iso2: "br", dialCode: "55", priority: 0, format: "+..-..-....-...."},
+    ]}
+ />
+```
 
 #### preferredCountries
 
