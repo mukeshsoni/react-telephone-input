@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
+import testGenerator from 'generate-ui-tests'
 
 import RTI from '../../src/withStyles'
 
@@ -51,4 +52,5 @@ const Demo = () => {
   )
 }
 
-render(<Demo />, document.querySelector('#demo'))
+let NewDemo = testGenerator(Demo)
+render(<NewDemo />, document.querySelector('#demo'))

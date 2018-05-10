@@ -93,10 +93,6 @@ export class ReactTelephoneInput extends Component {
     }
   }
 
-  getNumber = () => (this.state.formattedNumber !== '+' ? this.state.formattedNumber : '')
-
-  getValue = () => this.getNumber()
-
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeydown)
 
@@ -465,8 +461,10 @@ export class ReactTelephoneInput extends Component {
   }
 
   handleInputKeyDown = event => {
+    console.log('eee')
     if (event.which === keys.ENTER) {
-      this.props.onEnterKeyPress(event)
+      console.log('eee')
+      typeof this.props.onEnterKeyPress === 'function' && this.props.onEnterKeyPress(event)
     }
   }
 

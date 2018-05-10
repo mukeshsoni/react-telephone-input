@@ -4,18 +4,32 @@ import Enzyme, { shallow, mount } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import TestUtils from 'react-dom/test-utils'
 import countryData from 'country-telephone-data'
-import chai from 'chai'
-import dirtyChai from 'dirty-chai'
+import toJson, { createSerializer } from 'enzyme-to-json'
 
 import { ReactTelephoneInput } from '../src/ReactTelephoneInput'
 
 let rti
-const { expect } = chai
-chai.use(dirtyChai)
 
 const { allCountries } = countryData
 
 Enzyme.configure({ adapter: new Adapter() })
+
+expect.extend({
+  toBeType(received, argument) {
+    const initialType = typeof received
+    const type =
+      initialType === 'object' ? (Array.isArray(received) ? 'array' : initialType) : initialType
+    return type === argument
+      ? {
+          message: () => `expected ${received} to be type ${argument}`,
+          pass: true
+        }
+      : {
+          message: () => `expected ${received} to be type ${argument}`,
+          pass: false
+        }
+  }
+})
 
 describe('react telephone input', () => {
   afterEach(() => {
@@ -27,23 +41,49 @@ describe('react telephone input', () => {
 
   it('mandatory existential crisis test', () => {
     rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {}))
-    expect(rti).to.be.defined
-    expect(rti.refs.numberInput).to.be.defined
-    expect(true).to.be.true()
+    expect(rti).toBeDefined()
   })
 
   it('should render the top divs and inputses', () => {
     const wrapper = shallow(<ReactTelephoneInput />)
 
-    expect(wrapper.find('div.react-tel-input')).to.have.length(1)
-    expect(wrapper.find('input')).to.have.length(1)
+    expect(wrapper.find('div.react-tel-input')).toHaveLength(1)
+    expect(wrapper.find('input')).toHaveLength(1)
   })
 
   it('should show the placeholder as passed in the prop', () => {
     const placeholder = '0001-121-212'
     const component = mount(<ReactTelephoneInput placeholder={placeholder} />)
     const input = component.find('input')
-    expect(input.prop('placeholder')).to.eql(placeholder)
+    expect(input.prop('placeholder')).toEqual(placeholder)
+  })
+
+  it('should call onEnterKeyPress prop callback on enter key press', () => {
+    const onEnterKeyPress = jest.fn()
+    const wrapper = mount(
+      <ReactTelephoneInput
+        defaultCountry="us"
+        initialValue="+9112121"
+        preferredCountries={['us', 'ca', 'zz', 'hk']}
+        onEnterKeyPress={() => console.log}
+      />
+    )
+
+    expect(toJson(wrapper)).toMatchSnapshot()
+    wrapper
+      .find('input')
+      .at(0)
+      .simulate('focus')
+    wrapper
+      .find('input')
+      .at(0)
+      .simulate('change', { target: { value: '+91 12121-1212', checked: false } })
+    wrapper
+      .find('input')
+      .at(0)
+      .simulate('keyDown', { keyCode: 13, which: 13 })
+    expect(onEnterKeyPress.mock.calls.length).toBe(1)
+    expect(toJson(wrapper)).toMatchSnapshot()
   })
 
   // refer issue - https://github.com/mukeshsoni/react-telephone-input/issues/103
@@ -51,50 +91,50 @@ describe('react telephone input', () => {
     const wrapper = mount(
       <ReactTelephoneInput defaultCountry="us" preferredCountries={['us', 'ca', 'zz', 'hk']} />
     )
-    expect(wrapper.find('div.flag-dropdown')).to.have.length(1)
-    expect(wrapper.find('div.selected-flag > div.us')).to.have.length(1)
+    expect(wrapper.find('div.flag-dropdown')).toHaveLength(1)
+    expect(wrapper.find('div.selected-flag > div.us')).toHaveLength(1)
 
     // the dropdown list is not there
-    expect(wrapper.find('.country-list')).to.have.length(0)
+    expect(wrapper.find('.country-list')).toHaveLength(0)
     // let's click on the selected flag
     wrapper.find('div.selected-flag').simulate('click')
-    expect(wrapper.find('div.country-list')).to.have.length(1)
+    expect(wrapper.find('div.country-list')).toHaveLength(1)
 
     // now let's click on canada
     wrapper
       .find('div.country-list > div > div')
       .at(1)
       .simulate('click')
-    expect(wrapper.find('div.country-list')).to.have.length(0)
-    expect(wrapper.find('div.selected-flag div.ca')).to.have.length(1)
+    expect(wrapper.find('div.country-list')).toHaveLength(0)
+    expect(wrapper.find('div.selected-flag div.ca')).toHaveLength(1)
   })
 
   it('should allow custom value for autoComplete input property', () => {
     const wrapper = shallow(<ReactTelephoneInput />)
-    expect(wrapper.find('input').prop('autoComplete')).to.equal('tel')
+    expect(wrapper.find('input').prop('autoComplete')).toEqual('tel')
 
     const wrapper2 = shallow(<ReactTelephoneInput autoComplete="off" />)
-    expect(wrapper2.find('input').prop('autoComplete')).to.equal('off')
+    expect(wrapper2.find('input').prop('autoComplete')).toEqual('off')
   })
 
   it('should guess selected country', () => {
     rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {}))
     // if nothing is sent in, select the first country in allCountries list as the default
-    expect(rti.guessSelectedCountry('').iso2).to.equal(allCountries[0].iso2)
+    expect(rti.guessSelectedCountry('').iso2).toEqual(allCountries[0].iso2)
 
     // if input value is sent, select appropriately
-    expect(rti.guessSelectedCountry('12').iso2).to.equal('us') // based on priority
-    expect(rti.guessSelectedCountry('12112121').iso2).to.equal('us')
-    expect(rti.guessSelectedCountry('913212121').iso2).to.equal('in')
-    expect(rti.guessSelectedCountry('237').iso2).to.equal('cm') // based on priority
-    expect(rti.guessSelectedCountry('599').iso2).to.equal('cw')
-    expect(rti.guessSelectedCountry('590').iso2).to.equal('gp')
-    expect(rti.guessSelectedCountry('1403').iso2).to.equal('ca')
-    expect(rti.guessSelectedCountry('18005').iso2).to.equal('us')
-    expect(rti.guessSelectedCountry('1809').iso2).to.equal('do')
+    expect(rti.guessSelectedCountry('12').iso2).toEqual('us') // based on priority
+    expect(rti.guessSelectedCountry('12112121').iso2).toEqual('us')
+    expect(rti.guessSelectedCountry('913212121').iso2).toEqual('in')
+    expect(rti.guessSelectedCountry('237').iso2).toEqual('cm') // based on priority
+    expect(rti.guessSelectedCountry('599').iso2).toEqual('cw')
+    expect(rti.guessSelectedCountry('590').iso2).toEqual('gp')
+    expect(rti.guessSelectedCountry('1403').iso2).toEqual('ca')
+    expect(rti.guessSelectedCountry('18005').iso2).toEqual('us')
+    expect(rti.guessSelectedCountry('1809').iso2).toEqual('do')
 
     // select the first one if not able to resolve completely
-    expect(rti.guessSelectedCountry('59').iso2).to.equal(allCountries[0].iso2)
+    expect(rti.guessSelectedCountry('59').iso2).toEqual(allCountries[0].iso2)
   })
 
   it('should set the correct highlightCountryIndex', () => {
@@ -135,57 +175,57 @@ describe('react telephone input', () => {
     // then check if the highlightCountryIndex is correct
     rti.handleFlagItemClick(algeria)
     rti.handleFlagDropdownClick(fakeEvent)
-    expect(rti.state.highlightCountryIndex).to.equal(0)
-    expect(rti.state.formattedNumber).to.equal('+213121345')
+    expect(rti.state.highlightCountryIndex).toEqual(0)
+    expect(rti.state.formattedNumber).toEqual('+213121345')
 
     rti.handleFlagItemClick(afghanistan)
     rti.handleFlagDropdownClick(fakeEvent)
-    expect(rti.state.highlightCountryIndex).to.equal(1)
-    expect(rti.state.formattedNumber).to.equal('+93121345')
+    expect(rti.state.highlightCountryIndex).toEqual(1)
+    expect(rti.state.formattedNumber).toEqual('+93121345')
 
     rti.handleFlagItemClick(albania)
     rti.handleFlagDropdownClick(fakeEvent)
-    expect(rti.state.highlightCountryIndex).to.equal(2)
-    expect(rti.state.formattedNumber).to.equal('+355121345')
+    expect(rti.state.highlightCountryIndex).toEqual(2)
+    expect(rti.state.formattedNumber).toEqual('+355121345')
   })
 
   it('should trigger onFocus event handler when input element is focused', done => {
     const onFocus = (number, country) => {
-      expect(number).to.be.a.string
-      expect(country).to.be.string
+      expect(number).toBeType('string')
+      expect(country).toBeType('object')
       done()
     }
 
     rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, { onFocus }))
-    expect(rti).to.be.defined
+    expect(rti).toBeDefined()
 
     TestUtils.Simulate.focus(rti.numberInputRef)
   })
 
   it('should trigger onBlur event handler when input element is unfocused', done => {
     const onBlur = (number, country) => {
-      expect(number).to.be.a.string
-      expect(country).to.be.string
+      expect(number).toBeType('string')
+      expect(country).toBeType('object')
       done()
     }
 
     rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, { onBlur }))
-    expect(rti).to.be.defined
+    expect(rti).toBeDefined()
 
     TestUtils.Simulate.blur(rti.numberInputRef)
   })
 
   it('should re-render with correct phone number once value prop changed', () => {
     const wrapper = shallow(<ReactTelephoneInput value="+12313123132" />)
-    expect(wrapper.state('formattedNumber')).to.equal('+1 (231) 312-3132')
+    expect(wrapper.state('formattedNumber')).toEqual('+1 (231) 312-3132')
     wrapper.setProps({ value: '+12313123133' })
-    expect(wrapper.state('formattedNumber')).to.equal('+1 (231) 312-3133')
+    expect(wrapper.state('formattedNumber')).toEqual('+1 (231) 312-3133')
   })
 
   it('should re-render as empty once value prop becomes null', () => {
     const wrapper = shallow(<ReactTelephoneInput defaultCountry="us" value="+12313123132" />)
-    expect(wrapper.state('formattedNumber')).to.equal('+1 (231) 312-3132')
+    expect(wrapper.state('formattedNumber')).toEqual('+1 (231) 312-3132')
     wrapper.setProps({ value: null })
-    expect(wrapper.state('formattedNumber')).to.equal('+')
+    expect(wrapper.state('formattedNumber')).toEqual('+')
   })
 })
