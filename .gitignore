@@ -10,3 +10,4 @@ dist
 /umd
 .DS_Store
 coverage
+codemods
