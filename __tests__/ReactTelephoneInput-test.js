@@ -59,13 +59,15 @@ describe('react telephone input', () => {
   })
 
   it('should call onEnterKeyPress prop callback on enter key press', () => {
-    const onEnterKeyPress = jest.fn()
+    let onEnterKeyPress = jest.fn()
     const wrapper = mount(
       <ReactTelephoneInput
         defaultCountry="us"
         initialValue="+9112121"
         preferredCountries={['us', 'ca', 'zz', 'hk']}
-        onEnterKeyPress={() => console.log}
+        onEnterKeyPress={() => {
+          onEnterKeyPress()
+        }}
       />
     )
 
