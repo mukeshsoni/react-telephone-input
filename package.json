@@ -1,6 +1,6 @@
 {
   "name": "react-telephone-input",
-  "version": "4.7.11",
+  "version": "4.71.11",
   "description": "React component for entering and validating international telephone numbers",
   "main": "lib/ReactTelephoneInput.js",
   "modules": "es/ReactTelephoneInput.js",

@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import testGenerator from 'generate-ui-tests'
+// import testGenerator from 'generate-ui-tests'
 
-import ReactTelephoneInput from '../../src/withStyles'
+// import ReactTelephoneInput from '../../src/withStyles'
+import RTI from '../../src/withStyles'
 
-const RTI = testGenerator(ReactTelephoneInput)
+// const RTI = testGenerator(ReactTelephoneInput)
 
 const Demo = () => {
   return (
