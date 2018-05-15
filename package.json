@@ -4,7 +4,12 @@
   "description": "React component for entering and validating international telephone numbers",
   "main": "lib/ReactTelephoneInput.js",
   "modules": "es/ReactTelephoneInput.js",
-  "files": ["css", "es", "lib", "umd"],
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
   "scripts": {
     "build": "npx nwb build-react-component --copy-files",
     "clean": "npx nwb clean-module && npx clean-demo",
@@ -19,8 +24,12 @@
     "transform": {
       "^.+\\.js$": "./jest.transform.js"
     },
-    "moduleFileExtensions": ["js"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "repository": {
     "type": "git",
@@ -41,6 +50,7 @@
   "devDependencies": {
     "babel-eslint": "^8.2.3",
     "babel-jest": "^22.4.3",
+    "babel-plugin-remove-data-test-id-attribute": "^1.0.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-latest": "6.24.1",
     "babel-preset-react": "6.24.1",
@@ -52,10 +62,9 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "generate-ui-tests": "^1.2.4",
     "gh-pages": "^1.1.0",
     "jest": "^22.4.3",
-    "nwb": "0.18.x",
+    "nwb": "^0.21.5",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "regenerator-runtime": "0.10.5"
