@@ -1684,6 +1684,7 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
       className="flag-dropdown"
       data-test-id="src_reacttelephoneinput_test_id_6"
       onKeyDown={[Function]}
+      tabIndex={0}
     >
       <div
         className="selected-flag"
@@ -3395,6 +3396,7 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
       className="flag-dropdown"
       data-test-id="src_reacttelephoneinput_test_id_6"
       onKeyDown={[Function]}
+      tabIndex={0}
     >
       <div
         className="selected-flag"

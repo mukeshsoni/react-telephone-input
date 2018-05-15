@@ -94,8 +94,6 @@ export class ReactTelephoneInput extends Component {
   }
 
   componentDidMount() {
-    document.addEventListener('keydown', this.handleKeydown)
-
     this._cursorToEnd(true)
   }
 
@@ -105,10 +103,6 @@ export class ReactTelephoneInput extends Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState(this._mapPropsToState(nextProps))
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeydown)
   }
 
   // put the cursor to the end of the input (usually after a focus event)
@@ -591,6 +585,8 @@ export class ReactTelephoneInput extends Component {
           className={flagViewClasses}
           onKeyDown={this.handleKeydown}
           data-test-id="src_reacttelephoneinput_test_id_6"
+          // this is crucial if we want keyboard up/down events to be heard through this div and not document.body
+          tabIndex={0}
         >
           <div
             onClick={this.handleFlagDropdownClick}

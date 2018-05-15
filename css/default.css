@@ -706,8 +706,8 @@
 .react-tel-input .v-hide {
   visibility: hidden;
 }
-.react-tel-input input[type="text"],
-.react-tel-input input[type="tel"] {
+.react-tel-input input[type='text'],
+.react-tel-input input[type='tel'] {
   position: relative;
   z-index: 0;
   margin-top: 0 !important;
@@ -722,19 +722,19 @@
   height: 28px;
   width: 100%;
 }
-.react-tel-input input[type="text"]:focus,
-.react-tel-input input[type="tel"]:focus {
+.react-tel-input input[type='text']:focus,
+.react-tel-input input[type='tel']:focus {
   border-color: #42bdff;
   border-left-color: #cacaca;
 }
-.react-tel-input input[type="text"].invalid-number,
-.react-tel-input input[type="tel"].invalid-number {
+.react-tel-input input[type='text'].invalid-number,
+.react-tel-input input[type='tel'].invalid-number {
   border: 1px solid #d79f9f;
   background-color: #faf0f0;
   border-left-color: #cacaca;
 }
-.react-tel-input input[type="text"].invalid-number:focus,
-.react-tel-input input[type="tel"].invalid-number:focus {
+.react-tel-input input[type='text'].invalid-number:focus,
+.react-tel-input input[type='tel'].invalid-number:focus {
   border: 1px solid #d79f9f;
   border-left-color: #cacaca;
   background-color: #faf0f0;
@@ -748,6 +748,11 @@
   border: 1px solid #cacaca;
   border-radius: 3px 0 0 3px;
 }
+
+.react-tel-input .flag-dropdown {
+  outline: 0px solid transparent;
+}
+
 .react-tel-input .flag-dropdown.open-dropdown {
   background: #fff;
   border-bottom: 0;
