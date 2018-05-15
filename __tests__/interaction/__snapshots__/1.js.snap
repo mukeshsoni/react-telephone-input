@@ -1676,10 +1676,12 @@ exports[`Interaction test 1 1`] = `
   >
     <div
       className="react-tel-input"
+      data-test-id="src_reacttelephoneinput_test_id_4"
     >
       <input
         autoComplete="tel"
         className="form-control"
+        data-test-id="src_reacttelephoneinput_test_id_5"
         disabled={false}
         onBlur={[Function]}
         onChange={[Function]}
@@ -1693,15 +1695,18 @@ exports[`Interaction test 1 1`] = `
       />
       <div
         className="flag-dropdown"
+        data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
       >
         <div
           className="selected-flag"
+          data-test-id="src_reacttelephoneinput_test_id_7"
           onClick={[Function]}
           title="India (भारत): + 91"
         >
           <div
             className="flag in"
+            data-test-id="src_reacttelephoneinput_test_id_8"
             style={
               Object {
                 "backgroundImage": "url(flags.png)",
@@ -1710,6 +1715,7 @@ exports[`Interaction test 1 1`] = `
           >
             <div
               className="arrow"
+              data-test-id="src_reacttelephoneinput_test_id_9"
             />
           </div>
         </div>
@@ -3395,10 +3401,12 @@ exports[`Interaction test 1 2`] = `
   >
     <div
       className="react-tel-input"
+      data-test-id="src_reacttelephoneinput_test_id_4"
     >
       <input
         autoComplete="tel"
         className="form-control"
+        data-test-id="src_reacttelephoneinput_test_id_5"
         disabled={false}
         onBlur={[Function]}
         onChange={[Function]}
@@ -3412,15 +3420,18 @@ exports[`Interaction test 1 2`] = `
       />
       <div
         className="flag-dropdown"
+        data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
       >
         <div
           className="selected-flag"
+          data-test-id="src_reacttelephoneinput_test_id_7"
           onClick={[Function]}
           title="Hungary (Magyarország): + 36"
         >
           <div
             className="flag hu"
+            data-test-id="src_reacttelephoneinput_test_id_8"
             style={
               Object {
                 "backgroundImage": "url(flags.png)",
@@ -3429,9 +3440,4138 @@ exports[`Interaction test 1 2`] = `
           >
             <div
               className="arrow"
+              data-test-id="src_reacttelephoneinput_test_id_9"
             />
           </div>
         </div>
+      </div>
+    </div>
+  </ReactTelephoneInput>
+</clickOutside(ReactTelephoneInput)>
+`;
+
+exports[`Interaction test 2 1`] = `
+<clickOutside(ReactTelephoneInput)
+  defaultCountry="in"
+  flagsImagePath="/flags.723494a4.png"
+  initialValue="+9112121"
+  inputProps={
+    Object {
+      "autoFocus": true,
+    }
+  }
+  onChange={[Function]}
+  preferredCountries={
+    Array [
+      "af",
+      "al",
+    ]
+  }
+>
+  <ReactTelephoneInput
+    autoComplete="tel"
+    autoFormat={true}
+    defaultCountry="in"
+    disabled={false}
+    flagsImagePath="/flags.723494a4.png"
+    initialValue="+9112121"
+    inputProps={
+      Object {
+        "autoFocus": true,
+      }
+    }
+    isValid={[Function]}
+    listItemClassName="country"
+    listStyle={
+      Object {
+        "backgroundColor": "white",
+        "zIndex": 20,
+      }
+    }
+    onChange={[Function]}
+    onEnterKeyPress={[Function]}
+    onlyCountries={
+      Array [
+        Object {
+          "dialCode": "93",
+          "format": "+..-..-...-....",
+          "iso2": "af",
+          "name": "Afghanistan (‫افغانستان‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "355",
+          "format": "+...(...)...-...",
+          "iso2": "al",
+          "name": "Albania (Shqipëri)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "213",
+          "format": "+...-..-...-....",
+          "iso2": "dz",
+          "name": "Algeria (‫الجزائر‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1684",
+          "format": "+.(...)...-....",
+          "iso2": "as",
+          "name": "American Samoa",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "376",
+          "format": "+...-...-...",
+          "iso2": "ad",
+          "name": "Andorra",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "244",
+          "format": "+...(...)...-...",
+          "iso2": "ao",
+          "name": "Angola",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1264",
+          "format": "+.(...)...-....",
+          "iso2": "ai",
+          "name": "Anguilla",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1268",
+          "format": "+.(...)...-....",
+          "iso2": "ag",
+          "name": "Antigua and Barbuda",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "54",
+          "format": "+..(...)...-....",
+          "iso2": "ar",
+          "name": "Argentina",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "374",
+          "format": "+...-..-...-...",
+          "iso2": "am",
+          "name": "Armenia (Հայաստան)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "297",
+          "format": "+...-...-....",
+          "iso2": "aw",
+          "name": "Aruba",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "format": "+.. ... ... ...",
+          "iso2": "au",
+          "name": "Australia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "43",
+          "format": "+..(...)...-....",
+          "iso2": "at",
+          "name": "Austria (Österreich)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "994",
+          "format": "+...-..-...-..-..",
+          "iso2": "az",
+          "name": "Azerbaijan (Azərbaycan)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1242",
+          "format": "+.(...)...-....",
+          "iso2": "bs",
+          "name": "Bahamas",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "973",
+          "format": "+...-....-....",
+          "iso2": "bh",
+          "name": "Bahrain (‫البحرين‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "880",
+          "format": "+...-..-...-...",
+          "iso2": "bd",
+          "name": "Bangladesh (বাংলাদেশ)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1246",
+          "format": "+.(...)...-....",
+          "iso2": "bb",
+          "name": "Barbados",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "375",
+          "format": "+...(..)...-..-..",
+          "iso2": "by",
+          "name": "Belarus (Беларусь)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "32",
+          "format": "+.. ... .. .. ..",
+          "iso2": "be",
+          "name": "Belgium (België)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "501",
+          "format": "+...-...-....",
+          "iso2": "bz",
+          "name": "Belize",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "229",
+          "format": "+...-..-..-....",
+          "iso2": "bj",
+          "name": "Benin (Bénin)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1441",
+          "format": "+.(...)...-....",
+          "iso2": "bm",
+          "name": "Bermuda",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "975",
+          "format": "+...-.-...-...",
+          "iso2": "bt",
+          "name": "Bhutan (འབྲུག)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "591",
+          "format": "+...-.-...-....",
+          "iso2": "bo",
+          "name": "Bolivia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "387",
+          "format": "+...-..-....",
+          "iso2": "ba",
+          "name": "Bosnia and Herzegovina (Босна и Херцеговина)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "267",
+          "format": "+...-..-...-...",
+          "iso2": "bw",
+          "name": "Botswana",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "55",
+          "format": "+..-..-....-....",
+          "iso2": "br",
+          "name": "Brazil (Brasil)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "246",
+          "format": "+...-...-....",
+          "iso2": "io",
+          "name": "British Indian Ocean Territory",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1284",
+          "format": "+.(...)...-....",
+          "iso2": "vg",
+          "name": "British Virgin Islands",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "673",
+          "format": "+...-...-....",
+          "iso2": "bn",
+          "name": "Brunei",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "359",
+          "format": "+...(...)...-...",
+          "iso2": "bg",
+          "name": "Bulgaria (България)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "226",
+          "format": "+...-..-..-....",
+          "iso2": "bf",
+          "name": "Burkina Faso",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "257",
+          "format": "+...-..-..-....",
+          "iso2": "bi",
+          "name": "Burundi (Uburundi)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "855",
+          "format": "+...-..-...-...",
+          "iso2": "kh",
+          "name": "Cambodia (កម្ពុជា)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "237",
+          "format": "+...-....-....",
+          "iso2": "cm",
+          "name": "Cameroon (Cameroun)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1",
+          "format": "+. (...) ...-....",
+          "hasAreaCodes": true,
+          "iso2": "ca",
+          "name": "Canada",
+          "priority": 1,
+        },
+        Object {
+          "dialCode": "238",
+          "format": "+...(...)..-..",
+          "iso2": "cv",
+          "name": "Cape Verde (Kabu Verdi)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "599",
+          "format": "+...-...-....",
+          "iso2": "bq",
+          "name": "Caribbean Netherlands",
+          "priority": 1,
+        },
+        Object {
+          "dialCode": "1345",
+          "format": "+.(...)...-....",
+          "iso2": "ky",
+          "name": "Cayman Islands",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "236",
+          "format": "+...-..-..-....",
+          "iso2": "cf",
+          "name": "Central African Republic (République centrafricaine)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "235",
+          "format": "+...-..-..-..-..",
+          "iso2": "td",
+          "name": "Chad (Tchad)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "56",
+          "format": "+..-.-....-....",
+          "iso2": "cl",
+          "name": "Chile",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "86",
+          "format": "+.. ..-........",
+          "iso2": "cn",
+          "name": "China (中国)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "57",
+          "format": "+..(...)...-....",
+          "iso2": "co",
+          "name": "Colombia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "269",
+          "format": "+...-..-.....",
+          "iso2": "km",
+          "name": "Comoros (‫جزر القمر‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "243",
+          "format": "+...(...)...-...",
+          "iso2": "cd",
+          "name": "Congo (DRC) (Jamhuri ya Kidemokrasia ya Kongo)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "242",
+          "format": "+...-..-...-....",
+          "iso2": "cg",
+          "name": "Congo (Republic) (Congo-Brazzaville)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "682",
+          "format": "+...-..-...",
+          "iso2": "ck",
+          "name": "Cook Islands",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "506",
+          "format": "+... ....-....",
+          "iso2": "cr",
+          "name": "Costa Rica",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "225",
+          "format": "+...-..-...-...",
+          "iso2": "ci",
+          "name": "Côte d’Ivoire",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "385",
+          "format": "+...-..-...-...",
+          "iso2": "hr",
+          "name": "Croatia (Hrvatska)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "53",
+          "format": "+..-.-...-....",
+          "iso2": "cu",
+          "name": "Cuba",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "599",
+          "format": "+...-...-....",
+          "iso2": "cw",
+          "name": "Curaçao",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "357",
+          "format": "+...-..-...-...",
+          "iso2": "cy",
+          "name": "Cyprus (Κύπρος)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "420",
+          "format": "+...(...)...-...",
+          "iso2": "cz",
+          "name": "Czech Republic (Česká republika)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "45",
+          "format": "+.. .. .. .. ..",
+          "iso2": "dk",
+          "name": "Denmark (Danmark)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "253",
+          "format": "+...-..-..-..-..",
+          "iso2": "dj",
+          "name": "Djibouti",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1767",
+          "format": "+.(...)...-....",
+          "iso2": "dm",
+          "name": "Dominica",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1",
+          "format": "+.(...)...-....",
+          "hasAreaCodes": true,
+          "iso2": "do",
+          "name": "Dominican Republic (República Dominicana)",
+          "priority": 2,
+        },
+        Object {
+          "dialCode": "593",
+          "format": "+...-.-...-....",
+          "iso2": "ec",
+          "name": "Ecuador",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "20",
+          "format": "+..(...)...-....",
+          "iso2": "eg",
+          "name": "Egypt (‫مصر‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "503",
+          "format": "+... ....-....",
+          "iso2": "sv",
+          "name": "El Salvador",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "240",
+          "format": "+...-..-...-....",
+          "iso2": "gq",
+          "name": "Equatorial Guinea (Guinea Ecuatorial)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "291",
+          "format": "+...-.-...-...",
+          "iso2": "er",
+          "name": "Eritrea",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "372",
+          "format": "+...-...-....",
+          "iso2": "ee",
+          "name": "Estonia (Eesti)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "251",
+          "format": "+...-..-...-....",
+          "iso2": "et",
+          "name": "Ethiopia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "500",
+          "format": "+...-.....",
+          "iso2": "fk",
+          "name": "Falkland Islands (Islas Malvinas)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "298",
+          "format": "+...-...-...",
+          "iso2": "fo",
+          "name": "Faroe Islands (Føroyar)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "679",
+          "format": "+...-..-.....",
+          "iso2": "fj",
+          "name": "Fiji",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "358",
+          "format": "+... .. ... .. ..",
+          "iso2": "fi",
+          "name": "Finland (Suomi)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "33",
+          "format": "+.. . .. .. .. ..",
+          "iso2": "fr",
+          "name": "France",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "594",
+          "format": "+...-.....-....",
+          "iso2": "gf",
+          "name": "French Guiana (Guyane française)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "689",
+          "format": "+...-..-..-..",
+          "iso2": "pf",
+          "name": "French Polynesia (Polynésie française)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "241",
+          "format": "+...-.-..-..-..",
+          "iso2": "ga",
+          "name": "Gabon",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "220",
+          "format": "+...(...)..-..",
+          "iso2": "gm",
+          "name": "Gambia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "995",
+          "format": "+...(...)...-...",
+          "iso2": "ge",
+          "name": "Georgia (საქართველო)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "49",
+          "format": "+.. ... .......",
+          "iso2": "de",
+          "name": "Germany (Deutschland)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "233",
+          "format": "+...(...)...-...",
+          "iso2": "gh",
+          "name": "Ghana (Gaana)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "350",
+          "format": "+...-...-.....",
+          "iso2": "gi",
+          "name": "Gibraltar",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "30",
+          "format": "+..(...)...-....",
+          "iso2": "gr",
+          "name": "Greece (Ελλάδα)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "299",
+          "format": "+...-..-..-..",
+          "iso2": "gl",
+          "name": "Greenland (Kalaallit Nunaat)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1473",
+          "format": "+.(...)...-....",
+          "iso2": "gd",
+          "name": "Grenada",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "590",
+          "iso2": "gp",
+          "name": "Guadeloupe",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1671",
+          "format": "+.(...)...-....",
+          "iso2": "gu",
+          "name": "Guam",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "502",
+          "format": "+... ....-....",
+          "iso2": "gt",
+          "name": "Guatemala",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "224",
+          "format": "+...-..-...-...",
+          "iso2": "gn",
+          "name": "Guinea (Guinée)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "245",
+          "format": "+...-.-......",
+          "iso2": "gw",
+          "name": "Guinea-Bissau (Guiné Bissau)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "592",
+          "format": "+...-...-....",
+          "iso2": "gy",
+          "name": "Guyana",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "509",
+          "format": "+... ....-....",
+          "iso2": "ht",
+          "name": "Haiti",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "504",
+          "format": "+...-....-....",
+          "iso2": "hn",
+          "name": "Honduras",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "852",
+          "format": "+... .... ....",
+          "iso2": "hk",
+          "name": "Hong Kong (香港)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "36",
+          "format": "+..(...)...-...",
+          "iso2": "hu",
+          "name": "Hungary (Magyarország)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "354",
+          "format": "+... ... ....",
+          "iso2": "is",
+          "name": "Iceland (Ísland)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "91",
+          "format": "+.. .....-.....",
+          "iso2": "in",
+          "name": "India (भारत)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "62",
+          "format": "+..-..-...-..",
+          "iso2": "id",
+          "name": "Indonesia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "98",
+          "format": "+..(...)...-....",
+          "iso2": "ir",
+          "name": "Iran (‫ایران‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "964",
+          "format": "+...(...)...-....",
+          "iso2": "iq",
+          "name": "Iraq (‫العراق‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "353",
+          "format": "+... .. .......",
+          "iso2": "ie",
+          "name": "Ireland",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "972",
+          "format": "+...-.-...-....",
+          "iso2": "il",
+          "name": "Israel (‫ישראל‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "39",
+          "format": "+.. ... ......",
+          "iso2": "it",
+          "name": "Italy (Italia)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1876",
+          "format": "+.(...)...-....",
+          "iso2": "jm",
+          "name": "Jamaica",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "81",
+          "format": "+.. ... .. ....",
+          "iso2": "jp",
+          "name": "Japan (日本)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "962",
+          "format": "+...-.-....-....",
+          "iso2": "jo",
+          "name": "Jordan (‫الأردن‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "7",
+          "format": "+. ... ...-..-..",
+          "iso2": "kz",
+          "name": "Kazakhstan (Казахстан)",
+          "priority": 1,
+        },
+        Object {
+          "dialCode": "254",
+          "format": "+...-...-......",
+          "iso2": "ke",
+          "name": "Kenya",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "686",
+          "format": "+...-..-...",
+          "iso2": "ki",
+          "name": "Kiribati",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "965",
+          "format": "+...-....-....",
+          "iso2": "kw",
+          "name": "Kuwait (‫الكويت‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "996",
+          "format": "+...(...)...-...",
+          "iso2": "kg",
+          "name": "Kyrgyzstan (Кыргызстан)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "856",
+          "format": "+...-..-...-...",
+          "iso2": "la",
+          "name": "Laos (ລາວ)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "371",
+          "format": "+...-..-...-...",
+          "iso2": "lv",
+          "name": "Latvia (Latvija)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "961",
+          "format": "+...-.-...-...",
+          "iso2": "lb",
+          "name": "Lebanon (‫لبنان‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "266",
+          "format": "+...-.-...-....",
+          "iso2": "ls",
+          "name": "Lesotho",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "231",
+          "format": "+...-..-...-...",
+          "iso2": "lr",
+          "name": "Liberia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "218",
+          "format": "+...-..-...-...",
+          "iso2": "ly",
+          "name": "Libya (‫ليبيا‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "423",
+          "format": "+...(...)...-....",
+          "iso2": "li",
+          "name": "Liechtenstein",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "370",
+          "format": "+...(...)..-...",
+          "iso2": "lt",
+          "name": "Lithuania (Lietuva)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "352",
+          "format": "+...(...)...-...",
+          "iso2": "lu",
+          "name": "Luxembourg",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "853",
+          "format": "+...-....-....",
+          "iso2": "mo",
+          "name": "Macau (澳門)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "389",
+          "format": "+...-..-...-...",
+          "iso2": "mk",
+          "name": "Macedonia (FYROM) (Македонија)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "261",
+          "format": "+...-..-..-.....",
+          "iso2": "mg",
+          "name": "Madagascar (Madagasikara)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "265",
+          "format": "+...-.-....-....",
+          "iso2": "mw",
+          "name": "Malawi",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "60",
+          "format": "+.. ..-....-....",
+          "iso2": "my",
+          "name": "Malaysia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "960",
+          "format": "+...-...-....",
+          "iso2": "mv",
+          "name": "Maldives",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "223",
+          "format": "+...-..-..-....",
+          "iso2": "ml",
+          "name": "Mali",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "356",
+          "format": "+...-....-....",
+          "iso2": "mt",
+          "name": "Malta",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "692",
+          "format": "+...-...-....",
+          "iso2": "mh",
+          "name": "Marshall Islands",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "596",
+          "format": "+...(...)..-..-..",
+          "iso2": "mq",
+          "name": "Martinique",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "222",
+          "format": "+...-..-..-....",
+          "iso2": "mr",
+          "name": "Mauritania (‫موريتانيا‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "230",
+          "format": "+...-...-....",
+          "iso2": "mu",
+          "name": "Mauritius (Moris)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "52",
+          "format": "+..-..-..-....",
+          "iso2": "mx",
+          "name": "Mexico (México)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "691",
+          "format": "+...-...-....",
+          "iso2": "fm",
+          "name": "Micronesia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "373",
+          "format": "+...-....-....",
+          "iso2": "md",
+          "name": "Moldova (Republica Moldova)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "377",
+          "format": "+...-..-...-...",
+          "iso2": "mc",
+          "name": "Monaco",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "976",
+          "format": "+...-..-..-....",
+          "iso2": "mn",
+          "name": "Mongolia (Монгол)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "382",
+          "format": "+...-..-...-...",
+          "iso2": "me",
+          "name": "Montenegro (Crna Gora)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1664",
+          "format": "+.(...)...-....",
+          "iso2": "ms",
+          "name": "Montserrat",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "212",
+          "format": "+...-..-....-...",
+          "iso2": "ma",
+          "name": "Morocco (‫المغرب‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "258",
+          "format": "+...-..-...-...",
+          "iso2": "mz",
+          "name": "Mozambique (Moçambique)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "95",
+          "format": "+..-...-...",
+          "iso2": "mm",
+          "name": "Myanmar (Burma) (မြန်မာ)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "264",
+          "format": "+...-..-...-....",
+          "iso2": "na",
+          "name": "Namibia (Namibië)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "674",
+          "format": "+...-...-....",
+          "iso2": "nr",
+          "name": "Nauru",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "977",
+          "format": "+...-..-...-...",
+          "iso2": "np",
+          "name": "Nepal (नेपाल)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "31",
+          "format": "+.. .. ........",
+          "iso2": "nl",
+          "name": "Netherlands (Nederland)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "687",
+          "format": "+...-..-....",
+          "iso2": "nc",
+          "name": "New Caledonia (Nouvelle-Calédonie)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "64",
+          "format": "+.. ...-...-....",
+          "iso2": "nz",
+          "name": "New Zealand",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "505",
+          "format": "+...-....-....",
+          "iso2": "ni",
+          "name": "Nicaragua",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "227",
+          "format": "+...-..-..-....",
+          "iso2": "ne",
+          "name": "Niger (Nijar)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "234",
+          "format": "+...-..-...-..",
+          "iso2": "ng",
+          "name": "Nigeria",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "683",
+          "format": "+...-....",
+          "iso2": "nu",
+          "name": "Niue",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "format": "+...-...-...",
+          "iso2": "nf",
+          "name": "Norfolk Island",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "850",
+          "format": "+...-...-...",
+          "iso2": "kp",
+          "name": "North Korea (조선 민주주의 인민 공화국)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1670",
+          "format": "+.(...)...-....",
+          "iso2": "mp",
+          "name": "Northern Mariana Islands",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "47",
+          "format": "+.. ... .. ...",
+          "iso2": "no",
+          "name": "Norway (Norge)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "968",
+          "format": "+...-..-...-...",
+          "iso2": "om",
+          "name": "Oman (‫عُمان‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "92",
+          "format": "+.. ...-.......",
+          "iso2": "pk",
+          "name": "Pakistan (‫پاکستان‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "680",
+          "format": "+...-...-....",
+          "iso2": "pw",
+          "name": "Palau",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "970",
+          "format": "+...-..-...-....",
+          "iso2": "ps",
+          "name": "Palestine (‫فلسطين‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "507",
+          "format": "+...-...-....",
+          "iso2": "pa",
+          "name": "Panama (Panamá)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "675",
+          "format": "+...(...)..-...",
+          "iso2": "pg",
+          "name": "Papua New Guinea",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "595",
+          "format": "+...(...)...-...",
+          "iso2": "py",
+          "name": "Paraguay",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "51",
+          "format": "+..(...)...-...",
+          "iso2": "pe",
+          "name": "Peru (Perú)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "63",
+          "format": "+.. ... ....",
+          "iso2": "ph",
+          "name": "Philippines",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "48",
+          "format": "+.. ...-...-...",
+          "iso2": "pl",
+          "name": "Poland (Polska)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "351",
+          "format": "+...-..-...-....",
+          "iso2": "pt",
+          "name": "Portugal",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1",
+          "hasAreaCodes": true,
+          "iso2": "pr",
+          "name": "Puerto Rico",
+          "priority": 3,
+        },
+        Object {
+          "dialCode": "974",
+          "format": "+...-....-....",
+          "iso2": "qa",
+          "name": "Qatar (‫قطر‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "format": "+...-.....-....",
+          "iso2": "re",
+          "name": "Réunion (La Réunion)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "40",
+          "format": "+..-..-...-....",
+          "iso2": "ro",
+          "name": "Romania (România)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "7",
+          "format": "+. ... ...-..-..",
+          "iso2": "ru",
+          "name": "Russia (Россия)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "250",
+          "format": "+...(...)...-...",
+          "iso2": "rw",
+          "name": "Rwanda",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "590",
+          "iso2": "bl",
+          "name": "Saint Barthélemy (Saint-Barthélemy)",
+          "priority": 1,
+        },
+        Object {
+          "dialCode": "290",
+          "iso2": "sh",
+          "name": "Saint Helena",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1869",
+          "format": "+.(...)...-....",
+          "iso2": "kn",
+          "name": "Saint Kitts and Nevis",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1758",
+          "format": "+.(...)...-....",
+          "iso2": "lc",
+          "name": "Saint Lucia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "590",
+          "iso2": "mf",
+          "name": "Saint Martin (Saint-Martin (partie française))",
+          "priority": 2,
+        },
+        Object {
+          "dialCode": "508",
+          "iso2": "pm",
+          "name": "Saint Pierre and Miquelon (Saint-Pierre-et-Miquelon)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1784",
+          "format": "+.(...)...-....",
+          "iso2": "vc",
+          "name": "Saint Vincent and the Grenadines",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "685",
+          "format": "+...-..-....",
+          "iso2": "ws",
+          "name": "Samoa",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "378",
+          "format": "+...-....-......",
+          "iso2": "sm",
+          "name": "San Marino",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "239",
+          "format": "+...-..-.....",
+          "iso2": "st",
+          "name": "São Tomé and Príncipe (São Tomé e Príncipe)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "966",
+          "format": "+...-.-...-....",
+          "iso2": "sa",
+          "name": "Saudi Arabia (‫المملكة العربية السعودية‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "221",
+          "format": "+...-..-...-....",
+          "iso2": "sn",
+          "name": "Senegal (Sénégal)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "381",
+          "format": "+...-..-...-....",
+          "iso2": "rs",
+          "name": "Serbia (Србија)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "248",
+          "format": "+...-.-...-...",
+          "iso2": "sc",
+          "name": "Seychelles",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "232",
+          "format": "+...-..-......",
+          "iso2": "sl",
+          "name": "Sierra Leone",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "65",
+          "format": "+.. ....-....",
+          "iso2": "sg",
+          "name": "Singapore",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1721",
+          "format": "+.(...)...-....",
+          "iso2": "sx",
+          "name": "Sint Maarten",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "421",
+          "format": "+...(...)...-...",
+          "iso2": "sk",
+          "name": "Slovakia (Slovensko)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "386",
+          "format": "+...-..-...-...",
+          "iso2": "si",
+          "name": "Slovenia (Slovenija)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "677",
+          "format": "+...-.....",
+          "iso2": "sb",
+          "name": "Solomon Islands",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "252",
+          "format": "+...-.-...-...",
+          "iso2": "so",
+          "name": "Somalia (Soomaaliya)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "27",
+          "format": "+..-..-...-....",
+          "iso2": "za",
+          "name": "South Africa",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "82",
+          "format": "+..-..-...-....",
+          "iso2": "kr",
+          "name": "South Korea (대한민국)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "211",
+          "format": "+...-..-...-....",
+          "iso2": "ss",
+          "name": "South Sudan (‫جنوب السودان‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "34",
+          "format": "+.. ... ... ...",
+          "iso2": "es",
+          "name": "Spain (España)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "94",
+          "format": "+..-..-...-....",
+          "iso2": "lk",
+          "name": "Sri Lanka (ශ්‍රී ලංකාව)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "249",
+          "format": "+...-..-...-....",
+          "iso2": "sd",
+          "name": "Sudan (‫السودان‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "597",
+          "format": "+...-...-...",
+          "iso2": "sr",
+          "name": "Suriname",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "268",
+          "format": "+...-..-..-....",
+          "iso2": "sz",
+          "name": "Swaziland",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "46",
+          "format": "+.. .. ... .. ..",
+          "iso2": "se",
+          "name": "Sweden (Sverige)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "41",
+          "format": "+.. .. ... .. ..",
+          "iso2": "ch",
+          "name": "Switzerland (Schweiz)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "963",
+          "format": "+...-..-....-...",
+          "iso2": "sy",
+          "name": "Syria (‫سوريا‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "886",
+          "format": "+...-....-....",
+          "iso2": "tw",
+          "name": "Taiwan (台灣)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "992",
+          "format": "+...-..-...-....",
+          "iso2": "tj",
+          "name": "Tajikistan",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "255",
+          "format": "+...-..-...-....",
+          "iso2": "tz",
+          "name": "Tanzania",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "66",
+          "format": "+..-..-...-...",
+          "iso2": "th",
+          "name": "Thailand (ไทย)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "670",
+          "format": "+...-...-....",
+          "iso2": "tl",
+          "name": "Timor-Leste",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "228",
+          "format": "+...-..-...-...",
+          "iso2": "tg",
+          "name": "Togo",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "690",
+          "format": "+...-....",
+          "iso2": "tk",
+          "name": "Tokelau",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "676",
+          "format": "+...-.....",
+          "iso2": "to",
+          "name": "Tonga",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1868",
+          "format": "+.(...)...-....",
+          "iso2": "tt",
+          "name": "Trinidad and Tobago",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "216",
+          "format": "+...-..-...-...",
+          "iso2": "tn",
+          "name": "Tunisia (‫تونس‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "90",
+          "format": "+.. ... ... .. ..",
+          "iso2": "tr",
+          "name": "Turkey (Türkiye)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "993",
+          "format": "+...-.-...-....",
+          "iso2": "tm",
+          "name": "Turkmenistan",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1649",
+          "format": "+.(...)...-....",
+          "iso2": "tc",
+          "name": "Turks and Caicos Islands",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "688",
+          "format": "+...-.....",
+          "iso2": "tv",
+          "name": "Tuvalu",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1340",
+          "format": "+.(...)...-....",
+          "iso2": "vi",
+          "name": "U.S. Virgin Islands",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "256",
+          "format": "+...(...)...-...",
+          "iso2": "ug",
+          "name": "Uganda",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "380",
+          "format": "+...(..)...-..-..",
+          "iso2": "ua",
+          "name": "Ukraine (Україна)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "971",
+          "format": "+...-.-...-....",
+          "iso2": "ae",
+          "name": "United Arab Emirates (‫الإمارات العربية المتحدة‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "44",
+          "format": "+.. .... ......",
+          "iso2": "gb",
+          "name": "United Kingdom",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1",
+          "format": "+. (...) ...-....",
+          "iso2": "us",
+          "name": "United States",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "598",
+          "format": "+...-.-...-..-..",
+          "iso2": "uy",
+          "name": "Uruguay",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "998",
+          "format": "+...-..-...-....",
+          "iso2": "uz",
+          "name": "Uzbekistan (Oʻzbekiston)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "678",
+          "format": "+...-.....",
+          "iso2": "vu",
+          "name": "Vanuatu",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "39",
+          "format": "+.. .. .... ....",
+          "iso2": "va",
+          "name": "Vatican City (Città del Vaticano)",
+          "priority": 1,
+        },
+        Object {
+          "dialCode": "58",
+          "format": "+..(...)...-....",
+          "iso2": "ve",
+          "name": "Venezuela",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "84",
+          "format": "+..-..-....-...",
+          "iso2": "vn",
+          "name": "Vietnam (Việt Nam)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "681",
+          "format": "+...-..-....",
+          "iso2": "wf",
+          "name": "Wallis and Futuna",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "967",
+          "format": "+...-.-...-...",
+          "iso2": "ye",
+          "name": "Yemen (‫اليمن‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "260",
+          "format": "+...-..-...-....",
+          "iso2": "zm",
+          "name": "Zambia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "263",
+          "format": "+...-.-......",
+          "iso2": "zw",
+          "name": "Zimbabwe",
+          "priority": 0,
+        },
+      ]
+    }
+    placeholder="+1 (702) 123-4567"
+    preferredCountries={
+      Array [
+        "af",
+        "al",
+      ]
+    }
+    required={false}
+  >
+    <div
+      className="react-tel-input"
+      data-test-id="src_reacttelephoneinput_test_id_4"
+    >
+      <input
+        autoComplete="tel"
+        autoFocus={true}
+        className="form-control"
+        data-test-id="src_reacttelephoneinput_test_id_5"
+        disabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="+1 (702) 123-4567"
+        required={false}
+        type="tel"
+        value="+91 12121"
+      />
+      <div
+        className="flag-dropdown"
+        data-test-id="src_reacttelephoneinput_test_id_6"
+        onKeyDown={[Function]}
+      >
+        <div
+          className="selected-flag"
+          data-test-id="src_reacttelephoneinput_test_id_7"
+          onClick={[Function]}
+          title="India (भारत): + 91"
+        >
+          <div
+            className="flag in"
+            data-test-id="src_reacttelephoneinput_test_id_8"
+            style={
+              Object {
+                "backgroundImage": "url(/flags.723494a4.png)",
+              }
+            }
+          >
+            <div
+              className="arrow"
+              data-test-id="src_reacttelephoneinput_test_id_9"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </ReactTelephoneInput>
+</clickOutside(ReactTelephoneInput)>
+`;
+
+exports[`Interaction test 2 2`] = `
+<clickOutside(ReactTelephoneInput)
+  defaultCountry="in"
+  flagsImagePath="/flags.723494a4.png"
+  initialValue="+9112121"
+  inputProps={
+    Object {
+      "autoFocus": true,
+    }
+  }
+  onChange={[Function]}
+  preferredCountries={
+    Array [
+      "af",
+      "al",
+    ]
+  }
+>
+  <ReactTelephoneInput
+    autoComplete="tel"
+    autoFormat={true}
+    defaultCountry="in"
+    disabled={false}
+    flagsImagePath="/flags.723494a4.png"
+    initialValue="+9112121"
+    inputProps={
+      Object {
+        "autoFocus": true,
+      }
+    }
+    isValid={[Function]}
+    listItemClassName="country"
+    listStyle={
+      Object {
+        "backgroundColor": "white",
+        "zIndex": 20,
+      }
+    }
+    onChange={[Function]}
+    onEnterKeyPress={[Function]}
+    onlyCountries={
+      Array [
+        Object {
+          "dialCode": "93",
+          "format": "+..-..-...-....",
+          "iso2": "af",
+          "name": "Afghanistan (‫افغانستان‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "355",
+          "format": "+...(...)...-...",
+          "iso2": "al",
+          "name": "Albania (Shqipëri)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "213",
+          "format": "+...-..-...-....",
+          "iso2": "dz",
+          "name": "Algeria (‫الجزائر‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1684",
+          "format": "+.(...)...-....",
+          "iso2": "as",
+          "name": "American Samoa",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "376",
+          "format": "+...-...-...",
+          "iso2": "ad",
+          "name": "Andorra",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "244",
+          "format": "+...(...)...-...",
+          "iso2": "ao",
+          "name": "Angola",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1264",
+          "format": "+.(...)...-....",
+          "iso2": "ai",
+          "name": "Anguilla",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1268",
+          "format": "+.(...)...-....",
+          "iso2": "ag",
+          "name": "Antigua and Barbuda",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "54",
+          "format": "+..(...)...-....",
+          "iso2": "ar",
+          "name": "Argentina",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "374",
+          "format": "+...-..-...-...",
+          "iso2": "am",
+          "name": "Armenia (Հայաստան)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "297",
+          "format": "+...-...-....",
+          "iso2": "aw",
+          "name": "Aruba",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "format": "+.. ... ... ...",
+          "iso2": "au",
+          "name": "Australia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "43",
+          "format": "+..(...)...-....",
+          "iso2": "at",
+          "name": "Austria (Österreich)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "994",
+          "format": "+...-..-...-..-..",
+          "iso2": "az",
+          "name": "Azerbaijan (Azərbaycan)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1242",
+          "format": "+.(...)...-....",
+          "iso2": "bs",
+          "name": "Bahamas",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "973",
+          "format": "+...-....-....",
+          "iso2": "bh",
+          "name": "Bahrain (‫البحرين‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "880",
+          "format": "+...-..-...-...",
+          "iso2": "bd",
+          "name": "Bangladesh (বাংলাদেশ)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1246",
+          "format": "+.(...)...-....",
+          "iso2": "bb",
+          "name": "Barbados",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "375",
+          "format": "+...(..)...-..-..",
+          "iso2": "by",
+          "name": "Belarus (Беларусь)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "32",
+          "format": "+.. ... .. .. ..",
+          "iso2": "be",
+          "name": "Belgium (België)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "501",
+          "format": "+...-...-....",
+          "iso2": "bz",
+          "name": "Belize",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "229",
+          "format": "+...-..-..-....",
+          "iso2": "bj",
+          "name": "Benin (Bénin)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1441",
+          "format": "+.(...)...-....",
+          "iso2": "bm",
+          "name": "Bermuda",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "975",
+          "format": "+...-.-...-...",
+          "iso2": "bt",
+          "name": "Bhutan (འབྲུག)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "591",
+          "format": "+...-.-...-....",
+          "iso2": "bo",
+          "name": "Bolivia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "387",
+          "format": "+...-..-....",
+          "iso2": "ba",
+          "name": "Bosnia and Herzegovina (Босна и Херцеговина)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "267",
+          "format": "+...-..-...-...",
+          "iso2": "bw",
+          "name": "Botswana",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "55",
+          "format": "+..-..-....-....",
+          "iso2": "br",
+          "name": "Brazil (Brasil)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "246",
+          "format": "+...-...-....",
+          "iso2": "io",
+          "name": "British Indian Ocean Territory",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1284",
+          "format": "+.(...)...-....",
+          "iso2": "vg",
+          "name": "British Virgin Islands",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "673",
+          "format": "+...-...-....",
+          "iso2": "bn",
+          "name": "Brunei",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "359",
+          "format": "+...(...)...-...",
+          "iso2": "bg",
+          "name": "Bulgaria (България)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "226",
+          "format": "+...-..-..-....",
+          "iso2": "bf",
+          "name": "Burkina Faso",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "257",
+          "format": "+...-..-..-....",
+          "iso2": "bi",
+          "name": "Burundi (Uburundi)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "855",
+          "format": "+...-..-...-...",
+          "iso2": "kh",
+          "name": "Cambodia (កម្ពុជា)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "237",
+          "format": "+...-....-....",
+          "iso2": "cm",
+          "name": "Cameroon (Cameroun)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1",
+          "format": "+. (...) ...-....",
+          "hasAreaCodes": true,
+          "iso2": "ca",
+          "name": "Canada",
+          "priority": 1,
+        },
+        Object {
+          "dialCode": "238",
+          "format": "+...(...)..-..",
+          "iso2": "cv",
+          "name": "Cape Verde (Kabu Verdi)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "599",
+          "format": "+...-...-....",
+          "iso2": "bq",
+          "name": "Caribbean Netherlands",
+          "priority": 1,
+        },
+        Object {
+          "dialCode": "1345",
+          "format": "+.(...)...-....",
+          "iso2": "ky",
+          "name": "Cayman Islands",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "236",
+          "format": "+...-..-..-....",
+          "iso2": "cf",
+          "name": "Central African Republic (République centrafricaine)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "235",
+          "format": "+...-..-..-..-..",
+          "iso2": "td",
+          "name": "Chad (Tchad)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "56",
+          "format": "+..-.-....-....",
+          "iso2": "cl",
+          "name": "Chile",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "86",
+          "format": "+.. ..-........",
+          "iso2": "cn",
+          "name": "China (中国)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "57",
+          "format": "+..(...)...-....",
+          "iso2": "co",
+          "name": "Colombia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "269",
+          "format": "+...-..-.....",
+          "iso2": "km",
+          "name": "Comoros (‫جزر القمر‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "243",
+          "format": "+...(...)...-...",
+          "iso2": "cd",
+          "name": "Congo (DRC) (Jamhuri ya Kidemokrasia ya Kongo)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "242",
+          "format": "+...-..-...-....",
+          "iso2": "cg",
+          "name": "Congo (Republic) (Congo-Brazzaville)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "682",
+          "format": "+...-..-...",
+          "iso2": "ck",
+          "name": "Cook Islands",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "506",
+          "format": "+... ....-....",
+          "iso2": "cr",
+          "name": "Costa Rica",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "225",
+          "format": "+...-..-...-...",
+          "iso2": "ci",
+          "name": "Côte d’Ivoire",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "385",
+          "format": "+...-..-...-...",
+          "iso2": "hr",
+          "name": "Croatia (Hrvatska)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "53",
+          "format": "+..-.-...-....",
+          "iso2": "cu",
+          "name": "Cuba",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "599",
+          "format": "+...-...-....",
+          "iso2": "cw",
+          "name": "Curaçao",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "357",
+          "format": "+...-..-...-...",
+          "iso2": "cy",
+          "name": "Cyprus (Κύπρος)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "420",
+          "format": "+...(...)...-...",
+          "iso2": "cz",
+          "name": "Czech Republic (Česká republika)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "45",
+          "format": "+.. .. .. .. ..",
+          "iso2": "dk",
+          "name": "Denmark (Danmark)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "253",
+          "format": "+...-..-..-..-..",
+          "iso2": "dj",
+          "name": "Djibouti",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1767",
+          "format": "+.(...)...-....",
+          "iso2": "dm",
+          "name": "Dominica",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1",
+          "format": "+.(...)...-....",
+          "hasAreaCodes": true,
+          "iso2": "do",
+          "name": "Dominican Republic (República Dominicana)",
+          "priority": 2,
+        },
+        Object {
+          "dialCode": "593",
+          "format": "+...-.-...-....",
+          "iso2": "ec",
+          "name": "Ecuador",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "20",
+          "format": "+..(...)...-....",
+          "iso2": "eg",
+          "name": "Egypt (‫مصر‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "503",
+          "format": "+... ....-....",
+          "iso2": "sv",
+          "name": "El Salvador",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "240",
+          "format": "+...-..-...-....",
+          "iso2": "gq",
+          "name": "Equatorial Guinea (Guinea Ecuatorial)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "291",
+          "format": "+...-.-...-...",
+          "iso2": "er",
+          "name": "Eritrea",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "372",
+          "format": "+...-...-....",
+          "iso2": "ee",
+          "name": "Estonia (Eesti)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "251",
+          "format": "+...-..-...-....",
+          "iso2": "et",
+          "name": "Ethiopia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "500",
+          "format": "+...-.....",
+          "iso2": "fk",
+          "name": "Falkland Islands (Islas Malvinas)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "298",
+          "format": "+...-...-...",
+          "iso2": "fo",
+          "name": "Faroe Islands (Føroyar)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "679",
+          "format": "+...-..-.....",
+          "iso2": "fj",
+          "name": "Fiji",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "358",
+          "format": "+... .. ... .. ..",
+          "iso2": "fi",
+          "name": "Finland (Suomi)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "33",
+          "format": "+.. . .. .. .. ..",
+          "iso2": "fr",
+          "name": "France",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "594",
+          "format": "+...-.....-....",
+          "iso2": "gf",
+          "name": "French Guiana (Guyane française)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "689",
+          "format": "+...-..-..-..",
+          "iso2": "pf",
+          "name": "French Polynesia (Polynésie française)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "241",
+          "format": "+...-.-..-..-..",
+          "iso2": "ga",
+          "name": "Gabon",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "220",
+          "format": "+...(...)..-..",
+          "iso2": "gm",
+          "name": "Gambia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "995",
+          "format": "+...(...)...-...",
+          "iso2": "ge",
+          "name": "Georgia (საქართველო)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "49",
+          "format": "+.. ... .......",
+          "iso2": "de",
+          "name": "Germany (Deutschland)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "233",
+          "format": "+...(...)...-...",
+          "iso2": "gh",
+          "name": "Ghana (Gaana)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "350",
+          "format": "+...-...-.....",
+          "iso2": "gi",
+          "name": "Gibraltar",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "30",
+          "format": "+..(...)...-....",
+          "iso2": "gr",
+          "name": "Greece (Ελλάδα)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "299",
+          "format": "+...-..-..-..",
+          "iso2": "gl",
+          "name": "Greenland (Kalaallit Nunaat)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1473",
+          "format": "+.(...)...-....",
+          "iso2": "gd",
+          "name": "Grenada",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "590",
+          "iso2": "gp",
+          "name": "Guadeloupe",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1671",
+          "format": "+.(...)...-....",
+          "iso2": "gu",
+          "name": "Guam",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "502",
+          "format": "+... ....-....",
+          "iso2": "gt",
+          "name": "Guatemala",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "224",
+          "format": "+...-..-...-...",
+          "iso2": "gn",
+          "name": "Guinea (Guinée)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "245",
+          "format": "+...-.-......",
+          "iso2": "gw",
+          "name": "Guinea-Bissau (Guiné Bissau)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "592",
+          "format": "+...-...-....",
+          "iso2": "gy",
+          "name": "Guyana",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "509",
+          "format": "+... ....-....",
+          "iso2": "ht",
+          "name": "Haiti",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "504",
+          "format": "+...-....-....",
+          "iso2": "hn",
+          "name": "Honduras",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "852",
+          "format": "+... .... ....",
+          "iso2": "hk",
+          "name": "Hong Kong (香港)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "36",
+          "format": "+..(...)...-...",
+          "iso2": "hu",
+          "name": "Hungary (Magyarország)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "354",
+          "format": "+... ... ....",
+          "iso2": "is",
+          "name": "Iceland (Ísland)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "91",
+          "format": "+.. .....-.....",
+          "iso2": "in",
+          "name": "India (भारत)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "62",
+          "format": "+..-..-...-..",
+          "iso2": "id",
+          "name": "Indonesia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "98",
+          "format": "+..(...)...-....",
+          "iso2": "ir",
+          "name": "Iran (‫ایران‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "964",
+          "format": "+...(...)...-....",
+          "iso2": "iq",
+          "name": "Iraq (‫العراق‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "353",
+          "format": "+... .. .......",
+          "iso2": "ie",
+          "name": "Ireland",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "972",
+          "format": "+...-.-...-....",
+          "iso2": "il",
+          "name": "Israel (‫ישראל‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "39",
+          "format": "+.. ... ......",
+          "iso2": "it",
+          "name": "Italy (Italia)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1876",
+          "format": "+.(...)...-....",
+          "iso2": "jm",
+          "name": "Jamaica",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "81",
+          "format": "+.. ... .. ....",
+          "iso2": "jp",
+          "name": "Japan (日本)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "962",
+          "format": "+...-.-....-....",
+          "iso2": "jo",
+          "name": "Jordan (‫الأردن‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "7",
+          "format": "+. ... ...-..-..",
+          "iso2": "kz",
+          "name": "Kazakhstan (Казахстан)",
+          "priority": 1,
+        },
+        Object {
+          "dialCode": "254",
+          "format": "+...-...-......",
+          "iso2": "ke",
+          "name": "Kenya",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "686",
+          "format": "+...-..-...",
+          "iso2": "ki",
+          "name": "Kiribati",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "965",
+          "format": "+...-....-....",
+          "iso2": "kw",
+          "name": "Kuwait (‫الكويت‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "996",
+          "format": "+...(...)...-...",
+          "iso2": "kg",
+          "name": "Kyrgyzstan (Кыргызстан)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "856",
+          "format": "+...-..-...-...",
+          "iso2": "la",
+          "name": "Laos (ລາວ)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "371",
+          "format": "+...-..-...-...",
+          "iso2": "lv",
+          "name": "Latvia (Latvija)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "961",
+          "format": "+...-.-...-...",
+          "iso2": "lb",
+          "name": "Lebanon (‫لبنان‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "266",
+          "format": "+...-.-...-....",
+          "iso2": "ls",
+          "name": "Lesotho",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "231",
+          "format": "+...-..-...-...",
+          "iso2": "lr",
+          "name": "Liberia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "218",
+          "format": "+...-..-...-...",
+          "iso2": "ly",
+          "name": "Libya (‫ليبيا‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "423",
+          "format": "+...(...)...-....",
+          "iso2": "li",
+          "name": "Liechtenstein",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "370",
+          "format": "+...(...)..-...",
+          "iso2": "lt",
+          "name": "Lithuania (Lietuva)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "352",
+          "format": "+...(...)...-...",
+          "iso2": "lu",
+          "name": "Luxembourg",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "853",
+          "format": "+...-....-....",
+          "iso2": "mo",
+          "name": "Macau (澳門)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "389",
+          "format": "+...-..-...-...",
+          "iso2": "mk",
+          "name": "Macedonia (FYROM) (Македонија)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "261",
+          "format": "+...-..-..-.....",
+          "iso2": "mg",
+          "name": "Madagascar (Madagasikara)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "265",
+          "format": "+...-.-....-....",
+          "iso2": "mw",
+          "name": "Malawi",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "60",
+          "format": "+.. ..-....-....",
+          "iso2": "my",
+          "name": "Malaysia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "960",
+          "format": "+...-...-....",
+          "iso2": "mv",
+          "name": "Maldives",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "223",
+          "format": "+...-..-..-....",
+          "iso2": "ml",
+          "name": "Mali",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "356",
+          "format": "+...-....-....",
+          "iso2": "mt",
+          "name": "Malta",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "692",
+          "format": "+...-...-....",
+          "iso2": "mh",
+          "name": "Marshall Islands",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "596",
+          "format": "+...(...)..-..-..",
+          "iso2": "mq",
+          "name": "Martinique",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "222",
+          "format": "+...-..-..-....",
+          "iso2": "mr",
+          "name": "Mauritania (‫موريتانيا‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "230",
+          "format": "+...-...-....",
+          "iso2": "mu",
+          "name": "Mauritius (Moris)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "52",
+          "format": "+..-..-..-....",
+          "iso2": "mx",
+          "name": "Mexico (México)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "691",
+          "format": "+...-...-....",
+          "iso2": "fm",
+          "name": "Micronesia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "373",
+          "format": "+...-....-....",
+          "iso2": "md",
+          "name": "Moldova (Republica Moldova)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "377",
+          "format": "+...-..-...-...",
+          "iso2": "mc",
+          "name": "Monaco",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "976",
+          "format": "+...-..-..-....",
+          "iso2": "mn",
+          "name": "Mongolia (Монгол)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "382",
+          "format": "+...-..-...-...",
+          "iso2": "me",
+          "name": "Montenegro (Crna Gora)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1664",
+          "format": "+.(...)...-....",
+          "iso2": "ms",
+          "name": "Montserrat",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "212",
+          "format": "+...-..-....-...",
+          "iso2": "ma",
+          "name": "Morocco (‫المغرب‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "258",
+          "format": "+...-..-...-...",
+          "iso2": "mz",
+          "name": "Mozambique (Moçambique)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "95",
+          "format": "+..-...-...",
+          "iso2": "mm",
+          "name": "Myanmar (Burma) (မြန်မာ)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "264",
+          "format": "+...-..-...-....",
+          "iso2": "na",
+          "name": "Namibia (Namibië)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "674",
+          "format": "+...-...-....",
+          "iso2": "nr",
+          "name": "Nauru",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "977",
+          "format": "+...-..-...-...",
+          "iso2": "np",
+          "name": "Nepal (नेपाल)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "31",
+          "format": "+.. .. ........",
+          "iso2": "nl",
+          "name": "Netherlands (Nederland)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "687",
+          "format": "+...-..-....",
+          "iso2": "nc",
+          "name": "New Caledonia (Nouvelle-Calédonie)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "64",
+          "format": "+.. ...-...-....",
+          "iso2": "nz",
+          "name": "New Zealand",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "505",
+          "format": "+...-....-....",
+          "iso2": "ni",
+          "name": "Nicaragua",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "227",
+          "format": "+...-..-..-....",
+          "iso2": "ne",
+          "name": "Niger (Nijar)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "234",
+          "format": "+...-..-...-..",
+          "iso2": "ng",
+          "name": "Nigeria",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "683",
+          "format": "+...-....",
+          "iso2": "nu",
+          "name": "Niue",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "format": "+...-...-...",
+          "iso2": "nf",
+          "name": "Norfolk Island",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "850",
+          "format": "+...-...-...",
+          "iso2": "kp",
+          "name": "North Korea (조선 민주주의 인민 공화국)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1670",
+          "format": "+.(...)...-....",
+          "iso2": "mp",
+          "name": "Northern Mariana Islands",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "47",
+          "format": "+.. ... .. ...",
+          "iso2": "no",
+          "name": "Norway (Norge)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "968",
+          "format": "+...-..-...-...",
+          "iso2": "om",
+          "name": "Oman (‫عُمان‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "92",
+          "format": "+.. ...-.......",
+          "iso2": "pk",
+          "name": "Pakistan (‫پاکستان‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "680",
+          "format": "+...-...-....",
+          "iso2": "pw",
+          "name": "Palau",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "970",
+          "format": "+...-..-...-....",
+          "iso2": "ps",
+          "name": "Palestine (‫فلسطين‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "507",
+          "format": "+...-...-....",
+          "iso2": "pa",
+          "name": "Panama (Panamá)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "675",
+          "format": "+...(...)..-...",
+          "iso2": "pg",
+          "name": "Papua New Guinea",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "595",
+          "format": "+...(...)...-...",
+          "iso2": "py",
+          "name": "Paraguay",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "51",
+          "format": "+..(...)...-...",
+          "iso2": "pe",
+          "name": "Peru (Perú)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "63",
+          "format": "+.. ... ....",
+          "iso2": "ph",
+          "name": "Philippines",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "48",
+          "format": "+.. ...-...-...",
+          "iso2": "pl",
+          "name": "Poland (Polska)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "351",
+          "format": "+...-..-...-....",
+          "iso2": "pt",
+          "name": "Portugal",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1",
+          "hasAreaCodes": true,
+          "iso2": "pr",
+          "name": "Puerto Rico",
+          "priority": 3,
+        },
+        Object {
+          "dialCode": "974",
+          "format": "+...-....-....",
+          "iso2": "qa",
+          "name": "Qatar (‫قطر‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "format": "+...-.....-....",
+          "iso2": "re",
+          "name": "Réunion (La Réunion)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "40",
+          "format": "+..-..-...-....",
+          "iso2": "ro",
+          "name": "Romania (România)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "7",
+          "format": "+. ... ...-..-..",
+          "iso2": "ru",
+          "name": "Russia (Россия)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "250",
+          "format": "+...(...)...-...",
+          "iso2": "rw",
+          "name": "Rwanda",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "590",
+          "iso2": "bl",
+          "name": "Saint Barthélemy (Saint-Barthélemy)",
+          "priority": 1,
+        },
+        Object {
+          "dialCode": "290",
+          "iso2": "sh",
+          "name": "Saint Helena",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1869",
+          "format": "+.(...)...-....",
+          "iso2": "kn",
+          "name": "Saint Kitts and Nevis",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1758",
+          "format": "+.(...)...-....",
+          "iso2": "lc",
+          "name": "Saint Lucia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "590",
+          "iso2": "mf",
+          "name": "Saint Martin (Saint-Martin (partie française))",
+          "priority": 2,
+        },
+        Object {
+          "dialCode": "508",
+          "iso2": "pm",
+          "name": "Saint Pierre and Miquelon (Saint-Pierre-et-Miquelon)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1784",
+          "format": "+.(...)...-....",
+          "iso2": "vc",
+          "name": "Saint Vincent and the Grenadines",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "685",
+          "format": "+...-..-....",
+          "iso2": "ws",
+          "name": "Samoa",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "378",
+          "format": "+...-....-......",
+          "iso2": "sm",
+          "name": "San Marino",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "239",
+          "format": "+...-..-.....",
+          "iso2": "st",
+          "name": "São Tomé and Príncipe (São Tomé e Príncipe)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "966",
+          "format": "+...-.-...-....",
+          "iso2": "sa",
+          "name": "Saudi Arabia (‫المملكة العربية السعودية‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "221",
+          "format": "+...-..-...-....",
+          "iso2": "sn",
+          "name": "Senegal (Sénégal)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "381",
+          "format": "+...-..-...-....",
+          "iso2": "rs",
+          "name": "Serbia (Србија)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "248",
+          "format": "+...-.-...-...",
+          "iso2": "sc",
+          "name": "Seychelles",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "232",
+          "format": "+...-..-......",
+          "iso2": "sl",
+          "name": "Sierra Leone",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "65",
+          "format": "+.. ....-....",
+          "iso2": "sg",
+          "name": "Singapore",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1721",
+          "format": "+.(...)...-....",
+          "iso2": "sx",
+          "name": "Sint Maarten",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "421",
+          "format": "+...(...)...-...",
+          "iso2": "sk",
+          "name": "Slovakia (Slovensko)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "386",
+          "format": "+...-..-...-...",
+          "iso2": "si",
+          "name": "Slovenia (Slovenija)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "677",
+          "format": "+...-.....",
+          "iso2": "sb",
+          "name": "Solomon Islands",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "252",
+          "format": "+...-.-...-...",
+          "iso2": "so",
+          "name": "Somalia (Soomaaliya)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "27",
+          "format": "+..-..-...-....",
+          "iso2": "za",
+          "name": "South Africa",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "82",
+          "format": "+..-..-...-....",
+          "iso2": "kr",
+          "name": "South Korea (대한민국)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "211",
+          "format": "+...-..-...-....",
+          "iso2": "ss",
+          "name": "South Sudan (‫جنوب السودان‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "34",
+          "format": "+.. ... ... ...",
+          "iso2": "es",
+          "name": "Spain (España)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "94",
+          "format": "+..-..-...-....",
+          "iso2": "lk",
+          "name": "Sri Lanka (ශ්‍රී ලංකාව)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "249",
+          "format": "+...-..-...-....",
+          "iso2": "sd",
+          "name": "Sudan (‫السودان‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "597",
+          "format": "+...-...-...",
+          "iso2": "sr",
+          "name": "Suriname",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "268",
+          "format": "+...-..-..-....",
+          "iso2": "sz",
+          "name": "Swaziland",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "46",
+          "format": "+.. .. ... .. ..",
+          "iso2": "se",
+          "name": "Sweden (Sverige)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "41",
+          "format": "+.. .. ... .. ..",
+          "iso2": "ch",
+          "name": "Switzerland (Schweiz)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "963",
+          "format": "+...-..-....-...",
+          "iso2": "sy",
+          "name": "Syria (‫سوريا‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "886",
+          "format": "+...-....-....",
+          "iso2": "tw",
+          "name": "Taiwan (台灣)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "992",
+          "format": "+...-..-...-....",
+          "iso2": "tj",
+          "name": "Tajikistan",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "255",
+          "format": "+...-..-...-....",
+          "iso2": "tz",
+          "name": "Tanzania",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "66",
+          "format": "+..-..-...-...",
+          "iso2": "th",
+          "name": "Thailand (ไทย)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "670",
+          "format": "+...-...-....",
+          "iso2": "tl",
+          "name": "Timor-Leste",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "228",
+          "format": "+...-..-...-...",
+          "iso2": "tg",
+          "name": "Togo",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "690",
+          "format": "+...-....",
+          "iso2": "tk",
+          "name": "Tokelau",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "676",
+          "format": "+...-.....",
+          "iso2": "to",
+          "name": "Tonga",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1868",
+          "format": "+.(...)...-....",
+          "iso2": "tt",
+          "name": "Trinidad and Tobago",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "216",
+          "format": "+...-..-...-...",
+          "iso2": "tn",
+          "name": "Tunisia (‫تونس‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "90",
+          "format": "+.. ... ... .. ..",
+          "iso2": "tr",
+          "name": "Turkey (Türkiye)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "993",
+          "format": "+...-.-...-....",
+          "iso2": "tm",
+          "name": "Turkmenistan",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1649",
+          "format": "+.(...)...-....",
+          "iso2": "tc",
+          "name": "Turks and Caicos Islands",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "688",
+          "format": "+...-.....",
+          "iso2": "tv",
+          "name": "Tuvalu",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1340",
+          "format": "+.(...)...-....",
+          "iso2": "vi",
+          "name": "U.S. Virgin Islands",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "256",
+          "format": "+...(...)...-...",
+          "iso2": "ug",
+          "name": "Uganda",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "380",
+          "format": "+...(..)...-..-..",
+          "iso2": "ua",
+          "name": "Ukraine (Україна)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "971",
+          "format": "+...-.-...-....",
+          "iso2": "ae",
+          "name": "United Arab Emirates (‫الإمارات العربية المتحدة‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "44",
+          "format": "+.. .... ......",
+          "iso2": "gb",
+          "name": "United Kingdom",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "1",
+          "format": "+. (...) ...-....",
+          "iso2": "us",
+          "name": "United States",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "598",
+          "format": "+...-.-...-..-..",
+          "iso2": "uy",
+          "name": "Uruguay",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "998",
+          "format": "+...-..-...-....",
+          "iso2": "uz",
+          "name": "Uzbekistan (Oʻzbekiston)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "678",
+          "format": "+...-.....",
+          "iso2": "vu",
+          "name": "Vanuatu",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "39",
+          "format": "+.. .. .... ....",
+          "iso2": "va",
+          "name": "Vatican City (Città del Vaticano)",
+          "priority": 1,
+        },
+        Object {
+          "dialCode": "58",
+          "format": "+..(...)...-....",
+          "iso2": "ve",
+          "name": "Venezuela",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "84",
+          "format": "+..-..-....-...",
+          "iso2": "vn",
+          "name": "Vietnam (Việt Nam)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "681",
+          "format": "+...-..-....",
+          "iso2": "wf",
+          "name": "Wallis and Futuna",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "967",
+          "format": "+...-.-...-...",
+          "iso2": "ye",
+          "name": "Yemen (‫اليمن‬‎)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "260",
+          "format": "+...-..-...-....",
+          "iso2": "zm",
+          "name": "Zambia",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "263",
+          "format": "+...-.-......",
+          "iso2": "zw",
+          "name": "Zimbabwe",
+          "priority": 0,
+        },
+      ]
+    }
+    placeholder="+1 (702) 123-4567"
+    preferredCountries={
+      Array [
+        "af",
+        "al",
+      ]
+    }
+    required={false}
+  >
+    <div
+      className="react-tel-input"
+      data-test-id="src_reacttelephoneinput_test_id_4"
+    >
+      <input
+        autoComplete="tel"
+        autoFocus={true}
+        className="form-control"
+        data-test-id="src_reacttelephoneinput_test_id_5"
+        disabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="+1 (702) 123-4567"
+        required={false}
+        type="tel"
+        value="+91 12121-121"
+      />
+      <div
+        className="flag-dropdown open-dropdown"
+        data-test-id="src_reacttelephoneinput_test_id_6"
+        onKeyDown={[Function]}
+      >
+        <div
+          className="selected-flag"
+          data-test-id="src_reacttelephoneinput_test_id_7"
+          onClick={[Function]}
+          title="India (भारत): + 91"
+        >
+          <div
+            className="flag in"
+            data-test-id="src_reacttelephoneinput_test_id_8"
+            style={
+              Object {
+                "backgroundImage": "url(/flags.723494a4.png)",
+              }
+            }
+          >
+            <div
+              className="arrow up"
+              data-test-id="src_reacttelephoneinput_test_id_9"
+            />
+          </div>
+        </div>
+        <VirtualList
+          className="country-list"
+          height={300}
+          itemCount={235}
+          itemSize={40}
+          overscanCount={3}
+          renderItem={[Function]}
+          scrollDirection="vertical"
+          scrollToAlignment="center"
+          scrollToIndex={96}
+          style={
+            Object {
+              "backgroundColor": "white",
+              "zIndex": 20,
+            }
+          }
+          width={400}
+        >
+          <div
+            className="country-list"
+            onScroll={[Function]}
+            style={
+              Object {
+                "WebkitOverflowScrolling": "touch",
+                "backgroundColor": "white",
+                "height": 300,
+                "overflow": "auto",
+                "width": 400,
+                "willChange": "transform",
+                "zIndex": 20,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "height": 9400,
+                  "minHeight": "100%",
+                  "overflow": "hidden",
+                  "position": "relative",
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                className="country"
+                data-country-code="gw"
+                data-dial-code="245"
+                data-flag-key="flag_no_89"
+                data-test-id="src_reacttelephoneinput_test_id_0"
+                key="flag_no_89"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "height": 40,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 3560,
+                    "width": "100%",
+                  }
+                }
+                title="Guinea-Bissau (Guiné Bissau) - 245"
+              >
+                <div
+                  className="flag gw"
+                  data-test-id="src_reacttelephoneinput_test_id_1"
+                  style={
+                    Object {
+                      "backgroundImage": "url(/flags.723494a4.png)",
+                    }
+                  }
+                />
+                <span
+                  className="country-name"
+                  data-test-id="src_reacttelephoneinput_test_id_2"
+                >
+                  Guinea-Bissau (Guiné Bissau)
+                </span>
+                <span
+                  className="dial-code"
+                  data-test-id="src_reacttelephoneinput_test_id_3"
+                >
+                  +245
+                </span>
+              </div>
+              <div
+                className="country"
+                data-country-code="gy"
+                data-dial-code="592"
+                data-flag-key="flag_no_90"
+                data-test-id="src_reacttelephoneinput_test_id_0"
+                key="flag_no_90"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "height": 40,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 3600,
+                    "width": "100%",
+                  }
+                }
+                title="Guyana - 592"
+              >
+                <div
+                  className="flag gy"
+                  data-test-id="src_reacttelephoneinput_test_id_1"
+                  style={
+                    Object {
+                      "backgroundImage": "url(/flags.723494a4.png)",
+                    }
+                  }
+                />
+                <span
+                  className="country-name"
+                  data-test-id="src_reacttelephoneinput_test_id_2"
+                >
+                  Guyana
+                </span>
+                <span
+                  className="dial-code"
+                  data-test-id="src_reacttelephoneinput_test_id_3"
+                >
+                  +592
+                </span>
+              </div>
+              <div
+                className="country"
+                data-country-code="ht"
+                data-dial-code="509"
+                data-flag-key="flag_no_91"
+                data-test-id="src_reacttelephoneinput_test_id_0"
+                key="flag_no_91"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "height": 40,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 3640,
+                    "width": "100%",
+                  }
+                }
+                title="Haiti - 509"
+              >
+                <div
+                  className="flag ht"
+                  data-test-id="src_reacttelephoneinput_test_id_1"
+                  style={
+                    Object {
+                      "backgroundImage": "url(/flags.723494a4.png)",
+                    }
+                  }
+                />
+                <span
+                  className="country-name"
+                  data-test-id="src_reacttelephoneinput_test_id_2"
+                >
+                  Haiti
+                </span>
+                <span
+                  className="dial-code"
+                  data-test-id="src_reacttelephoneinput_test_id_3"
+                >
+                  +509
+                </span>
+              </div>
+              <div
+                className="country"
+                data-country-code="hn"
+                data-dial-code="504"
+                data-flag-key="flag_no_92"
+                data-test-id="src_reacttelephoneinput_test_id_0"
+                key="flag_no_92"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "height": 40,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 3680,
+                    "width": "100%",
+                  }
+                }
+                title="Honduras - 504"
+              >
+                <div
+                  className="flag hn"
+                  data-test-id="src_reacttelephoneinput_test_id_1"
+                  style={
+                    Object {
+                      "backgroundImage": "url(/flags.723494a4.png)",
+                    }
+                  }
+                />
+                <span
+                  className="country-name"
+                  data-test-id="src_reacttelephoneinput_test_id_2"
+                >
+                  Honduras
+                </span>
+                <span
+                  className="dial-code"
+                  data-test-id="src_reacttelephoneinput_test_id_3"
+                >
+                  +504
+                </span>
+              </div>
+              <div
+                className="country"
+                data-country-code="hk"
+                data-dial-code="852"
+                data-flag-key="flag_no_93"
+                data-test-id="src_reacttelephoneinput_test_id_0"
+                key="flag_no_93"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "height": 40,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 3720,
+                    "width": "100%",
+                  }
+                }
+                title="Hong Kong (香港) - 852"
+              >
+                <div
+                  className="flag hk"
+                  data-test-id="src_reacttelephoneinput_test_id_1"
+                  style={
+                    Object {
+                      "backgroundImage": "url(/flags.723494a4.png)",
+                    }
+                  }
+                />
+                <span
+                  className="country-name"
+                  data-test-id="src_reacttelephoneinput_test_id_2"
+                >
+                  Hong Kong (香港)
+                </span>
+                <span
+                  className="dial-code"
+                  data-test-id="src_reacttelephoneinput_test_id_3"
+                >
+                  +852
+                </span>
+              </div>
+              <div
+                className="country"
+                data-country-code="hu"
+                data-dial-code="36"
+                data-flag-key="flag_no_94"
+                data-test-id="src_reacttelephoneinput_test_id_0"
+                key="flag_no_94"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "height": 40,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 3760,
+                    "width": "100%",
+                  }
+                }
+                title="Hungary (Magyarország) - 36"
+              >
+                <div
+                  className="flag hu"
+                  data-test-id="src_reacttelephoneinput_test_id_1"
+                  style={
+                    Object {
+                      "backgroundImage": "url(/flags.723494a4.png)",
+                    }
+                  }
+                />
+                <span
+                  className="country-name"
+                  data-test-id="src_reacttelephoneinput_test_id_2"
+                >
+                  Hungary (Magyarország)
+                </span>
+                <span
+                  className="dial-code"
+                  data-test-id="src_reacttelephoneinput_test_id_3"
+                >
+                  +36
+                </span>
+              </div>
+              <div
+                className="country"
+                data-country-code="is"
+                data-dial-code="354"
+                data-flag-key="flag_no_95"
+                data-test-id="src_reacttelephoneinput_test_id_0"
+                key="flag_no_95"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "height": 40,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 3800,
+                    "width": "100%",
+                  }
+                }
+                title="Iceland (Ísland) - 354"
+              >
+                <div
+                  className="flag is"
+                  data-test-id="src_reacttelephoneinput_test_id_1"
+                  style={
+                    Object {
+                      "backgroundImage": "url(/flags.723494a4.png)",
+                    }
+                  }
+                />
+                <span
+                  className="country-name"
+                  data-test-id="src_reacttelephoneinput_test_id_2"
+                >
+                  Iceland (Ísland)
+                </span>
+                <span
+                  className="dial-code"
+                  data-test-id="src_reacttelephoneinput_test_id_3"
+                >
+                  +354
+                </span>
+              </div>
+              <div
+                className="country highlight"
+                data-country-code="in"
+                data-dial-code="91"
+                data-flag-key="flag_no_96"
+                data-test-id="src_reacttelephoneinput_test_id_0"
+                key="flag_no_96"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "height": 40,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 3840,
+                    "width": "100%",
+                  }
+                }
+                title="India (भारत) - 91"
+              >
+                <div
+                  className="flag in"
+                  data-test-id="src_reacttelephoneinput_test_id_1"
+                  style={
+                    Object {
+                      "backgroundImage": "url(/flags.723494a4.png)",
+                    }
+                  }
+                />
+                <span
+                  className="country-name"
+                  data-test-id="src_reacttelephoneinput_test_id_2"
+                >
+                  India (भारत)
+                </span>
+                <span
+                  className="dial-code"
+                  data-test-id="src_reacttelephoneinput_test_id_3"
+                >
+                  +91
+                </span>
+              </div>
+              <div
+                className="country"
+                data-country-code="id"
+                data-dial-code="62"
+                data-flag-key="flag_no_97"
+                data-test-id="src_reacttelephoneinput_test_id_0"
+                key="flag_no_97"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "height": 40,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 3880,
+                    "width": "100%",
+                  }
+                }
+                title="Indonesia - 62"
+              >
+                <div
+                  className="flag id"
+                  data-test-id="src_reacttelephoneinput_test_id_1"
+                  style={
+                    Object {
+                      "backgroundImage": "url(/flags.723494a4.png)",
+                    }
+                  }
+                />
+                <span
+                  className="country-name"
+                  data-test-id="src_reacttelephoneinput_test_id_2"
+                >
+                  Indonesia
+                </span>
+                <span
+                  className="dial-code"
+                  data-test-id="src_reacttelephoneinput_test_id_3"
+                >
+                  +62
+                </span>
+              </div>
+              <div
+                className="country"
+                data-country-code="ir"
+                data-dial-code="98"
+                data-flag-key="flag_no_98"
+                data-test-id="src_reacttelephoneinput_test_id_0"
+                key="flag_no_98"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "height": 40,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 3920,
+                    "width": "100%",
+                  }
+                }
+                title="Iran (‫ایران‬‎) - 98"
+              >
+                <div
+                  className="flag ir"
+                  data-test-id="src_reacttelephoneinput_test_id_1"
+                  style={
+                    Object {
+                      "backgroundImage": "url(/flags.723494a4.png)",
+                    }
+                  }
+                />
+                <span
+                  className="country-name"
+                  data-test-id="src_reacttelephoneinput_test_id_2"
+                >
+                  Iran (‫ایران‬‎)
+                </span>
+                <span
+                  className="dial-code"
+                  data-test-id="src_reacttelephoneinput_test_id_3"
+                >
+                  +98
+                </span>
+              </div>
+              <div
+                className="country"
+                data-country-code="iq"
+                data-dial-code="964"
+                data-flag-key="flag_no_99"
+                data-test-id="src_reacttelephoneinput_test_id_0"
+                key="flag_no_99"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "height": 40,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 3960,
+                    "width": "100%",
+                  }
+                }
+                title="Iraq (‫العراق‬‎) - 964"
+              >
+                <div
+                  className="flag iq"
+                  data-test-id="src_reacttelephoneinput_test_id_1"
+                  style={
+                    Object {
+                      "backgroundImage": "url(/flags.723494a4.png)",
+                    }
+                  }
+                />
+                <span
+                  className="country-name"
+                  data-test-id="src_reacttelephoneinput_test_id_2"
+                >
+                  Iraq (‫العراق‬‎)
+                </span>
+                <span
+                  className="dial-code"
+                  data-test-id="src_reacttelephoneinput_test_id_3"
+                >
+                  +964
+                </span>
+              </div>
+              <div
+                className="country"
+                data-country-code="ie"
+                data-dial-code="353"
+                data-flag-key="flag_no_100"
+                data-test-id="src_reacttelephoneinput_test_id_0"
+                key="flag_no_100"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "height": 40,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 4000,
+                    "width": "100%",
+                  }
+                }
+                title="Ireland - 353"
+              >
+                <div
+                  className="flag ie"
+                  data-test-id="src_reacttelephoneinput_test_id_1"
+                  style={
+                    Object {
+                      "backgroundImage": "url(/flags.723494a4.png)",
+                    }
+                  }
+                />
+                <span
+                  className="country-name"
+                  data-test-id="src_reacttelephoneinput_test_id_2"
+                >
+                  Ireland
+                </span>
+                <span
+                  className="dial-code"
+                  data-test-id="src_reacttelephoneinput_test_id_3"
+                >
+                  +353
+                </span>
+              </div>
+              <div
+                className="country"
+                data-country-code="il"
+                data-dial-code="972"
+                data-flag-key="flag_no_101"
+                data-test-id="src_reacttelephoneinput_test_id_0"
+                key="flag_no_101"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "height": 40,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 4040,
+                    "width": "100%",
+                  }
+                }
+                title="Israel (‫ישראל‬‎) - 972"
+              >
+                <div
+                  className="flag il"
+                  data-test-id="src_reacttelephoneinput_test_id_1"
+                  style={
+                    Object {
+                      "backgroundImage": "url(/flags.723494a4.png)",
+                    }
+                  }
+                />
+                <span
+                  className="country-name"
+                  data-test-id="src_reacttelephoneinput_test_id_2"
+                >
+                  Israel (‫ישראל‬‎)
+                </span>
+                <span
+                  className="dial-code"
+                  data-test-id="src_reacttelephoneinput_test_id_3"
+                >
+                  +972
+                </span>
+              </div>
+              <div
+                className="country"
+                data-country-code="it"
+                data-dial-code="39"
+                data-flag-key="flag_no_102"
+                data-test-id="src_reacttelephoneinput_test_id_0"
+                key="flag_no_102"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "height": 40,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 4080,
+                    "width": "100%",
+                  }
+                }
+                title="Italy (Italia) - 39"
+              >
+                <div
+                  className="flag it"
+                  data-test-id="src_reacttelephoneinput_test_id_1"
+                  style={
+                    Object {
+                      "backgroundImage": "url(/flags.723494a4.png)",
+                    }
+                  }
+                />
+                <span
+                  className="country-name"
+                  data-test-id="src_reacttelephoneinput_test_id_2"
+                >
+                  Italy (Italia)
+                </span>
+                <span
+                  className="dial-code"
+                  data-test-id="src_reacttelephoneinput_test_id_3"
+                >
+                  +39
+                </span>
+              </div>
+              <div
+                className="country"
+                data-country-code="jm"
+                data-dial-code="1876"
+                data-flag-key="flag_no_103"
+                data-test-id="src_reacttelephoneinput_test_id_0"
+                key="flag_no_103"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "height": 40,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 4120,
+                    "width": "100%",
+                  }
+                }
+                title="Jamaica - 1876"
+              >
+                <div
+                  className="flag jm"
+                  data-test-id="src_reacttelephoneinput_test_id_1"
+                  style={
+                    Object {
+                      "backgroundImage": "url(/flags.723494a4.png)",
+                    }
+                  }
+                />
+                <span
+                  className="country-name"
+                  data-test-id="src_reacttelephoneinput_test_id_2"
+                >
+                  Jamaica
+                </span>
+                <span
+                  className="dial-code"
+                  data-test-id="src_reacttelephoneinput_test_id_3"
+                >
+                  +1876
+                </span>
+              </div>
+            </div>
+          </div>
+        </VirtualList>
       </div>
     </div>
   </ReactTelephoneInput>

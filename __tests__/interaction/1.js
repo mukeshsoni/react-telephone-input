@@ -7,6 +7,8 @@ import ReactTelephoneInput from '../../src/ReactTelephoneInput'
 Enzyme.configure({ adapter: new Adapter() })
 
 test('Interaction test 1', () => {
+  const onEnterKeyPress = jest.fn()
+
   const wrapper = mount(
     <ReactTelephoneInput
       defaultCountry="us"
@@ -82,6 +84,65 @@ test('Interaction test 1', () => {
   wrapper
     .find('input')
     .at(0)
+    .simulate('keyDown', { keyCode: 13, which: 13 })
+  wrapper
+    .find('input')
+    .at(0)
     .simulate('blur')
+  expect(onEnterKeyPress.mock.calls.length).toEqual(1)
+  expect(toJson(wrapper)).toMatchSnapshot()
+})
+
+test('Interaction test 2', () => {
+  const onChange = jest.fn()
+
+  const props = {
+    preferredCountries: ['af', 'al'],
+    defaultCountry: 'in',
+    flagsImagePath: '/flags.723494a4.png',
+    initialValue: '+9112121',
+    inputProps: {
+      autoFocus: true
+    },
+    onChange: formattedNumber => onChange(formattedNumber)
+  }
+
+  const wrapper = mount(<ReactTelephoneInput {...props} />)
+
+  expect(toJson(wrapper)).toMatchSnapshot()
+  wrapper.find('[data-test-id="src_reacttelephoneinput_test_id_5"]').simulate('focus')
+  wrapper.find('[data-test-id="src_reacttelephoneinput_test_id_5"]').simulate('click')
+  wrapper
+    .find('[data-test-id="src_reacttelephoneinput_test_id_5"]')
+    .simulate('keyDown', { keyCode: 49, which: 49 })
+  wrapper
+    .find('[data-test-id="src_reacttelephoneinput_test_id_5"]')
+    .simulate('change', { target: { value: '+91 121211', checked: false } })
+  expect(onChange).toBeCalledWith('+91 12121-1')
+  wrapper
+    .find('[data-test-id="src_reacttelephoneinput_test_id_5"]')
+    .simulate('keyDown', { keyCode: 50, which: 50 })
+  wrapper
+    .find('[data-test-id="src_reacttelephoneinput_test_id_5"]')
+    .simulate('change', { target: { value: '+91 12121-12', checked: false } })
+  expect(onChange).toBeCalledWith('+91 12121-12')
+  wrapper
+    .find('[data-test-id="src_reacttelephoneinput_test_id_5"]')
+    .simulate('keyDown', { keyCode: 49, which: 49 })
+  wrapper
+    .find('[data-test-id="src_reacttelephoneinput_test_id_5"]')
+    .simulate('change', { target: { value: '+91 12121-121', checked: false } })
+  expect(onChange).toBeCalledWith('+91 12121-121')
+  wrapper.find('[data-test-id="src_reacttelephoneinput_test_id_5"]').simulate('blur')
+  wrapper.find('[data-test-id="src_reacttelephoneinput_test_id_7"]').simulate('click')
+  wrapper
+    .find('div')
+    .at(9)
+    .simulate('scroll')
+  wrapper.find('[data-test-id="src_reacttelephoneinput_test_id_5"]').simulate('focus')
+  wrapper.find('[data-test-id="src_reacttelephoneinput_test_id_5"]').simulate('blur')
+
+  // verify the number of times onChange would have been called
+  expect(onChange.mock.calls.length).toBe(3)
   expect(toJson(wrapper)).toMatchSnapshot()
 })

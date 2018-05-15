@@ -209,21 +209,22 @@ export class ReactTelephoneInput extends Component {
     let newSelectedCountry = this.state.selectedCountry
     let { freezeSelection } = this.state
 
-    // if the input is the same as before, must be some special key like enter etc.
+    // if the input is the same as before, must be some special key like enter, alt, command etc.
     if (event.target.value === this.state.formattedNumber) {
       return
     }
 
-    // ie hack
     if (event.preventDefault) {
       event.preventDefault()
     } else {
+      // ie hack
       event.returnValue = false // eslint-disable-line no-param-reassign
     }
 
-    if (event.target.value.length > 0) {
+    if (event.target.value && event.target.value.length > 0) {
       // before entering the number in new format,
       // lets check if the dial code now matches some other country
+      // replace all non-numeric characters from the input string
       const inputNumber = event.target.value.replace(/\D/g, '')
 
       // we don't need to send the whole number to guess the country...
@@ -237,7 +238,6 @@ export class ReactTelephoneInput extends Component {
         newSelectedCountry = this.guessSelectedCountry(inputNumber.substring(0, 6))
         freezeSelection = false
       }
-      // let us remove all non numerals from the input
       formattedNumber = formatNumber(inputNumber, newSelectedCountry.format, this.props.autoFormat)
     }
 
@@ -506,18 +506,24 @@ export class ReactTelephoneInput extends Component {
               onClick={this.handleFlagItemClick.bind(this, country)}
               style={style}
               title={`${country.name} - ${country.dialCode}`}
-              data-test-id="src_reacttelephoneinput_test_id_0">
+              data-test-id="src_reacttelephoneinput_test_id_0"
+            >
               <div
                 className={inputFlagClasses}
                 style={this.getFlagStyle()}
-                data-test-id="src_reacttelephoneinput_test_id_1" />
-              <span className="country-name" data-test-id="src_reacttelephoneinput_test_id_2">{country.name}</span>
-              <span className="dial-code" data-test-id="src_reacttelephoneinput_test_id_3">{`+${country.dialCode}`}</span>
+                data-test-id="src_reacttelephoneinput_test_id_1"
+              />
+              <span className="country-name" data-test-id="src_reacttelephoneinput_test_id_2">
+                {country.name}
+              </span>
+              <span className="dial-code" data-test-id="src_reacttelephoneinput_test_id_3">{`+${
+                country.dialCode
+              }`}</span>
             </div>
-          );
+          )
         }}
       />
-    );
+    )
   }
 
   getFlagStyle = () => {
@@ -559,7 +565,8 @@ export class ReactTelephoneInput extends Component {
     return (
       <div
         className={classNames('react-tel-input', this.props.classNames, this.props.className)}
-        data-test-id="src_reacttelephoneinput_test_id_4">
+        data-test-id="src_reacttelephoneinput_test_id_4"
+      >
         <input
           onChange={this.handleInput}
           onClick={this.handleInputClick}
@@ -578,27 +585,31 @@ export class ReactTelephoneInput extends Component {
           placeholder={this.props.placeholder}
           disabled={this.props.disabled}
           {...otherProps}
-          data-test-id="src_reacttelephoneinput_test_id_5" />
+          data-test-id="src_reacttelephoneinput_test_id_5"
+        />
         <div
           className={flagViewClasses}
           onKeyDown={this.handleKeydown}
-          data-test-id="src_reacttelephoneinput_test_id_6">
+          data-test-id="src_reacttelephoneinput_test_id_6"
+        >
           <div
             onClick={this.handleFlagDropdownClick}
             className="selected-flag"
             title={`${this.state.selectedCountry.name}: + ${this.state.selectedCountry.dialCode}`}
-            data-test-id="src_reacttelephoneinput_test_id_7">
+            data-test-id="src_reacttelephoneinput_test_id_7"
+          >
             <div
               className={inputFlagClasses}
               style={this.getFlagStyle()}
-              data-test-id="src_reacttelephoneinput_test_id_8">
+              data-test-id="src_reacttelephoneinput_test_id_8"
+            >
               <div className={arrowClasses} data-test-id="src_reacttelephoneinput_test_id_9" />
             </div>
           </div>
           {this.state.showDropDown ? this.getCountryDropDownList() : ''}
         </div>
       </div>
-    );
+    )
   }
 }
 

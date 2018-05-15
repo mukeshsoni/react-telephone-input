@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 import testGenerator from 'generate-ui-tests'
 
-import RTI from '../../src/withStyles'
+import ReactTelephoneInput from '../../src/withStyles'
+
+const RTI = testGenerator(ReactTelephoneInput)
 
 const Demo = () => {
   return (
@@ -22,7 +24,7 @@ const Demo = () => {
         initialValue="+9112121"
         inputProps={{ autoFocus: true }}
       />
-      <h4>With initial value</h4>
+      {/* <h4>With initial value</h4>
       <RTI
         defaultCountry="in"
         flagsImagePath={require('../../images/flags.png')}
@@ -47,10 +49,9 @@ const Demo = () => {
         flagsImagePath={require('../../images/flags.png')}
         initialValue="+13559112121"
         preferredCountries={['us', 'ca', 'zz', 'hk']}
-      />
+      /> */}
     </div>
   )
 }
 
-let NewDemo = testGenerator(Demo)
-render(<NewDemo />, document.querySelector('#demo'))
+render(<Demo />, document.querySelector('#demo'))

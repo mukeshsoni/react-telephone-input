@@ -1663,10 +1663,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
 >
   <div
     className="react-tel-input"
+    data-test-id="src_reacttelephoneinput_test_id_4"
   >
     <input
       autoComplete="tel"
       className="form-control"
+      data-test-id="src_reacttelephoneinput_test_id_5"
       disabled={false}
       onBlur={[Function]}
       onChange={[Function]}
@@ -1680,15 +1682,18 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
     />
     <div
       className="flag-dropdown"
+      data-test-id="src_reacttelephoneinput_test_id_6"
       onKeyDown={[Function]}
     >
       <div
         className="selected-flag"
+        data-test-id="src_reacttelephoneinput_test_id_7"
         onClick={[Function]}
         title="India (भारत): + 91"
       >
         <div
           className="flag in"
+          data-test-id="src_reacttelephoneinput_test_id_8"
           style={
             Object {
               "backgroundImage": "url(flags.png)",
@@ -1697,6 +1702,7 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         >
           <div
             className="arrow"
+            data-test-id="src_reacttelephoneinput_test_id_9"
           />
         </div>
       </div>
@@ -3368,10 +3374,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
 >
   <div
     className="react-tel-input"
+    data-test-id="src_reacttelephoneinput_test_id_4"
   >
     <input
       autoComplete="tel"
       className="form-control"
+      data-test-id="src_reacttelephoneinput_test_id_5"
       disabled={false}
       onBlur={[Function]}
       onChange={[Function]}
@@ -3385,15 +3393,18 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
     />
     <div
       className="flag-dropdown"
+      data-test-id="src_reacttelephoneinput_test_id_6"
       onKeyDown={[Function]}
     >
       <div
         className="selected-flag"
+        data-test-id="src_reacttelephoneinput_test_id_7"
         onClick={[Function]}
         title="India (भारत): + 91"
       >
         <div
           className="flag in"
+          data-test-id="src_reacttelephoneinput_test_id_8"
           style={
             Object {
               "backgroundImage": "url(flags.png)",
@@ -3402,6 +3413,7 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         >
           <div
             className="arrow"
+            data-test-id="src_reacttelephoneinput_test_id_9"
           />
         </div>
       </div>
