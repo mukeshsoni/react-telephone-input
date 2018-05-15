@@ -506,15 +506,18 @@ export class ReactTelephoneInput extends Component {
               onClick={this.handleFlagItemClick.bind(this, country)}
               style={style}
               title={`${country.name} - ${country.dialCode}`}
-            >
-              <div className={inputFlagClasses} style={this.getFlagStyle()} />
-              <span className="country-name">{country.name}</span>
-              <span className="dial-code">{`+${country.dialCode}`}</span>
+              data-test-id="src_reacttelephoneinput_test_id_0">
+              <div
+                className={inputFlagClasses}
+                style={this.getFlagStyle()}
+                data-test-id="src_reacttelephoneinput_test_id_1" />
+              <span className="country-name" data-test-id="src_reacttelephoneinput_test_id_2">{country.name}</span>
+              <span className="dial-code" data-test-id="src_reacttelephoneinput_test_id_3">{`+${country.dialCode}`}</span>
             </div>
-          )
+          );
         }}
       />
-    )
+    );
   }
 
   getFlagStyle = () => {
@@ -554,7 +557,9 @@ export class ReactTelephoneInput extends Component {
     }
 
     return (
-      <div className={classNames('react-tel-input', this.props.classNames, this.props.className)}>
+      <div
+        className={classNames('react-tel-input', this.props.classNames, this.props.className)}
+        data-test-id="src_reacttelephoneinput_test_id_4">
         <input
           onChange={this.handleInput}
           onClick={this.handleInputClick}
@@ -573,21 +578,27 @@ export class ReactTelephoneInput extends Component {
           placeholder={this.props.placeholder}
           disabled={this.props.disabled}
           {...otherProps}
-        />
-        <div className={flagViewClasses} onKeyDown={this.handleKeydown}>
+          data-test-id="src_reacttelephoneinput_test_id_5" />
+        <div
+          className={flagViewClasses}
+          onKeyDown={this.handleKeydown}
+          data-test-id="src_reacttelephoneinput_test_id_6">
           <div
             onClick={this.handleFlagDropdownClick}
             className="selected-flag"
             title={`${this.state.selectedCountry.name}: + ${this.state.selectedCountry.dialCode}`}
-          >
-            <div className={inputFlagClasses} style={this.getFlagStyle()}>
-              <div className={arrowClasses} />
+            data-test-id="src_reacttelephoneinput_test_id_7">
+            <div
+              className={inputFlagClasses}
+              style={this.getFlagStyle()}
+              data-test-id="src_reacttelephoneinput_test_id_8">
+              <div className={arrowClasses} data-test-id="src_reacttelephoneinput_test_id_9" />
             </div>
           </div>
           {this.state.showDropDown ? this.getCountryDropDownList() : ''}
         </div>
       </div>
-    )
+    );
   }
 }
 
