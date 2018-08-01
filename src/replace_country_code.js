@@ -4,6 +4,11 @@ export default function replaceCountryCode(
   number,
 ) {
   const dialCodeRegex = RegExp(`^(${currentSelectedCountry.dialCode})`)
+  const codeToBeReplaced = number.match(dialCodeRegex)
   const newNumber = number.replace(dialCodeRegex, nextSelectedCountry.dialCode)
+
+  if (codeToBeReplaced === null && newNumber === number) {
+    return nextSelectedCountry.dialCode + number
+  }
   return newNumber
 }
