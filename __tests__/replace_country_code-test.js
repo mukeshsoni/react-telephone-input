@@ -34,4 +34,19 @@ describe('country code replacement', () => {
     )
     expect(newNumber).toEqual(expectedNumber)
   })
+
+  it('should not append the country code when the current and next country have the same country code', () => {
+    // e.g. when switching from us to ca a 1 gets appended
+    let oldNumber = '+1(600)'
+    let currentSelectedCountry = find(allCountries, { iso2: 'us' })
+    let nextSelectedCountry = find(allCountries, { iso2: 'ca' })
+    let expectedNumber = '1600'
+
+    let newNumber = replaceCountryCode(
+      currentSelectedCountry,
+      nextSelectedCountry,
+      oldNumber.replace(/\D/g, '')
+    )
+    expect(newNumber).toEqual(expectedNumber)
+  })
 })

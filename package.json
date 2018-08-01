@@ -4,7 +4,12 @@
   "description": "React component for entering and validating international telephone numbers",
   "main": "lib/ReactTelephoneInput.js",
   "modules": "es/ReactTelephoneInput.js",
-  "files": ["css", "es", "lib", "umd"],
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
   "scripts": {
     "build": "npx nwb build-react-component --copy-files",
     "clean": "npx nwb clean-module && npx clean-demo",
@@ -19,8 +24,12 @@
     "transform": {
       "^.+\\.js$": "./jest.transform.js"
     },
-    "moduleFileExtensions": ["js"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "repository": {
     "type": "git",
