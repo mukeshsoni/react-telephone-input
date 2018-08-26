@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>react-telephone-input 4.72.0 Demo</title>
-  <link href="demo.css" rel="stylesheet"></head>
-  <body>
-    <div id="demo"></div>
-  <script>/******/ (function(modules) { // webpackBootstrap
+/******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	var parentJsonpFunction = window["webpackJsonp"];
 /******/ 	window["webpackJsonp"] = function webpackJsonpCallback(chunkIds, moreModules, executeModules) {
@@ -157,6 +147,5 @@
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/ })
 /************************************************************************/
-/******/ ([]);</script>
-  <script type="text/javascript" src="demo.js"></script></body>
-</html>
+/******/ ([]);
+//# sourceMappingURL=manifest.js.map
