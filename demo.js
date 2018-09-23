@@ -24762,6 +24762,36 @@ var ReactTelephoneInput = (_temp = _class = function (_Component) {
         className: __WEBPACK_IMPORTED_MODULE_6_classnames___default()('react-tel-input', this.props.classNames, this.props.className),
         'data-test-id': 'src_reacttelephoneinput_test_id_4'
       },
+      __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+        'div',
+        {
+          className: flagViewClasses,
+          onKeyDown: this.handleKeydown,
+          'data-test-id': 'src_reacttelephoneinput_test_id_6'
+          // this is crucial if we want keyboard up/down events to be heard through this div and not document.body
+          , tabIndex: 0
+        },
+        __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+          'button',
+          {
+            onClick: this.handleFlagDropdownClick,
+            className: 'selected-flag',
+            title: this.state.selectedCountry.name + ': + ' + this.state.selectedCountry.dialCode,
+            'data-test-id': 'src_reacttelephoneinput_test_id_7',
+            onKeyDown: this.handleFlagKeyDown
+          },
+          __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+            'div',
+            {
+              className: inputFlagClasses,
+              style: this.getFlagStyle(),
+              'data-test-id': 'src_reacttelephoneinput_test_id_8'
+            },
+            __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement('div', { className: arrowClasses, 'data-test-id': 'src_reacttelephoneinput_test_id_9' })
+          )
+        ),
+        this.state.showDropDown ? this.getCountryDropDownList() : ''
+      ),
       __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement('input', _extends({
         onChange: this.handleInput,
         onClick: this.handleInputClick,
@@ -24781,36 +24811,7 @@ var ReactTelephoneInput = (_temp = _class = function (_Component) {
         disabled: this.props.disabled
       }, otherProps, {
         'data-test-id': 'src_reacttelephoneinput_test_id_5'
-      })),
-      __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
-        'div',
-        {
-          className: flagViewClasses,
-          onKeyDown: this.handleKeydown,
-          'data-test-id': 'src_reacttelephoneinput_test_id_6'
-          // this is crucial if we want keyboard up/down events to be heard through this div and not document.body
-          , tabIndex: 0
-        },
-        __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
-          'div',
-          {
-            onClick: this.handleFlagDropdownClick,
-            className: 'selected-flag',
-            title: this.state.selectedCountry.name + ': + ' + this.state.selectedCountry.dialCode,
-            'data-test-id': 'src_reacttelephoneinput_test_id_7'
-          },
-          __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
-            'div',
-            {
-              className: inputFlagClasses,
-              style: this.getFlagStyle(),
-              'data-test-id': 'src_reacttelephoneinput_test_id_8'
-            },
-            __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement('div', { className: arrowClasses, 'data-test-id': 'src_reacttelephoneinput_test_id_9' })
-          )
-        ),
-        this.state.showDropDown ? this.getCountryDropDownList() : ''
-      )
+      }))
     );
   };
 
@@ -25220,6 +25221,14 @@ var ReactTelephoneInput = (_temp = _class = function (_Component) {
   this.handleInputBlur = function () {
     if (typeof _this3.props.onBlur === 'function') {
       _this3.props.onBlur(_this3.state.formattedNumber, _this3.state.selectedCountry);
+    }
+  };
+
+  this.handleFlagKeyDown = function (event) {
+    // only trigger dropdown click if the dropdown is not already open.
+    // it will otherwise interfere with key up/down of list
+    if (event.which === keys.DOWN && _this3.state.showDropDown === false) {
+      _this3.handleFlagDropdownClick(event);
     }
   };
 }, _temp);
