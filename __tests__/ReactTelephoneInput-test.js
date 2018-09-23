@@ -94,12 +94,12 @@ describe('react telephone input', () => {
       <ReactTelephoneInput defaultCountry="us" preferredCountries={['us', 'ca', 'zz', 'hk']} />
     )
     expect(wrapper.find('div.flag-dropdown')).toHaveLength(1)
-    expect(wrapper.find('div.selected-flag > div.us')).toHaveLength(1)
+    expect(wrapper.find('.selected-flag > div.us')).toHaveLength(1)
 
     // the dropdown list is not there
     expect(wrapper.find('.country-list')).toHaveLength(0)
     // let's click on the selected flag
-    wrapper.find('div.selected-flag').simulate('click')
+    wrapper.find('.selected-flag').simulate('click')
     expect(wrapper.find('div.country-list')).toHaveLength(1)
 
     // now let's click on canada
@@ -108,7 +108,7 @@ describe('react telephone input', () => {
       .at(1)
       .simulate('click')
     expect(wrapper.find('div.country-list')).toHaveLength(0)
-    expect(wrapper.find('div.selected-flag div.ca')).toHaveLength(1)
+    expect(wrapper.find('.selected-flag div.ca')).toHaveLength(1)
   })
 
   it('should allow custom value for autoComplete input property', () => {

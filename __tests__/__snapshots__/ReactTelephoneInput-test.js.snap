@@ -1665,31 +1665,17 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
     className="react-tel-input"
     data-test-id="src_reacttelephoneinput_test_id_4"
   >
-    <input
-      autoComplete="tel"
-      className="form-control"
-      data-test-id="src_reacttelephoneinput_test_id_5"
-      disabled={false}
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      placeholder="+1 (702) 123-4567"
-      required={false}
-      type="tel"
-      value="+91 12121"
-    />
     <div
       className="flag-dropdown"
       data-test-id="src_reacttelephoneinput_test_id_6"
       onKeyDown={[Function]}
       tabIndex={0}
     >
-      <div
+      <button
         className="selected-flag"
         data-test-id="src_reacttelephoneinput_test_id_7"
         onClick={[Function]}
+        onKeyDown={[Function]}
         title="India (भारत): + 91"
       >
         <div
@@ -1706,8 +1692,23 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
             data-test-id="src_reacttelephoneinput_test_id_9"
           />
         </div>
-      </div>
+      </button>
     </div>
+    <input
+      autoComplete="tel"
+      className="form-control"
+      data-test-id="src_reacttelephoneinput_test_id_5"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      placeholder="+1 (702) 123-4567"
+      required={false}
+      type="tel"
+      value="+91 12121"
+    />
   </div>
 </ReactTelephoneInput>
 `;
@@ -3377,31 +3378,17 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
     className="react-tel-input"
     data-test-id="src_reacttelephoneinput_test_id_4"
   >
-    <input
-      autoComplete="tel"
-      className="form-control"
-      data-test-id="src_reacttelephoneinput_test_id_5"
-      disabled={false}
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      placeholder="+1 (702) 123-4567"
-      required={false}
-      type="tel"
-      value="+91 12121-1212"
-    />
     <div
       className="flag-dropdown"
       data-test-id="src_reacttelephoneinput_test_id_6"
       onKeyDown={[Function]}
       tabIndex={0}
     >
-      <div
+      <button
         className="selected-flag"
         data-test-id="src_reacttelephoneinput_test_id_7"
         onClick={[Function]}
+        onKeyDown={[Function]}
         title="India (भारत): + 91"
       >
         <div
@@ -3418,8 +3405,23 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
             data-test-id="src_reacttelephoneinput_test_id_9"
           />
         </div>
-      </div>
+      </button>
     </div>
+    <input
+      autoComplete="tel"
+      className="form-control"
+      data-test-id="src_reacttelephoneinput_test_id_5"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      placeholder="+1 (702) 123-4567"
+      required={false}
+      type="tel"
+      value="+91 12121-1212"
+    />
   </div>
 </ReactTelephoneInput>
 `;

@@ -535,6 +535,14 @@ export class ReactTelephoneInput extends Component {
     }
   }
 
+  handleFlagKeyDown = event => {
+    // only trigger dropdown click if the dropdown is not already open.
+    // it will otherwise interfere with key up/down of list
+    if (event.which === keys.DOWN && this.state.showDropDown === false) {
+      this.handleFlagDropdownClick(event)
+    }
+  }
+
   render() {
     const arrowClasses = classNames({
       arrow: true,
@@ -561,6 +569,30 @@ export class ReactTelephoneInput extends Component {
         className={classNames('react-tel-input', this.props.classNames, this.props.className)}
         data-test-id="src_reacttelephoneinput_test_id_4"
       >
+        <div
+          className={flagViewClasses}
+          onKeyDown={this.handleKeydown}
+          data-test-id="src_reacttelephoneinput_test_id_6"
+          // this is crucial if we want keyboard up/down events to be heard through this div and not document.body
+          tabIndex={0}
+        >
+          <button
+            onClick={this.handleFlagDropdownClick}
+            className="selected-flag"
+            title={`${this.state.selectedCountry.name}: + ${this.state.selectedCountry.dialCode}`}
+            data-test-id="src_reacttelephoneinput_test_id_7"
+            onKeyDown={this.handleFlagKeyDown}
+          >
+            <div
+              className={inputFlagClasses}
+              style={this.getFlagStyle()}
+              data-test-id="src_reacttelephoneinput_test_id_8"
+            >
+              <div className={arrowClasses} data-test-id="src_reacttelephoneinput_test_id_9" />
+            </div>
+          </button>
+          {this.state.showDropDown ? this.getCountryDropDownList() : ''}
+        </div>
         <input
           onChange={this.handleInput}
           onClick={this.handleInputClick}
@@ -581,29 +613,6 @@ export class ReactTelephoneInput extends Component {
           {...otherProps}
           data-test-id="src_reacttelephoneinput_test_id_5"
         />
-        <div
-          className={flagViewClasses}
-          onKeyDown={this.handleKeydown}
-          data-test-id="src_reacttelephoneinput_test_id_6"
-          // this is crucial if we want keyboard up/down events to be heard through this div and not document.body
-          tabIndex={0}
-        >
-          <div
-            onClick={this.handleFlagDropdownClick}
-            className="selected-flag"
-            title={`${this.state.selectedCountry.name}: + ${this.state.selectedCountry.dialCode}`}
-            data-test-id="src_reacttelephoneinput_test_id_7"
-          >
-            <div
-              className={inputFlagClasses}
-              style={this.getFlagStyle()}
-              data-test-id="src_reacttelephoneinput_test_id_8"
-            >
-              <div className={arrowClasses} data-test-id="src_reacttelephoneinput_test_id_9" />
-            </div>
-          </div>
-          {this.state.showDropDown ? this.getCountryDropDownList() : ''}
-        </div>
       </div>
     )
   }

@@ -1678,31 +1678,17 @@ exports[`Interaction test 1 1`] = `
       className="react-tel-input"
       data-test-id="src_reacttelephoneinput_test_id_4"
     >
-      <input
-        autoComplete="tel"
-        className="form-control"
-        data-test-id="src_reacttelephoneinput_test_id_5"
-        disabled={false}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        placeholder="+1 (702) 123-4567"
-        required={false}
-        type="tel"
-        value="+91 12121"
-      />
       <div
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
         tabIndex={0}
       >
-        <div
+        <button
           className="selected-flag"
           data-test-id="src_reacttelephoneinput_test_id_7"
           onClick={[Function]}
+          onKeyDown={[Function]}
           title="India (भारत): + 91"
         >
           <div
@@ -1719,8 +1705,23 @@ exports[`Interaction test 1 1`] = `
               data-test-id="src_reacttelephoneinput_test_id_9"
             />
           </div>
-        </div>
+        </button>
       </div>
+      <input
+        autoComplete="tel"
+        className="form-control"
+        data-test-id="src_reacttelephoneinput_test_id_5"
+        disabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="+1 (702) 123-4567"
+        required={false}
+        type="tel"
+        value="+91 12121"
+      />
     </div>
   </ReactTelephoneInput>
 </clickOutside(ReactTelephoneInput)>
@@ -3404,31 +3405,17 @@ exports[`Interaction test 1 2`] = `
       className="react-tel-input"
       data-test-id="src_reacttelephoneinput_test_id_4"
     >
-      <input
-        autoComplete="tel"
-        className="form-control"
-        data-test-id="src_reacttelephoneinput_test_id_5"
-        disabled={false}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        placeholder="+1 (702) 123-4567"
-        required={false}
-        type="tel"
-        value="+36(121)211-21121"
-      />
       <div
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
         tabIndex={0}
       >
-        <div
+        <button
           className="selected-flag"
           data-test-id="src_reacttelephoneinput_test_id_7"
           onClick={[Function]}
+          onKeyDown={[Function]}
           title="Hungary (Magyarország): + 36"
         >
           <div
@@ -3445,8 +3432,23 @@ exports[`Interaction test 1 2`] = `
               data-test-id="src_reacttelephoneinput_test_id_9"
             />
           </div>
-        </div>
+        </button>
       </div>
+      <input
+        autoComplete="tel"
+        className="form-control"
+        data-test-id="src_reacttelephoneinput_test_id_5"
+        disabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="+1 (702) 123-4567"
+        required={false}
+        type="tel"
+        value="+36(121)211-21121"
+      />
     </div>
   </ReactTelephoneInput>
 </clickOutside(ReactTelephoneInput)>
@@ -5137,32 +5139,17 @@ exports[`Interaction test 2 1`] = `
       className="react-tel-input"
       data-test-id="src_reacttelephoneinput_test_id_4"
     >
-      <input
-        autoComplete="tel"
-        autoFocus={true}
-        className="form-control"
-        data-test-id="src_reacttelephoneinput_test_id_5"
-        disabled={false}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        placeholder="+1 (702) 123-4567"
-        required={false}
-        type="tel"
-        value="+91 12121"
-      />
       <div
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
         tabIndex={0}
       >
-        <div
+        <button
           className="selected-flag"
           data-test-id="src_reacttelephoneinput_test_id_7"
           onClick={[Function]}
+          onKeyDown={[Function]}
           title="India (भारत): + 91"
         >
           <div
@@ -5179,8 +5166,24 @@ exports[`Interaction test 2 1`] = `
               data-test-id="src_reacttelephoneinput_test_id_9"
             />
           </div>
-        </div>
+        </button>
       </div>
+      <input
+        autoComplete="tel"
+        autoFocus={true}
+        className="form-control"
+        data-test-id="src_reacttelephoneinput_test_id_5"
+        disabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="+1 (702) 123-4567"
+        required={false}
+        type="tel"
+        value="+91 12121"
+      />
     </div>
   </ReactTelephoneInput>
 </clickOutside(ReactTelephoneInput)>
@@ -6871,32 +6874,17 @@ exports[`Interaction test 2 2`] = `
       className="react-tel-input"
       data-test-id="src_reacttelephoneinput_test_id_4"
     >
-      <input
-        autoComplete="tel"
-        autoFocus={true}
-        className="form-control"
-        data-test-id="src_reacttelephoneinput_test_id_5"
-        disabled={false}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        placeholder="+1 (702) 123-4567"
-        required={false}
-        type="tel"
-        value="+36(121)211-21"
-      />
       <div
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
         tabIndex={0}
       >
-        <div
+        <button
           className="selected-flag"
           data-test-id="src_reacttelephoneinput_test_id_7"
           onClick={[Function]}
+          onKeyDown={[Function]}
           title="Hungary (Magyarország): + 36"
         >
           <div
@@ -6913,8 +6901,24 @@ exports[`Interaction test 2 2`] = `
               data-test-id="src_reacttelephoneinput_test_id_9"
             />
           </div>
-        </div>
+        </button>
       </div>
+      <input
+        autoComplete="tel"
+        autoFocus={true}
+        className="form-control"
+        data-test-id="src_reacttelephoneinput_test_id_5"
+        disabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="+1 (702) 123-4567"
+        required={false}
+        type="tel"
+        value="+36(121)211-21"
+      />
     </div>
   </ReactTelephoneInput>
 </clickOutside(ReactTelephoneInput)>
@@ -8603,32 +8607,17 @@ exports[`Keyboard event with searching in the list 1`] = `
       className="react-tel-input"
       data-test-id="src_reacttelephoneinput_test_id_4"
     >
-      <input
-        autoComplete="tel"
-        autoFocus={true}
-        className="form-control"
-        data-test-id="src_reacttelephoneinput_test_id_5"
-        disabled={false}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        placeholder="+1 (702) 123-4567"
-        required={false}
-        type="tel"
-        value="+91 12121"
-      />
       <div
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
         tabIndex={0}
       >
-        <div
+        <button
           className="selected-flag"
           data-test-id="src_reacttelephoneinput_test_id_7"
           onClick={[Function]}
+          onKeyDown={[Function]}
           title="India (भारत): + 91"
         >
           <div
@@ -8645,8 +8634,24 @@ exports[`Keyboard event with searching in the list 1`] = `
               data-test-id="src_reacttelephoneinput_test_id_9"
             />
           </div>
-        </div>
+        </button>
       </div>
+      <input
+        autoComplete="tel"
+        autoFocus={true}
+        className="form-control"
+        data-test-id="src_reacttelephoneinput_test_id_5"
+        disabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="+1 (702) 123-4567"
+        required={false}
+        type="tel"
+        value="+91 12121"
+      />
     </div>
   </ReactTelephoneInput>
 </clickOutside(ReactTelephoneInput)>
@@ -10335,32 +10340,17 @@ exports[`Keyboard event with searching in the list 2`] = `
       className="react-tel-input"
       data-test-id="src_reacttelephoneinput_test_id_4"
     >
-      <input
-        autoComplete="tel"
-        autoFocus={true}
-        className="form-control"
-        data-test-id="src_reacttelephoneinput_test_id_5"
-        disabled={false}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        placeholder="+1 (702) 123-4567"
-        required={false}
-        type="tel"
-        value="+509 1212-1"
-      />
       <div
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
         tabIndex={0}
       >
-        <div
+        <button
           className="selected-flag"
           data-test-id="src_reacttelephoneinput_test_id_7"
           onClick={[Function]}
+          onKeyDown={[Function]}
           title="Haiti: + 509"
         >
           <div
@@ -10377,8 +10367,24 @@ exports[`Keyboard event with searching in the list 2`] = `
               data-test-id="src_reacttelephoneinput_test_id_9"
             />
           </div>
-        </div>
+        </button>
       </div>
+      <input
+        autoComplete="tel"
+        autoFocus={true}
+        className="form-control"
+        data-test-id="src_reacttelephoneinput_test_id_5"
+        disabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="+1 (702) 123-4567"
+        required={false}
+        type="tel"
+        value="+509 1212-1"
+      />
     </div>
   </ReactTelephoneInput>
 </clickOutside(ReactTelephoneInput)>
@@ -12067,32 +12073,17 @@ exports[`Keyboard events with escape key at the end 1`] = `
       className="react-tel-input"
       data-test-id="src_reacttelephoneinput_test_id_4"
     >
-      <input
-        autoComplete="tel"
-        autoFocus={true}
-        className="form-control"
-        data-test-id="src_reacttelephoneinput_test_id_5"
-        disabled={false}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        placeholder="+1 (702) 123-4567"
-        required={false}
-        type="tel"
-        value="+91 12121"
-      />
       <div
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
         tabIndex={0}
       >
-        <div
+        <button
           className="selected-flag"
           data-test-id="src_reacttelephoneinput_test_id_7"
           onClick={[Function]}
+          onKeyDown={[Function]}
           title="India (भारत): + 91"
         >
           <div
@@ -12109,8 +12100,24 @@ exports[`Keyboard events with escape key at the end 1`] = `
               data-test-id="src_reacttelephoneinput_test_id_9"
             />
           </div>
-        </div>
+        </button>
       </div>
+      <input
+        autoComplete="tel"
+        autoFocus={true}
+        className="form-control"
+        data-test-id="src_reacttelephoneinput_test_id_5"
+        disabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="+1 (702) 123-4567"
+        required={false}
+        type="tel"
+        value="+91 12121"
+      />
     </div>
   </ReactTelephoneInput>
 </clickOutside(ReactTelephoneInput)>
@@ -13799,32 +13806,17 @@ exports[`Keyboard events with escape key at the end 2`] = `
       className="react-tel-input"
       data-test-id="src_reacttelephoneinput_test_id_4"
     >
-      <input
-        autoComplete="tel"
-        autoFocus={true}
-        className="form-control"
-        data-test-id="src_reacttelephoneinput_test_id_5"
-        disabled={false}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        placeholder="+1 (702) 123-4567"
-        required={false}
-        type="tel"
-        value="+91 12121"
-      />
       <div
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
         tabIndex={0}
       >
-        <div
+        <button
           className="selected-flag"
           data-test-id="src_reacttelephoneinput_test_id_7"
           onClick={[Function]}
+          onKeyDown={[Function]}
           title="India (भारत): + 91"
         >
           <div
@@ -13841,8 +13833,24 @@ exports[`Keyboard events with escape key at the end 2`] = `
               data-test-id="src_reacttelephoneinput_test_id_9"
             />
           </div>
-        </div>
+        </button>
       </div>
+      <input
+        autoComplete="tel"
+        autoFocus={true}
+        className="form-control"
+        data-test-id="src_reacttelephoneinput_test_id_5"
+        disabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="+1 (702) 123-4567"
+        required={false}
+        type="tel"
+        value="+91 12121"
+      />
     </div>
   </ReactTelephoneInput>
 </clickOutside(ReactTelephoneInput)>
@@ -15531,32 +15539,17 @@ exports[`keyboard event up/down 1`] = `
       className="react-tel-input"
       data-test-id="src_reacttelephoneinput_test_id_4"
     >
-      <input
-        autoComplete="tel"
-        autoFocus={true}
-        className="form-control"
-        data-test-id="src_reacttelephoneinput_test_id_5"
-        disabled={false}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        placeholder="+1 (702) 123-4567"
-        required={false}
-        type="tel"
-        value="+91 12121"
-      />
       <div
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
         tabIndex={0}
       >
-        <div
+        <button
           className="selected-flag"
           data-test-id="src_reacttelephoneinput_test_id_7"
           onClick={[Function]}
+          onKeyDown={[Function]}
           title="India (भारत): + 91"
         >
           <div
@@ -15573,8 +15566,24 @@ exports[`keyboard event up/down 1`] = `
               data-test-id="src_reacttelephoneinput_test_id_9"
             />
           </div>
-        </div>
+        </button>
       </div>
+      <input
+        autoComplete="tel"
+        autoFocus={true}
+        className="form-control"
+        data-test-id="src_reacttelephoneinput_test_id_5"
+        disabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="+1 (702) 123-4567"
+        required={false}
+        type="tel"
+        value="+91 12121"
+      />
     </div>
   </ReactTelephoneInput>
 </clickOutside(ReactTelephoneInput)>
@@ -17263,32 +17272,17 @@ exports[`keyboard event up/down 2`] = `
       className="react-tel-input"
       data-test-id="src_reacttelephoneinput_test_id_4"
     >
-      <input
-        autoComplete="tel"
-        autoFocus={true}
-        className="form-control"
-        data-test-id="src_reacttelephoneinput_test_id_5"
-        disabled={false}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        placeholder="+1 (702) 123-4567"
-        required={false}
-        type="tel"
-        value="+592-121-21"
-      />
       <div
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
         tabIndex={0}
       >
-        <div
+        <button
           className="selected-flag"
           data-test-id="src_reacttelephoneinput_test_id_7"
           onClick={[Function]}
+          onKeyDown={[Function]}
           title="Guyana: + 592"
         >
           <div
@@ -17305,8 +17299,24 @@ exports[`keyboard event up/down 2`] = `
               data-test-id="src_reacttelephoneinput_test_id_9"
             />
           </div>
-        </div>
+        </button>
       </div>
+      <input
+        autoComplete="tel"
+        autoFocus={true}
+        className="form-control"
+        data-test-id="src_reacttelephoneinput_test_id_5"
+        disabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="+1 (702) 123-4567"
+        required={false}
+        type="tel"
+        value="+592-121-21"
+      />
     </div>
   </ReactTelephoneInput>
 </clickOutside(ReactTelephoneInput)>
