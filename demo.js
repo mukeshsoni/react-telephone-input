@@ -24778,7 +24778,8 @@ var ReactTelephoneInput = (_temp = _class = function (_Component) {
             className: 'selected-flag',
             title: this.state.selectedCountry.name + ': + ' + this.state.selectedCountry.dialCode,
             'data-test-id': 'src_reacttelephoneinput_test_id_7',
-            onKeyDown: this.handleFlagKeyDown
+            onKeyDown: this.handleFlagKeyDown,
+            type: 'button'
           },
           __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
             'div',
