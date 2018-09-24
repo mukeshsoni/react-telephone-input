@@ -1690,6 +1690,7 @@ exports[`Interaction test 1 1`] = `
           onClick={[Function]}
           onKeyDown={[Function]}
           title="India (भारत): + 91"
+          type="button"
         >
           <div
             className="flag in"
@@ -3417,6 +3418,7 @@ exports[`Interaction test 1 2`] = `
           onClick={[Function]}
           onKeyDown={[Function]}
           title="Hungary (Magyarország): + 36"
+          type="button"
         >
           <div
             className="flag hu"
@@ -5151,6 +5153,7 @@ exports[`Interaction test 2 1`] = `
           onClick={[Function]}
           onKeyDown={[Function]}
           title="India (भारत): + 91"
+          type="button"
         >
           <div
             className="flag in"
@@ -6886,6 +6889,7 @@ exports[`Interaction test 2 2`] = `
           onClick={[Function]}
           onKeyDown={[Function]}
           title="Hungary (Magyarország): + 36"
+          type="button"
         >
           <div
             className="flag hu"
@@ -8619,6 +8623,7 @@ exports[`Keyboard event with searching in the list 1`] = `
           onClick={[Function]}
           onKeyDown={[Function]}
           title="India (भारत): + 91"
+          type="button"
         >
           <div
             className="flag in"
@@ -10352,6 +10357,7 @@ exports[`Keyboard event with searching in the list 2`] = `
           onClick={[Function]}
           onKeyDown={[Function]}
           title="Haiti: + 509"
+          type="button"
         >
           <div
             className="flag ht"
@@ -12085,6 +12091,7 @@ exports[`Keyboard events with escape key at the end 1`] = `
           onClick={[Function]}
           onKeyDown={[Function]}
           title="India (भारत): + 91"
+          type="button"
         >
           <div
             className="flag in"
@@ -13818,6 +13825,7 @@ exports[`Keyboard events with escape key at the end 2`] = `
           onClick={[Function]}
           onKeyDown={[Function]}
           title="India (भारत): + 91"
+          type="button"
         >
           <div
             className="flag in"
@@ -15551,6 +15559,7 @@ exports[`keyboard event up/down 1`] = `
           onClick={[Function]}
           onKeyDown={[Function]}
           title="India (भारत): + 91"
+          type="button"
         >
           <div
             className="flag in"
@@ -17284,6 +17293,7 @@ exports[`keyboard event up/down 2`] = `
           onClick={[Function]}
           onKeyDown={[Function]}
           title="Guyana: + 592"
+          type="button"
         >
           <div
             className="flag gy"

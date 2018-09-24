@@ -582,6 +582,7 @@ export class ReactTelephoneInput extends Component {
             title={`${this.state.selectedCountry.name}: + ${this.state.selectedCountry.dialCode}`}
             data-test-id="src_reacttelephoneinput_test_id_7"
             onKeyDown={this.handleFlagKeyDown}
+            type="button"
           >
             <div
               className={inputFlagClasses}

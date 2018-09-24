@@ -1677,6 +1677,7 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         onClick={[Function]}
         onKeyDown={[Function]}
         title="India (भारत): + 91"
+        type="button"
       >
         <div
           className="flag in"
@@ -3390,6 +3391,7 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         onClick={[Function]}
         onKeyDown={[Function]}
         title="India (भारत): + 91"
+        type="button"
       >
         <div
           className="flag in"
