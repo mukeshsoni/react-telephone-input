@@ -625,6 +625,7 @@ ReactTelephoneInput.propTypes = {
   value: PropTypes.string,
   initialValue: PropTypes.string,
   autoFormat: PropTypes.bool,
+  numberLength: PropTypes.number,
   defaultCountry: PropTypes.string,
   isValid: PropTypes.func,
   onlyCountries: PropTypes.arrayOf(PropTypes.object),

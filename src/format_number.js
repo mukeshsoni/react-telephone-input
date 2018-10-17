@@ -2,7 +2,7 @@ import R from 'cramda'
 
 const { first, tail } = R
 
-function formatNumber(text, pattern, autoFormat, length) {
+function formatNumber(text, pattern, autoFormat, length = 42) {
   if (!text || text.length === 0) {
     return '+'
   }
@@ -11,6 +11,10 @@ function formatNumber(text, pattern, autoFormat, length) {
   // also return the same text if the selected country has no fixed format
   if ((text && text.length < 2) || !pattern || !autoFormat) {
     return `+${text}`
+  }
+
+  if (length === null) {
+    length = text.length;
   }
 
   if (text.length > length) {
