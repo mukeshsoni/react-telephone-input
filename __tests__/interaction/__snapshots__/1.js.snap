@@ -23,6 +23,7 @@ exports[`Interaction test 1 1`] = `
     initialValue="+9112121"
     inputProps={Object {}}
     isValid={[Function]}
+    itemsLoaded={3}
     listItemClassName="country"
     listStyle={
       Object {
@@ -1751,6 +1752,7 @@ exports[`Interaction test 1 2`] = `
     initialValue="+9112121"
     inputProps={Object {}}
     isValid={[Function]}
+    itemsLoaded={3}
     listItemClassName="country"
     listStyle={
       Object {
@@ -3487,6 +3489,7 @@ exports[`Interaction test 2 1`] = `
       }
     }
     isValid={[Function]}
+    itemsLoaded={3}
     listItemClassName="country"
     listStyle={
       Object {
@@ -5223,6 +5226,7 @@ exports[`Interaction test 2 2`] = `
       }
     }
     isValid={[Function]}
+    itemsLoaded={3}
     listItemClassName="country"
     listStyle={
       Object {
@@ -6958,6 +6962,7 @@ exports[`Keyboard event with searching in the list 1`] = `
       }
     }
     isValid={[Function]}
+    itemsLoaded={3}
     listItemClassName="country"
     listStyle={
       Object {
@@ -8692,6 +8697,7 @@ exports[`Keyboard event with searching in the list 2`] = `
       }
     }
     isValid={[Function]}
+    itemsLoaded={3}
     listItemClassName="country"
     listStyle={
       Object {
@@ -10426,6 +10432,7 @@ exports[`Keyboard events with escape key at the end 1`] = `
       }
     }
     isValid={[Function]}
+    itemsLoaded={3}
     listItemClassName="country"
     listStyle={
       Object {
@@ -12160,6 +12167,7 @@ exports[`Keyboard events with escape key at the end 2`] = `
       }
     }
     isValid={[Function]}
+    itemsLoaded={3}
     listItemClassName="country"
     listStyle={
       Object {
@@ -13894,6 +13902,7 @@ exports[`keyboard event up/down 1`] = `
       }
     }
     isValid={[Function]}
+    itemsLoaded={3}
     listItemClassName="country"
     listStyle={
       Object {
@@ -15628,6 +15637,7 @@ exports[`keyboard event up/down 2`] = `
       }
     }
     isValid={[Function]}
+    itemsLoaded={3}
     listItemClassName="country"
     listStyle={
       Object {

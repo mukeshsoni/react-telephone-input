@@ -55,6 +55,7 @@ export class ReactTelephoneInput extends Component {
     defaultCountry: allCountries[0].iso2,
     isValid: isNumberValid,
     flagsImagePath: 'flags.png',
+    itemsLoaded: 3,
     onEnterKeyPress() {},
     preferredCountries: [],
     disabled: false,
@@ -477,6 +478,7 @@ export class ReactTelephoneInput extends Component {
         height={300}
         itemCount={data.length}
         itemSize={40}
+        overscanCount={this.props.itemsLoaded}
         style={this.props.listStyle}
         className="country-list"
         scrollToIndex={this.state.highlightCountryIndex}
@@ -633,6 +635,7 @@ ReactTelephoneInput.propTypes = {
   classNames: PropTypes.string,
   className: PropTypes.string,
   inputId: PropTypes.string,
+  itemsLoaded: PropTypes.number,
   onChange: PropTypes.func,
   onEnterKeyPress: PropTypes.func,
   onBlur: PropTypes.func,

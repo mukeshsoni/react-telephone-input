@@ -21,6 +21,7 @@
     "deploy": "gh-pages -d demo/dist"
   },
   "jest": {
+    "testURL": "http://localhost",
     "transform": {
       "^.+\\.js$": "./jest.transform.js"
     },
@@ -67,7 +68,8 @@
     "nwb": "^0.21.5",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "regenerator-runtime": "0.10.5"
+    "regenerator-runtime": "0.10.5",
+    "styled-components": "^4.0.3"
   },
   "dependencies": {
     "classnames": "^2.1.2",

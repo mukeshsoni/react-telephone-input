@@ -10,6 +10,7 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
   initialValue="+9112121"
   inputProps={Object {}}
   isValid={[Function]}
+  itemsLoaded={3}
   listItemClassName="country"
   listStyle={
     Object {
@@ -1724,6 +1725,7 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
   initialValue="+9112121"
   inputProps={Object {}}
   isValid={[Function]}
+  itemsLoaded={3}
   listItemClassName="country"
   listStyle={
     Object {

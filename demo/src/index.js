@@ -4,6 +4,7 @@ import { render } from 'react-dom'
 
 // import ReactTelephoneInput from '../../src/withStyles'
 import RTI from '../../src/withStyles'
+import MRTI from '../../src/withMobileStyle'
 
 // const RTI = testGenerator(ReactTelephoneInput)
 
@@ -19,6 +20,15 @@ const Demo = () => {
       <h1>React Telephone Input Demo</h1>
       <h4>Base case</h4>
       <RTI
+        preferredCountries={['af', 'al']}
+        defaultCountry="in"
+        flagsImagePath={require('../../images/flags.png')}
+        initialValue="+9112121"
+        inputProps={{ autoFocus: true }}
+      />
+      <h4>With a full screen style in mobile view</h4>
+      <MRTI
+        itemsLoaded={40}
         preferredCountries={['af', 'al']}
         defaultCountry="in"
         flagsImagePath={require('../../images/flags.png')}
