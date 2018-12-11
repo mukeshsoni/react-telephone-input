@@ -17,6 +17,7 @@ exports[`Interaction test 1 1`] = `
   <ReactTelephoneInput
     autoComplete="tel"
     autoFormat={true}
+    buttonProps={Object {}}
     defaultCountry="us"
     disabled={false}
     flagsImagePath="flags.png"
@@ -1682,7 +1683,6 @@ exports[`Interaction test 1 1`] = `
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
-        tabIndex={0}
       >
         <button
           className="selected-flag"
@@ -1745,6 +1745,7 @@ exports[`Interaction test 1 2`] = `
   <ReactTelephoneInput
     autoComplete="tel"
     autoFormat={true}
+    buttonProps={Object {}}
     defaultCountry="us"
     disabled={false}
     flagsImagePath="flags.png"
@@ -3410,7 +3411,6 @@ exports[`Interaction test 1 2`] = `
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
-        tabIndex={0}
       >
         <button
           className="selected-flag"
@@ -3477,6 +3477,7 @@ exports[`Interaction test 2 1`] = `
   <ReactTelephoneInput
     autoComplete="tel"
     autoFormat={true}
+    buttonProps={Object {}}
     defaultCountry="in"
     disabled={false}
     flagsImagePath="/flags.723494a4.png"
@@ -5145,7 +5146,6 @@ exports[`Interaction test 2 1`] = `
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
-        tabIndex={0}
       >
         <button
           className="selected-flag"
@@ -5213,6 +5213,7 @@ exports[`Interaction test 2 2`] = `
   <ReactTelephoneInput
     autoComplete="tel"
     autoFormat={true}
+    buttonProps={Object {}}
     defaultCountry="in"
     disabled={false}
     flagsImagePath="/flags.723494a4.png"
@@ -6881,7 +6882,6 @@ exports[`Interaction test 2 2`] = `
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
-        tabIndex={0}
       >
         <button
           className="selected-flag"
@@ -6948,6 +6948,7 @@ exports[`Keyboard event with searching in the list 1`] = `
   <ReactTelephoneInput
     autoComplete="tel"
     autoFormat={true}
+    buttonProps={Object {}}
     defaultCountry="in"
     disabled={false}
     flagsImagePath="/flags.723494a4.png"
@@ -8615,7 +8616,6 @@ exports[`Keyboard event with searching in the list 1`] = `
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
-        tabIndex={0}
       >
         <button
           className="selected-flag"
@@ -8682,6 +8682,7 @@ exports[`Keyboard event with searching in the list 2`] = `
   <ReactTelephoneInput
     autoComplete="tel"
     autoFormat={true}
+    buttonProps={Object {}}
     defaultCountry="in"
     disabled={false}
     flagsImagePath="/flags.723494a4.png"
@@ -10349,7 +10350,6 @@ exports[`Keyboard event with searching in the list 2`] = `
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
-        tabIndex={0}
       >
         <button
           className="selected-flag"
@@ -10416,6 +10416,7 @@ exports[`Keyboard events with escape key at the end 1`] = `
   <ReactTelephoneInput
     autoComplete="tel"
     autoFormat={true}
+    buttonProps={Object {}}
     defaultCountry="in"
     disabled={false}
     flagsImagePath="/flags.723494a4.png"
@@ -12083,7 +12084,6 @@ exports[`Keyboard events with escape key at the end 1`] = `
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
-        tabIndex={0}
       >
         <button
           className="selected-flag"
@@ -12150,6 +12150,7 @@ exports[`Keyboard events with escape key at the end 2`] = `
   <ReactTelephoneInput
     autoComplete="tel"
     autoFormat={true}
+    buttonProps={Object {}}
     defaultCountry="in"
     disabled={false}
     flagsImagePath="/flags.723494a4.png"
@@ -13817,7 +13818,6 @@ exports[`Keyboard events with escape key at the end 2`] = `
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
-        tabIndex={0}
       >
         <button
           className="selected-flag"
@@ -13884,6 +13884,7 @@ exports[`keyboard event up/down 1`] = `
   <ReactTelephoneInput
     autoComplete="tel"
     autoFormat={true}
+    buttonProps={Object {}}
     defaultCountry="in"
     disabled={false}
     flagsImagePath="/flags.723494a4.png"
@@ -15551,7 +15552,6 @@ exports[`keyboard event up/down 1`] = `
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
-        tabIndex={0}
       >
         <button
           className="selected-flag"
@@ -15618,6 +15618,7 @@ exports[`keyboard event up/down 2`] = `
   <ReactTelephoneInput
     autoComplete="tel"
     autoFormat={true}
+    buttonProps={Object {}}
     defaultCountry="in"
     disabled={false}
     flagsImagePath="/flags.723494a4.png"
@@ -17285,7 +17286,6 @@ exports[`keyboard event up/down 2`] = `
         className="flag-dropdown"
         data-test-id="src_reacttelephoneinput_test_id_6"
         onKeyDown={[Function]}
-        tabIndex={0}
       >
         <button
           className="selected-flag"

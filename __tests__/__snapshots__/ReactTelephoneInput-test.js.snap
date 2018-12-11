@@ -4,6 +4,7 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
 <ReactTelephoneInput
   autoComplete="tel"
   autoFormat={true}
+  buttonProps={Object {}}
   defaultCountry="us"
   disabled={false}
   flagsImagePath="flags.png"
@@ -1669,7 +1670,6 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
       className="flag-dropdown"
       data-test-id="src_reacttelephoneinput_test_id_6"
       onKeyDown={[Function]}
-      tabIndex={0}
     >
       <button
         className="selected-flag"
@@ -1718,6 +1718,7 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
 <ReactTelephoneInput
   autoComplete="tel"
   autoFormat={true}
+  buttonProps={Object {}}
   defaultCountry="us"
   disabled={false}
   flagsImagePath="flags.png"
@@ -3383,7 +3384,6 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
       className="flag-dropdown"
       data-test-id="src_reacttelephoneinput_test_id_6"
       onKeyDown={[Function]}
-      tabIndex={0}
     >
       <button
         className="selected-flag"
