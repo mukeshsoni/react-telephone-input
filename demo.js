@@ -24751,6 +24751,7 @@ var ReactTelephoneInput = (_temp = _class = function (_Component) {
     });
 
     var inputFlagClasses = 'flag ' + this.state.selectedCountry.iso2;
+    var buttonProps = this.props.buttonProps;
     var otherProps = this.props.inputProps;
     if (this.props.inputId) {
       otherProps.id = this.props.inputId;
@@ -24768,19 +24769,17 @@ var ReactTelephoneInput = (_temp = _class = function (_Component) {
           className: flagViewClasses,
           onKeyDown: this.handleKeydown,
           'data-test-id': 'src_reacttelephoneinput_test_id_6'
-          // this is crucial if we want keyboard up/down events to be heard through this div and not document.body
-          , tabIndex: 0
         },
         __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
           'button',
-          {
+          _extends({
             onClick: this.handleFlagDropdownClick,
             className: 'selected-flag',
             title: this.state.selectedCountry.name + ': + ' + this.state.selectedCountry.dialCode,
             'data-test-id': 'src_reacttelephoneinput_test_id_7',
             onKeyDown: this.handleFlagKeyDown,
             type: 'button'
-          },
+          }, buttonProps),
           __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
             'div',
             {
@@ -24831,6 +24830,7 @@ var ReactTelephoneInput = (_temp = _class = function (_Component) {
   autoComplete: 'tel',
   required: false,
   inputProps: {},
+  buttonProps: {},
   listItemClassName: 'country',
   listStyle: {
     zIndex: 20,
@@ -25256,6 +25256,7 @@ ReactTelephoneInput.propTypes = {
   pattern: __WEBPACK_IMPORTED_MODULE_5_prop_types___default.a.string,
   required: __WEBPACK_IMPORTED_MODULE_5_prop_types___default.a.bool,
   inputProps: __WEBPACK_IMPORTED_MODULE_5_prop_types___default.a.object,
+  buttonProps: __WEBPACK_IMPORTED_MODULE_5_prop_types___default.a.object,
   listStyle: __WEBPACK_IMPORTED_MODULE_5_prop_types___default.a.object,
   listItemClassName: __WEBPACK_IMPORTED_MODULE_5_prop_types___default.a.string
 };
