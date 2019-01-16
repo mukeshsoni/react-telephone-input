@@ -62,6 +62,7 @@ export class ReactTelephoneInput extends Component {
     autoComplete: 'tel',
     required: false,
     inputProps: {},
+    buttonProps: {},
     listItemClassName: 'country',
     listStyle: {
       zIndex: 20,
@@ -559,10 +560,11 @@ export class ReactTelephoneInput extends Component {
     })
 
     const inputFlagClasses = `flag ${this.state.selectedCountry.iso2}`
+    const buttonProps = this.props.buttonProps
     const otherProps = this.props.inputProps
     if (this.props.inputId) {
       otherProps.id = this.props.inputId
-    }
+    }    
 
     return (
       <div
@@ -573,8 +575,6 @@ export class ReactTelephoneInput extends Component {
           className={flagViewClasses}
           onKeyDown={this.handleKeydown}
           data-test-id="src_reacttelephoneinput_test_id_6"
-          // this is crucial if we want keyboard up/down events to be heard through this div and not document.body
-          tabIndex={0}
         >
           <button
             onClick={this.handleFlagDropdownClick}
@@ -583,6 +583,7 @@ export class ReactTelephoneInput extends Component {
             data-test-id="src_reacttelephoneinput_test_id_7"
             onKeyDown={this.handleFlagKeyDown}
             type="button"
+            {...buttonProps}
           >
             <div
               className={inputFlagClasses}
@@ -641,6 +642,7 @@ ReactTelephoneInput.propTypes = {
   pattern: PropTypes.string,
   required: PropTypes.bool,
   inputProps: PropTypes.object,
+  buttonProps: PropTypes.object,
   listStyle: PropTypes.object,
   listItemClassName: PropTypes.string
 }
