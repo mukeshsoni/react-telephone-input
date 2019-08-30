@@ -67,7 +67,7 @@
     "nwb": "^0.23.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "regenerator-runtime": "0.10.5"
+    "regenerator-runtime": "0.13.3"
   },
   "dependencies": {
     "classnames": "^2.1.2",
