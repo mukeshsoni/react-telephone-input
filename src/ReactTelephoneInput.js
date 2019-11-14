@@ -76,11 +76,10 @@ export class ReactTelephoneInput extends Component {
     super(props)
 
     const preferredCountries = props.preferredCountries
-      .map(
-        iso2 =>
-          Object.prototype.hasOwnProperty.call(iso2Lookup, iso2)
-            ? allCountries[iso2Lookup[iso2]]
-            : null
+      .map(iso2 =>
+        Object.prototype.hasOwnProperty.call(iso2Lookup, iso2)
+          ? allCountries[iso2Lookup[iso2]]
+          : null
       )
       .filter(val => val !== null)
 
@@ -102,7 +101,7 @@ export class ReactTelephoneInput extends Component {
     return !equals(nextProps, this.props) || !equals(nextState, this.state)
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState(this._mapPropsToState(nextProps))
   }
 
@@ -511,9 +510,10 @@ export class ReactTelephoneInput extends Component {
               <span className="country-name" data-test-id="src_reacttelephoneinput_test_id_2">
                 {country.name}
               </span>
-              <span className="dial-code" data-test-id="src_reacttelephoneinput_test_id_3">{`+${
-                country.dialCode
-              }`}</span>
+              <span
+                className="dial-code"
+                data-test-id="src_reacttelephoneinput_test_id_3"
+              >{`+${country.dialCode}`}</span>
             </div>
           )
         }}
@@ -564,7 +564,7 @@ export class ReactTelephoneInput extends Component {
     const otherProps = this.props.inputProps
     if (this.props.inputId) {
       otherProps.id = this.props.inputId
-    }    
+    }
 
     return (
       <div
