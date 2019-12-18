@@ -233,7 +233,7 @@ export class ReactTelephoneInput extends Component {
         newSelectedCountry = this.guessSelectedCountry(inputNumber.substring(0, 6))
         freezeSelection = false
       }
-      formattedNumber = formatNumber(inputNumber, newSelectedCountry.format, this.props.autoFormat)
+      formattedNumber = formatNumber(inputNumber, newSelectedCountry.format, this.props.autoFormat, this.props.numberLength)
     }
 
     let caretPosition = event.target.selectionStart
@@ -291,7 +291,8 @@ export class ReactTelephoneInput extends Component {
       const formattedNumber = formatNumber(
         newNumber,
         nextSelectedCountry.format,
-        this.props.autoFormat
+        this.props.autoFormat,
+        this.props.numberLength
       )
 
       this.setState(
@@ -346,7 +347,8 @@ export class ReactTelephoneInput extends Component {
     const formattedNumber = formatNumber(
       inputNumber.replace(/\D/g, ''),
       selectedCountryGuess ? selectedCountryGuess.format : null,
-      this.props.autoFormat
+      this.props.autoFormat,
+      this.props.numberLength
     )
 
     return {
@@ -624,6 +626,7 @@ ReactTelephoneInput.propTypes = {
   value: PropTypes.string,
   initialValue: PropTypes.string,
   autoFormat: PropTypes.bool,
+  numberLength: PropTypes.number,
   defaultCountry: PropTypes.string,
   isValid: PropTypes.func,
   onlyCountries: PropTypes.arrayOf(PropTypes.object),
