@@ -65,8 +65,8 @@
     "gh-pages": "^1.1.0",
     "jest": "^22.4.3",
     "nwb": "^0.23.0",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "regenerator-runtime": "0.13.3"
   },
   "dependencies": {
@@ -77,7 +77,7 @@
     "lodash.memoize": "^4.1.2",
     "prop-types": "^15.5.10",
     "react-click-outside": "^3.0.1",
-    "react-tiny-virtual-list": "^2.1.4"
+    "react-tiny-virtual-list": "git://github.com/peakon/react-tiny-virtual-list.git#build"
   },
   "peerDependencies": {
     "react": ">=0.14.0 || ^15.0.0 || ^16.0.0"

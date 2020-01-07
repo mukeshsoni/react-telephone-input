@@ -102,7 +102,7 @@ export class ReactTelephoneInput extends Component {
     return !equals(nextProps, this.props) || !equals(nextState, this.state)
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState(this._mapPropsToState(nextProps))
   }
 
