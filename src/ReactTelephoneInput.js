@@ -16,7 +16,7 @@ import guessSelectedCountry from './guessSelectedCountry'
 
 const { find, propEq, equals, findIndex, startsWith } = R
 
-const { allCountries, iso2Lookup, allCountryCodes } = countryData
+const { allCountries, iso2Lookup } = countryData
 let isModernBrowser = true
 
 if (typeof document !== 'undefined') {
@@ -78,10 +78,9 @@ export class ReactTelephoneInput extends Component {
 
     const preferredCountries = props.preferredCountries
       .map(
-        iso2 =>
-          Object.prototype.hasOwnProperty.call(iso2Lookup, iso2)
-            ? allCountries[iso2Lookup[iso2]]
-            : null
+        iso2 => Object.prototype.hasOwnProperty.call(iso2Lookup, iso2)
+          ? allCountries[iso2Lookup[iso2]]
+          : null
       )
       .filter(val => val !== null)
 
@@ -105,12 +104,12 @@ export class ReactTelephoneInput extends Component {
 
   static getDerivedStateFromProps(props, state) {
     let inputNumber
-    
+
     if (props.value) {
       inputNumber = props.value
     } else if (props.initialValue && state.firstCall) {
       inputNumber = props.initialValue
-    } else if (props.value) {
+    } else if (props.value === null) {
       // just clear the value
       inputNumber = ''
     } else if (state && state.formattedNumber && state.formattedNumber.length > 0) {
@@ -201,8 +200,8 @@ export class ReactTelephoneInput extends Component {
       // the guess country function can then use memoization much more effectively
       // since the set of input it gets has drastically reduced
       if (
-        !this.state.freezeSelection ||
-        this.state.selectedCountry.dialCode.length > inputNumber.length
+        !this.state.freezeSelection
+        || this.state.selectedCountry.dialCode.length > inputNumber.length
       ) {
         newSelectedCountry = guessSelectedCountry(inputNumber.substring(0, 6), this.props)
         freezeSelection = false
@@ -213,8 +212,7 @@ export class ReactTelephoneInput extends Component {
     let caretPosition = event.target.selectionStart
     const oldFormattedText = this.state.formattedNumber
     const diff = formattedNumber.length - oldFormattedText.length
-    const selectedCountry =
-      newSelectedCountry.dialCode.length > 0 ? newSelectedCountry : this.state.selectedCountry
+    const selectedCountry = newSelectedCountry.dialCode.length > 0 ? newSelectedCountry : this.state.selectedCountry
 
     this.setState(
       {
@@ -310,9 +308,8 @@ export class ReactTelephoneInput extends Component {
     const highlightCountryIndex = this.state.highlightCountryIndex + direction
 
     if (
-      highlightCountryIndex < 0 ||
-      highlightCountryIndex >=
-      this.props.onlyCountries.length + this.state.preferredCountries.length
+      highlightCountryIndex < 0
+      || highlightCountryIndex >= this.props.onlyCountries.length + this.state.preferredCountries.length
     ) {
       return highlightCountryIndex - direction
     }
@@ -334,11 +331,11 @@ export class ReactTelephoneInput extends Component {
   })
 
   searchCountry = () => {
-    const probableCandidate =
-      this._searchCountry(this.state.queryString) || this.props.onlyCountries[0]
-    const probableCandidateIndex =
-      findIndex(propEq('iso2', probableCandidate.iso2), this.props.onlyCountries) +
-      this.state.preferredCountries.length
+    const probableCandidate = this._searchCountry(this.state.queryString) || this.props.onlyCountries[0]
+    const probableCandidateIndex = findIndex(
+      propEq('iso2', probableCandidate.iso2),
+      this.props.onlyCountries
+    ) + this.state.preferredCountries.length
 
     this.setState({
       queryString: '',
@@ -374,9 +371,7 @@ export class ReactTelephoneInput extends Component {
         break
       case keys.ENTER:
         this.handleFlagItemClick(
-          this.state.preferredCountries.concat(this.props.onlyCountries)[
-          this.state.highlightCountryIndex
-          ],
+          this.state.preferredCountries.concat(this.props.onlyCountries)[this.state.highlightCountryIndex],
           event
         )
         break
@@ -396,8 +391,8 @@ export class ReactTelephoneInput extends Component {
   }
 
   handleInputKeyDown = event => {
-    if (event.which === keys.ENTER) {
-      typeof this.props.onEnterKeyPress === 'function' && this.props.onEnterKeyPress(event)
+    if (event.which === keys.ENTER && typeof this.props.onEnterKeyPress === 'function') {
+      this.props.onEnterKeyPress(event)
     }
   }
 
@@ -453,7 +448,7 @@ export class ReactTelephoneInput extends Component {
               </span>
               <span className="dial-code" data-test-id="src_reacttelephoneinput_test_id_3">{`+${
                 country.dialCode
-                }`}</span>
+              }`}</span>
             </div>
           )
         }}
@@ -500,7 +495,7 @@ export class ReactTelephoneInput extends Component {
     })
 
     const inputFlagClasses = `flag ${this.state.selectedCountry.iso2}`
-    const buttonProps = this.props.buttonProps
+    const { buttonProps } = this.props
     const otherProps = this.props.inputProps
     if (this.props.inputId) {
       otherProps.id = this.props.inputId

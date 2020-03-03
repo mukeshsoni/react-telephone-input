@@ -5,6 +5,7 @@ import Adapter from 'enzyme-adapter-react-16'
 import TestUtils from 'react-dom/test-utils'
 import countryData from 'country-telephone-data'
 import toJson, { createSerializer } from 'enzyme-to-json'
+import guessSelectedCountry from '../src/guessSelectedCountry'
 
 import { ReactTelephoneInput } from '../src/ReactTelephoneInput'
 
@@ -120,23 +121,29 @@ describe('react telephone input', () => {
   })
 
   it('should guess selected country', () => {
+    
+    const props = {
+      onlyCountries: allCountries,
+      defaultCountry: allCountries[0].iso2,
+    }
+    
     rti = TestUtils.renderIntoDocument(React.createElement(ReactTelephoneInput, {}))
     // if nothing is sent in, select the first country in allCountries list as the default
-    expect(rti.guessSelectedCountry('').iso2).toEqual(allCountries[0].iso2)
+    expect(guessSelectedCountry('', props).iso2).toEqual(allCountries[0].iso2)
 
     // if input value is sent, select appropriately
-    expect(rti.guessSelectedCountry('12').iso2).toEqual('us') // based on priority
-    expect(rti.guessSelectedCountry('12112121').iso2).toEqual('us')
-    expect(rti.guessSelectedCountry('913212121').iso2).toEqual('in')
-    expect(rti.guessSelectedCountry('237').iso2).toEqual('cm') // based on priority
-    expect(rti.guessSelectedCountry('599').iso2).toEqual('cw')
-    expect(rti.guessSelectedCountry('590').iso2).toEqual('gp')
-    expect(rti.guessSelectedCountry('1403').iso2).toEqual('ca')
-    expect(rti.guessSelectedCountry('18005').iso2).toEqual('us')
-    expect(rti.guessSelectedCountry('1809').iso2).toEqual('do')
+    expect(guessSelectedCountry('12', props).iso2).toEqual('us') // based on priority
+    expect(guessSelectedCountry('12112121', props).iso2).toEqual('us')
+    expect(guessSelectedCountry('913212121', props).iso2).toEqual('in')
+    expect(guessSelectedCountry('237', props).iso2).toEqual('cm') // based on priority
+    expect(guessSelectedCountry('599', props).iso2).toEqual('cw')
+    expect(guessSelectedCountry('590', props).iso2).toEqual('gp')
+    expect(guessSelectedCountry('1403', props).iso2).toEqual('ca')
+    expect(guessSelectedCountry('18005', props).iso2).toEqual('us')
+    expect(guessSelectedCountry('1809', props).iso2).toEqual('do')
 
     // select the first one if not able to resolve completely
-    expect(rti.guessSelectedCountry('59').iso2).toEqual(allCountries[0].iso2)
+    expect(guessSelectedCountry('59', props).iso2).toEqual(allCountries[0].iso2)
   })
 
   it('should set the correct highlightCountryIndex', () => {
