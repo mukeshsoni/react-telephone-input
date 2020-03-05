@@ -174,7 +174,7 @@ function handleInputBlur(telNumber, selectedCountry) {
   )
 }
 
-;<ReactTelephoneInput
+<ReactTelephoneInput
   defaultCountry="in"
   flagsImagePath="/path/to/images/flags.png"
   onChange={handleInputChange}
@@ -199,7 +199,7 @@ You can try the app by downloading everything and running the commands given bel
 $ npm install
 $ npm start
 
-go to your browser and type `http://localhost:3000`
+go to your browser and type http://localhost:3000
 ```
 
 [build-badge]: https://img.shields.io/travis/mukeshsoni/react-telephone-input/master.png?style=flat-square
