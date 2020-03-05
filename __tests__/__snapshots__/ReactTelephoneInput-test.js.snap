@@ -29,6 +29,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "priority": 0,
       },
       Object {
+        "dialCode": "358",
+        "iso2": "ax",
+        "name": "Åland Islands",
+        "priority": 0,
+      },
+      Object {
         "dialCode": "355",
         "format": "+...(...)...-...",
         "iso2": "al",
@@ -68,6 +74,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "format": "+.(...)...-....",
         "iso2": "ai",
         "name": "Anguilla",
+        "priority": 0,
+      },
+      Object {
+        "dialCode": "672",
+        "iso2": "aq",
+        "name": "Antarctica",
         "priority": 0,
       },
       Object {
@@ -211,6 +223,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "priority": 0,
       },
       Object {
+        "dialCode": "47",
+        "iso2": "bv",
+        "name": "Bouvet Island",
+        "priority": 0,
+      },
+      Object {
         "dialCode": "55",
         "format": "+..-..-....-....",
         "iso2": "br",
@@ -328,6 +346,18 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "format": "+.. ..-........",
         "iso2": "cn",
         "name": "China (中国)",
+        "priority": 0,
+      },
+      Object {
+        "dialCode": "61",
+        "iso2": "cx",
+        "name": "Christmas Island",
+        "priority": 0,
+      },
+      Object {
+        "dialCode": "61",
+        "iso2": "cc",
+        "name": "Cocos (Keeling) Islands",
         "priority": 0,
       },
       Object {
@@ -515,7 +545,7 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
       },
       Object {
         "dialCode": "358",
-        "format": "+... .. ... .. ..",
+        "format": "+... .. .... ....",
         "iso2": "fi",
         "name": "Finland (Suomi)",
         "priority": 0,
@@ -539,6 +569,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "format": "+...-..-..-..",
         "iso2": "pf",
         "name": "French Polynesia (Polynésie française)",
+        "priority": 0,
+      },
+      Object {
+        "dialCode": "262",
+        "iso2": "tf",
+        "name": "French Southern and Antarctic Lands",
         "priority": 0,
       },
       Object {
@@ -625,6 +661,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "priority": 0,
       },
       Object {
+        "dialCode": "44",
+        "iso2": "gg",
+        "name": "Guernsey",
+        "priority": 0,
+      },
+      Object {
         "dialCode": "224",
         "format": "+...-..-...-...",
         "iso2": "gn",
@@ -650,6 +692,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "format": "+... ....-....",
         "iso2": "ht",
         "name": "Haiti",
+        "priority": 0,
+      },
+      Object {
+        "dialCode": "672",
+        "iso2": "hm",
+        "name": "Heard Island and McDonald Islands",
         "priority": 0,
       },
       Object {
@@ -716,6 +764,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "priority": 0,
       },
       Object {
+        "dialCode": "44",
+        "iso2": "im",
+        "name": "Isle of Man",
+        "priority": 0,
+      },
+      Object {
         "dialCode": "972",
         "format": "+...-.-...-....",
         "iso2": "il",
@@ -744,6 +798,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "priority": 0,
       },
       Object {
+        "dialCode": "44",
+        "iso2": "je",
+        "name": "Jersey",
+        "priority": 0,
+      },
+      Object {
         "dialCode": "962",
         "format": "+...-.-....-....",
         "iso2": "jo",
@@ -769,6 +829,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "format": "+...-..-...",
         "iso2": "ki",
         "name": "Kiribati",
+        "priority": 0,
+      },
+      Object {
+        "dialCode": "383",
+        "iso2": "xk",
+        "name": "Kosovo",
         "priority": 0,
       },
       Object {
@@ -930,6 +996,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "format": "+...-...-....",
         "iso2": "mu",
         "name": "Mauritius (Moris)",
+        "priority": 0,
+      },
+      Object {
+        "dialCode": "262",
+        "iso2": "yt",
+        "name": "Mayotte",
         "priority": 0,
       },
       Object {
@@ -1164,6 +1236,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "priority": 0,
       },
       Object {
+        "dialCode": "64",
+        "iso2": "pn",
+        "name": "Pitcairn Islands",
+        "priority": 0,
+      },
+      Object {
         "dialCode": "48",
         "format": "+.. ...-...-...",
         "iso2": "pl",
@@ -1179,6 +1257,7 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
       },
       Object {
         "dialCode": "1",
+        "format": "+. (...) ...-....",
         "hasAreaCodes": true,
         "iso2": "pr",
         "name": "Puerto Rico",
@@ -1370,6 +1449,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "priority": 0,
       },
       Object {
+        "dialCode": "500",
+        "iso2": "gs",
+        "name": "South Georgia and the South Sandwich Islands",
+        "priority": 0,
+      },
+      Object {
         "dialCode": "82",
         "format": "+..-..-...-....",
         "iso2": "kr",
@@ -1409,6 +1494,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "format": "+...-...-...",
         "iso2": "sr",
         "name": "Suriname",
+        "priority": 0,
+      },
+      Object {
+        "dialCode": "47",
+        "iso2": "sj",
+        "name": "Svalbard and Jan Mayen",
         "priority": 0,
       },
       Object {
@@ -1580,6 +1671,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "priority": 0,
       },
       Object {
+        "dialCode": "1",
+        "iso2": "um",
+        "name": "United States Minor Outlying Islands",
+        "priority": 0,
+      },
+      Object {
         "dialCode": "598",
         "format": "+...-.-...-..-..",
         "iso2": "uy",
@@ -1626,6 +1723,13 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "format": "+...-..-....",
         "iso2": "wf",
         "name": "Wallis and Futuna",
+        "priority": 0,
+      },
+      Object {
+        "dialCode": "212",
+        "format": "+...-..-....",
+        "iso2": "eh",
+        "name": "Western Sahara",
         "priority": 0,
       },
       Object {
@@ -1743,6 +1847,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "priority": 0,
       },
       Object {
+        "dialCode": "358",
+        "iso2": "ax",
+        "name": "Åland Islands",
+        "priority": 0,
+      },
+      Object {
         "dialCode": "355",
         "format": "+...(...)...-...",
         "iso2": "al",
@@ -1782,6 +1892,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "format": "+.(...)...-....",
         "iso2": "ai",
         "name": "Anguilla",
+        "priority": 0,
+      },
+      Object {
+        "dialCode": "672",
+        "iso2": "aq",
+        "name": "Antarctica",
         "priority": 0,
       },
       Object {
@@ -1925,6 +2041,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "priority": 0,
       },
       Object {
+        "dialCode": "47",
+        "iso2": "bv",
+        "name": "Bouvet Island",
+        "priority": 0,
+      },
+      Object {
         "dialCode": "55",
         "format": "+..-..-....-....",
         "iso2": "br",
@@ -2042,6 +2164,18 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "format": "+.. ..-........",
         "iso2": "cn",
         "name": "China (中国)",
+        "priority": 0,
+      },
+      Object {
+        "dialCode": "61",
+        "iso2": "cx",
+        "name": "Christmas Island",
+        "priority": 0,
+      },
+      Object {
+        "dialCode": "61",
+        "iso2": "cc",
+        "name": "Cocos (Keeling) Islands",
         "priority": 0,
       },
       Object {
@@ -2229,7 +2363,7 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
       },
       Object {
         "dialCode": "358",
-        "format": "+... .. ... .. ..",
+        "format": "+... .. .... ....",
         "iso2": "fi",
         "name": "Finland (Suomi)",
         "priority": 0,
@@ -2253,6 +2387,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "format": "+...-..-..-..",
         "iso2": "pf",
         "name": "French Polynesia (Polynésie française)",
+        "priority": 0,
+      },
+      Object {
+        "dialCode": "262",
+        "iso2": "tf",
+        "name": "French Southern and Antarctic Lands",
         "priority": 0,
       },
       Object {
@@ -2339,6 +2479,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "priority": 0,
       },
       Object {
+        "dialCode": "44",
+        "iso2": "gg",
+        "name": "Guernsey",
+        "priority": 0,
+      },
+      Object {
         "dialCode": "224",
         "format": "+...-..-...-...",
         "iso2": "gn",
@@ -2364,6 +2510,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "format": "+... ....-....",
         "iso2": "ht",
         "name": "Haiti",
+        "priority": 0,
+      },
+      Object {
+        "dialCode": "672",
+        "iso2": "hm",
+        "name": "Heard Island and McDonald Islands",
         "priority": 0,
       },
       Object {
@@ -2430,6 +2582,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "priority": 0,
       },
       Object {
+        "dialCode": "44",
+        "iso2": "im",
+        "name": "Isle of Man",
+        "priority": 0,
+      },
+      Object {
         "dialCode": "972",
         "format": "+...-.-...-....",
         "iso2": "il",
@@ -2458,6 +2616,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "priority": 0,
       },
       Object {
+        "dialCode": "44",
+        "iso2": "je",
+        "name": "Jersey",
+        "priority": 0,
+      },
+      Object {
         "dialCode": "962",
         "format": "+...-.-....-....",
         "iso2": "jo",
@@ -2483,6 +2647,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "format": "+...-..-...",
         "iso2": "ki",
         "name": "Kiribati",
+        "priority": 0,
+      },
+      Object {
+        "dialCode": "383",
+        "iso2": "xk",
+        "name": "Kosovo",
         "priority": 0,
       },
       Object {
@@ -2644,6 +2814,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "format": "+...-...-....",
         "iso2": "mu",
         "name": "Mauritius (Moris)",
+        "priority": 0,
+      },
+      Object {
+        "dialCode": "262",
+        "iso2": "yt",
+        "name": "Mayotte",
         "priority": 0,
       },
       Object {
@@ -2878,6 +3054,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "priority": 0,
       },
       Object {
+        "dialCode": "64",
+        "iso2": "pn",
+        "name": "Pitcairn Islands",
+        "priority": 0,
+      },
+      Object {
         "dialCode": "48",
         "format": "+.. ...-...-...",
         "iso2": "pl",
@@ -2893,6 +3075,7 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
       },
       Object {
         "dialCode": "1",
+        "format": "+. (...) ...-....",
         "hasAreaCodes": true,
         "iso2": "pr",
         "name": "Puerto Rico",
@@ -3084,6 +3267,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "priority": 0,
       },
       Object {
+        "dialCode": "500",
+        "iso2": "gs",
+        "name": "South Georgia and the South Sandwich Islands",
+        "priority": 0,
+      },
+      Object {
         "dialCode": "82",
         "format": "+..-..-...-....",
         "iso2": "kr",
@@ -3123,6 +3312,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "format": "+...-...-...",
         "iso2": "sr",
         "name": "Suriname",
+        "priority": 0,
+      },
+      Object {
+        "dialCode": "47",
+        "iso2": "sj",
+        "name": "Svalbard and Jan Mayen",
         "priority": 0,
       },
       Object {
@@ -3294,6 +3489,12 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "priority": 0,
       },
       Object {
+        "dialCode": "1",
+        "iso2": "um",
+        "name": "United States Minor Outlying Islands",
+        "priority": 0,
+      },
+      Object {
         "dialCode": "598",
         "format": "+...-.-...-..-..",
         "iso2": "uy",
@@ -3340,6 +3541,13 @@ exports[`react telephone input should call onEnterKeyPress prop callback on ente
         "format": "+...-..-....",
         "iso2": "wf",
         "name": "Wallis and Futuna",
+        "priority": 0,
+      },
+      Object {
+        "dialCode": "212",
+        "format": "+...-..-....",
+        "iso2": "eh",
+        "name": "Western Sahara",
         "priority": 0,
       },
       Object {

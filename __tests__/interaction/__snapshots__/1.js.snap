@@ -42,6 +42,12 @@ exports[`Interaction test 1 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "358",
+          "iso2": "ax",
+          "name": "Åland Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "355",
           "format": "+...(...)...-...",
           "iso2": "al",
@@ -81,6 +87,12 @@ exports[`Interaction test 1 1`] = `
           "format": "+.(...)...-....",
           "iso2": "ai",
           "name": "Anguilla",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "aq",
+          "name": "Antarctica",
           "priority": 0,
         },
         Object {
@@ -224,6 +236,12 @@ exports[`Interaction test 1 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "47",
+          "iso2": "bv",
+          "name": "Bouvet Island",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "55",
           "format": "+..-..-....-....",
           "iso2": "br",
@@ -341,6 +359,18 @@ exports[`Interaction test 1 1`] = `
           "format": "+.. ..-........",
           "iso2": "cn",
           "name": "China (中国)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cx",
+          "name": "Christmas Island",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cc",
+          "name": "Cocos (Keeling) Islands",
           "priority": 0,
         },
         Object {
@@ -528,7 +558,7 @@ exports[`Interaction test 1 1`] = `
         },
         Object {
           "dialCode": "358",
-          "format": "+... .. ... .. ..",
+          "format": "+... .. .... ....",
           "iso2": "fi",
           "name": "Finland (Suomi)",
           "priority": 0,
@@ -552,6 +582,12 @@ exports[`Interaction test 1 1`] = `
           "format": "+...-..-..-..",
           "iso2": "pf",
           "name": "French Polynesia (Polynésie française)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "tf",
+          "name": "French Southern and Antarctic Lands",
           "priority": 0,
         },
         Object {
@@ -638,6 +674,12 @@ exports[`Interaction test 1 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "gg",
+          "name": "Guernsey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "224",
           "format": "+...-..-...-...",
           "iso2": "gn",
@@ -663,6 +705,12 @@ exports[`Interaction test 1 1`] = `
           "format": "+... ....-....",
           "iso2": "ht",
           "name": "Haiti",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "hm",
+          "name": "Heard Island and McDonald Islands",
           "priority": 0,
         },
         Object {
@@ -729,6 +777,12 @@ exports[`Interaction test 1 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "im",
+          "name": "Isle of Man",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "972",
           "format": "+...-.-...-....",
           "iso2": "il",
@@ -757,6 +811,12 @@ exports[`Interaction test 1 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "je",
+          "name": "Jersey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "962",
           "format": "+...-.-....-....",
           "iso2": "jo",
@@ -782,6 +842,12 @@ exports[`Interaction test 1 1`] = `
           "format": "+...-..-...",
           "iso2": "ki",
           "name": "Kiribati",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "383",
+          "iso2": "xk",
+          "name": "Kosovo",
           "priority": 0,
         },
         Object {
@@ -943,6 +1009,12 @@ exports[`Interaction test 1 1`] = `
           "format": "+...-...-....",
           "iso2": "mu",
           "name": "Mauritius (Moris)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "yt",
+          "name": "Mayotte",
           "priority": 0,
         },
         Object {
@@ -1177,6 +1249,12 @@ exports[`Interaction test 1 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "64",
+          "iso2": "pn",
+          "name": "Pitcairn Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "48",
           "format": "+.. ...-...-...",
           "iso2": "pl",
@@ -1192,6 +1270,7 @@ exports[`Interaction test 1 1`] = `
         },
         Object {
           "dialCode": "1",
+          "format": "+. (...) ...-....",
           "hasAreaCodes": true,
           "iso2": "pr",
           "name": "Puerto Rico",
@@ -1383,6 +1462,12 @@ exports[`Interaction test 1 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "500",
+          "iso2": "gs",
+          "name": "South Georgia and the South Sandwich Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "82",
           "format": "+..-..-...-....",
           "iso2": "kr",
@@ -1422,6 +1507,12 @@ exports[`Interaction test 1 1`] = `
           "format": "+...-...-...",
           "iso2": "sr",
           "name": "Suriname",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "47",
+          "iso2": "sj",
+          "name": "Svalbard and Jan Mayen",
           "priority": 0,
         },
         Object {
@@ -1593,6 +1684,12 @@ exports[`Interaction test 1 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "1",
+          "iso2": "um",
+          "name": "United States Minor Outlying Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "598",
           "format": "+...-.-...-..-..",
           "iso2": "uy",
@@ -1639,6 +1736,13 @@ exports[`Interaction test 1 1`] = `
           "format": "+...-..-....",
           "iso2": "wf",
           "name": "Wallis and Futuna",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "212",
+          "format": "+...-..-....",
+          "iso2": "eh",
+          "name": "Western Sahara",
           "priority": 0,
         },
         Object {
@@ -1770,6 +1874,12 @@ exports[`Interaction test 1 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "358",
+          "iso2": "ax",
+          "name": "Åland Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "355",
           "format": "+...(...)...-...",
           "iso2": "al",
@@ -1809,6 +1919,12 @@ exports[`Interaction test 1 2`] = `
           "format": "+.(...)...-....",
           "iso2": "ai",
           "name": "Anguilla",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "aq",
+          "name": "Antarctica",
           "priority": 0,
         },
         Object {
@@ -1952,6 +2068,12 @@ exports[`Interaction test 1 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "47",
+          "iso2": "bv",
+          "name": "Bouvet Island",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "55",
           "format": "+..-..-....-....",
           "iso2": "br",
@@ -2069,6 +2191,18 @@ exports[`Interaction test 1 2`] = `
           "format": "+.. ..-........",
           "iso2": "cn",
           "name": "China (中国)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cx",
+          "name": "Christmas Island",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cc",
+          "name": "Cocos (Keeling) Islands",
           "priority": 0,
         },
         Object {
@@ -2256,7 +2390,7 @@ exports[`Interaction test 1 2`] = `
         },
         Object {
           "dialCode": "358",
-          "format": "+... .. ... .. ..",
+          "format": "+... .. .... ....",
           "iso2": "fi",
           "name": "Finland (Suomi)",
           "priority": 0,
@@ -2280,6 +2414,12 @@ exports[`Interaction test 1 2`] = `
           "format": "+...-..-..-..",
           "iso2": "pf",
           "name": "French Polynesia (Polynésie française)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "tf",
+          "name": "French Southern and Antarctic Lands",
           "priority": 0,
         },
         Object {
@@ -2366,6 +2506,12 @@ exports[`Interaction test 1 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "gg",
+          "name": "Guernsey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "224",
           "format": "+...-..-...-...",
           "iso2": "gn",
@@ -2391,6 +2537,12 @@ exports[`Interaction test 1 2`] = `
           "format": "+... ....-....",
           "iso2": "ht",
           "name": "Haiti",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "hm",
+          "name": "Heard Island and McDonald Islands",
           "priority": 0,
         },
         Object {
@@ -2457,6 +2609,12 @@ exports[`Interaction test 1 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "im",
+          "name": "Isle of Man",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "972",
           "format": "+...-.-...-....",
           "iso2": "il",
@@ -2485,6 +2643,12 @@ exports[`Interaction test 1 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "je",
+          "name": "Jersey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "962",
           "format": "+...-.-....-....",
           "iso2": "jo",
@@ -2510,6 +2674,12 @@ exports[`Interaction test 1 2`] = `
           "format": "+...-..-...",
           "iso2": "ki",
           "name": "Kiribati",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "383",
+          "iso2": "xk",
+          "name": "Kosovo",
           "priority": 0,
         },
         Object {
@@ -2671,6 +2841,12 @@ exports[`Interaction test 1 2`] = `
           "format": "+...-...-....",
           "iso2": "mu",
           "name": "Mauritius (Moris)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "yt",
+          "name": "Mayotte",
           "priority": 0,
         },
         Object {
@@ -2905,6 +3081,12 @@ exports[`Interaction test 1 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "64",
+          "iso2": "pn",
+          "name": "Pitcairn Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "48",
           "format": "+.. ...-...-...",
           "iso2": "pl",
@@ -2920,6 +3102,7 @@ exports[`Interaction test 1 2`] = `
         },
         Object {
           "dialCode": "1",
+          "format": "+. (...) ...-....",
           "hasAreaCodes": true,
           "iso2": "pr",
           "name": "Puerto Rico",
@@ -3111,6 +3294,12 @@ exports[`Interaction test 1 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "500",
+          "iso2": "gs",
+          "name": "South Georgia and the South Sandwich Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "82",
           "format": "+..-..-...-....",
           "iso2": "kr",
@@ -3150,6 +3339,12 @@ exports[`Interaction test 1 2`] = `
           "format": "+...-...-...",
           "iso2": "sr",
           "name": "Suriname",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "47",
+          "iso2": "sj",
+          "name": "Svalbard and Jan Mayen",
           "priority": 0,
         },
         Object {
@@ -3321,6 +3516,12 @@ exports[`Interaction test 1 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "1",
+          "iso2": "um",
+          "name": "United States Minor Outlying Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "598",
           "format": "+...-.-...-..-..",
           "iso2": "uy",
@@ -3367,6 +3568,13 @@ exports[`Interaction test 1 2`] = `
           "format": "+...-..-....",
           "iso2": "wf",
           "name": "Wallis and Futuna",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "212",
+          "format": "+...-..-....",
+          "iso2": "eh",
+          "name": "Western Sahara",
           "priority": 0,
         },
         Object {
@@ -3507,6 +3715,12 @@ exports[`Interaction test 2 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "358",
+          "iso2": "ax",
+          "name": "Åland Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "355",
           "format": "+...(...)...-...",
           "iso2": "al",
@@ -3546,6 +3760,12 @@ exports[`Interaction test 2 1`] = `
           "format": "+.(...)...-....",
           "iso2": "ai",
           "name": "Anguilla",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "aq",
+          "name": "Antarctica",
           "priority": 0,
         },
         Object {
@@ -3689,6 +3909,12 @@ exports[`Interaction test 2 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "47",
+          "iso2": "bv",
+          "name": "Bouvet Island",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "55",
           "format": "+..-..-....-....",
           "iso2": "br",
@@ -3806,6 +4032,18 @@ exports[`Interaction test 2 1`] = `
           "format": "+.. ..-........",
           "iso2": "cn",
           "name": "China (中国)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cx",
+          "name": "Christmas Island",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cc",
+          "name": "Cocos (Keeling) Islands",
           "priority": 0,
         },
         Object {
@@ -3993,7 +4231,7 @@ exports[`Interaction test 2 1`] = `
         },
         Object {
           "dialCode": "358",
-          "format": "+... .. ... .. ..",
+          "format": "+... .. .... ....",
           "iso2": "fi",
           "name": "Finland (Suomi)",
           "priority": 0,
@@ -4017,6 +4255,12 @@ exports[`Interaction test 2 1`] = `
           "format": "+...-..-..-..",
           "iso2": "pf",
           "name": "French Polynesia (Polynésie française)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "tf",
+          "name": "French Southern and Antarctic Lands",
           "priority": 0,
         },
         Object {
@@ -4103,6 +4347,12 @@ exports[`Interaction test 2 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "gg",
+          "name": "Guernsey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "224",
           "format": "+...-..-...-...",
           "iso2": "gn",
@@ -4128,6 +4378,12 @@ exports[`Interaction test 2 1`] = `
           "format": "+... ....-....",
           "iso2": "ht",
           "name": "Haiti",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "hm",
+          "name": "Heard Island and McDonald Islands",
           "priority": 0,
         },
         Object {
@@ -4194,6 +4450,12 @@ exports[`Interaction test 2 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "im",
+          "name": "Isle of Man",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "972",
           "format": "+...-.-...-....",
           "iso2": "il",
@@ -4222,6 +4484,12 @@ exports[`Interaction test 2 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "je",
+          "name": "Jersey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "962",
           "format": "+...-.-....-....",
           "iso2": "jo",
@@ -4247,6 +4515,12 @@ exports[`Interaction test 2 1`] = `
           "format": "+...-..-...",
           "iso2": "ki",
           "name": "Kiribati",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "383",
+          "iso2": "xk",
+          "name": "Kosovo",
           "priority": 0,
         },
         Object {
@@ -4408,6 +4682,12 @@ exports[`Interaction test 2 1`] = `
           "format": "+...-...-....",
           "iso2": "mu",
           "name": "Mauritius (Moris)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "yt",
+          "name": "Mayotte",
           "priority": 0,
         },
         Object {
@@ -4642,6 +4922,12 @@ exports[`Interaction test 2 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "64",
+          "iso2": "pn",
+          "name": "Pitcairn Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "48",
           "format": "+.. ...-...-...",
           "iso2": "pl",
@@ -4657,6 +4943,7 @@ exports[`Interaction test 2 1`] = `
         },
         Object {
           "dialCode": "1",
+          "format": "+. (...) ...-....",
           "hasAreaCodes": true,
           "iso2": "pr",
           "name": "Puerto Rico",
@@ -4848,6 +5135,12 @@ exports[`Interaction test 2 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "500",
+          "iso2": "gs",
+          "name": "South Georgia and the South Sandwich Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "82",
           "format": "+..-..-...-....",
           "iso2": "kr",
@@ -4887,6 +5180,12 @@ exports[`Interaction test 2 1`] = `
           "format": "+...-...-...",
           "iso2": "sr",
           "name": "Suriname",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "47",
+          "iso2": "sj",
+          "name": "Svalbard and Jan Mayen",
           "priority": 0,
         },
         Object {
@@ -5058,6 +5357,12 @@ exports[`Interaction test 2 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "1",
+          "iso2": "um",
+          "name": "United States Minor Outlying Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "598",
           "format": "+...-.-...-..-..",
           "iso2": "uy",
@@ -5104,6 +5409,13 @@ exports[`Interaction test 2 1`] = `
           "format": "+...-..-....",
           "iso2": "wf",
           "name": "Wallis and Futuna",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "212",
+          "format": "+...-..-....",
+          "iso2": "eh",
+          "name": "Western Sahara",
           "priority": 0,
         },
         Object {
@@ -5243,6 +5555,12 @@ exports[`Interaction test 2 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "358",
+          "iso2": "ax",
+          "name": "Åland Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "355",
           "format": "+...(...)...-...",
           "iso2": "al",
@@ -5282,6 +5600,12 @@ exports[`Interaction test 2 2`] = `
           "format": "+.(...)...-....",
           "iso2": "ai",
           "name": "Anguilla",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "aq",
+          "name": "Antarctica",
           "priority": 0,
         },
         Object {
@@ -5425,6 +5749,12 @@ exports[`Interaction test 2 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "47",
+          "iso2": "bv",
+          "name": "Bouvet Island",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "55",
           "format": "+..-..-....-....",
           "iso2": "br",
@@ -5542,6 +5872,18 @@ exports[`Interaction test 2 2`] = `
           "format": "+.. ..-........",
           "iso2": "cn",
           "name": "China (中国)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cx",
+          "name": "Christmas Island",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cc",
+          "name": "Cocos (Keeling) Islands",
           "priority": 0,
         },
         Object {
@@ -5729,7 +6071,7 @@ exports[`Interaction test 2 2`] = `
         },
         Object {
           "dialCode": "358",
-          "format": "+... .. ... .. ..",
+          "format": "+... .. .... ....",
           "iso2": "fi",
           "name": "Finland (Suomi)",
           "priority": 0,
@@ -5753,6 +6095,12 @@ exports[`Interaction test 2 2`] = `
           "format": "+...-..-..-..",
           "iso2": "pf",
           "name": "French Polynesia (Polynésie française)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "tf",
+          "name": "French Southern and Antarctic Lands",
           "priority": 0,
         },
         Object {
@@ -5839,6 +6187,12 @@ exports[`Interaction test 2 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "gg",
+          "name": "Guernsey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "224",
           "format": "+...-..-...-...",
           "iso2": "gn",
@@ -5864,6 +6218,12 @@ exports[`Interaction test 2 2`] = `
           "format": "+... ....-....",
           "iso2": "ht",
           "name": "Haiti",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "hm",
+          "name": "Heard Island and McDonald Islands",
           "priority": 0,
         },
         Object {
@@ -5930,6 +6290,12 @@ exports[`Interaction test 2 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "im",
+          "name": "Isle of Man",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "972",
           "format": "+...-.-...-....",
           "iso2": "il",
@@ -5958,6 +6324,12 @@ exports[`Interaction test 2 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "je",
+          "name": "Jersey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "962",
           "format": "+...-.-....-....",
           "iso2": "jo",
@@ -5983,6 +6355,12 @@ exports[`Interaction test 2 2`] = `
           "format": "+...-..-...",
           "iso2": "ki",
           "name": "Kiribati",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "383",
+          "iso2": "xk",
+          "name": "Kosovo",
           "priority": 0,
         },
         Object {
@@ -6144,6 +6522,12 @@ exports[`Interaction test 2 2`] = `
           "format": "+...-...-....",
           "iso2": "mu",
           "name": "Mauritius (Moris)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "yt",
+          "name": "Mayotte",
           "priority": 0,
         },
         Object {
@@ -6378,6 +6762,12 @@ exports[`Interaction test 2 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "64",
+          "iso2": "pn",
+          "name": "Pitcairn Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "48",
           "format": "+.. ...-...-...",
           "iso2": "pl",
@@ -6393,6 +6783,7 @@ exports[`Interaction test 2 2`] = `
         },
         Object {
           "dialCode": "1",
+          "format": "+. (...) ...-....",
           "hasAreaCodes": true,
           "iso2": "pr",
           "name": "Puerto Rico",
@@ -6584,6 +6975,12 @@ exports[`Interaction test 2 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "500",
+          "iso2": "gs",
+          "name": "South Georgia and the South Sandwich Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "82",
           "format": "+..-..-...-....",
           "iso2": "kr",
@@ -6623,6 +7020,12 @@ exports[`Interaction test 2 2`] = `
           "format": "+...-...-...",
           "iso2": "sr",
           "name": "Suriname",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "47",
+          "iso2": "sj",
+          "name": "Svalbard and Jan Mayen",
           "priority": 0,
         },
         Object {
@@ -6794,6 +7197,12 @@ exports[`Interaction test 2 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "1",
+          "iso2": "um",
+          "name": "United States Minor Outlying Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "598",
           "format": "+...-.-...-..-..",
           "iso2": "uy",
@@ -6840,6 +7249,13 @@ exports[`Interaction test 2 2`] = `
           "format": "+...-..-....",
           "iso2": "wf",
           "name": "Wallis and Futuna",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "212",
+          "format": "+...-..-....",
+          "iso2": "eh",
+          "name": "Western Sahara",
           "priority": 0,
         },
         Object {
@@ -6977,6 +7393,12 @@ exports[`Keyboard event with searching in the list 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "358",
+          "iso2": "ax",
+          "name": "Åland Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "355",
           "format": "+...(...)...-...",
           "iso2": "al",
@@ -7016,6 +7438,12 @@ exports[`Keyboard event with searching in the list 1`] = `
           "format": "+.(...)...-....",
           "iso2": "ai",
           "name": "Anguilla",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "aq",
+          "name": "Antarctica",
           "priority": 0,
         },
         Object {
@@ -7159,6 +7587,12 @@ exports[`Keyboard event with searching in the list 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "47",
+          "iso2": "bv",
+          "name": "Bouvet Island",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "55",
           "format": "+..-..-....-....",
           "iso2": "br",
@@ -7276,6 +7710,18 @@ exports[`Keyboard event with searching in the list 1`] = `
           "format": "+.. ..-........",
           "iso2": "cn",
           "name": "China (中国)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cx",
+          "name": "Christmas Island",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cc",
+          "name": "Cocos (Keeling) Islands",
           "priority": 0,
         },
         Object {
@@ -7463,7 +7909,7 @@ exports[`Keyboard event with searching in the list 1`] = `
         },
         Object {
           "dialCode": "358",
-          "format": "+... .. ... .. ..",
+          "format": "+... .. .... ....",
           "iso2": "fi",
           "name": "Finland (Suomi)",
           "priority": 0,
@@ -7487,6 +7933,12 @@ exports[`Keyboard event with searching in the list 1`] = `
           "format": "+...-..-..-..",
           "iso2": "pf",
           "name": "French Polynesia (Polynésie française)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "tf",
+          "name": "French Southern and Antarctic Lands",
           "priority": 0,
         },
         Object {
@@ -7573,6 +8025,12 @@ exports[`Keyboard event with searching in the list 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "gg",
+          "name": "Guernsey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "224",
           "format": "+...-..-...-...",
           "iso2": "gn",
@@ -7598,6 +8056,12 @@ exports[`Keyboard event with searching in the list 1`] = `
           "format": "+... ....-....",
           "iso2": "ht",
           "name": "Haiti",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "hm",
+          "name": "Heard Island and McDonald Islands",
           "priority": 0,
         },
         Object {
@@ -7664,6 +8128,12 @@ exports[`Keyboard event with searching in the list 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "im",
+          "name": "Isle of Man",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "972",
           "format": "+...-.-...-....",
           "iso2": "il",
@@ -7692,6 +8162,12 @@ exports[`Keyboard event with searching in the list 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "je",
+          "name": "Jersey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "962",
           "format": "+...-.-....-....",
           "iso2": "jo",
@@ -7717,6 +8193,12 @@ exports[`Keyboard event with searching in the list 1`] = `
           "format": "+...-..-...",
           "iso2": "ki",
           "name": "Kiribati",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "383",
+          "iso2": "xk",
+          "name": "Kosovo",
           "priority": 0,
         },
         Object {
@@ -7878,6 +8360,12 @@ exports[`Keyboard event with searching in the list 1`] = `
           "format": "+...-...-....",
           "iso2": "mu",
           "name": "Mauritius (Moris)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "yt",
+          "name": "Mayotte",
           "priority": 0,
         },
         Object {
@@ -8112,6 +8600,12 @@ exports[`Keyboard event with searching in the list 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "64",
+          "iso2": "pn",
+          "name": "Pitcairn Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "48",
           "format": "+.. ...-...-...",
           "iso2": "pl",
@@ -8127,6 +8621,7 @@ exports[`Keyboard event with searching in the list 1`] = `
         },
         Object {
           "dialCode": "1",
+          "format": "+. (...) ...-....",
           "hasAreaCodes": true,
           "iso2": "pr",
           "name": "Puerto Rico",
@@ -8318,6 +8813,12 @@ exports[`Keyboard event with searching in the list 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "500",
+          "iso2": "gs",
+          "name": "South Georgia and the South Sandwich Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "82",
           "format": "+..-..-...-....",
           "iso2": "kr",
@@ -8357,6 +8858,12 @@ exports[`Keyboard event with searching in the list 1`] = `
           "format": "+...-...-...",
           "iso2": "sr",
           "name": "Suriname",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "47",
+          "iso2": "sj",
+          "name": "Svalbard and Jan Mayen",
           "priority": 0,
         },
         Object {
@@ -8528,6 +9035,12 @@ exports[`Keyboard event with searching in the list 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "1",
+          "iso2": "um",
+          "name": "United States Minor Outlying Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "598",
           "format": "+...-.-...-..-..",
           "iso2": "uy",
@@ -8574,6 +9087,13 @@ exports[`Keyboard event with searching in the list 1`] = `
           "format": "+...-..-....",
           "iso2": "wf",
           "name": "Wallis and Futuna",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "212",
+          "format": "+...-..-....",
+          "iso2": "eh",
+          "name": "Western Sahara",
           "priority": 0,
         },
         Object {
@@ -8711,6 +9231,12 @@ exports[`Keyboard event with searching in the list 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "358",
+          "iso2": "ax",
+          "name": "Åland Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "355",
           "format": "+...(...)...-...",
           "iso2": "al",
@@ -8750,6 +9276,12 @@ exports[`Keyboard event with searching in the list 2`] = `
           "format": "+.(...)...-....",
           "iso2": "ai",
           "name": "Anguilla",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "aq",
+          "name": "Antarctica",
           "priority": 0,
         },
         Object {
@@ -8893,6 +9425,12 @@ exports[`Keyboard event with searching in the list 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "47",
+          "iso2": "bv",
+          "name": "Bouvet Island",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "55",
           "format": "+..-..-....-....",
           "iso2": "br",
@@ -9010,6 +9548,18 @@ exports[`Keyboard event with searching in the list 2`] = `
           "format": "+.. ..-........",
           "iso2": "cn",
           "name": "China (中国)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cx",
+          "name": "Christmas Island",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cc",
+          "name": "Cocos (Keeling) Islands",
           "priority": 0,
         },
         Object {
@@ -9197,7 +9747,7 @@ exports[`Keyboard event with searching in the list 2`] = `
         },
         Object {
           "dialCode": "358",
-          "format": "+... .. ... .. ..",
+          "format": "+... .. .... ....",
           "iso2": "fi",
           "name": "Finland (Suomi)",
           "priority": 0,
@@ -9221,6 +9771,12 @@ exports[`Keyboard event with searching in the list 2`] = `
           "format": "+...-..-..-..",
           "iso2": "pf",
           "name": "French Polynesia (Polynésie française)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "tf",
+          "name": "French Southern and Antarctic Lands",
           "priority": 0,
         },
         Object {
@@ -9307,6 +9863,12 @@ exports[`Keyboard event with searching in the list 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "gg",
+          "name": "Guernsey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "224",
           "format": "+...-..-...-...",
           "iso2": "gn",
@@ -9332,6 +9894,12 @@ exports[`Keyboard event with searching in the list 2`] = `
           "format": "+... ....-....",
           "iso2": "ht",
           "name": "Haiti",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "hm",
+          "name": "Heard Island and McDonald Islands",
           "priority": 0,
         },
         Object {
@@ -9398,6 +9966,12 @@ exports[`Keyboard event with searching in the list 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "im",
+          "name": "Isle of Man",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "972",
           "format": "+...-.-...-....",
           "iso2": "il",
@@ -9426,6 +10000,12 @@ exports[`Keyboard event with searching in the list 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "je",
+          "name": "Jersey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "962",
           "format": "+...-.-....-....",
           "iso2": "jo",
@@ -9451,6 +10031,12 @@ exports[`Keyboard event with searching in the list 2`] = `
           "format": "+...-..-...",
           "iso2": "ki",
           "name": "Kiribati",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "383",
+          "iso2": "xk",
+          "name": "Kosovo",
           "priority": 0,
         },
         Object {
@@ -9612,6 +10198,12 @@ exports[`Keyboard event with searching in the list 2`] = `
           "format": "+...-...-....",
           "iso2": "mu",
           "name": "Mauritius (Moris)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "yt",
+          "name": "Mayotte",
           "priority": 0,
         },
         Object {
@@ -9846,6 +10438,12 @@ exports[`Keyboard event with searching in the list 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "64",
+          "iso2": "pn",
+          "name": "Pitcairn Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "48",
           "format": "+.. ...-...-...",
           "iso2": "pl",
@@ -9861,6 +10459,7 @@ exports[`Keyboard event with searching in the list 2`] = `
         },
         Object {
           "dialCode": "1",
+          "format": "+. (...) ...-....",
           "hasAreaCodes": true,
           "iso2": "pr",
           "name": "Puerto Rico",
@@ -10052,6 +10651,12 @@ exports[`Keyboard event with searching in the list 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "500",
+          "iso2": "gs",
+          "name": "South Georgia and the South Sandwich Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "82",
           "format": "+..-..-...-....",
           "iso2": "kr",
@@ -10091,6 +10696,12 @@ exports[`Keyboard event with searching in the list 2`] = `
           "format": "+...-...-...",
           "iso2": "sr",
           "name": "Suriname",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "47",
+          "iso2": "sj",
+          "name": "Svalbard and Jan Mayen",
           "priority": 0,
         },
         Object {
@@ -10262,6 +10873,12 @@ exports[`Keyboard event with searching in the list 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "1",
+          "iso2": "um",
+          "name": "United States Minor Outlying Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "598",
           "format": "+...-.-...-..-..",
           "iso2": "uy",
@@ -10311,6 +10928,13 @@ exports[`Keyboard event with searching in the list 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "212",
+          "format": "+...-..-....",
+          "iso2": "eh",
+          "name": "Western Sahara",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "967",
           "format": "+...-.-...-...",
           "iso2": "ye",
@@ -10356,11 +10980,11 @@ exports[`Keyboard event with searching in the list 2`] = `
           data-test-id="src_reacttelephoneinput_test_id_7"
           onClick={[Function]}
           onKeyDown={[Function]}
-          title="Haiti: + 509"
+          title="Heard Island and McDonald Islands: + 672"
           type="button"
         >
           <div
-            className="flag ht"
+            className="flag hm"
             data-test-id="src_reacttelephoneinput_test_id_8"
             style={
               Object {
@@ -10389,7 +11013,7 @@ exports[`Keyboard event with searching in the list 2`] = `
         placeholder="+1 (702) 123-4567"
         required={false}
         type="tel"
-        value="+509 1212-1"
+        value="+67212121"
       />
     </div>
   </ReactTelephoneInput>
@@ -10445,6 +11069,12 @@ exports[`Keyboard events with escape key at the end 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "358",
+          "iso2": "ax",
+          "name": "Åland Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "355",
           "format": "+...(...)...-...",
           "iso2": "al",
@@ -10484,6 +11114,12 @@ exports[`Keyboard events with escape key at the end 1`] = `
           "format": "+.(...)...-....",
           "iso2": "ai",
           "name": "Anguilla",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "aq",
+          "name": "Antarctica",
           "priority": 0,
         },
         Object {
@@ -10627,6 +11263,12 @@ exports[`Keyboard events with escape key at the end 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "47",
+          "iso2": "bv",
+          "name": "Bouvet Island",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "55",
           "format": "+..-..-....-....",
           "iso2": "br",
@@ -10744,6 +11386,18 @@ exports[`Keyboard events with escape key at the end 1`] = `
           "format": "+.. ..-........",
           "iso2": "cn",
           "name": "China (中国)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cx",
+          "name": "Christmas Island",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cc",
+          "name": "Cocos (Keeling) Islands",
           "priority": 0,
         },
         Object {
@@ -10931,7 +11585,7 @@ exports[`Keyboard events with escape key at the end 1`] = `
         },
         Object {
           "dialCode": "358",
-          "format": "+... .. ... .. ..",
+          "format": "+... .. .... ....",
           "iso2": "fi",
           "name": "Finland (Suomi)",
           "priority": 0,
@@ -10955,6 +11609,12 @@ exports[`Keyboard events with escape key at the end 1`] = `
           "format": "+...-..-..-..",
           "iso2": "pf",
           "name": "French Polynesia (Polynésie française)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "tf",
+          "name": "French Southern and Antarctic Lands",
           "priority": 0,
         },
         Object {
@@ -11041,6 +11701,12 @@ exports[`Keyboard events with escape key at the end 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "gg",
+          "name": "Guernsey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "224",
           "format": "+...-..-...-...",
           "iso2": "gn",
@@ -11066,6 +11732,12 @@ exports[`Keyboard events with escape key at the end 1`] = `
           "format": "+... ....-....",
           "iso2": "ht",
           "name": "Haiti",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "hm",
+          "name": "Heard Island and McDonald Islands",
           "priority": 0,
         },
         Object {
@@ -11132,6 +11804,12 @@ exports[`Keyboard events with escape key at the end 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "im",
+          "name": "Isle of Man",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "972",
           "format": "+...-.-...-....",
           "iso2": "il",
@@ -11160,6 +11838,12 @@ exports[`Keyboard events with escape key at the end 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "je",
+          "name": "Jersey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "962",
           "format": "+...-.-....-....",
           "iso2": "jo",
@@ -11185,6 +11869,12 @@ exports[`Keyboard events with escape key at the end 1`] = `
           "format": "+...-..-...",
           "iso2": "ki",
           "name": "Kiribati",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "383",
+          "iso2": "xk",
+          "name": "Kosovo",
           "priority": 0,
         },
         Object {
@@ -11346,6 +12036,12 @@ exports[`Keyboard events with escape key at the end 1`] = `
           "format": "+...-...-....",
           "iso2": "mu",
           "name": "Mauritius (Moris)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "yt",
+          "name": "Mayotte",
           "priority": 0,
         },
         Object {
@@ -11580,6 +12276,12 @@ exports[`Keyboard events with escape key at the end 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "64",
+          "iso2": "pn",
+          "name": "Pitcairn Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "48",
           "format": "+.. ...-...-...",
           "iso2": "pl",
@@ -11595,6 +12297,7 @@ exports[`Keyboard events with escape key at the end 1`] = `
         },
         Object {
           "dialCode": "1",
+          "format": "+. (...) ...-....",
           "hasAreaCodes": true,
           "iso2": "pr",
           "name": "Puerto Rico",
@@ -11786,6 +12489,12 @@ exports[`Keyboard events with escape key at the end 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "500",
+          "iso2": "gs",
+          "name": "South Georgia and the South Sandwich Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "82",
           "format": "+..-..-...-....",
           "iso2": "kr",
@@ -11825,6 +12534,12 @@ exports[`Keyboard events with escape key at the end 1`] = `
           "format": "+...-...-...",
           "iso2": "sr",
           "name": "Suriname",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "47",
+          "iso2": "sj",
+          "name": "Svalbard and Jan Mayen",
           "priority": 0,
         },
         Object {
@@ -11996,6 +12711,12 @@ exports[`Keyboard events with escape key at the end 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "1",
+          "iso2": "um",
+          "name": "United States Minor Outlying Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "598",
           "format": "+...-.-...-..-..",
           "iso2": "uy",
@@ -12042,6 +12763,13 @@ exports[`Keyboard events with escape key at the end 1`] = `
           "format": "+...-..-....",
           "iso2": "wf",
           "name": "Wallis and Futuna",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "212",
+          "format": "+...-..-....",
+          "iso2": "eh",
+          "name": "Western Sahara",
           "priority": 0,
         },
         Object {
@@ -12179,6 +12907,12 @@ exports[`Keyboard events with escape key at the end 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "358",
+          "iso2": "ax",
+          "name": "Åland Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "355",
           "format": "+...(...)...-...",
           "iso2": "al",
@@ -12218,6 +12952,12 @@ exports[`Keyboard events with escape key at the end 2`] = `
           "format": "+.(...)...-....",
           "iso2": "ai",
           "name": "Anguilla",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "aq",
+          "name": "Antarctica",
           "priority": 0,
         },
         Object {
@@ -12361,6 +13101,12 @@ exports[`Keyboard events with escape key at the end 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "47",
+          "iso2": "bv",
+          "name": "Bouvet Island",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "55",
           "format": "+..-..-....-....",
           "iso2": "br",
@@ -12478,6 +13224,18 @@ exports[`Keyboard events with escape key at the end 2`] = `
           "format": "+.. ..-........",
           "iso2": "cn",
           "name": "China (中国)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cx",
+          "name": "Christmas Island",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cc",
+          "name": "Cocos (Keeling) Islands",
           "priority": 0,
         },
         Object {
@@ -12665,7 +13423,7 @@ exports[`Keyboard events with escape key at the end 2`] = `
         },
         Object {
           "dialCode": "358",
-          "format": "+... .. ... .. ..",
+          "format": "+... .. .... ....",
           "iso2": "fi",
           "name": "Finland (Suomi)",
           "priority": 0,
@@ -12689,6 +13447,12 @@ exports[`Keyboard events with escape key at the end 2`] = `
           "format": "+...-..-..-..",
           "iso2": "pf",
           "name": "French Polynesia (Polynésie française)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "tf",
+          "name": "French Southern and Antarctic Lands",
           "priority": 0,
         },
         Object {
@@ -12775,6 +13539,12 @@ exports[`Keyboard events with escape key at the end 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "gg",
+          "name": "Guernsey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "224",
           "format": "+...-..-...-...",
           "iso2": "gn",
@@ -12800,6 +13570,12 @@ exports[`Keyboard events with escape key at the end 2`] = `
           "format": "+... ....-....",
           "iso2": "ht",
           "name": "Haiti",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "hm",
+          "name": "Heard Island and McDonald Islands",
           "priority": 0,
         },
         Object {
@@ -12866,6 +13642,12 @@ exports[`Keyboard events with escape key at the end 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "im",
+          "name": "Isle of Man",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "972",
           "format": "+...-.-...-....",
           "iso2": "il",
@@ -12894,6 +13676,12 @@ exports[`Keyboard events with escape key at the end 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "je",
+          "name": "Jersey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "962",
           "format": "+...-.-....-....",
           "iso2": "jo",
@@ -12919,6 +13707,12 @@ exports[`Keyboard events with escape key at the end 2`] = `
           "format": "+...-..-...",
           "iso2": "ki",
           "name": "Kiribati",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "383",
+          "iso2": "xk",
+          "name": "Kosovo",
           "priority": 0,
         },
         Object {
@@ -13080,6 +13874,12 @@ exports[`Keyboard events with escape key at the end 2`] = `
           "format": "+...-...-....",
           "iso2": "mu",
           "name": "Mauritius (Moris)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "yt",
+          "name": "Mayotte",
           "priority": 0,
         },
         Object {
@@ -13314,6 +14114,12 @@ exports[`Keyboard events with escape key at the end 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "64",
+          "iso2": "pn",
+          "name": "Pitcairn Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "48",
           "format": "+.. ...-...-...",
           "iso2": "pl",
@@ -13329,6 +14135,7 @@ exports[`Keyboard events with escape key at the end 2`] = `
         },
         Object {
           "dialCode": "1",
+          "format": "+. (...) ...-....",
           "hasAreaCodes": true,
           "iso2": "pr",
           "name": "Puerto Rico",
@@ -13520,6 +14327,12 @@ exports[`Keyboard events with escape key at the end 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "500",
+          "iso2": "gs",
+          "name": "South Georgia and the South Sandwich Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "82",
           "format": "+..-..-...-....",
           "iso2": "kr",
@@ -13559,6 +14372,12 @@ exports[`Keyboard events with escape key at the end 2`] = `
           "format": "+...-...-...",
           "iso2": "sr",
           "name": "Suriname",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "47",
+          "iso2": "sj",
+          "name": "Svalbard and Jan Mayen",
           "priority": 0,
         },
         Object {
@@ -13730,6 +14549,12 @@ exports[`Keyboard events with escape key at the end 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "1",
+          "iso2": "um",
+          "name": "United States Minor Outlying Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "598",
           "format": "+...-.-...-..-..",
           "iso2": "uy",
@@ -13776,6 +14601,13 @@ exports[`Keyboard events with escape key at the end 2`] = `
           "format": "+...-..-....",
           "iso2": "wf",
           "name": "Wallis and Futuna",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "212",
+          "format": "+...-..-....",
+          "iso2": "eh",
+          "name": "Western Sahara",
           "priority": 0,
         },
         Object {
@@ -13913,6 +14745,12 @@ exports[`keyboard event up/down 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "358",
+          "iso2": "ax",
+          "name": "Åland Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "355",
           "format": "+...(...)...-...",
           "iso2": "al",
@@ -13952,6 +14790,12 @@ exports[`keyboard event up/down 1`] = `
           "format": "+.(...)...-....",
           "iso2": "ai",
           "name": "Anguilla",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "aq",
+          "name": "Antarctica",
           "priority": 0,
         },
         Object {
@@ -14095,6 +14939,12 @@ exports[`keyboard event up/down 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "47",
+          "iso2": "bv",
+          "name": "Bouvet Island",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "55",
           "format": "+..-..-....-....",
           "iso2": "br",
@@ -14212,6 +15062,18 @@ exports[`keyboard event up/down 1`] = `
           "format": "+.. ..-........",
           "iso2": "cn",
           "name": "China (中国)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cx",
+          "name": "Christmas Island",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cc",
+          "name": "Cocos (Keeling) Islands",
           "priority": 0,
         },
         Object {
@@ -14399,7 +15261,7 @@ exports[`keyboard event up/down 1`] = `
         },
         Object {
           "dialCode": "358",
-          "format": "+... .. ... .. ..",
+          "format": "+... .. .... ....",
           "iso2": "fi",
           "name": "Finland (Suomi)",
           "priority": 0,
@@ -14423,6 +15285,12 @@ exports[`keyboard event up/down 1`] = `
           "format": "+...-..-..-..",
           "iso2": "pf",
           "name": "French Polynesia (Polynésie française)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "tf",
+          "name": "French Southern and Antarctic Lands",
           "priority": 0,
         },
         Object {
@@ -14509,6 +15377,12 @@ exports[`keyboard event up/down 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "gg",
+          "name": "Guernsey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "224",
           "format": "+...-..-...-...",
           "iso2": "gn",
@@ -14534,6 +15408,12 @@ exports[`keyboard event up/down 1`] = `
           "format": "+... ....-....",
           "iso2": "ht",
           "name": "Haiti",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "hm",
+          "name": "Heard Island and McDonald Islands",
           "priority": 0,
         },
         Object {
@@ -14600,6 +15480,12 @@ exports[`keyboard event up/down 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "im",
+          "name": "Isle of Man",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "972",
           "format": "+...-.-...-....",
           "iso2": "il",
@@ -14628,6 +15514,12 @@ exports[`keyboard event up/down 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "je",
+          "name": "Jersey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "962",
           "format": "+...-.-....-....",
           "iso2": "jo",
@@ -14653,6 +15545,12 @@ exports[`keyboard event up/down 1`] = `
           "format": "+...-..-...",
           "iso2": "ki",
           "name": "Kiribati",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "383",
+          "iso2": "xk",
+          "name": "Kosovo",
           "priority": 0,
         },
         Object {
@@ -14814,6 +15712,12 @@ exports[`keyboard event up/down 1`] = `
           "format": "+...-...-....",
           "iso2": "mu",
           "name": "Mauritius (Moris)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "yt",
+          "name": "Mayotte",
           "priority": 0,
         },
         Object {
@@ -15048,6 +15952,12 @@ exports[`keyboard event up/down 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "64",
+          "iso2": "pn",
+          "name": "Pitcairn Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "48",
           "format": "+.. ...-...-...",
           "iso2": "pl",
@@ -15063,6 +15973,7 @@ exports[`keyboard event up/down 1`] = `
         },
         Object {
           "dialCode": "1",
+          "format": "+. (...) ...-....",
           "hasAreaCodes": true,
           "iso2": "pr",
           "name": "Puerto Rico",
@@ -15254,6 +16165,12 @@ exports[`keyboard event up/down 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "500",
+          "iso2": "gs",
+          "name": "South Georgia and the South Sandwich Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "82",
           "format": "+..-..-...-....",
           "iso2": "kr",
@@ -15293,6 +16210,12 @@ exports[`keyboard event up/down 1`] = `
           "format": "+...-...-...",
           "iso2": "sr",
           "name": "Suriname",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "47",
+          "iso2": "sj",
+          "name": "Svalbard and Jan Mayen",
           "priority": 0,
         },
         Object {
@@ -15464,6 +16387,12 @@ exports[`keyboard event up/down 1`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "1",
+          "iso2": "um",
+          "name": "United States Minor Outlying Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "598",
           "format": "+...-.-...-..-..",
           "iso2": "uy",
@@ -15510,6 +16439,13 @@ exports[`keyboard event up/down 1`] = `
           "format": "+...-..-....",
           "iso2": "wf",
           "name": "Wallis and Futuna",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "212",
+          "format": "+...-..-....",
+          "iso2": "eh",
+          "name": "Western Sahara",
           "priority": 0,
         },
         Object {
@@ -15647,6 +16583,12 @@ exports[`keyboard event up/down 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "358",
+          "iso2": "ax",
+          "name": "Åland Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "355",
           "format": "+...(...)...-...",
           "iso2": "al",
@@ -15686,6 +16628,12 @@ exports[`keyboard event up/down 2`] = `
           "format": "+.(...)...-....",
           "iso2": "ai",
           "name": "Anguilla",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "aq",
+          "name": "Antarctica",
           "priority": 0,
         },
         Object {
@@ -15829,6 +16777,12 @@ exports[`keyboard event up/down 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "47",
+          "iso2": "bv",
+          "name": "Bouvet Island",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "55",
           "format": "+..-..-....-....",
           "iso2": "br",
@@ -15946,6 +16900,18 @@ exports[`keyboard event up/down 2`] = `
           "format": "+.. ..-........",
           "iso2": "cn",
           "name": "China (中国)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cx",
+          "name": "Christmas Island",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "61",
+          "iso2": "cc",
+          "name": "Cocos (Keeling) Islands",
           "priority": 0,
         },
         Object {
@@ -16133,7 +17099,7 @@ exports[`keyboard event up/down 2`] = `
         },
         Object {
           "dialCode": "358",
-          "format": "+... .. ... .. ..",
+          "format": "+... .. .... ....",
           "iso2": "fi",
           "name": "Finland (Suomi)",
           "priority": 0,
@@ -16157,6 +17123,12 @@ exports[`keyboard event up/down 2`] = `
           "format": "+...-..-..-..",
           "iso2": "pf",
           "name": "French Polynesia (Polynésie française)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "tf",
+          "name": "French Southern and Antarctic Lands",
           "priority": 0,
         },
         Object {
@@ -16243,6 +17215,12 @@ exports[`keyboard event up/down 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "gg",
+          "name": "Guernsey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "224",
           "format": "+...-..-...-...",
           "iso2": "gn",
@@ -16268,6 +17246,12 @@ exports[`keyboard event up/down 2`] = `
           "format": "+... ....-....",
           "iso2": "ht",
           "name": "Haiti",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "672",
+          "iso2": "hm",
+          "name": "Heard Island and McDonald Islands",
           "priority": 0,
         },
         Object {
@@ -16334,6 +17318,12 @@ exports[`keyboard event up/down 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "im",
+          "name": "Isle of Man",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "972",
           "format": "+...-.-...-....",
           "iso2": "il",
@@ -16362,6 +17352,12 @@ exports[`keyboard event up/down 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "44",
+          "iso2": "je",
+          "name": "Jersey",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "962",
           "format": "+...-.-....-....",
           "iso2": "jo",
@@ -16387,6 +17383,12 @@ exports[`keyboard event up/down 2`] = `
           "format": "+...-..-...",
           "iso2": "ki",
           "name": "Kiribati",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "383",
+          "iso2": "xk",
+          "name": "Kosovo",
           "priority": 0,
         },
         Object {
@@ -16548,6 +17550,12 @@ exports[`keyboard event up/down 2`] = `
           "format": "+...-...-....",
           "iso2": "mu",
           "name": "Mauritius (Moris)",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "262",
+          "iso2": "yt",
+          "name": "Mayotte",
           "priority": 0,
         },
         Object {
@@ -16782,6 +17790,12 @@ exports[`keyboard event up/down 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "64",
+          "iso2": "pn",
+          "name": "Pitcairn Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "48",
           "format": "+.. ...-...-...",
           "iso2": "pl",
@@ -16797,6 +17811,7 @@ exports[`keyboard event up/down 2`] = `
         },
         Object {
           "dialCode": "1",
+          "format": "+. (...) ...-....",
           "hasAreaCodes": true,
           "iso2": "pr",
           "name": "Puerto Rico",
@@ -16988,6 +18003,12 @@ exports[`keyboard event up/down 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "500",
+          "iso2": "gs",
+          "name": "South Georgia and the South Sandwich Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "82",
           "format": "+..-..-...-....",
           "iso2": "kr",
@@ -17027,6 +18048,12 @@ exports[`keyboard event up/down 2`] = `
           "format": "+...-...-...",
           "iso2": "sr",
           "name": "Suriname",
+          "priority": 0,
+        },
+        Object {
+          "dialCode": "47",
+          "iso2": "sj",
+          "name": "Svalbard and Jan Mayen",
           "priority": 0,
         },
         Object {
@@ -17198,6 +18225,12 @@ exports[`keyboard event up/down 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "1",
+          "iso2": "um",
+          "name": "United States Minor Outlying Islands",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "598",
           "format": "+...-.-...-..-..",
           "iso2": "uy",
@@ -17247,6 +18280,13 @@ exports[`keyboard event up/down 2`] = `
           "priority": 0,
         },
         Object {
+          "dialCode": "212",
+          "format": "+...-..-....",
+          "iso2": "eh",
+          "name": "Western Sahara",
+          "priority": 0,
+        },
+        Object {
           "dialCode": "967",
           "format": "+...-.-...-...",
           "iso2": "ye",
@@ -17292,11 +18332,11 @@ exports[`keyboard event up/down 2`] = `
           data-test-id="src_reacttelephoneinput_test_id_7"
           onClick={[Function]}
           onKeyDown={[Function]}
-          title="Guyana: + 592"
+          title="Haiti: + 509"
           type="button"
         >
           <div
-            className="flag gy"
+            className="flag ht"
             data-test-id="src_reacttelephoneinput_test_id_8"
             style={
               Object {
@@ -17325,7 +18365,7 @@ exports[`keyboard event up/down 2`] = `
         placeholder="+1 (702) 123-4567"
         required={false}
         type="tel"
-        value="+592-121-21"
+        value="+509 1212-1"
       />
     </div>
   </ReactTelephoneInput>
