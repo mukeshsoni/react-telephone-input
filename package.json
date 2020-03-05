@@ -20,6 +20,19 @@
     "test:watch": "jest --watch",
     "deploy": "gh-pages -d demo/dist"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add",
+      "npm run test -- --bail --passWithNoTests --findRelatedTests"
+    ]
+  },
   "jest": {
     "transform": {
       "^.+\\.js$": "./jest.transform.js"
@@ -63,8 +76,11 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "gh-pages": "^1.1.0",
+    "husky": "^4.2.3",
     "jest": "^22.4.3",
+    "lint-staged": "^10.0.8",
     "nwb": "^0.23.0",
+    "prettier": "^1.19.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "regenerator-runtime": "0.13.3"
