@@ -36,9 +36,9 @@ var ReactTelInput = require('react-telephone-input');
 React.render(<ReactTelInput
                 defaultCountry="in"
                 flagsImagePath='/path/to/images/flags.png'
-                onChange={handleInputChange}/>
-                onBlur={handleInputBlur}
-                document.getElementById('my-container'));
+                onChange={handleInputChange}
+                onBlur={handleInputBlur}/>,
+              document.getElementById('my-container'));
 ```
 
 The component accepts other props to customize it -
