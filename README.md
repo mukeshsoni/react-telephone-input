@@ -37,7 +37,8 @@ React.render(<ReactTelInput
                 defaultCountry="in"
                 flagsImagePath='/path/to/images/flags.png'
                 onChange={handleInputChange}
-                onBlur={handleInputBlur}/>,
+                onBlur={handleInputBlur}
+              />,
               document.getElementById('my-container'));
 ```
 
