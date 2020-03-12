@@ -84,7 +84,7 @@
     "prettier": "^1.19.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "regenerator-runtime": "0.13.3"
+    "regenerator-runtime": "0.13.5"
   },
   "dependencies": {
     "classnames": "^2.1.2",
