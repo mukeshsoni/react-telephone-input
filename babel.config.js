@@ -7,6 +7,7 @@ module.exports = {
       {
         targets: {
           node: 'current',
+          browsers: ['last 2 versions'],
         },
       },
     ],
