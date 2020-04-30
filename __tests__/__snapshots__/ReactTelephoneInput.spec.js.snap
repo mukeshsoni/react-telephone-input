@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`react telephone input should call onEnterKeyPress prop callback on enter key press 1`] = `
+<div
+  class="react-tel-input"
+  data-test-id="src_reacttelephoneinput_test_id_4"
+>
+  <div
+    class="flag-dropdown"
+    data-test-id="src_reacttelephoneinput_test_id_6"
+  >
+    <button
+      class="selected-flag"
+      data-test-id="src_reacttelephoneinput_test_id_7"
+      title="India (भारत): + 91"
+      type="button"
+    >
+      <div
+        class="flag in"
+        data-test-id="src_reacttelephoneinput_test_id_8"
+        style="background-image: url(flags.png);"
+      >
+        <div
+          class="arrow"
+          data-test-id="src_reacttelephoneinput_test_id_9"
+        />
+      </div>
+    </button>
+    
+  </div>
+  <input
+    autocomplete="tel"
+    class="form-control"
+    data-test-id="src_reacttelephoneinput_test_id_5"
+    placeholder="+1 (702) 123-4567"
+    type="tel"
+    value="+91 12121"
+  />
+</div>
+`;
+
+exports[`react telephone input should call onEnterKeyPress prop callback on enter key press 2`] = `
+<div
+  class="react-tel-input"
+  data-test-id="src_reacttelephoneinput_test_id_4"
+>
+  <div
+    class="flag-dropdown"
+    data-test-id="src_reacttelephoneinput_test_id_6"
+  >
+    <button
+      class="selected-flag"
+      data-test-id="src_reacttelephoneinput_test_id_7"
+      title="India (भारत): + 91"
+      type="button"
+    >
+      <div
+        class="flag in"
+        data-test-id="src_reacttelephoneinput_test_id_8"
+        style="background-image: url(flags.png);"
+      >
+        <div
+          class="arrow"
+          data-test-id="src_reacttelephoneinput_test_id_9"
+        />
+      </div>
+    </button>
+    
+  </div>
+  <input
+    autocomplete="tel"
+    class="form-control"
+    data-test-id="src_reacttelephoneinput_test_id_5"
+    placeholder="+1 (702) 123-4567"
+    type="tel"
+    value="+91 12121-1212"
+  />
+</div>
+`;
