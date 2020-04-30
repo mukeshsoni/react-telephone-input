@@ -1,101 +1,42 @@
-import React from 'react'
-import Enzyme, { mount } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
-import toJson, { createSerializer } from 'enzyme-to-json'
-import ReactTelephoneInput from '../../src/ReactTelephoneInput'
-import ReactTestUtils from 'react-dom/test-utils'
+import React from 'react';
+import { render, fireEvent } from '@testing-library/react';
 
-Enzyme.configure({ adapter: new Adapter() })
+// eslint-disable-next-line
+import ReactTelephoneInput from '../../src/ReactTelephoneInput';
 
 test('Interaction test 1', () => {
-  const onEnterKeyPress = jest.fn()
+  const onEnterKeyPress = jest.fn();
 
-  const wrapper = mount(
+  const { container } = render(
     <ReactTelephoneInput
       defaultCountry="us"
       initialValue="+9112121"
       preferredCountries={['us', 'ca', 'zz', 'hk']}
       onEnterKeyPress={() => {
-        onEnterKeyPress()
+        onEnterKeyPress();
       }}
-    />
-  )
+    />,
+  );
 
-  expect(toJson(wrapper)).toMatchSnapshot()
-  wrapper
-    .find('input')
-    .at(0)
-    .simulate('focus')
-  wrapper
-    .find('input')
-    .at(0)
-    .simulate('keyDown', { keyCode: 49, which: 49 })
-  wrapper
-    .find('input')
-    .at(0)
-    .simulate('change', { target: { value: '+91 121211', checked: false } })
-  wrapper
-    .find('input')
-    .at(0)
-    .simulate('keyDown', { keyCode: 50, which: 50 })
-  wrapper
-    .find('input')
-    .at(0)
-    .simulate('change', { target: { value: '+91 12121-12', checked: false } })
-  wrapper
-    .find('input')
-    .at(0)
-    .simulate('keyDown', { keyCode: 49, which: 49 })
-  wrapper
-    .find('input')
-    .at(0)
-    .simulate('change', { target: { value: '+91 12121-121', checked: false } })
-  wrapper
-    .find('input')
-    .at(0)
-    .simulate('blur')
-  wrapper
-    .find('input')
-    .at(0)
-    .simulate('focus')
-  wrapper
-    .find('input')
-    .at(0)
-    .simulate('keyDown', { keyCode: 49, which: 49 })
-  wrapper
-    .find('input')
-    .at(0)
-    .simulate('change', { target: { value: '+36(121)211-211', checked: false } })
-  wrapper
-    .find('input')
-    .at(0)
-    .simulate('keyDown', { keyCode: 50, which: 50 })
-  wrapper
-    .find('input')
-    .at(0)
-    .simulate('change', { target: { value: '+36(121)211-2112', checked: false } })
-  wrapper
-    .find('input')
-    .at(0)
-    .simulate('keyDown', { keyCode: 49, which: 49 })
-  wrapper
-    .find('input')
-    .at(0)
-    .simulate('change', { target: { value: '+36(121)211-21121', checked: false } })
-  wrapper
-    .find('input')
-    .at(0)
-    .simulate('keyDown', { keyCode: 13, which: 13 })
-  wrapper
-    .find('input')
-    .at(0)
-    .simulate('blur')
-  expect(onEnterKeyPress.mock.calls.length).toEqual(1)
-  expect(toJson(wrapper)).toMatchSnapshot()
-})
+  expect(container.firstChild).toMatchSnapshot();
+
+  const input = container.querySelector('input');
+
+  fireEvent.focus(input);
+  fireEvent.keyDown(input, { keyCode: 49, which: 49 });
+  fireEvent.change(input, { target: { value: '+91 121211', checked: false } });
+  fireEvent.keyDown(input, { keyCode: 50, which: 50 });
+  fireEvent.change(input, {
+    target: { value: '+91 12121-12', checked: false },
+  });
+  fireEvent.keyDown(input, { keyCode: 13, which: 13 });
+  fireEvent.blur(input);
+  expect(onEnterKeyPress.mock.calls.length).toEqual(1);
+  expect(container.firstChild).toMatchSnapshot();
+});
 
 test('Interaction test 2', () => {
-  const onChange = jest.fn()
+  const onChange = jest.fn();
 
   const props = {
     preferredCountries: ['af', 'al'],
@@ -103,56 +44,48 @@ test('Interaction test 2', () => {
     flagsImagePath: '/flags.723494a4.png',
     initialValue: '+9112121',
     inputProps: {
-      autoFocus: true
+      autoFocus: true,
     },
-    onChange: formattedNumber => onChange(formattedNumber)
-  }
+    onChange: (formattedNumber) => onChange(formattedNumber),
+  };
 
-  const wrapper = mount(<ReactTelephoneInput {...props} />)
+  const { container } = render(<ReactTelephoneInput {...props} />);
 
-  expect(toJson(wrapper)).toMatchSnapshot()
-  wrapper.find('[data-test-id="src_reacttelephoneinput_test_id_5"]').simulate('focus')
-  wrapper.find('[data-test-id="src_reacttelephoneinput_test_id_5"]').simulate('click')
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_5"]')
-    .simulate('keyDown', { keyCode: 49, which: 49 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_5"]')
-    .simulate('change', { target: { value: '+91 121211', checked: false } })
-  expect(onChange).toBeCalledWith('+91 12121-1')
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_5"]')
-    .simulate('keyDown', { keyCode: 50, which: 50 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_5"]')
-    .simulate('change', { target: { value: '+91 12121-12', checked: false } })
-  expect(onChange).toBeCalledWith('+91 12121-12')
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_5"]')
-    .simulate('keyDown', { keyCode: 49, which: 49 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_5"]')
-    .simulate('change', { target: { value: '+91 12121-121', checked: false } })
-  expect(onChange).toBeCalledWith('+91 12121-121')
-  wrapper.find('[data-test-id="src_reacttelephoneinput_test_id_5"]').simulate('blur')
-  wrapper.find('[data-test-id="src_reacttelephoneinput_test_id_7"]').simulate('click')
-  wrapper
-    .find('div')
-    .at(9)
-    .simulate('scroll')
-  wrapper.find('[data-test-id="src_reacttelephoneinput_test_id_5"]').simulate('focus')
-  wrapper.find('[data-test-id="src_reacttelephoneinput_test_id_5"]').simulate('blur')
-  // click on a flag in the dropdown list of flags
-  // that should trigger another onChange call
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_0"]')
-    .at(5)
-    .simulate('click')
+  expect(container.firstChild).toMatchSnapshot();
 
-  // verify the number of times onChange would have been called
-  expect(onChange.mock.calls.length).toBe(4)
-  expect(toJson(wrapper)).toMatchSnapshot()
-})
+  const input = container.querySelector('input');
+
+  fireEvent.focus(input);
+  fireEvent.click(input);
+  fireEvent.keyDown(input, { keyCode: 49, which: 49 });
+  fireEvent.change(input, { target: { value: '+91 121211', checked: false } });
+  expect(onChange).toBeCalledWith('+91 12121-1');
+
+  fireEvent.keyDown(input, { keyCode: 50, which: 50 });
+  fireEvent.change(input, {
+    target: { value: '+91 12121-12', checked: false },
+  });
+  expect(onChange).toBeCalledWith('+91 12121-12');
+
+  fireEvent.keyDown(input, { keyCode: 49, which: 49 });
+  fireEvent.change(input, {
+    target: { value: '+91 12121-121', checked: false },
+  });
+  expect(onChange).toBeCalledWith('+91 12121-121');
+
+  fireEvent.blur(input);
+
+  const selectedFlag = container.querySelector('.selected-flag');
+  fireEvent.click(selectedFlag);
+  const countryList = container.querySelectorAll(
+    'div.country-list > div > div',
+  );
+  fireEvent.click(countryList[4]);
+
+  // // verify the number of times onChange would have been called
+  expect(onChange.mock.calls.length).toBe(4);
+  expect(container.firstChild).toMatchSnapshot();
+});
 
 test('keyboard event up/down', () => {
   const props = {
@@ -161,105 +94,29 @@ test('keyboard event up/down', () => {
     flagsImagePath: '/flags.723494a4.png',
     initialValue: '+9112121',
     inputProps: {
-      autoFocus: true
-    }
-  }
-  const wrapper = mount(<ReactTelephoneInput {...props} />)
+      autoFocus: true,
+    },
+  };
 
-  expect(toJson(wrapper)).toMatchSnapshot()
-  wrapper.find('[data-test-id="src_reacttelephoneinput_test_id_7"]').simulate('click')
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 40, which: 40 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 40, which: 40 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyUp', { keyCode: 40, which: 40 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 40, which: 40 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 40, which: 40 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyUp', { keyCode: 40, which: 40 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 40, which: 40 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 40, which: 40 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyUp', { keyCode: 40, which: 40 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyUp', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyUp', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyUp', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyUp', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyUp', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyUp', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 13, which: 13 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 13, which: 13 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_5"]')
-    .simulate('keyUp', { keyCode: 13, which: 13 })
-  expect(toJson(wrapper)).toMatchSnapshot()
-})
+  const { container } = render(<ReactTelephoneInput {...props} />);
+
+  expect(container.firstChild).toMatchSnapshot();
+
+  const selectedFlag = container.querySelector('.selected-flag');
+  fireEvent.click(selectedFlag);
+  const flagDropdown = container.querySelector('.flag-dropdown');
+  for (let i = 0; i < 9; i += 1) {
+    fireEvent.keyDown(flagDropdown, { keyCode: 40, which: 40 });
+  }
+  for (let i = 0; i < 18; i += 1) {
+    fireEvent.keyDown(flagDropdown, { keyCode: 38, which: 38 });
+  }
+
+  fireEvent.keyDown(flagDropdown, { keyCode: 13, which: 13 });
+  fireEvent.keyDown(flagDropdown, { keyCode: 13, which: 13 });
+  fireEvent.keyUp(flagDropdown, { keyCode: 13, which: 13 });
+  expect(container.firstChild).toMatchSnapshot();
+});
 
 test('Keyboard events with escape key at the end', () => {
   const props = {
@@ -268,78 +125,26 @@ test('Keyboard events with escape key at the end', () => {
     flagsImagePath: '/flags.723494a4.png',
     initialValue: '+9112121',
     inputProps: {
-      autoFocus: true
-    }
-  }
-  const wrapper = mount(<ReactTelephoneInput {...props} />)
+      autoFocus: true,
+    },
+  };
+  const { container } = render(<ReactTelephoneInput {...props} />);
 
-  expect(toJson(wrapper)).toMatchSnapshot()
-  wrapper.find('[data-test-id="src_reacttelephoneinput_test_id_8"]').simulate('click')
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 40, which: 40 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 40, which: 40 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyUp', { keyCode: 40, which: 40 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 40, which: 40 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 40, which: 40 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyUp', { keyCode: 40, which: 40 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 40, which: 40 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 40, which: 40 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyUp', { keyCode: 40, which: 40 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyUp', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyUp', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyUp', { keyCode: 38, which: 38 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 27, which: 27 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 27, which: 27 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_5"]')
-    .simulate('keyUp', { keyCode: 27, which: 27 })
-  expect(toJson(wrapper)).toMatchSnapshot()
-})
+  expect(container.firstChild).toMatchSnapshot();
+  const selectedFlag = container.querySelector('.selected-flag');
+  fireEvent.click(selectedFlag);
+  const flagDropdown = container.querySelector('.flag-dropdown');
+  for (let i = 0; i < 9; i += 1) {
+    fireEvent.keyDown(flagDropdown, { keyCode: 40, which: 40 });
+  }
+
+  for (let i = 0; i < 9; i += 1) {
+    fireEvent.keyDown(flagDropdown, { keyCode: 38, which: 38 });
+  }
+  fireEvent.keyDown(flagDropdown, { keyCode: 27, which: 27 });
+  fireEvent.keyDown(flagDropdown, { keyCode: 27, which: 27 });
+  fireEvent.keyUp(flagDropdown, { keyCode: 27, which: 27 });
+});
 
 test('Keyboard event with searching in the list', () => {
   const props = {
@@ -348,31 +153,27 @@ test('Keyboard event with searching in the list', () => {
     flagsImagePath: '/flags.723494a4.png',
     initialValue: '+9112121',
     inputProps: {
-      autoFocus: true
-    }
-  }
-  const wrapper = mount(<ReactTelephoneInput {...props} />)
+      autoFocus: true,
+    },
+  };
+  const { container } = render(<ReactTelephoneInput {...props} />);
 
-  expect(toJson(wrapper)).toMatchSnapshot()
-  wrapper.find('[data-test-id="src_reacttelephoneinput_test_id_7"]').simulate('click')
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 65, which: 65 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyDown', { keyCode: 65, which: 65 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_6"]')
-    .simulate('keyUp', { keyCode: 65, which: 65 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_2"]')
-    .at(2)
-    .simulate('click')
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_5"]')
-    .simulate('keyDown', { keyCode: 91, which: 91 })
-  wrapper
-    .find('[data-test-id="src_reacttelephoneinput_test_id_5"]')
-    .simulate('keyDown', { keyCode: 91, which: 91 })
-  expect(toJson(wrapper)).toMatchSnapshot()
-})
+  expect(container.firstChild).toMatchSnapshot();
+
+  const selectedFlag = container.querySelector('.selected-flag');
+  fireEvent.click(selectedFlag);
+  const flagDropdown = container.querySelector('.flag-dropdown');
+  for (let i = 0; i < 4; i += 1) {
+    fireEvent.keyDown(flagDropdown, { keyCode: 65, which: 65 });
+  }
+
+  const countryList = container.querySelectorAll(
+    'div.country-list > div > div',
+  );
+  fireEvent.click(countryList[1]);
+
+  const input = container.querySelector('input');
+  fireEvent.keyDown(input, { keyCode: 91, which: 91 });
+  fireEvent.keyDown(input, { keyCode: 91, which: 91 });
+  expect(container.firstChild).toMatchSnapshot();
+});

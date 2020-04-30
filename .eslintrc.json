@@ -1,9 +1,7 @@
 {
   "parser": "babel-eslint",
-  "env": {
-    "browser": true
-  },
   "extends": ["airbnb-base", "plugin:react/recommended"],
+  "plugins": ["jest"],
   "rules": {
     "semi": 0,
     "no-underscore-dangle": "off",
@@ -14,6 +12,12 @@
     "no-else-return": "off",
     "object-curly-newline": "off",
     "no-confusing-arrow": "off",
-    "function-paren-newline": "off"
+    "function-paren-newline": "off",
+    "no-nested-ternary": "off",
+    "import/no-extraneous-dependencies": "off"
+  },
+  "env": {
+    "browser": true,
+    "jest/globals": true
   }
 }
