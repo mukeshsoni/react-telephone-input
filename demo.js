@@ -20,17 +20,14 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Users_mukesh_Documents_projects_react_telephone_input_node_modules_nwb_node_modules_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/nwb/node_modules/@babel/runtime/helpers/esm/extends */ "./node_modules/nwb/node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _src_withStyles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../src/withStyles */ "./src/withStyles.js");
-/* harmony import */ var _src_withStyles__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_src_withStyles__WEBPACK_IMPORTED_MODULE_3__);
-
-
-var _this = undefined,
-    _jsxFileName = "/Users/mukesh/Documents/projects/react-telephone-input/demo/src/index.js";
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _src_withStyles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../src/withStyles */ "./src/withStyles.js");
+/* harmony import */ var _src_withStyles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_src_withStyles__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/mukesh/Documents/projects/react-telephone-input/demo/src/index.js",
+    _this = undefined;
 
 
  // import testGenerator from 'generate-ui-tests'
@@ -39,56 +36,112 @@ var _this = undefined,
 
 
 var flagsImagePath = __webpack_require__(/*! ../../images/flags.png */ "./images/flags.png"); // const RTI = testGenerator(ReactTelephoneInput)
+// eslint-disable-next-line
 
 
-var propsDemo3 = {
-  preferredCountries: ['af', 'al'],
-  defaultCountry: 'in',
-  flagsImagePath: '/flags.723494a4.png',
-  initialValue: '+9112121',
-  inputProps: {
-    autoFocus: true
-  }
-};
-
-var Demo = function Demo() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    __self: _this,
+function CodeBlock(_ref) {
+  var children = _ref.children;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      marginBottom: 10
+    },
+    __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
-      columnNumber: 3
+      lineNumber: 14,
+      columnNumber: 5
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("pre", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 7
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 9
+    }
+  }, children)));
+}
+
+var Demo = function Demo() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 23,
+      columnNumber: 3
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
       columnNumber: 5
     }
-  }, "Github repo -", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+  }, "Github repo -", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://github.com/mukeshsoni/react-telephone-input",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 7
     }
-  }, "https://github.com/mukeshsoni/react-telephone-input")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29,
-      columnNumber: 5
-    }
-  }, "React Telephone Input Demo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", {
+  }, "https://github.com/mukeshsoni/react-telephone-input")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 30,
       columnNumber: 5
     }
-  }, "Base case"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_withStyles__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, "React Telephone Input Demo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31,
+      columnNumber: 5
+    }
+  }, "Base case"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CodeBlock, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32,
+      columnNumber: 5
+    }
+  }, '<RTI flagsImagePath={flagsImagePath} />'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_withStyles__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    flagsImagePath: flagsImagePath,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 5
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34,
+      columnNumber: 5
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 5
+    }
+  }, "With initial values and auto focus"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CodeBlock, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36,
+      columnNumber: 5
+    }
+  }, "<RTI\n  preferredCountries={['af', 'al']}\n  defaultCountry=\"in\"\n  flagsImagePath={flagsImagePath}\n  initialValue=\"+9112121\"\n  inputProps={{ autoFocus: true }}\n/>"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_withStyles__WEBPACK_IMPORTED_MODULE_2___default.a, {
     preferredCountries: ['af', 'al'],
     defaultCountry: "in",
     flagsImagePath: flagsImagePath,
@@ -99,34 +152,105 @@ var Demo = function Demo() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 45,
       columnNumber: 5
     }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_withStyles__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52,
+      columnNumber: 5
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CodeBlock, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53,
+      columnNumber: 5
+    }
+  }, "<RTI\n  defaultCountry=\"us\"\n  preferredCountries={['us', 'ca', 'zz', 'hk']}\n  flagsImagePath={flagsImagePath}\n/>"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_withStyles__WEBPACK_IMPORTED_MODULE_2___default.a, {
     defaultCountry: "us",
     preferredCountries: ['us', 'ca', 'zz', 'hk'],
     flagsImagePath: flagsImagePath,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 60,
       columnNumber: 5
     }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_withStyles__WEBPACK_IMPORTED_MODULE_3___default.a, Object(_Users_mukesh_Documents_projects_react_telephone_input_node_modules_nwb_node_modules_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, propsDemo3, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 65,
       columnNumber: 5
     }
-  })));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66,
+      columnNumber: 5
+    }
+  }, "Different country - Albania"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CodeBlock, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67,
+      columnNumber: 5
+    }
+  }, "<RTI\n  flagsImagePath={flagsImagePath}\n  preferredCountries={['af', 'al']}\n  defaultCountry=\"in\"\n  initialValue=\"+9112121\"\n/>"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_withStyles__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    flagsImagePath: flagsImagePath,
+    preferredCountries: ['af', 'al'],
+    defaultCountry: "in",
+    initialValue: "+9112121",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75,
+      columnNumber: 5
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 81,
+      columnNumber: 5
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 82,
+      columnNumber: 5
+    }
+  }, "With preferred countries"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CodeBlock, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83,
+      columnNumber: 5
+    }
+  }, "<RTI\n  defaultCountry=\"us\"\n  flagsImagePath={flagsImagePath}\n  initialValue=\"+13559112121\"\n  preferredCountries={['us', 'ca', 'zz', 'hk']}\n/>"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_withStyles__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    defaultCountry: "us",
+    flagsImagePath: flagsImagePath,
+    initialValue: "+13559112121",
+    preferredCountries: ['us', 'ca', 'zz', 'hk'],
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 91,
+      columnNumber: 5
+    }
+  }));
 };
 
-Object(react_dom__WEBPACK_IMPORTED_MODULE_2__["render"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Demo, {
+Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Demo, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 73,
+    lineNumber: 100,
     columnNumber: 8
   }
 }), document.querySelector('#demo'));
