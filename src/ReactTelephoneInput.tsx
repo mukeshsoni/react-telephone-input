@@ -102,10 +102,7 @@ interface State {
   formattedNumber: string;
 }
 
-export class ReactTelephoneInput extends Component<
-  Props & DefaultProps,
-  State
-> {
+export class ReactTelephoneInput extends Component<Props, State> {
   static defaultProps = {
     autoFormat: true,
     onlyCountries: allCountries,
