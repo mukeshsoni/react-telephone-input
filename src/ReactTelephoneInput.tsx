@@ -212,7 +212,9 @@ export class ReactTelephoneInput extends Component<
 
     const formattedNumber = formatNumber(
       inputNumber.replace(/\D/g, ''),
-      selectedCountryGuess ? selectedCountryGuess.format : null,
+      selectedCountryGuess && selectedCountryGuess.format
+        ? selectedCountryGuess.format
+        : null,
       props.autoFormat,
     );
 
@@ -300,7 +302,9 @@ export class ReactTelephoneInput extends Component<
       }
       formattedNumber = formatNumber(
         inputNumber,
-        newSelectedCountry.format,
+        newSelectedCountry && newSelectedCountry.format
+          ? newSelectedCountry.format
+          : null,
         this.props.autoFormat,
       );
     }
