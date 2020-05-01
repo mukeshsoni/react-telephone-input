@@ -193,6 +193,8 @@ The default value for `flagsImagePath` is 'flags.png'
 * Country names in the dropdown also include localised versions in brackets
 * Dropdown appears above or below the input depending on available space/scroll position
 
+### Contributing
+
 You can try the app by downloading everything and running the commands given below -
 
 ```
@@ -200,6 +202,13 @@ $ npm install
 $ npm start
 
 go to your browser and type http://localhost:3000
+```
+
+### Running tests
+
+```
+$ npm run test
+$ npm run test -- --watch # to run tests in watch mode
 ```
 
 [build-badge]: https://img.shields.io/travis/mukeshsoni/react-telephone-input/master.png?style=flat-square
