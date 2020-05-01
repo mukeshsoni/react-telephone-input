@@ -1,3 +1,4 @@
+import * as React from 'react';
 // memoize results based on the first 5/6 characters. That is all that matters
 
 import R from 'cramda';
@@ -6,8 +7,52 @@ import countryData from 'country-telephone-data';
 const { find, propEq, startsWith } = R;
 const { allCountries, allCountryCodes } = countryData;
 
-export default function guessSelectedCountry(inputNumber, props) {
-  const { defaultCountry, onlyCountries } = props;
+type ISO2Name = string;
+
+interface Country {
+  name?: string;
+  iso2?: ISO2Name;
+  dialCode: string;
+  priority: number;
+  format?: string;
+}
+
+interface DefaultProps {
+  autoFormat: boolean;
+  onlyCountries: Array<Country>;
+  defaultCountry: ISO2Name;
+  isValid: (inputNumber: string) => boolean;
+  flagsImagePath: string;
+  onEnterKeyPress: () => void;
+  preferredCountries: Array<ISO2Name>;
+  disabled: boolean;
+  placeholder: string;
+  autoComplete: string; // TODO: find the exact list of acceptable strings
+  required: boolean;
+  inputProps: React.HTMLProps<HTMLInputElement>;
+  buttonProps: React.HTMLProps<HTMLButtonElement>;
+  listItemClassName: string;
+  listStyle: React.CSSProperties;
+}
+
+type Props = {
+  value?: string;
+  initialValue?: string;
+  classNames: string;
+  className: string;
+  inputId: string;
+  onChange: (inputNumber: string, selectedCountry: Country) => void;
+  onBlur: () => void;
+  onFocus: () => void;
+  pattern: string;
+} & Partial<DefaultProps>;
+
+export default function guessSelectedCountry(
+  inputNumber: string,
+  props: Props,
+): Country {
+  const defaultCountry = props.defaultCountry!;
+  const onlyCountries = props.onlyCountries!;
 
   const secondBestGuess =
     find(propEq('iso2', defaultCountry), allCountries) || onlyCountries[0];
@@ -17,7 +62,7 @@ export default function guessSelectedCountry(inputNumber, props) {
 
   if (inputNumber.trim() !== '') {
     bestGuess = onlyCountries.reduce(
-      (selectedCountry, country) => {
+      (selectedCountry: Country, country: Country) => {
         // if the country dialCode exists WITH area code
 
         if (
@@ -50,7 +95,6 @@ export default function guessSelectedCountry(inputNumber, props) {
         return selectedCountry;
       },
       { dialCode: '', priority: 10001 },
-      this,
     );
   } else {
     return secondBestGuess;
