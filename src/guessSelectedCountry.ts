@@ -1,3 +1,4 @@
+import * as React from 'react';
 // memoize results based on the first 5/6 characters. That is all that matters
 
 import R from 'cramda';
@@ -5,9 +6,14 @@ import countryData from 'country-telephone-data';
 
 const { find, propEq, startsWith } = R;
 const { allCountries, allCountryCodes } = countryData;
+import { Country, Props } from './ReactTelephoneInput';
 
-export default function guessSelectedCountry(inputNumber, props) {
-  const { defaultCountry, onlyCountries } = props;
+export default function guessSelectedCountry(
+  inputNumber: string,
+  props: Props,
+): Country {
+  const defaultCountry = props.defaultCountry!;
+  const onlyCountries = props.onlyCountries!;
 
   const secondBestGuess =
     find(propEq('iso2', defaultCountry), allCountries) || onlyCountries[0];
@@ -17,7 +23,7 @@ export default function guessSelectedCountry(inputNumber, props) {
 
   if (inputNumber.trim() !== '') {
     bestGuess = onlyCountries.reduce(
-      (selectedCountry, country) => {
+      (selectedCountry: Country, country: Country) => {
         // if the country dialCode exists WITH area code
 
         if (
@@ -50,7 +56,6 @@ export default function guessSelectedCountry(inputNumber, props) {
         return selectedCountry;
       },
       { dialCode: '', priority: 10001 },
-      this,
     );
   } else {
     return secondBestGuess;

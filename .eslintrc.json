@@ -1,7 +1,13 @@
 {
-  "parser": "babel-eslint",
-  "extends": ["airbnb-base", "plugin:react/recommended"],
-  "plugins": ["jest"],
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "jest"],
   "rules": {
     "semi": 0,
     "no-underscore-dangle": "off",
@@ -14,7 +20,11 @@
     "no-confusing-arrow": "off",
     "function-paren-newline": "off",
     "no-nested-ternary": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/explicit-function-return-type": "off"
   },
   "env": {
     "browser": true,
