@@ -4,8 +4,8 @@ import VirtualList from 'react-tiny-virtual-list';
 import debounce from 'debounce';
 import memoize from 'lodash.memoize';
 
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import { Component } from 'react';
 import classNames from 'classnames';
 import enhanceWithClickOutside from 'react-click-outside';
 import countryData from 'country-telephone-data';
@@ -13,6 +13,47 @@ import formatNumber from './format_number';
 import replaceCountryCode from './replace_country_code';
 import isNumberValid from './number_validator';
 import guessSelectedCountry from './guessSelectedCountry';
+
+type Direction = 1 | -1;
+type ISO2Name = string;
+
+export interface Country {
+  name?: string;
+  iso2?: ISO2Name;
+  dialCode: string;
+  priority: number;
+  format?: string;
+}
+
+interface DefaultProps {
+  autoFormat: boolean;
+  onlyCountries: Array<Country>;
+  defaultCountry: ISO2Name;
+  isValid: (inputNumber: string) => boolean;
+  flagsImagePath: string;
+  onEnterKeyPress: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+  preferredCountries: Array<ISO2Name>;
+  disabled: boolean;
+  placeholder: string;
+  autoComplete: string; // TODO: find the exact list of acceptable strings
+  required: boolean;
+  inputProps: React.HTMLProps<HTMLInputElement>;
+  buttonProps: React.HTMLProps<HTMLButtonElement>;
+  listItemClassName: string;
+  listStyle: React.CSSProperties;
+}
+
+export type Props = {
+  value?: string;
+  initialValue?: string;
+  classNames: string;
+  className: string;
+  inputId: string;
+  onChange: (inputNumber: string, selectedCountry: Country) => void;
+  onFocus?: (inputNumber: string, selectedCountry: Country) => void;
+  onBlur?: (inputNumber: string, selectedCountry: Country) => void;
+  pattern: string;
+} & DefaultProps;
 
 const { find, propEq, equals, findIndex, startsWith } = R;
 
@@ -49,7 +90,22 @@ function getDropdownListWidth() {
   }
 }
 
-export class ReactTelephoneInput extends Component {
+interface State {
+  firstCall: boolean;
+  preferredCountries: Array<Country>;
+  showDropDown: boolean;
+  queryString: string;
+  freezeSelection: boolean;
+  debouncedQueryStingSearcher: () => void;
+  selectedCountry?: Country;
+  highlightCountryIndex: number;
+  formattedNumber: string;
+}
+
+export class ReactTelephoneInput extends Component<
+  Props & DefaultProps,
+  State
+> {
   static defaultProps = {
     autoFormat: true,
     onlyCountries: allCountries,
@@ -71,12 +127,15 @@ export class ReactTelephoneInput extends Component {
     },
   };
 
-  numberInputRef = null;
+  numberInputRef: HTMLInputElement | null = null;
 
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
 
-    const preferredCountries = props.preferredCountries
+    // eslint-disable-next-line
+    const preferredCountriesFromProps = props.preferredCountries;
+
+    const preferredCountries = preferredCountriesFromProps
       .map((iso2) =>
         Object.prototype.hasOwnProperty.call(iso2Lookup, iso2)
           ? allCountries[iso2Lookup[iso2]]
@@ -91,6 +150,8 @@ export class ReactTelephoneInput extends Component {
       queryString: '',
       freezeSelection: false,
       debouncedQueryStingSearcher: debounce(this.searchCountry, 600),
+      formattedNumber: '',
+      highlightCountryIndex: 0,
     };
   }
 
@@ -98,11 +159,11 @@ export class ReactTelephoneInput extends Component {
     this._cursorToEnd(true);
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate(nextProps: Props, nextState: State) {
     return !equals(nextProps, this.props) || !equals(nextState, this.state);
   }
 
-  static getDerivedStateFromProps(props, state) {
+  static getDerivedStateFromProps(props: Props, state: State) {
     let inputNumber;
     const { onlyCountries } = props;
     const { showDropDown, preferredCountries, selectedCountry } = state;
@@ -164,32 +225,32 @@ export class ReactTelephoneInput extends Component {
   }
 
   // put the cursor to the end of the input (usually after a focus event)
-  _cursorToEnd = (skipFocus) => {
+  _cursorToEnd = (skipFocus = false) => {
     const input = this.numberInputRef;
     if (skipFocus) {
       this._fillDialCode();
     } else {
-      input.focus();
+      if (input) {
+        input.focus();
+      }
 
-      if (isModernBrowser) {
+      if (isModernBrowser && input) {
         const len = input.value.length;
         input.setSelectionRange(len, len);
       }
     }
   };
 
-  handleFlagDropdownClick = (e) => {
+  handleFlagDropdownClick = (e: React.SyntheticEvent) => {
     if (this.props.disabled) {
       return;
     }
 
     e.preventDefault();
-    const { preferredCountries, selectedCountry } = this.state;
+    const { preferredCountries } = this.state;
+    const selectedCountry = this.state.selectedCountry!;
     const { onlyCountries } = this.props;
-    const highlightCountry = find(
-      equals(this.state.selectedCountry),
-      preferredCountries.concat(onlyCountries),
-    );
+
     const highlightCountryIndex = findIndex(
       propEq('iso2', selectedCountry.iso2),
       preferredCountries.concat(onlyCountries),
@@ -198,14 +259,13 @@ export class ReactTelephoneInput extends Component {
     // need to put the highlight on the current selected country if the dropdown is going to open up
     this.setState({
       showDropDown: !this.state.showDropDown,
-      highlightCountry,
       highlightCountryIndex,
     });
   };
 
-  handleInput = (event) => {
+  handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     let formattedNumber = '+';
-    let newSelectedCountry = this.state.selectedCountry;
+    let newSelectedCountry = this.state.selectedCountry!;
     let { freezeSelection } = this.state;
 
     // if the input is the same as before, must be some special key like enter, alt, command etc.
@@ -215,9 +275,7 @@ export class ReactTelephoneInput extends Component {
 
     if (event.preventDefault) {
       event.preventDefault();
-    } else {
-      // ie hack
-      event.returnValue = false; // eslint-disable-line no-param-reassign
+      event.nativeEvent.preventDefault();
     }
 
     if (event.target.value && event.target.value.length > 0) {
@@ -232,7 +290,7 @@ export class ReactTelephoneInput extends Component {
       // since the set of input it gets has drastically reduced
       if (
         !this.state.freezeSelection ||
-        this.state.selectedCountry.dialCode.length > inputNumber.length
+        newSelectedCountry.dialCode.length > inputNumber.length
       ) {
         newSelectedCountry = guessSelectedCountry(
           inputNumber.substring(0, 6),
@@ -247,13 +305,13 @@ export class ReactTelephoneInput extends Component {
       );
     }
 
-    let caretPosition = event.target.selectionStart;
+    let caretPosition: number = event.target.selectionStart || 0;
     const oldFormattedText = this.state.formattedNumber;
     const diff = formattedNumber.length - oldFormattedText.length;
     const selectedCountry =
       newSelectedCountry.dialCode.length > 0
         ? newSelectedCountry
-        : this.state.selectedCountry;
+        : this.state.selectedCountry!;
 
     this.setState(
       {
@@ -295,11 +353,11 @@ export class ReactTelephoneInput extends Component {
     this.setState({ showDropDown: false });
   };
 
-  handleFlagItemClick = (country) => {
+  handleFlagItemClick = (country: Country) => {
     const { onlyCountries } = this.props;
-    const currentSelectedCountry = this.state.selectedCountry;
+    const currentSelectedCountry = this.state.selectedCountry!;
     const nextSelectedCountry = find(
-      (c) => c.iso2 === country.iso2,
+      (c: Country) => c.iso2 === country.iso2,
       onlyCountries,
     );
 
@@ -344,7 +402,7 @@ export class ReactTelephoneInput extends Component {
     if (typeof this.props.onFocus === 'function') {
       this.props.onFocus(
         this.state.formattedNumber,
-        this.state.selectedCountry,
+        this.state.selectedCountry!,
       );
     }
 
@@ -352,15 +410,17 @@ export class ReactTelephoneInput extends Component {
   };
 
   _fillDialCode = () => {
+    const selectedCountry = this.state.selectedCountry!;
+
     // if the input is blank, insert dial code of the selected country
     if (this.numberInputRef && this.numberInputRef.value === '+') {
       this.setState({
-        formattedNumber: `+${this.state.selectedCountry.dialCode}`,
+        formattedNumber: `+${selectedCountry.dialCode}`,
       });
     }
   };
 
-  _getHighlightCountryIndex = (direction) => {
+  _getHighlightCountryIndex = (direction: Direction) => {
     const { onlyCountries } = this.props;
     const { highlightCountryIndex, preferredCountries } = this.state;
 
@@ -379,23 +439,27 @@ export class ReactTelephoneInput extends Component {
   };
 
   // memoize search results... caching all the way
-  _searchCountry = memoize(function searchCountry(queryString) {
+  _searchCountry = memoize((queryString) => {
+    const { onlyCountries } = this.props;
     if (!queryString || queryString.length === 0) {
       return null;
     }
     // don't include the preferred countries in search
-    const probableCountries = this.props.onlyCountries.filter(
-      (country) =>
-        startsWith(queryString.toLowerCase(), country.name.toLowerCase()),
+    const probableCountries = onlyCountries.filter(
+      (country: Country) =>
+        country.name
+          ? startsWith(queryString.toLowerCase(), country.name.toLowerCase())
+          : false,
       this,
     );
     return probableCountries[0];
   });
 
   searchCountry = () => {
+    const { onlyCountries } = this.props;
+
     const probableCandidate =
-      this._searchCountry(this.state.queryString) ||
-      this.props.onlyCountries[0];
+      this._searchCountry(this.state.queryString) || onlyCountries[0];
     const probableCandidateIndex =
       findIndex(
         propEq('iso2', probableCandidate.iso2),
@@ -408,7 +472,9 @@ export class ReactTelephoneInput extends Component {
     });
   };
 
-  handleKeydown = (event) => {
+  handleKeydown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const { onlyCountries } = this.props;
+
     if (!this.state.showDropDown || event.metaKey || event.altKey) {
       return;
     }
@@ -416,18 +482,16 @@ export class ReactTelephoneInput extends Component {
     // ie hack
     if (event.preventDefault) {
       event.preventDefault();
-    } else {
-      event.returnValue = false; // eslint-disable-line no-param-reassign
+      event.nativeEvent.preventDefault();
     }
 
-    const self = this;
-    function _moveHighlight(direction) {
-      const highlightCountryIndex = self._getHighlightCountryIndex(direction);
+    const _moveHighlight = (direction: Direction) => {
+      const highlightCountryIndex = this._getHighlightCountryIndex(direction);
 
-      self.setState({
+      this.setState({
         highlightCountryIndex,
       });
-    }
+    };
 
     switch (event.which) {
       case keys.DOWN:
@@ -438,10 +502,9 @@ export class ReactTelephoneInput extends Component {
         break;
       case keys.ENTER:
         this.handleFlagItemClick(
-          this.state.preferredCountries.concat(this.props.onlyCountries)[
+          this.state.preferredCountries.concat(onlyCountries)[
             this.state.highlightCountryIndex
           ],
-          event,
         );
         break;
       case keys.ESC:
@@ -463,7 +526,7 @@ export class ReactTelephoneInput extends Component {
     }
   };
 
-  handleInputKeyDown = (event) => {
+  handleInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (
       event.which === keys.ENTER &&
       typeof this.props.onEnterKeyPress === 'function'
@@ -481,8 +544,10 @@ export class ReactTelephoneInput extends Component {
   };
 
   getCountryDropDownList = () => {
+    const { onlyCountries } = this.props;
+
     const { highlightCountryIndex, preferredCountries } = this.state;
-    const data = preferredCountries.concat(this.props.onlyCountries);
+    const data = preferredCountries.concat(onlyCountries);
 
     return (
       <VirtualList
@@ -493,7 +558,7 @@ export class ReactTelephoneInput extends Component {
         style={this.props.listStyle}
         className="country-list"
         scrollToIndex={highlightCountryIndex}
-        scrollToAlignment="center"
+        scrollToAlignment={'center' as any}
         renderItem={({ index, style }) => {
           const country = data[index];
           const itemClasses = classNames(this.props.listItemClassName, {
@@ -551,12 +616,14 @@ export class ReactTelephoneInput extends Component {
   };
 
   handleInputBlur = () => {
+    const selectedCountry = this.state.selectedCountry!;
+
     if (typeof this.props.onBlur === 'function') {
-      this.props.onBlur(this.state.formattedNumber, this.state.selectedCountry);
+      this.props.onBlur(this.state.formattedNumber, selectedCountry);
     }
   };
 
-  handleFlagKeyDown = (event) => {
+  handleFlagKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
     // only trigger dropdown click if the dropdown is not already open.
     // it will otherwise interfere with key up/down of list
     if (event.which === keys.DOWN && this.state.showDropDown === false) {
@@ -565,7 +632,8 @@ export class ReactTelephoneInput extends Component {
   };
 
   render() {
-    const { selectedCountry } = this.state;
+    const { isValid } = this.props;
+    const selectedCountry = this.state.selectedCountry!;
 
     const arrowClasses = classNames({
       arrow: true,
@@ -573,9 +641,7 @@ export class ReactTelephoneInput extends Component {
     });
     const inputClasses = classNames({
       'form-control': true,
-      'invalid-number': !this.props.isValid(
-        this.state.formattedNumber.replace(/\D/g, ''),
-      ),
+      'invalid-number': !isValid(this.state.formattedNumber.replace(/\D/g, '')),
     });
 
     const flagViewClasses = classNames({
@@ -586,7 +652,7 @@ export class ReactTelephoneInput extends Component {
     const inputFlagClasses = `flag ${selectedCountry.iso2}`;
     const { buttonProps } = this.props;
     const otherProps = this.props.inputProps;
-    if (this.props.inputId) {
+    if (otherProps && this.props.inputId) {
       otherProps.id = this.props.inputId;
     }
 
@@ -610,7 +676,7 @@ export class ReactTelephoneInput extends Component {
             title={`${selectedCountry.name}: + ${selectedCountry.dialCode}`}
             data-test-id="src_reacttelephoneinput_test_id_7"
             onKeyDown={this.handleFlagKeyDown}
-            type="button"
+            type={'button' as any}
             {...buttonProps}
           >
             <div
@@ -650,32 +716,5 @@ export class ReactTelephoneInput extends Component {
     );
   }
 }
-
-ReactTelephoneInput.propTypes = {
-  value: PropTypes.string,
-  initialValue: PropTypes.string,
-  autoFormat: PropTypes.bool,
-  defaultCountry: PropTypes.string,
-  isValid: PropTypes.func,
-  onlyCountries: PropTypes.arrayOf(PropTypes.object),
-  preferredCountries: PropTypes.arrayOf(PropTypes.string),
-  flagsImagePath: PropTypes.string,
-  placeholder: PropTypes.string,
-  autoComplete: PropTypes.string,
-  classNames: PropTypes.string,
-  className: PropTypes.string,
-  inputId: PropTypes.string,
-  onChange: PropTypes.func,
-  onEnterKeyPress: PropTypes.func,
-  onBlur: PropTypes.func,
-  onFocus: PropTypes.func,
-  disabled: PropTypes.bool,
-  pattern: PropTypes.string,
-  required: PropTypes.bool,
-  inputProps: PropTypes.object,
-  buttonProps: PropTypes.object,
-  listStyle: PropTypes.object,
-  listItemClassName: PropTypes.string,
-};
 
 export default enhanceWithClickOutside(ReactTelephoneInput);

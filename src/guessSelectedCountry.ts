@@ -6,46 +6,7 @@ import countryData from 'country-telephone-data';
 
 const { find, propEq, startsWith } = R;
 const { allCountries, allCountryCodes } = countryData;
-
-type ISO2Name = string;
-
-interface Country {
-  name?: string;
-  iso2?: ISO2Name;
-  dialCode: string;
-  priority: number;
-  format?: string;
-}
-
-interface DefaultProps {
-  autoFormat: boolean;
-  onlyCountries: Array<Country>;
-  defaultCountry: ISO2Name;
-  isValid: (inputNumber: string) => boolean;
-  flagsImagePath: string;
-  onEnterKeyPress: () => void;
-  preferredCountries: Array<ISO2Name>;
-  disabled: boolean;
-  placeholder: string;
-  autoComplete: string; // TODO: find the exact list of acceptable strings
-  required: boolean;
-  inputProps: React.HTMLProps<HTMLInputElement>;
-  buttonProps: React.HTMLProps<HTMLButtonElement>;
-  listItemClassName: string;
-  listStyle: React.CSSProperties;
-}
-
-type Props = {
-  value?: string;
-  initialValue?: string;
-  classNames: string;
-  className: string;
-  inputId: string;
-  onChange: (inputNumber: string, selectedCountry: Country) => void;
-  onBlur: () => void;
-  onFocus: () => void;
-  pattern: string;
-} & Partial<DefaultProps>;
+import { Country, Props } from './ReactTelephoneInput';
 
 export default function guessSelectedCountry(
   inputNumber: string,
