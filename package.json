@@ -63,6 +63,8 @@
     "@babel/preset-react": "^7.9.4",
     "@testing-library/react": "^10.0.3",
     "@types/jest": "^25.2.1",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^25.5.1",
@@ -86,6 +88,9 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@types/classnames": "^2.2.10",
+    "@types/debounce": "^1.2.0",
+    "@types/lodash.memoize": "^4.1.6",
     "classnames": "^2.1.2",
     "country-telephone-data": "0.6.2",
     "cramda": "^0.4.4",
