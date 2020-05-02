@@ -1,3 +1,5 @@
+## 5.0.0 (2020-05-02)
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
