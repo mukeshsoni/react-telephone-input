@@ -2,6 +2,11 @@
 
 # Changelog
 
+### Breaking 
+- withStyles file is no longer included in the package. One can add the css file
+  directly into their modules from 'react-telephone-input/css/default.css'
+- The module now comes bundled with typescript types.
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
