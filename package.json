@@ -11,7 +11,7 @@
     "src"
   ],
   "scripts": {
-    "build": "tsdx build --entry ./src/ReactTelephoneInput.tsx ./src/withStyles.js",
+    "build": "tsdx build --entry ./src/ReactTelephoneInput.tsx",
     "clean": "nwb clean-module && npx nwb clean-demo",
     "start": "nwb serve-react-demo",
     "lint": "eslint src",
@@ -30,7 +30,7 @@
   },
   "lint-staged": {
     "*.{js,jsx}": [
-      "eslint --fix",
+      "npm run list -- --fix",
       "prettier --write",
       "npm run test -- --bail --passWithNoTests --findRelatedTests"
     ]
@@ -101,7 +101,6 @@
     "cramda": "^0.4.4",
     "debounce": "^1.1.0",
     "lodash.memoize": "^4.1.2",
-    "prop-types": "^15.5.10",
     "react-click-outside": "^3.0.1",
     "react-tiny-virtual-list": "^2.1.4"
   },
