@@ -2,16 +2,16 @@
   "name": "react-telephone-input",
   "version": "4.75.5",
   "description": "React component for entering and validating international telephone numbers",
-  "main": "lib/ReactTelephoneInput.js",
-  "modules": "es/ReactTelephoneInput.js",
+  "main": "dist/index.js",
+  "module": "dist/react-telephone-input.esm.js",
+  "typings": "dist/ReactTelephoneInput.d.ts",
   "files": [
     "css",
-    "es",
-    "lib",
-    "umd"
+    "dist",
+    "src"
   ],
   "scripts": {
-    "build": "nwb build-react-component --copy-files",
+    "build": "tsdx build --entry ./src/ReactTelephoneInput.tsx ./src/withStyles.js",
     "clean": "nwb clean-module && npx nwb clean-demo",
     "start": "nwb serve-react-demo",
     "lint": "eslint src",
@@ -85,6 +85,7 @@
     "react-dom": "^16.13.1",
     "regenerator-runtime": "0.13.5",
     "ts-jest": "^25.4.0",
+    "tsdx": "^0.13.2",
     "typescript": "^3.8.3"
   },
   "dependencies": {

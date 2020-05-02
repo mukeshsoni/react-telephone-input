@@ -3,6 +3,13 @@
 [![Travis][build-badge]][build]
 [![npm package][npm-badge]][npm]
 
+_IMP_: From 5.\*, the withStyles file will not be bundled in dist. If you want
+to use the css, you can import the css file directly to your module -
+
+```JavaScript
+import 'react-telephone-input/css/default.css'
+```
+
 _IMP_: From 3.\*, the styles won't be included by default. Can use `require('react-telephone-input/lib/withStyles')` to get the styles.
 
 Inspired from the awesome jquery plugin for <a href="https://github.com/Bluefieldscom/intl-tel-input" target="_blank">International Telephone Input</a>.
