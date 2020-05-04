@@ -1,20 +1,8 @@
 const path = require('path');
 
 module.exports = {
-  type: 'react-component',
-  npm: {
-    esModules: true,
-    umd: {
-      entry: './src/ReactTelephoneInput.tsx',
-      global: 'ReactTelephoneInput',
-      externals: {
-        react: 'React',
-      },
-    },
-  },
   webpack: {
     config(config) {
-      config.entry = './src/ReactTelephoneInput';
       // eslint-disable-next-line
       config.resolve.alias = {
         ...config.alias,

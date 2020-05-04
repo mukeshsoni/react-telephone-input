@@ -30,7 +30,7 @@
   },
   "lint-staged": {
     "*.{js,jsx}": [
-      "npm run list -- --fix",
+      "npm run lint -- --fix",
       "prettier --write",
       "npm run test -- --bail --passWithNoTests --findRelatedTests"
     ]
