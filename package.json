@@ -73,7 +73,7 @@
     "babel-jest": "^26.0.1",
     "babel-plugin-remove-data-test-id-attribute": "^1.0.0",
     "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jest": "^23.8.2",
     "eslint-plugin-jsx-a11y": "^6.0.3",
